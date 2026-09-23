@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import CareerPage from './pages/career/Career'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./common/header/Id-Header";
+import Footer from "./common/footer/Id-Footer";
+import routes from "./routes/routes";
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <CareerPage />
-      </section>
-      <section id="spacer"></section>
-    </>
-  )
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        {routes.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
 }
-
-export default App
