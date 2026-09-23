@@ -13,8 +13,9 @@ export default function Header() {
     const toggleDrawer = (open) => () => setDrawerOpen(open);
 
     return (
-        <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pt: { xs: 3, md: 5 } }}>
-            <Box sx={{ borderRadius: "1rem", border: "1px solid #1e293b", bgcolor: "#090e17", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)" }}>
+        // <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pt: { xs: 3, md: 5 } }}>
+        <Box sx={{ width: "100%", m: 0, p: 0 }}>
+            <Box sx={{ borderRadius: "0rem", border: "1px solid #1e293b", bgcolor: "#090e17", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)", height:"120px"}}>
                 <AppBar position="static" elevation={0} sx={{ bgcolor: "#090e17", borderBottom: "1px solid #1e293b" }}>
                     <Toolbar sx={{ px: { xs: 2.5, lg: 4 }, py: 1.5, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <MuiLink component={RouterLink} to="/" sx={{ display: "flex", alignItems: "center" }}>
