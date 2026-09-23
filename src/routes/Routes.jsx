@@ -11,6 +11,7 @@ const routes = [
     // { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true },
     // { path: "/blogs", label: "Blogs", element: <BlogsPage />, showInNav: true },
     { path: "/career", label: "Career", element: <CareerPage />, showInNav: true, showInFooter: true },
+
     // { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true },
 ];
 
