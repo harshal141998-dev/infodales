@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Box, Stack, Link as MuiLink, IconButton, Drawer, Divider, ListItem, ListItemButton, ListItemText, List } from "@mui/material";
-import logo from "../../assets/images/infodales/InfoDalesMainLogo03.svg";
+import logo from "../../assets/images/infodales/InfoDalesMainLogo01.png";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';

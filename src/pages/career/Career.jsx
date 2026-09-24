@@ -595,11 +595,6 @@ export default function CareerPage() {
                             onChange={(e) => setForm({ ...form, link: e.target.value })} placeholder="https://github.com/your-handle"
                             sx={{ '& .MuiOutlinedInput-root': { borderRadius: '0.75rem', bgcolor: '#f8fafc', fontSize: { xs: '0.75rem', sm: '0.875rem' }, '& fieldset': { borderColor: '#e2e8f0' }, '&.Mui-focused fieldset': { borderColor: COLORS.brandBlue } } }} />
 
-                        <FormControlLabel
-                            sx={{ mt: 1, '& .MuiFormControlLabel-label': { color: '#64748b', fontSize: '0.75rem' } }}
-                            control={<Checkbox required size="small" checked={form.consent} onChange={(e) => setForm({ ...form, consent: e.target.checked })} sx={{ color: '#cbd5e1', '&.Mui-checked': { color: COLORS.brandBlue } }} />}
-                            label="I agree to the candidate recruitment terms and data handling."
-                        />
                         <Stack direction="row" justifyConten="flex-end" spacing={1.5} sx={{ mt: 3, pt: 2, justifyContent: 'flex-end' }}>
                             <Button onClick={closeModal} sx={{ textTransform: "none", color: "#475569", fontWeight: 600, fontSize: '0.75rem', borderRadius: 10, px: 2.5, '&:hover': { bgcolor: '#f1f5f9' } }}>Cancel</Button>
                             <Button type="submit" disableElevation sx={{ bgcolor: "#0f172a", color: "#fff", borderRadius: 10, px: 3, textTransform: "none", fontWeight: 600, fontSize: '0.75rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', "&:hover": { bgcolor: COLORS.brandBlue } }}>
