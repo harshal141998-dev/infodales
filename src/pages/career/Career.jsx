@@ -160,7 +160,7 @@ export default function CareerPage() {
     };
 
     return (
-        <Box sx={{ bgcolor: COLORS.surface, fontFamily: "'Plus Jakarta Sans', sans-serif", minHeight: '100vh' }}>
+        <Box sx={{ bgcolor: COLORS.surface, minHeight: '100vh' }}>
             {/* HERO */}
             <Box sx={{
                 pt: { xs: 8, md: 12 }, pb: { xs: 16, md: 24 },
@@ -256,7 +256,7 @@ export default function CareerPage() {
                                     color: COLORS.brandBlue,
                                     fontWeight: 600,
                                     textTransform: "uppercase",
-                                    fontFamily: "'Space Grotesk', monospace",
+
                                     letterSpacing: "0.05em",
                                     display: "block",
                                     mb: 0.5,
@@ -304,7 +304,7 @@ export default function CareerPage() {
                                 color="text.secondary"
                                 sx={{
                                     whiteSpace: "nowrap",
-                                    fontFamily: "'Space Grotesk', monospace",
+
                                     color: "#94a3b8",
                                 }}
                             >
@@ -431,7 +431,7 @@ export default function CareerPage() {
                                                 fontWeight: 500,
                                                 p: 1,
                                                 whiteSpace: "nowrap",
-                                                "&:hover": { bgcolor: "#2563eb" },
+                                                "&:hover": { bgcolor: "#0EA5E9" },
                                             }}
                                         >
                                             Apply Now
@@ -452,9 +452,7 @@ export default function CareerPage() {
 
                     {/* Top Text Section */}
                     <Box sx={{ maxWidth: 800, mb: 6 }}>
-                        {/* <Typography variant="caption" sx={{ color: "#2563eb", fontWeight: 700, textTransform: "uppercase", fontFamily: "'Space Grotesk', monospace", letterSpacing: '0.05em', display: 'block', mb: 1 }}>
-                            Architectural Values
-                        </Typography> */}
+
                         <Typography variant="h2" fontWeight={800} sx={{ color: '#0f172a', fontSize: { xs: '2rem', md: '2.5rem' }, letterSpacing: '-0.025em', mb: 2 }}>
                             Our philosophy
                         </Typography>
@@ -478,7 +476,7 @@ export default function CareerPage() {
                             </Grid>
 
                             <Grid size={{ xs: 12, lg: 6 }} sx={{ p: { xs: 4, lg: 6, xl: 8 }, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ color: '#0ea5e9', mb: 2, fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>
+                                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ color: '#0ea5e9', mb: 2, fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>
                                     <VerifiedIcon sx={{ fontSize: 20 }} />
                                     <Typography variant="inherit" sx={{ letterSpacing: '0.05em' }}>Transparent Talent Evaluation</Typography>
                                 </Stack>
@@ -528,7 +526,7 @@ export default function CareerPage() {
                             <Card key={tip.title} sx={{ borderRadius: '1.5rem', overflow: "hidden", border: '1px solid rgba(226, 232, 240, 0.9)', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' } }}>
                                 <Grid container direction={tip.imgFirst ? "row-reverse" : "row"}>
                                     <Grid size={{ xs: 12, lg: 6 }} sx={{ p: { xs: 4, lg: 6 }, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                        <Typography variant="caption" sx={{ color: COLORS.brandBlue, fontWeight: 600, textTransform: "uppercase", fontFamily: "'Space Grotesk', monospace", letterSpacing: '0.05em', display: 'block', mb: 1 }}>{tip.step}</Typography>
+                                        <Typography variant="caption" sx={{ color: COLORS.brandBlue, fontWeight: 600, textTransform: "uppercase", letterSpacing: '0.05em', display: 'block', mb: 1 }}>{tip.step}</Typography>
                                         <Typography variant="h4" fontWeight={700} sx={{ mb: 2, color: '#0f172a', fontSize: '1.5rem', letterSpacing: '-0.025em' }}>{tip.title}</Typography>
                                         <Typography sx={{ mb: 3, color: "#475569", fontSize: { xs: '0.875rem', md: '1rem' }, lineHeight: 1.6 }}>{tip.text}</Typography>
                                         <Stack direction="row" spacing={1.5} alignItems="center" sx={{ bgcolor: "#f8fafc", border: '1px solid rgba(226, 232, 240, 0.8)', p: 2, borderRadius: '0.75rem', color: '#334155' }}>
@@ -548,13 +546,13 @@ export default function CareerPage() {
 
             {/* CTA */}
             <Box sx={{
-                bgcolor: COLORS.slateDark, color: "#fff", py: 8, position: 'relative', overflow: 'hidden',
+                bgcolor: COLORS.slateDark, color: "#fff", p: 2, m: 2, position: 'relative', overflow: 'hidden',
                 backgroundImage: 'linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px)',
-                backgroundSize: '52px 52px',
+                backgroundSize: '52px 52px', borderRadius: "10px"
             }}>
                 <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 10, display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "space-between", alignItems: "center", gap: 4 }}>
                     <Box sx={{ maxWidth: 576 }}>
-                        {/* <Chip label="Direct Talent Pipeline" size="small" icon={<Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#22d3ee', ml: 1 }} />} sx={{ bgcolor: "#1e293b", color: "#67e8f9", mb: 1.5, fontFamily: "'Space Grotesk', monospace", textTransform: 'uppercase' }} /> */}
+
                         <Typography variant="h4" fontWeight={800} sx={{ mb: 1, letterSpacing: '-0.025em', fontSize: { xs: '1.5rem', sm: '1.875rem' } }}>Don't see your specific stack listed?</Typography>
                         <Typography sx={{ color: "#94a3b8", fontSize: { xs: '0.875rem', sm: '1rem' }, lineHeight: 1.6 }}>
                             We are continuously seeking extraordinary problem-solvers across Cloud, DevSecOps, and Enterprise Data platforms. Introduce yourself directly.
@@ -574,9 +572,8 @@ export default function CareerPage() {
             <Dialog open={modalOpen} onClose={closeModal} maxWidth="sm" fullWidth PaperProps={{ sx: { borderRadius: '1.5rem', p: 0, border: '1px solid #f1f5f9', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' } }} slotProps={{ backdrop: { sx: { bgcolor: 'rgba(2, 6, 23, 0.7)', backdropFilter: 'blur(12px)' } } }}>
                 <DialogContent sx={{ p: { xs: 4, sm: 5 } }}>
                     <IconButton onClick={closeModal} sx={{ position: "absolute", top: 24, right: 24, bgcolor: "#f1f5f9", color: '#64748b', width: 36, height: 36, '&:hover': { bgcolor: '#e2e8f0', color: '#0f172a' } }}>
-                        <CloseIcon sx={{ fontSize: 20 }} />
+                        <CloseIcon sx={{ fontSize: 20, }} />
                     </IconButton>
-                    <Chip label="Rapid Application" size="small" icon={<Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#2563eb', ml: 1 }} />} sx={{ bgcolor: "#eff6ff", color: "#1d4ed8", fontWeight: 600, mb: 1, fontFamily: "'Space Grotesk', monospace", textTransform: 'uppercase' }} />
                     <Typography variant="h5" fontWeight={700} sx={{ mb: 1, color: '#0f172a' }}>{modalTitle}</Typography>
                     <Typography variant="body2" sx={{ mb: 4, color: "#64748b", fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                         Submit your profile directly to our engineering hiring leads. We prioritize practical competency over rigid credentials.
@@ -598,11 +595,6 @@ export default function CareerPage() {
                             onChange={(e) => setForm({ ...form, link: e.target.value })} placeholder="https://github.com/your-handle"
                             sx={{ '& .MuiOutlinedInput-root': { borderRadius: '0.75rem', bgcolor: '#f8fafc', fontSize: { xs: '0.75rem', sm: '0.875rem' }, '& fieldset': { borderColor: '#e2e8f0' }, '&.Mui-focused fieldset': { borderColor: COLORS.brandBlue } } }} />
 
-                        <FormControlLabel
-                            sx={{ mt: 1, '& .MuiFormControlLabel-label': { color: '#64748b', fontSize: '0.75rem' } }}
-                            control={<Checkbox required size="small" checked={form.consent} onChange={(e) => setForm({ ...form, consent: e.target.checked })} sx={{ color: '#cbd5e1', '&.Mui-checked': { color: COLORS.brandBlue } }} />}
-                            label="I agree to the candidate recruitment terms and data handling."
-                        />
                         <Stack direction="row" justifyConten="flex-end" spacing={1.5} sx={{ mt: 3, pt: 2, justifyContent: 'flex-end' }}>
                             <Button onClick={closeModal} sx={{ textTransform: "none", color: "#475569", fontWeight: 600, fontSize: '0.75rem', borderRadius: 10, px: 2.5, '&:hover': { bgcolor: '#f1f5f9' } }}>Cancel</Button>
                             <Button type="submit" disableElevation sx={{ bgcolor: "#0f172a", color: "#fff", borderRadius: 10, px: 3, textTransform: "none", fontWeight: 600, fontSize: '0.75rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', "&:hover": { bgcolor: COLORS.brandBlue } }}>
