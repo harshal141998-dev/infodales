@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./common/header/Id-Header";
 import Footer from "./common/footer/Id-Footer";
 import routes from "./routes/routes";
-
+import "./App.css"
 
 
 export default function App() {

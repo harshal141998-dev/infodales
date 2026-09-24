@@ -18,7 +18,6 @@ export default function Footer() {
                     bgcolor: "#060a12",
                     overflow: "hidden",
                     boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)",
-                    height:"120px",
                 }}
             >
                 <Box
