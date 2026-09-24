@@ -23,9 +23,7 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-// ----------------------------------------------------
-// THEME (kept identical to CareerPage for consistency)
-// ----------------------------------------------------
+
 const COLORS = {
     slateDark: "#050b14",
     cyanGlow: "#00d2fe",
@@ -436,12 +434,6 @@ export default function ServicesPage() {
                                         {m.icon}
                                     </Box>
 
-                                    {/* <Typography
-                                        variant="caption"
-                                        sx={{ color: "#0EA5E9", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", fontSize: "0.65rem", display: "block", mb: 0.75 }}
-                                    >
-                                        Module {m.num}
-                                    </Typography> */}
 
                                     <Typography variant="h6" fontWeight={700} sx={{ color: "#fff", fontSize: "1rem", mb: 1.5 }}>
                                         {m.title}
@@ -461,21 +453,7 @@ export default function ServicesPage() {
             <Box sx={{ bgcolor: "#ffffff", py: { xs: 4, md: 8 } }}>
                 <Container maxWidth="lg">
                     <Box sx={{ maxWidth: 750, mx: "auto", textAlign: "center", mb: 6 }}>
-                        {/* <Chip
-                            icon={<FiberManualRecordIcon sx={{ fontSize: "8px !important", color: "#0EA5E9 !important" }} />}
-                            label="VERIFICATION & GOVERNANCE MATRIX"
-                            size="small"
-                            sx={{
-                                mb: 2.5,
-                                bgcolor: "#eff6ff",
-                                color: COLORS.brandBlue,
-                                fontWeight: 700,
-                                fontSize: "0.7rem",
-                                letterSpacing: "0.05em",
-                                borderRadius: "999px",
-                                px: 0.5,
-                            }}
-                        /> */}
+
                         <Typography
                             variant="h4"
                             fontWeight={800}
@@ -533,9 +511,7 @@ export default function ServicesPage() {
                                         />
                                     </Box>
 
-                                    {/* <Typography variant="caption" sx={{ color: COLORS.brandBlue, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", fontSize: "0.7rem", mb: 0.5, display: "block" }}>
-                                        {c.tag}
-                                    </Typography> */}
+
                                     <Typography variant="h6" fontWeight={700} sx={{ color: "#0f172a", mb: 1.5 }}>
                                         {c.title}
                                     </Typography>
