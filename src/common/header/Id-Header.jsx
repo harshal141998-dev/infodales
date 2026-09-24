@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Box, Stack, Link as MuiLink, IconButton, Drawer, Divider, ListItem, ListItemButton, ListItemText, List } from "@mui/material";
-import logo from "../../assets/images/infodales/InfoDalesMainLogo03.webp";
+import logo from "../../assets/images/infodales/InfoDalesMainLogo03.svg";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -15,7 +15,7 @@ export default function Header() {
     return (
         // <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pt: { xs: 3, md: 5 } }}>
         <Box sx={{ width: "100%", m: 0, p: 0 }}>
-            <Box sx={{ borderRadius: "0rem", border: "1px solid #1e293b", bgcolor: "#090e17", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)"}}>
+            <Box sx={{ borderRadius: "0rem", border: "1px solid #1e293b", bgcolor: "#090e17", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)" }}>
                 <AppBar position="static" elevation={0} sx={{ bgcolor: "#090e17", borderBottom: "1px solid #1e293b" }}>
                     <Toolbar sx={{ px: { xs: 2.5, lg: 4 }, py: 1.5, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <MuiLink component={RouterLink} to="/" sx={{ display: "flex", alignItems: "center" }}>
