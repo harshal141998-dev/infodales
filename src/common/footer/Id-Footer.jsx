@@ -10,14 +10,16 @@ import { footerRoutes } from "../../routes/Routes";
 
 export default function Footer() {
     return (
-        <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pb: { xs: 4, md: 6 } }}>
+        // <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pb: { xs: 4, md: 6 } }}>
+         <Box sx={{ width: "100%", m: 0, p: 0 }}>
             <Box
                 sx={{
-                    borderRadius: "1rem",
+                    borderRadius: "0rem",
                     border: "1px solid #1e293b",
                     bgcolor: "#060a12",
                     overflow: "hidden",
                     boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)",
+                    height:"120px",
                 }}
             >
                 <Box
