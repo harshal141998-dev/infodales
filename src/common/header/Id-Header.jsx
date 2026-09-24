@@ -15,7 +15,7 @@ export default function Header() {
     return (
         // <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pt: { xs: 3, md: 5 } }}>
         <Box sx={{ width: "100%", m: 0, p: 0 }}>
-            <Box sx={{ borderRadius: "0rem", border: "1px solid #1e293b", bgcolor: "#090e17", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)", height:"120px"}}>
+            <Box sx={{ borderRadius: "0rem", border: "1px solid #1e293b", bgcolor: "#090e17", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)"}}>
                 <AppBar position="static" elevation={0} sx={{ bgcolor: "#090e17", borderBottom: "1px solid #1e293b" }}>
                     <Toolbar sx={{ px: { xs: 2.5, lg: 4 }, py: 1.5, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <MuiLink component={RouterLink} to="/" sx={{ display: "flex", alignItems: "center" }}>
@@ -31,7 +31,7 @@ export default function Header() {
                                     to={route.path}
                                     underline="none"
                                     sx={{
-                                        fontSize: "0.875rem",
+                                        fontSize: "1rem",
                                         fontWeight: 500,
                                         color: location.pathname === route.path ? "#38bdf8" : "#cbd5e1",
                                         transition: "color 0.2s",

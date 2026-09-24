@@ -23,6 +23,7 @@
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./common/header/Id-Header";
 import Footer from "./common/footer/Id-Footer";
+import "./App.css"
 import routes from "./routes/Routes";
 
 
