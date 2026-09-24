@@ -19,7 +19,6 @@ export default function Footer() {
                     bgcolor: "#060a12",
                     overflow: "hidden",
                     boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)",
-                    height:"120px",
                 }}
             >
                 <Box
@@ -52,7 +51,7 @@ export default function Footer() {
                                 component={RouterLink}
                                 to={route.path}
                                 underline="none"
-                                sx={{ fontSize: "0.875rem", color: "#cbd5e1", "&:hover": { color: "#fff" } }}
+                                sx={{ fontSize: "1rem", color: "#cbd5e1", "&:hover": { color: "#fff" } }}
                             >
                                 {route.label}
                             </MuiLink>
