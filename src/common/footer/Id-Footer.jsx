@@ -2,7 +2,8 @@ import { Box, Stack, Typography, IconButton, Link as MuiLink } from "@mui/materi
 import { Link as RouterLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import { footerRoutes } from "../../routes/routes";
+import { footerRoutes } from "../../routes/Routes";
+
 
 
 
@@ -50,7 +51,7 @@ export default function Footer() {
                                 component={RouterLink}
                                 to={route.path}
                                 underline="none"
-                                sx={{ fontSize: "0.875rem", color: "#cbd5e1", "&:hover": { color: "#fff" } }}
+                                sx={{ fontSize: "1rem", color: "#cbd5e1", "&:hover": { color: "#fff" } }}
                             >
                                 {route.label}
                             </MuiLink>

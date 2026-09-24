@@ -1,10 +1,10 @@
-import { AppBar, Toolbar, Box, Stack, Link as MuiLink, Container, IconButton, Drawer, Divider, ListItem, ListItemButton, ListItemText, List } from "@mui/material";
+import { AppBar, Toolbar, Box, Stack, Link as MuiLink, IconButton, Drawer, Divider, ListItem, ListItemButton, ListItemText, List } from "@mui/material";
 import logo from "../../assets/images/infodales/InfoDalesMainLogo03.webp";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import { navRoutes } from "../../routes/routes";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { navRoutes } from "../../routes/Routes";
 
 export default function Header() {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Header() {
                                     to={route.path}
                                     underline="none"
                                     sx={{
-                                        fontSize: "0.875rem",
+                                        fontSize: "1rem",
                                         fontWeight: 500,
                                         color: location.pathname === route.path ? "#38bdf8" : "#cbd5e1",
                                         transition: "color 0.2s",
