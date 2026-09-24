@@ -3,6 +3,7 @@
 // Each route has a path, element, and label.
 
 import CareerPage from "../pages/career/Career";
+import HomePage from "../pages/home/Home";
 import ServicesPage from "../pages/serviceAtInfodales/Service";
 
 // `showInNav` controls whether it appears in Header/Footer nav automatically.
@@ -11,6 +12,7 @@ const routes = [
     // { path: "/about", label: "About", element: <AboutPage />, showInNav: true },
     // { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true },
     // { path: "/blogs", label: "Blogs", element: <BlogsPage />, showInNav: true },
+    { path: "/", label: "Home", element: <HomePage />, showInNav: true, showInFooter: true },
     { path: "/career", label: "Career", element: <CareerPage />, showInNav: true, showInFooter: true },
     { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true, showInFooter: true },
 

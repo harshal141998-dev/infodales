@@ -378,7 +378,7 @@ export default function ServicesPage() {
             </Container>
 
             {/* AEM DEEP DIVE - STICKY SPLIT */}
-            <Box
+            <Box id="adobe-service"
                 sx={{
                     bgcolor: COLORS.slateDark,
                     py: { xs: 6, md: 10 },
@@ -436,12 +436,12 @@ export default function ServicesPage() {
                                         {m.icon}
                                     </Box>
 
-                                    <Typography
+                                    {/* <Typography
                                         variant="caption"
                                         sx={{ color: "#0EA5E9", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", fontSize: "0.65rem", display: "block", mb: 0.75 }}
                                     >
                                         Module {m.num}
-                                    </Typography>
+                                    </Typography> */}
 
                                     <Typography variant="h6" fontWeight={700} sx={{ color: "#fff", fontSize: "1rem", mb: 1.5 }}>
                                         {m.title}
@@ -533,9 +533,9 @@ export default function ServicesPage() {
                                         />
                                     </Box>
 
-                                    <Typography variant="caption" sx={{ color: COLORS.brandBlue, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", fontSize: "0.7rem", mb: 0.5, display: "block" }}>
+                                    {/* <Typography variant="caption" sx={{ color: COLORS.brandBlue, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", fontSize: "0.7rem", mb: 0.5, display: "block" }}>
                                         {c.tag}
-                                    </Typography>
+                                    </Typography> */}
                                     <Typography variant="h6" fontWeight={700} sx={{ color: "#0f172a", mb: 1.5 }}>
                                         {c.title}
                                     </Typography>
