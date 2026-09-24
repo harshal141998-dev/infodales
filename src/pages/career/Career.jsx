@@ -546,9 +546,9 @@ export default function CareerPage() {
 
             {/* CTA */}
             <Box sx={{
-                bgcolor: COLORS.slateDark, color: "#fff", py: 8, position: 'relative', overflow: 'hidden',
+                bgcolor: COLORS.slateDark, color: "#fff", p: 2, m: 2, position: 'relative', overflow: 'hidden',
                 backgroundImage: 'linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px)',
-                backgroundSize: '52px 52px',
+                backgroundSize: '52px 52px', borderRadius: "10px"
             }}>
                 <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 10, display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "space-between", alignItems: "center", gap: 4 }}>
                     <Box sx={{ maxWidth: 576 }}>
@@ -572,9 +572,8 @@ export default function CareerPage() {
             <Dialog open={modalOpen} onClose={closeModal} maxWidth="sm" fullWidth PaperProps={{ sx: { borderRadius: '1.5rem', p: 0, border: '1px solid #f1f5f9', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' } }} slotProps={{ backdrop: { sx: { bgcolor: 'rgba(2, 6, 23, 0.7)', backdropFilter: 'blur(12px)' } } }}>
                 <DialogContent sx={{ p: { xs: 4, sm: 5 } }}>
                     <IconButton onClick={closeModal} sx={{ position: "absolute", top: 24, right: 24, bgcolor: "#f1f5f9", color: '#64748b', width: 36, height: 36, '&:hover': { bgcolor: '#e2e8f0', color: '#0f172a' } }}>
-                        <CloseIcon sx={{ fontSize: 20 }} />
+                        <CloseIcon sx={{ fontSize: 20, }} />
                     </IconButton>
-                    <Chip label="Rapid Application" size="small" icon={<Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#2563eb', ml: 1 }} />} sx={{ bgcolor: "#eff6ff", color: "#1d4ed8", fontWeight: 600, mb: 1, textTransform: 'uppercase' }} />
                     <Typography variant="h5" fontWeight={700} sx={{ mb: 1, color: '#0f172a' }}>{modalTitle}</Typography>
                     <Typography variant="body2" sx={{ mb: 4, color: "#64748b", fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                         Submit your profile directly to our engineering hiring leads. We prioritize practical competency over rigid credentials.
