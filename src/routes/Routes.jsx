@@ -5,8 +5,6 @@
 import CareerPage from "../pages/career/Career";
 import HomePage from "../pages/home/Home";
 import ServicesPage from "../pages/serviceAtInfodales/Service";
-import BlogPage from "../pages/blog/blog";
-import ContactPage from "../pages/contact/contact";
 
 // `showInNav` controls whether it appears in Header/Footer nav automatically.
 const routes = [
@@ -17,8 +15,7 @@ const routes = [
     { path: "/", label: "Home", element: <HomePage />, showInNav: true, showInFooter: true },
     { path: "/career", label: "Career", element: <CareerPage />, showInNav: true, showInFooter: true },
     { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true, showInFooter: true },
-    { path: "/blog", label: "Blog", element: <BlogPage />, showInNav: true, showInFooter: true },
-    { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true, showInFooter: true },
+
     // { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true },
 ];
 
