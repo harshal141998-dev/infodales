@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #191c1e;
+  background: #f7f9fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.contact-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f7f9fb;
+  color: #191c1e;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* =========================
+   Map hero
+========================= */
+
+.contact-hero {
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+  background: #0c1424;
+  color: #fff;
+}
+
+.map-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Existing map positioning */
+  transform: translateY(-90px);
+}
+
+/* Rotate only the dotted ring */
+.map-dotted-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dotted-ring-rotate 18s linear infinite;
+}
+
+@keyframes dotted-ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #0c1424 0%, transparent 65%),
+    linear-gradient(90deg, rgba(3, 9, 20, 0.45), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 590px;
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.hero-location-chip,
+.hero-status-chip {
+  height: 38px !important;
+  color: #f8fafc !important;
+  background: rgba(11, 19, 41, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  backdrop-filter: blur(12px);
+  font-family: inherit !important;
+  font-weight: 600 !important;
+}
+
+.hero-location-chip .MuiChip-icon {
+  color: #38bdf8 !important;
+}
+
+.hero-heading {
+  max-width: 850px;
+  margin: 70px auto 0;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  margin-bottom: 14px !important;
+  color: #7dd3fc;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: clamp(2.3rem, 5vw, 4.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.hero-description {
+  max-width: 700px;
+  margin: 20px auto 0 !important;
+  color: #cbd5e1;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+
+.hero-bottom-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.hero-bottom-label .MuiSvgIcon-root {
+  color: #e3fa60;
+}
+
+/* =========================
+   Floating content panel
+========================= */
+
+.contact-overlap {
+  position: relative;
+  z-index: 2;
+  margin-top: -85px;
+}
+
+.contact-main-panel {
+  width: 100%;
+  padding: clamp(20px, 3vw, 42px);
+  border: 1px solid #e3e8ef;
+  border-radius: 22px !important;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* =========================
+   Contact cards
+========================= */
+
+.contact-cards {
+  padding-bottom: 34px;
+}
+
+.contact-cards > .MuiGrid-root {
+  display: flex;
+  min-width: 0;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 265px;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px !important;
+  background: #f8fafc;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: #a8bce8;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.contact-card-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #131b2e;
+  color: #fff;
+  transition:
+    transform 220ms ease,
+    background 220ms ease;
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: translateY(-3px);
+  background: #4059aa;
+}
+
+.contact-card-icon .MuiSvgIcon-root {
+  font-size: 24px;
+}
+
+.contact-card-chip {
+  max-width: 100%;
+  background: #e8edfb !important;
+  color: #4059aa !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.contact-card-title {
+  margin-bottom: 8px !important;
+  color: #191c1e;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+
+.contact-card-description {
+  flex-grow: 1;
+  margin-bottom: 22px !important;
+  color: #5d6675;
+  font-size: 13px !important;
+  line-height: 1.75 !important;
+  overflow-wrap: anywhere;
+}
+
+.contact-card-action {
+  min-height: 42px !important;
+  border-color: #d5dce7 !important;
+  border-radius: 9px !important;
+  color: #17233b !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease !important;
+}
+
+.contact-card-action:hover {
+  border-color: #17233b !important;
+  background: #17233b !important;
+  color: #fff !important;
+}
+
+.panel-divider {
+  border-color: #e7ebf0 !important;
+}
+
+/* =========================
+   Inquiry form
+========================= */
+
+.inquiry-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 38px;
+}
+
+.inquiry-heading {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.section-title {
+  color: #191c1e;
+  font-size: clamp(1.6rem, 3vw, 2rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.section-description {
+  max-width: 660px;
+  margin: 10px auto 0 !important;
+  color: #647084;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.inquiry-section form {
+  width: 100%;
+}
+
+.inquiry-section .MuiGrid-root {
+  min-width: 0;
+}
+
+.inquiry-section .MuiTextField-root {
+  width: 100%;
+}
+
+.inquiry-section .MuiInputLabel-root {
+  color: #4b5563;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inquiry-section .MuiOutlinedInput-root {
+  min-width: 0;
+  border-radius: 10px;
+  background: #f8fafc;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.inquiry-section .MuiOutlinedInput-notchedOutline {
+  border-color: #dce2ea;
+}
+
+.inquiry-section
+  .MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #9aa8bd;
+}
+
+.inquiry-section
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #4059aa;
+  border-width: 1.5px;
+}
+
+.inquiry-section .MuiInputAdornment-root .MuiSvgIcon-root {
+  color: #788398;
+  font-size: 20px;
+}
+
+.inquiry-section .MuiFormHelperText-root {
+  margin-left: 2px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.consent-label {
+  color: #5c6676;
+  font-size: 12px !important;
+  line-height: 1.65 !important;
+}
+
+.field-error {
+  margin-left: 14px !important;
+  color: #ba1a1a;
+  font-size: 12px !important;
+}
+
+.form-note {
+  color: #788398;
+  font-size: 12px !important;
+}
+
+.submit-button {
+  min-height: 48px !important;
+  padding: 0 28px !important;
+  border-radius: 10px !important;
+  background: #131b2e !important;
+  color: #fff !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+}
+
+.submit-button:hover {
+  background: #4059aa !important;
+  box-shadow: none !important;
+}
+
+/* =========================
+   Location / facility panel
+========================= */
+
+.facility-section {
+  padding-top: 34px;
+  padding-bottom: 60px;
+}
+
+.facility-panel {
+  width: 100%;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid #e1e6ed;
+  border-radius: 16px !important;
+  background: #f1f4f8;
+}
+
+.facility-panel > .MuiGrid-container {
+  align-items: stretch;
+}
+
+.facility-panel .MuiGrid-root {
+  min-width: 0;
+}
+
+.facility-panel .MuiStack-root {
+  height: 100%;
+  align-items: flex-start;
+}
+
+.facility-icon {
+  display: flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #e2e8f4;
+  color: #4059aa;
+}
+
+.facility-title {
+  margin-bottom: 7px !important;
+  color: #202938;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.facility-description {
+  color: #5f6b7c;
+  font-size: 12px !important;
+  line-height: 1.75 !important;
+  overflow-wrap: anywhere;
+}
+
+.map-link {
+  margin-top: 8px !important;
+  padding: 0 !important;
+  color: #4059aa !important;
+  font-family: inherit !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+}
+
+/* =========================
+   Responsive layout
+========================= */
+
+@media (max-width: 900px) {
+  .contact-main-panel {
+    padding: 28px;
+  }
+
+  .contact-hero,
+  .hero-content {
+    min-height: 540px;
+  }
+
+  .hero-heading {
+    margin-top: 65px;
+  }
+
+  .facility-panel {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero,
+  .hero-content {
+    min-height: 510px;
+  }
+
+  .hero-content {
+    padding-top: 22px;
+    padding-bottom: 24px;
+  }
+
+  .hero-heading {
+    margin-top: 58px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+
+  .hero-description {
+    font-size: 14px !important;
+  }
+
+  .hero-status-chip {
+    display: none !important;
+  }
+
+  .contact-overlap {
+    margin-top: -48px;
+  }
+
+  .contact-main-panel {
+    padding: 18px;
+    border-radius: 16px !important;
+  }
+
+  .contact-cards {
+    padding-bottom: 24px;
+  }
+
+  .contact-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .inquiry-section {
+    padding-top: 28px;
+  }
+
+  .facility-section {
+    padding-top: 22px;
+    padding-bottom: 35px;
+  }
+
+  .facility-panel {
+    padding: 20px;
+  }
+}
+
+/* Accessibility: disable continuous motion if requested */
+@media (prefers-reduced-motion: reduce) {
+  .map-dotted-ring {
+    animation: none;
+  }
+
+  .contact-card,
+  .contact-card-icon {
+    transition: none;
+  }
+}
