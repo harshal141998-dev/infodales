@@ -185,10 +185,10 @@ function MapHero() {
             className="hero-location-chip"
           />
 
-          <Chip
+          {/* <Chip
             label="Connect with our team"
             className="hero-status-chip"
-          />
+          /> */}
         </Stack>
 
         <Box className="hero-heading">
@@ -207,13 +207,13 @@ function MapHero() {
           </Typography>
         </Box>
 
-        <Box className="hero-bottom-label">
+        {/* <Box className="hero-bottom-label">
           <LocationOnOutlinedIcon />
 
           <Typography>
             Shri Krushna Nagar, Nagpur, Maharashtra
           </Typography>
-        </Box>
+        </Box> */}
       </Container>
     </Box>
   );
@@ -309,40 +309,40 @@ function InquiryForm() {
   };
 
   const handleSubmit = async (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  setSubmitted(false);
-  setSubmitError('');
+    setSubmitted(false);
+    setSubmitError('');
 
-  if (!validate()) return;
+    if (!validate()) return;
 
-  setLoading(true);
+    setLoading(true);
 
-  try {
-    await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        name: `${form.firstName} ${form.lastName}`,
-        email: form.email,
-        phone: form.phone || 'Not provided',
-        message: form.message,
-      },
-      { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-    );
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: `${form.firstName} ${form.lastName}`,
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          message: form.message,
+        },
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
 
-    setSubmitted(true);
-    setForm(initialForm);
-    setErrors({});
-  } catch (error) {
-    console.error(error);
-    setSubmitError('Something went wrong. Please try again.');
-  } finally {
-    setLoading(false);
-  }
-};
+      setSubmitted(true);
+      setForm(initialForm);
+      setErrors({});
+    } catch (error) {
+      console.error(error);
+      setSubmitError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
- const fieldProps = {
+  const fieldProps = {
     fullWidth: true,
     size: 'medium',
     variant: 'outlined',
@@ -491,17 +491,17 @@ function InquiryForm() {
             <Grid size={{ xs: 12 }}>
               <Alert severity="success">
                 Thank you! Your inquiry has been sent successfully.
-      Our team will get in touch with you.
+                Our team will get in touch with you.
               </Alert>
             </Grid>
           )}
           {submitError && (
-  <Grid size={{ xs: 12 }}>
-    <Alert severity="error">
-      {submitError}
-    </Alert>
-  </Grid>
-)}
+            <Grid size={{ xs: 12 }}>
+              <Alert severity="error">
+                {submitError}
+              </Alert>
+            </Grid>
+          )}
         </Grid>
       </Box>
     </Box>
@@ -516,62 +516,62 @@ export default function ContactPage() {
       <Container maxWidth="xl" className="contact-overlap">
         <Paper elevation={0} className="contact-main-panel">
           <Grid container spacing={2.5} className="contact-cards">
-           <Grid size={{ xs: 12, md: 4 }}>
-            <Box
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Box
                 component="a"
                 href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-card-link"
-            >
+              >
                 <ContactCard
-                icon={<BusinessOutlinedIcon />}
-                label="Our Office"
-                title="Visit Infodales"
-                description={contactDetails.address}
-                action="Get Directions"
+                  icon={<BusinessOutlinedIcon />}
+                  label="Our Office"
+                  title="Visit Infodales"
+                  description={contactDetails.address}
+                  action="Get Directions"
                 />
-            </Box>
+              </Box>
             </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
-            <Box
+              <Box
                 component="a"
                 href="tel:+918087474953"
                 className="contact-card-link"
-                
-            >
+
+              >
                 <ContactCard
-                icon={<PhoneInTalkOutlinedIcon />}
-                label="Call Us"
-                title="Speak with Our Team"
-                description={contactDetails.phone}
-                action="Call Infodales"
+                  icon={<PhoneInTalkOutlinedIcon />}
+                  label="Call Us"
+                  title="Speak with Our Team"
+                  description={contactDetails.phone}
+                  action="Call Infodales"
                 />
-            </Box>
+              </Box>
             </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
-            <Box
+              <Box
                 component="a"
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-card-link"
-            >
+              >
                 <ContactCard
-                icon={<MarkEmailReadOutlinedIcon />}
-                label="Email Us"
-                title="General Inquiries"
-                description={contactDetails.email}
-                action="Send an Email"
+                  icon={<MarkEmailReadOutlinedIcon />}
+                  label="Email Us"
+                  title="General Inquiries"
+                  description={contactDetails.email}
+                  action="Send an Email"
                 />
-            </Box>
+              </Box>
             </Grid>
 
-          <Divider className="panel-divider" />
+            <Divider className="panel-divider" />
 
-          <InquiryForm />
+            <InquiryForm />
           </Grid>
         </Paper>
       </Container>
