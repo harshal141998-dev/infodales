@@ -131,128 +131,133 @@ export default function Header() {
             </Box>
 
             {/* Mobile drawer menu */}
-            <Drawer
-                anchor="right"
-                open={drawerOpen}
-                onClose={toggleDrawer(false)}
-                slotProps={{
-                    paper: {
-                        sx: {
-                            width: { xs: "85vw", sm: 320 },
-                            maxWidth: 320,
-                            bgcolor: "#090e17 !important",
-                            backgroundImage: "none",
-                            borderLeft: "1px solid #1e293b",
-                            display: "flex",
-                            flexDirection: "column",
-                            color: "#fff",
+            <Box sx={{ flexShrink: 0 }}>
+                <Drawer
+                    anchor="right"
+                    open={drawerOpen}
+                    onClose={toggleDrawer(false)}
+                    slotProps={{
+                        paper: {
+                            sx: {
+                                width: { xs: "85vw", sm: 320 },
+                                maxWidth: 320,
+                                // height: "100%",
+                                height: "100dvh",
+                                bgcolor: "#090e17 !important",
+                                backgroundImage: "none",
+                                borderLeft: "1px solid #1e293b",
+                                display: "flex",
+                                flexDirection: "column",
+                                overflowY: "auto",
+                                color: "#fff",
+                            },
                         },
-                    },
-                }}
-            >
-                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", px: 2.5, py: 2.5 }}>
-                    <Box component="img" src={logo} alt="Infodales" sx={{ height: 28, width: "auto", objectFit: "contain" }} />
-                    <IconButton onClick={toggleDrawer(false)} sx={{ color: "#94a3b8", "&:hover": { color: "#fff" } }}>
-                        <CloseIcon />
-                    </IconButton>
-                </Box>
-                <Divider sx={{ borderColor: "#1e293b" }} />
-                <List sx={{ py: 1, flexGrow: 1 }}>
-                    {navRoutes.map((route) => (
-                        <ListItem key={route.path} disablePadding>
-                            <ListItemButton
-                                component={RouterLink}
-                                to={route.path}
-                                onClick={toggleDrawer(false)}
+                    }}
+                >
+                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", px: 2.5, py: 2.5 }}>
+                        <Box component="img" src={logo} alt="Infodales" sx={{ height: 28, width: "auto", objectFit: "contain" }} />
+                        <IconButton onClick={toggleDrawer(false)} sx={{ color: "#94a3b8", "&:hover": { color: "#fff" } }}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Box>
+                    <Divider sx={{ borderColor: "#1e293b" }} />
+                    <List sx={{ py: 1, flexGrow: 1 }}>
+                        {navRoutes.map((route) => (
+                            <ListItem key={route.path} disablePadding>
+                                <ListItemButton
+                                    component={RouterLink}
+                                    to={route.path}
+                                    onClick={toggleDrawer(false)}
+                                    sx={{
+                                        px: 2.5,
+                                        py: 1.2,
+                                        "&:hover": { bgcolor: "rgba(56,189,248,0.06)" },
+                                    }}
+                                >
+                                    <ListItemText
+                                        primary={route.label}
+                                        primaryTypographyProps={{
+                                            fontSize: "0.9375rem",
+                                            fontWeight: 500,
+                                            color: location.pathname === route.path ? "#38bdf8" : "#cbd5e1",
+                                        }}
+                                    />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+
+                    <Box>
+                        <Divider sx={{ borderColor: "#1e293b" }} />
+                        {/* Social */}
+                        <Stack direction="row" spacing={1.5} sx={{ px: 2.5, py: 2.5 }}>
+                            <IconButton
+                                component="a"
+                                href="https://www.linkedin.com/company/infodales-tech-solution/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
                                 sx={{
-                                    px: 2.5,
-                                    py: 1.5,
-                                    "&:hover": { bgcolor: "rgba(56,189,248,0.06)" },
+                                    width: 36,
+                                    height: 36,
+                                    borderRadius: "0.5rem",
+                                    bgcolor: "#0f172a",
+                                    border: "1px solid #1e293b",
+                                    color: "#94a3b8",
+                                    "&:hover": {
+                                        borderColor: "rgba(14,165,233,0.6)",
+                                        color: "#38bdf8",
+                                        bgcolor: "#0f172a",
+                                    },
                                 }}
                             >
-                                <ListItemText
-                                    primary={route.label}
-                                    primaryTypographyProps={{
-                                        fontSize: "0.9375rem",
-                                        fontWeight: 500,
-                                        color: location.pathname === route.path ? "#38bdf8" : "#cbd5e1",
-                                    }}
-                                />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-
-                <Box>
-                    <Divider sx={{ borderColor: "#1e293b" }} />
-                    {/* Social */}
-                    <Stack direction="row" spacing={1.5} sx={{ px: 2.5, py: 2.5 }}>
-                        <IconButton
-                            component="a"
-                            href="https://www.linkedin.com/company/infodales-tech-solution/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            sx={{
-                                width: 36,
-                                height: 36,
-                                borderRadius: "0.5rem",
-                                bgcolor: "#0f172a",
-                                border: "1px solid #1e293b",
-                                color: "#94a3b8",
-                                "&:hover": {
-                                    borderColor: "rgba(14,165,233,0.6)",
-                                    color: "#38bdf8",
+                                <LinkedInIcon sx={{ fontSize: 18 }} />
+                            </IconButton>
+                            <IconButton
+                                component="a"
+                                href="mailto:contact@infodales.com"
+                                aria-label="Email"
+                                sx={{
+                                    width: 36,
+                                    height: 36,
+                                    borderRadius: "0.5rem",
                                     bgcolor: "#0f172a",
-                                },
-                            }}
-                        >
-                            <LinkedInIcon sx={{ fontSize: 18 }} />
-                        </IconButton>
-                        <IconButton
-                            component="a"
-                            href="mailto:contact@infodales.com"
-                            aria-label="Email"
-                            sx={{
-                                width: 36,
-                                height: 36,
-                                borderRadius: "0.5rem",
-                                bgcolor: "#0f172a",
-                                border: "1px solid #1e293b",
-                                color: "#94a3b8",
-                                "&:hover": {
-                                    borderColor: "rgba(14,165,233,0.6)",
-                                    color: "#38bdf8",
-                                    bgcolor: "#0f172a",
-                                },
-                            }}
-                        >
-                            <EmailOutlinedIcon sx={{ fontSize: 18 }} />
-                        </IconButton>
-                    </Stack>
-                    <Box sx={{ px: 2.5, pb: 3 }}>
-                        <Button
-                            component={RouterLink}
-                            to="/contact"
-                            onClick={toggleDrawer(false)}
-                            fullWidth
-                            disableElevation
-                            sx={{
-                                bgcolor: "#0EA5E9",
-                                color: "#fff",
-                                borderRadius: "10px",
-                                textTransform: "none",
-                                fontWeight: 600,
-                                fontSize: "0.875rem",
-                                py: 1,
-                                "&:hover": { bgcolor: "#0284c7" },
-                            }}
-                        >
-                            Get in Touch
-                        </Button>
+                                    border: "1px solid #1e293b",
+                                    color: "#94a3b8",
+                                    "&:hover": {
+                                        borderColor: "rgba(14,165,233,0.6)",
+                                        color: "#38bdf8",
+                                        bgcolor: "#0f172a",
+                                    },
+                                }}
+                            >
+                                <EmailOutlinedIcon sx={{ fontSize: 18 }} />
+                            </IconButton>
+                        </Stack>
+                        <Box sx={{ px: 2.5, pb: 3 }}>
+                            <Button
+                                component={RouterLink}
+                                to="/contact"
+                                onClick={toggleDrawer(false)}
+                                fullWidth
+                                disableElevation
+                                sx={{
+                                    bgcolor: "#0EA5E9",
+                                    color: "#fff",
+                                    borderRadius: "10px",
+                                    textTransform: "none",
+                                    fontWeight: 600,
+                                    fontSize: "0.875rem",
+                                    py: 1,
+                                    "&:hover": { bgcolor: "#0284c7" },
+                                }}
+                            >
+                                Get in Touch
+                            </Button>
+                        </Box>
                     </Box>
-                </Box>
-            </Drawer>
+                </Drawer>
+            </Box>
         </Box>
     );
 }
