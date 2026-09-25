@@ -111,11 +111,11 @@ const CLIENT_TIERS = [
     },
 ];
 
-const HERO_LOGOS = [
-    { id: "codilar", name: "Codilar", src: codilarlogo }, // Replace with your actual image path
-    { id: "hayagreeva", name: "Haya Greeva", src: hayalogo },
-    { id: "gspann", name: "GSAPNN", src: gspannlogo }
-];
+// const HERO_LOGOS = [
+//     { id: "codilar", name: "Codilar", src: codilarlogo }, // Replace with your actual image path
+//     { id: "hayagreeva", name: "Haya Greeva", src: hayalogo },
+//     { id: "gspann", name: "GSAPNN", src: gspannlogo }
+// ];
 
 
 
@@ -158,7 +158,7 @@ export default function AboutUsPage() {
                         </Typography>
 
 
-                        <Stack
+                        {/* <Stack
                             direction="row"
                             spacing={{ xs: 2, md: 4 }}
                             sx={{
@@ -200,7 +200,7 @@ export default function AboutUsPage() {
 
                                 </React.Fragment>
                             ))}
-                        </Stack>
+                        </Stack> */}
                     </Box>
                 </Container>
             </Box>
@@ -313,7 +313,7 @@ export default function AboutUsPage() {
             </Box>
 
             {/* PRODUCTION VERIFICATION / CLIENT TIERS */}
-            <Box sx={{ bgcolor: "rgba(241, 245, 249, 0.6)", borderTop: '1px solid #e2e8f0', py: { xs: 5, md: 10 } }}>
+            {/* <Box sx={{ bgcolor: "rgba(241, 245, 249, 0.6)", borderTop: '1px solid #e2e8f0', py: { xs: 5, md: 10 } }}>
                 <Container maxWidth="lg">
                     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'flex-start', md: 'flex-end' }, mb: 6, gap: 2 }}>
                         <Box>
@@ -335,7 +335,7 @@ export default function AboutUsPage() {
                                         borderColor: "#0EA5E9",
                                     }
                                 }}>
-                                    {/* Header Box: Logo and Category */}
+                                   
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 3, gap: 2, flexWrap: 'wrap' }}>
                                         <Box
                                             component="img"
@@ -353,7 +353,7 @@ export default function AboutUsPage() {
                                         </Typography>
                                     </Box>
 
-                                    {/* Quote */}
+                                   
                                     <Typography variant="body2" sx={{ color: '#334155', fontSize: '0.9rem', lineHeight: 1.7, mb: 4, flexGrow: 1, fontStyle: 'italic' }}>
                                         "{client.quote}"
                                     </Typography>
@@ -362,7 +362,7 @@ export default function AboutUsPage() {
                         ))}
                     </Grid>
                 </Container>
-            </Box>
+            </Box> */}
 
             {/* CTA */}
             <Box sx={{

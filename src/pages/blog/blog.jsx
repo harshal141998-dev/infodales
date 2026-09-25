@@ -81,38 +81,38 @@ const tracks = [
   },
 ];
 
-const categoryCards = [
-  {
-    title: "AEM EDS",
-    description: "Explore Edge Delivery Services articles",
-    icon: "⚡",
-  },
-  {
-    title: "AEM Sites",
-    description: "Explore AEM Sites articles",
-    icon: "🌐",
-  },
-  {
-    title: "AEM Forms",
-    description: "Explore AEM Forms articles",
-    icon: "📄",
-  },
-  {
-    title: "All Articles",
-    description: "Browse all blog articles",
-    icon: "📚",
-  },
-  {
-    title: "Dispatcher & Cloud",
-    description: "Explore Dispatcher and Cloud topics",
-    icon: "☁️",
-  },
-  {
-    title: "AEM SPA",
-    description: "Explore AEM SPA articles",
-    icon: "📱",
-  },
-];
+// const categoryCards = [
+//   {
+//     title: "AEM EDS",
+//     description: "Explore Edge Delivery Services articles",
+//     icon: "⚡",
+//   },
+//   {
+//     title: "AEM Sites",
+//     description: "Explore AEM Sites articles",
+//     icon: "🌐",
+//   },
+//   {
+//     title: "AEM Forms",
+//     description: "Explore AEM Forms articles",
+//     icon: "📄",
+//   },
+//   {
+//     title: "All Articles",
+//     description: "Browse all blog articles",
+//     icon: "📚",
+//   },
+//   {
+//     title: "Dispatcher & Cloud",
+//     description: "Explore Dispatcher and Cloud topics",
+//     icon: "☁️",
+//   },
+//   {
+//     title: "AEM SPA",
+//     description: "Explore AEM SPA articles",
+//     icon: "📱",
+//   },
+// ];
 
 function CategoryFilterBar({ category, onSelectCategory, sortOrder, onSortChange, articles }) {
   const categoryCounts = useMemo(() => {

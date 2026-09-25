@@ -3,15 +3,13 @@ import { Link as RouterLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { footerRoutes } from "../../routes/Routes";
-
-
-
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 
 export default function Footer() {
     return (
         // <Box sx={{ maxWidth: "lg", mx: "auto", px: { xs: 2, sm: 3, md: 4 }, pb: { xs: 4, md: 6 } }}>
-         <Box sx={{ width: "100%", m: 0, p: 0 }}>
+        <Box sx={{ width: "100%", m: 0, p: 0 }}>
             <Box
                 sx={{
                     borderRadius: "0rem",
@@ -101,6 +99,26 @@ export default function Footer() {
                             }}
                         >
                             <EmailOutlinedIcon sx={{ fontSize: 18 }} />
+                        </IconButton>
+                        <IconButton
+                            component="a"
+                            href=""
+                            aria-label="Email"
+                            sx={{
+                                width: 40,
+                                height: 40,
+                                borderRadius: "0.5rem",
+                                bgcolor: "#0f172a",
+                                border: "1px solid #1e293b",
+                                color: "#94a3b8",
+                                "&:hover": {
+                                    borderColor: "rgba(14,165,233,0.6)",
+                                    color: "#38bdf8",
+                                    bgcolor: "#0f172a",
+                                },
+                            }}
+                        >
+                            <TwitterIcon sx={{ fontSize: 18 }} />
                         </IconButton>
                     </Stack>
                 </Box>

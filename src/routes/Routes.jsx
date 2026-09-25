@@ -17,9 +17,9 @@ const routes = [
     // { path: "/blogs", label: "Blogs", element: <BlogsPage />, showInNav: true },
     { path: "/", label: "Home", element: <HomePage />, showInNav: true, showInFooter: true },
     { path: "/about", label: "About Us", element: <AboutUsPag />, showInNav: true, showInFooter: true },
-    { path: "/career", label: "Career", element: <CareerPage />, showInNav: true, showInFooter: true },
-    { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true, showInFooter: true },
-    { path: "/blog", label: "Blog", element: <BlogPage />, showInNav: true, showInFooter: true },
+    { path: "/career", label: "Career", element: <CareerPage />, showInNav: true, showInFooter: false },
+    { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true, showInFooter: false },
+    { path: "/blog", label: "Blog", element: <BlogPage />, showInNav: true, showInFooter: false },
     { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true, showInFooter: true },
     // { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true },
 ];
