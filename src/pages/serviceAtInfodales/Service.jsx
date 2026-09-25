@@ -22,6 +22,7 @@ import SmartToyIcon from "@mui/icons-material/SmartToy";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { useNavigate } from "react-router-dom";
 
 
 const COLORS = {
@@ -152,6 +153,7 @@ const TESTING_CARDS = [
 ];
 
 export default function ServicesPage() {
+    const navigateTo = useNavigate();
     return (
         <Box sx={{ bgcolor: COLORS.surface, minHeight: "100vh" }}>
             {/* HERO */}
@@ -214,8 +216,7 @@ export default function ServicesPage() {
                                     fontSize: "0.95rem",
                                     "&:hover": { bgcolor: "#0284c7" },
                                 }}
-                                component={Link}
-                                to="/contact"
+                                onClick={() => { navigateTo("/contact") }}
                             >
                                 Schedule Architecture Consultation
                             </Button>
