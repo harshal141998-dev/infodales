@@ -184,6 +184,13 @@
     background 220ms ease,
     box-shadow 220ms ease;
 }
+.contact-card-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
 
 .contact-card:hover {
   transform: translateY(-5px);
@@ -209,7 +216,7 @@
 
 .contact-card:hover .contact-card-icon {
   transform: translateY(-3px);
-  background: #4059aa;
+  background: #0284c7;
 }
 
 .contact-card-icon .MuiSvgIcon-root {
@@ -259,8 +266,8 @@
 }
 
 .contact-card-action:hover {
-  border-color: #17233b !important;
-  background: #17233b !important;
+  border-color: #0284c7 !important;
+  background: #0284c7 !important;
   color: #fff !important;
 }
 
@@ -333,7 +340,7 @@
 .inquiry-section
   .MuiOutlinedInput-root:hover
   .MuiOutlinedInput-notchedOutline {
-  border-color: #9aa8bd;
+  border-color: #0284c7;
 }
 
 .inquiry-section
@@ -385,7 +392,7 @@
 }
 
 .submit-button:hover {
-  background: #4059aa !important;
+  background: #0284c7 !important;
   box-shadow: none !important;
 }
 

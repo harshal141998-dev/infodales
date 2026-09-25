@@ -463,36 +463,8 @@ function InquiryForm() {
               multiline
               minRows={5}
               error={Boolean(errors.message)}
-              helperText={
-                errors.message || `${form.message.length} characters`
-              }
               placeholder="Tell us about your project, goals, timeline, or requirements..."
             />
-          </Grid>
-
-          <Grid size={{ xs: 12 }}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  name="consent"
-                  checked={form.consent}
-                  onChange={updateField}
-                  color="primary"
-                />
-              }
-              label={
-                <Typography className="consent-label">
-                  I agree to the privacy policy and consent to Infodales
-                  using my information to respond to this inquiry.
-                </Typography>
-              }
-            />
-
-            {errors.consent && (
-              <Typography className="field-error">
-                {errors.consent}
-              </Typography>
-            )}
           </Grid>
 
           <Grid size={{ xs: 12 }}>
@@ -502,9 +474,6 @@ function InquiryForm() {
               justifyContent="space-between"
               spacing={2}
             >
-              <Typography className="form-note">
-                Fields marked * are required.
-              </Typography>
 
               <Button
                 type="submit"
@@ -547,43 +516,63 @@ export default function ContactPage() {
       <Container maxWidth="xl" className="contact-overlap">
         <Paper elevation={0} className="contact-main-panel">
           <Grid container spacing={2.5} className="contact-cards">
-            <Grid size={{ xs: 12, md: 4 }}>
-              <ContactCard
+           <Grid size={{ xs: 12, md: 4 }}>
+            <Box
+                component="a"
+                href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-card-link"
+            >
+                <ContactCard
                 icon={<BusinessOutlinedIcon />}
                 label="Our Office"
                 title="Visit Infodales"
                 description={contactDetails.address}
                 action="Get Directions"
-                href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
-              />
+                />
+            </Box>
             </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
-              <ContactCard
+            <Box
+                component="a"
+                href="tel:+918087474953"
+                className="contact-card-link"
+                
+            >
+                <ContactCard
                 icon={<PhoneInTalkOutlinedIcon />}
                 label="Call Us"
                 title="Speak with Our Team"
                 description={contactDetails.phone}
                 action="Call Infodales"
-                href="tel:+918087474953"
-              />
+                />
+            </Box>
             </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
-              <ContactCard
+            <Box
+                component="a"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-card-link"
+            >
+                <ContactCard
                 icon={<MarkEmailReadOutlinedIcon />}
                 label="Email Us"
                 title="General Inquiries"
                 description={contactDetails.email}
                 action="Send an Email"
-               href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
-              />
+                />
+            </Box>
             </Grid>
-          </Grid>
 
           <Divider className="panel-divider" />
 
           <InquiryForm />
+          </Grid>
         </Paper>
       </Container>
 
