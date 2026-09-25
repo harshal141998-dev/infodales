@@ -33,7 +33,7 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import { useTheme } from "@mui/material/styles";
-import {articles} from "../../data/blog.js";
+import { articles } from "../../data/blog.js";
 
 import "../blog/blog.css";
 
@@ -114,210 +114,84 @@ const categoryCards = [
   },
 ];
 
-function FeatureCards({ category, onExplore }) {
-  const cardCount = categoryCards.length;
-  const [currentIndex, setCurrentIndex] = useState(cardCount / 2);
-  const [animate, setAnimate] = useState(true);
-  const carouselWindowRef = useRef(null);
-  const getSlideWidth = () => {
-  const carouselWidth = carouselWindowRef.current?.clientWidth || 0;
+function CategoryFilterBar({ category, onSelectCategory, sortOrder, onSortChange, articles }) {
+  const categoryCounts = useMemo(() => {
+    const counts = { "All Articles": articles.length };
 
-  if (window.innerWidth <= 600) {
-    return carouselWidth; // 1 card on mobile
-  }
+    categories.forEach((cat) => {
+      if (cat === "All Articles") return;
 
-  if (window.innerWidth <= 900) {
-    return carouselWidth / 2; // 2 cards on tablet
-  }
+      counts[cat] =
+        cat === "Dispatcher & Cloud"
+          ? articles.filter((a) =>
+            ["Dispatcher", "Dispatcher & Cloud"].includes(a.category)
+          ).length
+          : articles.filter((a) => a.category === cat).length;
+    });
 
-  return carouselWidth / 3; // 3 cards on desktop
-};
-
-  const touchStartX = useRef(null);
-
-  const extendedCards = [
-    ...categoryCards.slice(-3),
-    ...categoryCards,
-    ...categoryCards.slice(0, 3),
-  ];
-
-  const moveCarousel = (direction) => {
-    setAnimate(true);
-    setCurrentIndex((prev) => prev + direction);
-  };
-
-  const handleTransitionEnd = () => {
-  if (currentIndex >= cardCount + 3) {
-    setAnimate(false);
-    setCurrentIndex(3);
-
-    setTimeout(() => setAnimate(true), 50);
-  } else if (currentIndex <= 2) {
-    setAnimate(false);
-    setCurrentIndex(cardCount + 2);
-
-    setTimeout(() => setAnimate(true), 50);
-  }
-};
-
-  const handleTouchStart = (event) => {
-    touchStartX.current = event.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (event) => {
-    if (touchStartX.current === null) return;
-
-    const difference =
-      touchStartX.current - event.changedTouches[0].clientX;
-
-    if (Math.abs(difference) > 50) {
-      moveCarousel(difference > 0 ? 1 : -1);
-    }
-
-    touchStartX.current = null;
-  };
+    return counts;
+  }, [articles]);
 
   return (
-    <Box className="category-carousel-section">
-      <Box className="category-carousel-header">
-        <Box>
-          <Typography variant="h4" fontWeight={700}>
-            Explore Categories
-          </Typography>
-
-          <Typography color="text.secondary">
-            Discover articles by topic
-          </Typography>
-        </Box>
+    <Box className="category-filter-bar">
+      <Box className="category-filter-pills">
+        {categories.map((cat) => (
+          <Box
+            key={cat}
+            className={`category-pill ${category === cat ? "active" : ""}`}
+            onClick={() => onSelectCategory(cat)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onSelectCategory(cat);
+              }
+            }}
+          >
+            <span className="category-pill-label">{cat}</span>
+            <span className="category-pill-count">
+              {categoryCounts[cat] ?? 0}
+            </span>
+          </Box>
+        ))}
       </Box>
 
-      <Box className="category-carousel">
-        <IconButton
-          className="category-carousel-arrow category-carousel-prev"
-          onClick={() => moveCarousel(-1)}
-          aria-label="Previous categories"
-        >
-          <ChevronLeftIcon />
-        </IconButton>
-
-        <Box
-          className="category-carousel-window"
-          ref={carouselWindowRef}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <Box
-            className={`category-carousel-track ${
-              animate ? "carousel-animated" : "carousel-no-transition"
-            }`}
-            style={{
-              transform: `translateX(-${currentIndex * getSlideWidth()}px)`,
+      <Box className="category-filter-sort">
+        <Typography className="sort-label">SORT:</Typography>
+        <FormControl size="small" className="sort-control">
+          <Select
+            value={sortOrder}
+            onChange={(e) => onSortChange(e.target.value)}
+            inputProps={{ "aria-label": "Sort articles by date" }}
+            MenuProps={{
+              PaperProps: {
+                sx: {
+                  bgcolor: "#0f172a",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  "& .MuiMenuItem-root": {
+                    color: "#cbd5e1",
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    "&:hover": { bgcolor: "rgba(34,211,238,0.08)" },
+                    "&.Mui-selected": {
+                      bgcolor: "rgba(34,211,238,0.12)",
+                      color: "#22d3ee",
+                    },
+                    "&.Mui-selected:hover": { bgcolor: "rgba(34,211,238,0.18)" },
+                  },
+                },
+              },
             }}
-            onTransitionEnd={handleTransitionEnd}
           >
-            {extendedCards.map((item, index) => (
-              <Box className="category-carousel-slide" key={`${item.title}-${index}`}>
-                <Card
-                  className={`category-carousel-card ${
-                    category === item.title ? "active" : ""
-                  }`}
-                  onClick={() => onExplore(item.title)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      onExplore(item.title);
-                    }
-                  }}
-                >
-                  <CardContent className="category-carousel-card-content">
-                    <Typography className="category-carousel-icon">
-                      {item.icon}
-                    </Typography>
-
-                    <Typography
-                      variant="h5"
-                      className="category-carousel-title"
-                    >
-                      {item.title}
-                    </Typography>
-
-                    <Typography
-                      variant="body1"
-                      className="category-carousel-description"
-                    >
-                      {item.description}
-                    </Typography>
-
-                    <Typography className="category-carousel-link">
-                      Explore articles →
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-
-        <IconButton
-          className="category-carousel-arrow category-carousel-next"
-          onClick={() => moveCarousel(1)}
-          aria-label="Next categories"
-        >
-          <ChevronRightIcon />
-        </IconButton>
+            <MenuItem value="latest">Latest Published</MenuItem>
+            <MenuItem value="oldest">Oldest First</MenuItem>
+          </Select>
+        </FormControl>
       </Box>
     </Box>
   );
 }
-
-// function ArticleCard({ article, onOpen }) {
-//   return (
-//     <Card className="article-card">
-//       <CardContent className="article-content">
-//         <Stack
-//           direction="row"
-//           justifyContent="space-between"
-//           alignItems="center"
-//           spacing={1}
-//         >
-//           <Chip
-//             label={article.category}
-//             className="article-category"
-//           />
-
-//           <Typography className="read-time">
-//             <AccessTimeIcon />
-//             {article.readTime}
-//           </Typography>
-//         </Stack>
-
-//         <Typography variant="h6" className="article-title">
-//           {article.title}
-//         </Typography>
-
-//         <Typography className="article-description">
-//           {article.description}
-//         </Typography>
-
-//         <Box className="article-bottom">
-//           <Typography className="article-author">
-//             By {article.author}
-//           </Typography>
-
-//           <Button
-//             endIcon={<ArrowForwardIcon />}
-//             className="read-button"
-//             onClick={() => onOpen(article.slug)}
-//           >
-//             Read
-//           </Button>
-//         </Box>
-//       </CardContent>
-//     </Card>
-//   );
-// }
 
 function formatArticleDate(date) {
   if (!date) return "Date unavailable";
@@ -407,7 +281,7 @@ function ArticleDetail({ article, onBack }) {
       >
         <Typography>By {article.author}</Typography>
         <span>·</span>
-       <Typography>{formatArticleDate(article.date)}</Typography>
+        <Typography>{formatArticleDate(article.date)}</Typography>
       </Stack>
 
       <Divider sx={{ my: 3 }} />
@@ -453,8 +327,8 @@ export default function BlogsPage() {
 
     return articles.filter((article) => {
       const matchesCategory =
-      category === "All Articles" ||
-      article.category === category;
+        category === "All Articles" ||
+        article.category === category;
       // (category === "Dispatcher & Cloud"
       //   ? ["Dispatcher", "Dispatcher & Cloud"].includes(
       //       article.category
@@ -462,59 +336,59 @@ export default function BlogsPage() {
       //   : article.category === category);
 
       const matchesSearch =
-        !term || article.title.toLowerCase().includes(term)||
+        !term || article.title.toLowerCase().includes(term) ||
         article.description.toLowerCase().includes(term) ||
-      article.category.toLowerCase().includes(term);
+        article.category.toLowerCase().includes(term);
 
       return matchesCategory && matchesSearch;
     });
   }, [search, category]);
 
- const filteredAndSortedArticles = useMemo(() => {
-  const term = search.trim().toLowerCase();
+  const filteredAndSortedArticles = useMemo(() => {
+    const term = search.trim().toLowerCase();
 
-  return articles
-    .filter((article) => {
-      const matchesCategory =
-        category === "All Articles" ||
-        (category === "Dispatcher & Cloud"
-          ? ["Dispatcher", "Dispatcher & Cloud"].includes(
+    return articles
+      .filter((article) => {
+        const matchesCategory =
+          category === "All Articles" ||
+          (category === "Dispatcher & Cloud"
+            ? ["Dispatcher", "Dispatcher & Cloud"].includes(
               article.category
             )
-          : article.category === category);
+            : article.category === category);
 
-      const matchesSearch =
-        !term ||
-        article.title.toLowerCase().includes(term) ||
-        article.description.toLowerCase().includes(term) ||
-        article.category.toLowerCase().includes(term);
+        const matchesSearch =
+          !term ||
+          article.title.toLowerCase().includes(term) ||
+          article.description.toLowerCase().includes(term) ||
+          article.category.toLowerCase().includes(term);
 
-      return matchesCategory && matchesSearch;
-    })
-    .sort((a, b) => {
-      const dateA = a.date
-        ? new Date(`${a.date}T00:00:00`).getTime()
-        : 0;
+        return matchesCategory && matchesSearch;
+      })
+      .sort((a, b) => {
+        const dateA = a.date
+          ? new Date(`${a.date}T00:00:00`).getTime()
+          : 0;
 
-      const dateB = b.date
-        ? new Date(`${b.date}T00:00:00`).getTime()
-        : 0;
+        const dateB = b.date
+          ? new Date(`${b.date}T00:00:00`).getTime()
+          : 0;
 
-      return sortOrder === "latest"
-        ? dateB - dateA
-        : dateA - dateB;
-    });
-}, [search, category, sortOrder]);
+        return sortOrder === "latest"
+          ? dateB - dateA
+          : dateA - dateB;
+      });
+  }, [search, category, sortOrder]);
 
-const pageCount = Math.max(
-  1,
-  Math.ceil(filteredAndSortedArticles.length / pageSize)
-);
+  const pageCount = Math.max(
+    1,
+    Math.ceil(filteredAndSortedArticles.length / pageSize)
+  );
 
-const visibleArticles = filteredAndSortedArticles.slice(
-  (page - 1) * pageSize,
-  page * pageSize
-);
+  const visibleArticles = filteredAndSortedArticles.slice(
+    (page - 1) * pageSize,
+    page * pageSize
+  );
 
   const selectCategory = (value) => {
     setCategory(value);
@@ -567,18 +441,11 @@ const visibleArticles = filteredAndSortedArticles.slice(
   return (
     <Box className="blogs-page">
       {/* HERO */}
+      {/* HERO */}
       <Box className="blog-hero">
         <Container maxWidth="xl" className="hero-inner">
-          {/* <Box className="hero-status">
-            <span className="status-dot" />
-            Infodales Knowledge Base · AEM Engineering Insights
-          </Box> */}
-
           <Box className="hero-center">
-            <Chip
-              // label="ADOBE EXPERIENCE MANAGER ENGINEERING HUB"
-              // className="hero-label"
-            />
+            <Chip />
 
             <Typography component="h1" className="hero-title">
               Exploring AEM through Blogs
@@ -626,14 +493,32 @@ const visibleArticles = filteredAndSortedArticles.slice(
               }}
             />
           </Box>
+
+          {/* CATEGORY FILTER BAR — now part of hero */}
+          <CategoryFilterBar
+            category={category}
+            onSelectCategory={selectCategory}
+            sortOrder={sortOrder}
+            onSortChange={(value) => {
+              setSortOrder(value);
+              setPage(1);
+            }}
+            articles={articles}
+          />
         </Container>
       </Box>
 
-      {/* FEATURE TRACKS */}
-      <FeatureCards
+      {/* CATEGORY FILTER BAR */}
+      {/* <CategoryFilterBar
         category={category}
-        onExplore={selectCategory}
-      />
+        onSelectCategory={selectCategory}
+        sortOrder={sortOrder}
+        onSortChange={(value) => {
+          setSortOrder(value);
+          setPage(1);
+        }}
+        articles={articles}
+      /> */}
 
       {/* ARTICLES */}
       <Container
@@ -654,50 +539,15 @@ const visibleArticles = filteredAndSortedArticles.slice(
 
         <Box
           sx={{
-            display:"flex",
-            flexWrap:"wrap",
-            justifyContent:"center",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
-          {/* {categories.map((item) => (
-            <Button
-              key={item}
-              onClick={() => selectCategory(item)}
-              className={
-                category === item
-                  ? "category-active"
-                  : "category-button"
-              }
-            >
-              {item}
-              {item === "All Articles"
-                ? ` (${articles.length})`
-                : ""}
-            </Button>
-          ))} */}
+
         </Box>
 
-        <Box className="article-sort">
-  <Typography className="sort-label">
-    Sort by
-  </Typography>
 
-  <FormControl size="small" className="sort-control">
-    <Select
-      value={sortOrder}
-      onChange={(event) => {
-        setSortOrder(event.target.value);
-        setPage(1);
-      }}
-      inputProps={{
-        "aria-label": "Sort articles by date",
-      }}
-    >
-      <MenuItem value="latest">Latest</MenuItem>
-      <MenuItem value="oldest">Oldest</MenuItem>
-    </Select>
-  </FormControl>
-</Box>
 
         {visibleArticles.length > 0 ? (
           <Grid container spacing={3} alignitems="stretch">
