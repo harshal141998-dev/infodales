@@ -856,7 +856,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/Architecture-picture.png",
+      src: "src/assets/images/blogs/eds/Architecture-picture.png",
       alt: "Edge Delivery Services Architecture",
     },
 
@@ -925,7 +925,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/Implementation.png",
+      src: "src/assets/images/blogs/eds/Implementation.png",
       alt: "Edge Delivery Services Implementation",
     },
 
@@ -985,7 +985,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/FourMainPartsofEDS.png",
+      src: "src/assets/images/blogs/eds/FourMainPartsofEDS.png",
       alt: "Four Main Parts of Edge Delivery Services",
       style: {
         maxWidth: "600px",
@@ -1014,7 +1014,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/Edge.png",
+      src: "src/assets/images/blogs/eds/Edge.png",
       alt: "Edge CDN",
       
     },
@@ -1068,7 +1068,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/Authoring-Author.png",
+      src: "src/assets/images/blogs/eds/Authoring-Author.png",
       alt: "EDS Authoring",
     },
 
@@ -1110,7 +1110,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/Dev.png",
+      src: "src/assets/images/blogs/eds/Dev.png",
       alt: "EDS Development",
     },
 
