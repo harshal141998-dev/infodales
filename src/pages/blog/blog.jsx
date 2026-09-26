@@ -318,16 +318,16 @@ export default function BlogsPage() {
 
   const pageSize = 9;
 
-//   useEffect(() => {
-//   const currentPath = window.location.hash.replace("#", "");
+  //   useEffect(() => {
+  //   const currentPath = window.location.hash.replace("#", "");
 
-//   if (
-//     currentPath !== "/blogs" &&
-//     !currentPath.startsWith("/blogs/")
-//   ) {
-//     navigate("/blogs", { replace: true });
-//   }
-// }, [navigate]);
+  //   if (
+  //     currentPath !== "/blogs" &&
+  //     !currentPath.startsWith("/blogs/")
+  //   ) {
+  //     navigate("/blogs", { replace: true });
+  //   }
+  // }, [navigate]);
 
   const selectedArticle = articles.find(
     (article) => article.slug === slug
