@@ -8,6 +8,9 @@ import ServicesPage from "../pages/serviceAtInfodales/Service";
 import BlogPage from "../pages/blog/blog";
 import ContactPage from "../pages/contact/contact";
 import AboutUsPag from "../pages/about/AboutUs";
+import BlogDetailPage from "../pages/blogDetail/BlogDetail";
+import { Navigate } from "react-router-dom";
+
 
 // `showInNav` controls whether it appears in Header/Footer nav automatically.
 const routes = [
@@ -21,7 +24,10 @@ const routes = [
     { path: "/services", label: "Services", element: <ServicesPage />, showInNav: true, showInFooter: false },
     { path: "/blog", label: "Blog", element: <BlogPage />, showInNav: true, showInFooter: false },
     { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true, showInFooter: true },
+    { path: "/blogs/:slug", label: "Blog Detail", element: <BlogDetailPage />, showInNav: false, showInFooter: false },
+    // { path: "*", label: "Redirect", element: <BlogPage />, showInNav: false, showInFooter: false },
     // { path: "/contact", label: "Contact", element: <ContactPage />, showInNav: true },
+    
 ];
 
 export default routes;
