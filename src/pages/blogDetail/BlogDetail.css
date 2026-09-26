@@ -81,6 +81,16 @@
   color: #b6c1ce;
 }
 
+.article-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.article-views svg {
+  font-size: 16px;
+}
+
 /* Share */
 
 .article-share {

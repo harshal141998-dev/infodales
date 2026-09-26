@@ -14,8 +14,10 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 import { articles } from "../../data/blog";
+import { useViewCounter } from "../../hooks/useViewCounter";
 
 import "../blogDetail/BlogDetail.css";
 
@@ -100,6 +102,11 @@ export default function BlogDetailPage() {
     (item) => item.slug === slug
   );
 
+  // Counts this page load as a view for this specific blog post (by slug),
+  // and gives back the running total for that post. Called before any
+  // early return so hook order stays consistent, per React's rules of hooks.
+  const { views } = useViewCounter(article?.slug, true);
+
   if (!article) {
     return (
       <Container>
@@ -171,6 +178,13 @@ export default function BlogDetailPage() {
 
           <span>
             {formatDate(article.date)}
+          </span>
+
+          <span>•</span>
+
+          <span className="article-views">
+            <VisibilityOutlinedIcon fontSize="small" />
+            {views === null ? "…" : `${views.toLocaleString()} views`}
           </span>
         </Stack>
 
