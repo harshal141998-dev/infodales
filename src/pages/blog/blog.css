@@ -258,6 +258,7 @@
 .articles-section {
   padding-top: 85px;
   padding-bottom: 75px;
+  margin-top: 25px;
 }
 
 .section-heading {
@@ -350,6 +351,7 @@
   background: #fff;
   box-shadow: 0 2px 5px rgba(15, 23, 42, 0.025);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
 }
 
 .article-card.MuiCard-root:hover {
