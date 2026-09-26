@@ -693,7 +693,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/AEM_Type.webp",
+      src: "/images/AEM-Type.webp",
       alt: "Types of AEM",
     },
 
@@ -812,15 +812,316 @@ export const articles = [
     content: [],
   },
   {
-    slug: "introduction-to-eds",
-    title: "Introduction to Edge Delivery Services",
-    category: "AEM EDS",
-    date: "2024-12-01",
-    author: "Owais Pathan",
-    description:
-      "Explore Edge Delivery Services architecture, authoring approaches, and high-performance content delivery.",
-    content: [],
-  },
+  slug: "introduction-to-eds",
+  title: "Introduction to Edge Delivery Services",
+  category: "AEM EDS",
+  date: "2024-12-01",
+  author: "Owais Pathan",
+  description:
+    "Explore Edge Delivery Services architecture, authoring approaches, and high-performance content delivery.",
+
+  content: [
+    {
+      type: "paragraph",
+      text: "Happy to find you here. Welcome to another learning.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "What is Edge Delivery Services",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Edge Delivery Service is a part of AEM as a Cloud Service. It is an individual module or functionality in AEM as a Cloud Service and is not dependent on AEM. You can build, run, and author a website using Edge Delivery Services without AEM. It can be integrated with AEM Author to create content and sites; however, AEM authoring is not mandatory for content authoring. It supports two ways of authoring: document-based authoring and WYSIWYG (What You See Is What You Get) authoring.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Edge Delivery Services Architecture",
+    },
+
+    {
+      type: "bulletList",
+      items: [
+        "Franklin / Edge Delivery Services is based on a serverless micro-services architecture.",
+        "Each individual service is designed to be single-purpose. The connections between the different services make up the overall architecture.",
+        "All inter-service communication is based on HTTPS.",
+        "It is a composable set of services that enables a rapid development environment.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "src/assets/images/blogs/eds/Architecture-picture.png",
+      alt: "Edge Delivery Services Architecture",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "The architecture is typically composed of three layers.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Authoring Layer",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "In this layer, we create content for Edge Delivery Services. We have the following ways to create content:",
+    },
+
+    {
+      type: "bulletList",
+      items: [
+        "AEM authoring using Universal Editor.",
+        "Content can be created using Google Docs, Microsoft Docs, or spreadsheets. Teams and Slack can also be used to communicate and collaborate with Adobe when required.",
+        "Code and configuration are maintained in GitHub and moved to Edge Delivery Services when needed.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Edge Delivery Layer",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "It is a microservice-based serverless infrastructure built on the cloud.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Client Infrastructure",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "This is also the CDN layer from the client side, on top of the Edge Delivery Services CDN.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "The Entire Edge Delivery Services Implementation",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "After development, storage and processing are handled using the following server components.",
+    },
+
+    {
+      type: "image",
+      src: "src/assets/images/blogs/eds/Implementation.png",
+      alt: "Edge Delivery Services Implementation",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "AWS",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "In AWS there are three main components: AWS S3, Lambda, and Fastly.",
+    },
+
+    {
+      type: "bulletList",
+      items: [
+        "AWS S3 is used for storage or as the content hub.",
+        "Lambda is used for processing and computing.",
+        "Fastly is used as the CDN for this stack.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Cloudflare",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "In Cloudflare there are three main components: R2, Worker, and Cloudflare CDN.",
+    },
+
+    {
+      type: "bulletList",
+      items: [
+        "R2 is used for storage.",
+        "Worker is used for computing.",
+        "Cloudflare CDN is used as the CDN.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Four Main Parts of Edge Delivery Services",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "There are basically four main parts involved in Edge Delivery Services (EDS):",
+    },
+
+    {
+      type: "image",
+      src: "src/assets/images/blogs/eds/FourMainPartsofEDS.png",
+      alt: "Four Main Parts of Edge Delivery Services",
+      style: {
+        maxWidth: "600px",
+        borderRadius: "8px",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+      },
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "I will explain each and every part in detail.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Edge",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Edge is basically the CDN part. It involves three types of CDN.",
+    },
+
+    {
+      type: "image",
+      src: "src/assets/images/blogs/eds/Edge.png",
+      alt: "Edge CDN",
+      
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Bring Your Own CDN (BYOCDN) is the CDN that a client can include above the EDS CDN.",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Outer CDN: In EDS, we have two URLs, one for the live environment and one for the preview environment. The outer CDN displays the live URL content that has been published.",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Inner CDN: This displays the preview of the content that has been authored.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "PIPE (Pipeline)",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "The main delivery functionality is provided by PIPE (Pipeline). The main pipeline is the helix-pipeline-service, which uses the helix-html-pipeline framework to render HTML and filtered JSON after applying the required filters. The Pipeline Service pulls configuration from the Code Bus and published content from the Content Bus. The pipeline service runs as an AWS Lambda function. Mainly, the pipeline is used to convert content authored in documents into hypermedia.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Authoring / Author",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Authoring can be done using Google Docs or Microsoft Docs and can be stored in Google Drive or SharePoint and published from there.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Authoring mainly involves three things:",
+    },
+
+    {
+      type: "image",
+      src: "src/assets/images/blogs/eds/Authoring-Author.png",
+      alt: "EDS Authoring",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Authoring",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Authoring can be done using Google Docs, Microsoft Docs, or any third-party document service.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Sidekick",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "Sidekick is an important extension used to publish, unpublish, or delete content from the website.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Dev",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "The development part is mainly done in the GitHub repository that we create. In this repository, we need to install the AEM Code Sync GitHub app, also known as Franklin Bot. The content is served from documents stored in Google Drive or SharePoint.",
+    },
+
+    {
+      type: "image",
+      src: "src/assets/images/blogs/eds/Dev.png",
+      alt: "EDS Development",
+    },
+
+    {
+      type: "paragraph",
+      variant: "closing",
+      text:
+        "Thank you for reading this introduction to Edge Delivery Services. This overview covered the EDS architecture, authoring approaches, delivery infrastructure, and the main components involved in building and delivering content.",
+    },
+  ],
+},
 
   {
     slug: "introduction-to-document-based-authoring",
