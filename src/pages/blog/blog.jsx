@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef } from "react";
 
@@ -318,6 +318,17 @@ export default function BlogsPage() {
 
   const pageSize = 9;
 
+//   useEffect(() => {
+//   const currentPath = window.location.hash.replace("#", "");
+
+//   if (
+//     currentPath !== "/blogs" &&
+//     !currentPath.startsWith("/blogs/")
+//   ) {
+//     navigate("/blogs", { replace: true });
+//   }
+// }, [navigate]);
+
   const selectedArticle = articles.find(
     (article) => article.slug === slug
   );
@@ -405,12 +416,10 @@ export default function BlogsPage() {
 
   const openArticle = (articleSlug) => {
     navigate(`/blogs/${articleSlug}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const backToBlogs = () => {
-    navigate("/blogs");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/blog");
   };
 
   if (slug) {
