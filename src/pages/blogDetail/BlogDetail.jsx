@@ -14,8 +14,10 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 import { articles } from "../../data/blog";
+import { useViewCounter } from "../../hooks/useViewCounter";
 
 import "../blogDetail/BlogDetail.css";
 
@@ -76,11 +78,48 @@ function ContentItem({ item }) {
     );
   }
 
+  if (item.type === "bulletList") {
+    return (
+      <Box
+        component="ul"
+        className="article-list article-bullet-list"
+      >
+        {item.items?.map((listItem, index) => (
+          <li key={index}>
+            {typeof listItem === "string" ? (
+              listItem
+            ) : (
+              <>
+                <strong>{listItem.title}:</strong>{" "}
+                {listItem.text}
+              </>
+            )}
+          </li>
+        ))}
+      </Box>
+    );
+  }
+
+  if (item.type === "code") {
+    return (
+      <Box className="article-code">
+        <Box
+          component="pre"
+          className="article-code-block"
+        >
+          <code>{item.code}</code>
+        </Box>
+      </Box>
+    );
+  }
+
   // if (item.type === "image") {
+  //   const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
+
   //   return (
   //     <Box className="article-image">
   //       <img
-  //         src={item.src}
+  //         src={resolvedSrc}
   //         alt={item.alt || ""}
   //         style={item.style}
   //       />
@@ -88,14 +127,15 @@ function ContentItem({ item }) {
   //   );
   // }
   if (item.type === "image") {
-    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
+    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, "")}`;
+    const { maxWidth, ...restStyle } = item.style || {};
 
     return (
       <Box className="article-image">
         <img
           src={resolvedSrc}
           alt={item.alt || ""}
-          style={item.style}
+          style={{ ...restStyle, "--img-max": maxWidth }}
         />
       </Box>
     );
@@ -112,6 +152,11 @@ export default function BlogDetailPage() {
   const article = articles.find(
     (item) => item.slug === slug
   );
+
+  // Counts this page load as a view for this specific blog post (by slug),
+  // and gives back the running total for that post. Called before any
+  // early return so hook order stays consistent, per React's rules of hooks.
+  const { views } = useViewCounter(article?.slug, true);
 
   if (!article) {
     return (
@@ -146,9 +191,18 @@ export default function BlogDetailPage() {
     <Box className="article-detail-page">
       <Container maxWidth={false}
         sx={{
+          // maxWidth: "1250px",
+          // margin: "0 auto",
+          // px: { xs: 2, md: 3 },
+          width: {
+            xs: "calc(100% - 40px)",
+            sm: "calc(100% - 60px)",
+            md: "calc(100% - 90px)",
+          },
+          width: "calc(100% - 100px)",
           maxWidth: "1250px",
           margin: "0 auto",
-          px: { xs: 2, md: 3 },
+          px: 0,
         }}>
 
         {/* Back */}
@@ -184,6 +238,13 @@ export default function BlogDetailPage() {
 
           <span>
             {formatDate(article.date)}
+          </span>
+
+          <span>•</span>
+
+          <span className="article-views">
+            <VisibilityOutlinedIcon fontSize="small" />
+            {views === null ? "…" : `${views.toLocaleString()} views`}
           </span>
         </Stack>
 

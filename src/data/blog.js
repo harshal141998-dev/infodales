@@ -7,7 +7,371 @@ export const articles = [
     author: "Shruti Meshram",
     description:
       "Understand how AEM Dispatcher improves performance, caching, and security for AEM websites.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "I hope you all are doing well. Let's begin our learning with Dispatcher in AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "1. Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text: "Dispatcher is an Apache HTTP Web Server. It is used for exercising the functionalities such as caching, load balancing providing and limiting access of domains and security.",
+      },
+
+      {
+        type: "paragraph",
+        text: "AEM publish instance cannot communicate with the dispatcher (web server) and so AEM module helps in the task. It conveys the requests of the dispatcher to the Publish instance and provides the response from the publish instance to the dispatcher back again.",
+      },
+
+      {
+        type: "paragraph",
+        text: "First any request coming from the client goes to Content Delivery Network (CDN), if the response is available, is returned else it goes to Dispatcher where again the response availability is checked in cache. If found it is returned else it goes to the publish instance to fetch the response of the request and travels back the same route to serve the response to the client.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here we are setting up Apache 2.2 – 32 bit and Dispatcher 4.2.1.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "2. Setup For Dispatcher",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Download the provided version.",
+          "After download, open file to install it. You will find the following dialog box, click on next.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image1.webp",
+        alt: "Dispatcher Setup",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
+        },
+      },
+
+      {
+        type: "list",
+        items: [
+          "Accept the license and click on next and then you will find a Server Information dialog box. Add your respective network domain, server name and a working email address so that you get all the server related problems via email. Select the default port as 80 or else you can change it to 8000 for current user. Here the port is set to 80.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image2.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image3.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "list",
+        items: [
+          "Click on Next, select Typical and then click on Next again and you will find the default location of installed Apache Server in your system. You can either change it or keep it same.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image4.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image5.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "list",
+        items: [
+          "Then click on Next, the setup is almost completed, click on install. Installation takes about 5 minutes.",
+          "After installation is complete click Finish.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image6.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now after completion of installation process we need to check whether everything is properly installed or not. Hit the URL http://localhost to find.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image7.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now your dispatcher is installed and is ready to get configured. For configuration purpose you will be requiring disp_apache2.2.dll, dispatcher.any and httpd.conf files. It is recommended to get them from your workspace.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image8.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Open the Apache and find modules folder. In modules folder paste disp_apache2.2.dll file. Then in conf folder paste dispatcher.any and httpd.conf files.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image9.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "httpd.conf file is the starting point of dispatcher so here you need to add LoadModule which is a DSO (Dynamically Shared Object). You need to provide entry of disp_apache2.2.dll file.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image10.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "In httpd.conf file you find your server root and administrator's email id which you added in server information dialog box.",
+          "In IfModule provide location of dispatcher.any and also set the log level. In Directory add the handler and your httpd.conf file is ready.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image11.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image12.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "3. Setup For Publish Instance",
+      },
+
+      {
+        type: "list",
+        items: [
+          "In order to setup Publish instance copy the jar and license of AEM to a new folder and rename the jar to publish instance jar with required port number. By default it is 4503 but here we have set it to 4506.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/starting-dispatcher.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Then open command prompt and go to the directory where you have your jar and type java -jar cq-publish-4506.jar. This will open your publish instance with following run modes.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image14.webp",
+        alt: "Publish Instance Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now we need to configure the port of publish instance in our author so go to author instance, then go to welcome page of author instance, find Replication options and select Agents on Author. Select Default Agent (publish) and edit.",
+          "In Transport tab you will find the url, change the port to 4506.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image15.webp",
+        alt: "Publish Instance Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now in publish instance, upload your project, acs commons and service pack and replicate them all from package manager console.",
+          "Service pack may not get replicated from Package Manager Console properly. If so, go to Activate Tree and provide the path of your service pack in crx console and uncheck On Modify. First dry run and see if your service pack is ready to replicate and if yes, then click on Activate.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image16.webp",
+        alt: "Publish Instance Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Go to Felix console of publish instance and check whether all your bundles are Active or not once and if no then resolve the remaining dependencies which completes your publish instance setup.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "4. dispatcher.any file",
+      },
+
+      {
+        type: "list",
+        items: [
+          "dispatcher.any file determines complete behavior of your dispatcher.",
+          "It has project specific /farms files (you can have single /farms file too, there is no restriction) where each farm file configures a set of load balanced renders.",
+          "Set your publish instance as a render via setting its port and IP address.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image17.webp",
+        alt: "dispatcher.any",
+      },
+
+      {
+        type: "list",
+        items: [
+          "In /virtualhosts file we configure domains which are allowed in headers. Set your preferred domains here.",
+          "/filter section sets the paths of requests that you want your dispatcher to handle. You can enable open consoles (crx content repository, OSGI console, servlet engines), non-public content directories (/bin, /content, /home and so on) and can also deny content grabbing.",
+          "/cache section consists of a docroot file wherein the dispatcher will store files relative to this directory, decline the subsequent requests and allow the web server to deliver them as regular static content.",
+          "/statfileslevel indicates the hierarchy up to which a .stat file gets created that checks the time of cache in the dispatcher and that of replication in publish environment. If time of modification in publish environment is greater than that of the cache then it means there is an updated version available and this will delete the previously generated cache and allow the entry of new cache in the provided level.",
+          "In /rules section of /cache we have to specify how caching should happen according to the url generated. You can have your own rule sets.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image18.webp",
+        alt: "dispatcher.any",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Within the cache section we have /invalidate wherein we define which request needs to be available for dispatcher flushing after activation. You can set the dispatcher flush agent on both Author as well as on Publish but prefer setting it on publish because author is a development environment and modifications are tend to happen whereas publish is a read-only environment where unusual modifications happen only via publishing the pages by author instance.",
+          "Set the clients which can activate the content in /allowedClients section by providing the IP address and setting the /type “allow”.",
+          "/ignoreUrlParams section allows you to ignore query parameters passed in the url while caching the response.",
+          "Finally you can enable /auth_checker to check the whether the cached page which is requested for delivery matches its header with that of the one which is allowed via /filters by internally passing ‘?uri=’ parameter. If the status code becomes 200 then only the page is sent out for the delivery.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "5. Publishing The Content And Checking On Dispatcher",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Simply go to your author instance and select the page that you want to publish and hit Quick Publish.",
+          "Then go to your publish instance and check whether your published page is visible or not.",
+          "Go to your dispatcher and type http://localhost/ complete path of your page and done.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "6. Errors And Possible Solutions",
+      },
+
+      {
+        type: "list",
+        items: [
+          {
+            title: "Service pack is not getting uploaded",
+            text: "replicate it in package manager and then use Activation tree from author instance to achieve the same.",
+          },
+          {
+            title: "Bundle is not getting uploaded",
+            text: "Try force upload of snapshot of your project from packageManager(zip) or upload extracted snapshot from Felix console (do not forget to check start bundle) or (least recommended) change the port of your project’s pom.xml file to 4506 from 4503 and do single package.",
+          },
+          {
+            title: "Socket Error",
+            text: "Recheck your IP address in Allowed Clients section.",
+          },
+          {
+            title: "Null Pointer Exception",
+            text: "Agents on Author, Publish Queue might not be idle.",
+          },
+          {
+            title: "Problem in triggering the jar of publish instance",
+            text: "rename the quickstart file to crx-quickstart-old. Abort the starting process of from command prompt and rerun java -jar cq-publish-4506.jar. You will find a new quickstart file now which gets generated with respective script.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "I hope you find this blog informative, please share and for more blogs please surf our website.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Thank you",
+      },
+    ],
   },
   {
     slug: "aemcaas-dispatcher",
@@ -17,7 +381,484 @@ export const articles = [
     author: "Yash Sakharkar",
     description:
       "Learn how to adapt and migrate Dispatcher configurations from AMS to AEM as a Cloud Service.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 2,
+        text: "Introduction",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Migrating an AEM AMS (Adobe Managed Services) Dispatcher to AEM as a Cloud Service involves using Adobe I/O CLI (aio CLI) tools to manage and deploy the Dispatcher configurations. This process requires careful planning and adherence to Adobe’s best practices for AEM as a Cloud Service. In this blog, we’ll walk through the step-by-step process of converting AMS Dispatcher configurations and making the necessary updates to the converted Dispatcher files.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 1: Install Node.js",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Ensure that Node.js is installed on your system. If it isn’t, download and install the latest version from the official Node.js website.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 2: Install the Adobe I/O CLI Tool",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Open the command prompt and run the following command to install the Adobe I/O CLI:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: "npm install -g @adobe/aio-cli",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 3: Install AEM Cloud Service Migration Plugins",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Install the necessary AEM Cloud Service migration plugins by running the following command:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code:
+          "aio plugins:install @adobe/aio-cli-plugin-AEM-cloud-service-migration",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 4: Verify the Installation",
+      },
+      {
+        type: "paragraph",
+        text:
+          "To verify that the CLI tools are installed correctly, run the following command:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: "aio AEM-migration --help",
+      },
+      {
+        type: "paragraph",
+        text: "This command will display the list of available tools.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/dispatcher/aio-cli-tools.webp",
+        alt: "aio-cli-tools-img",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 5: Configure the Migration Tool",
+      },
+      {
+        type: "paragraph",
+        text: "Navigate to the configuration file located at:",
+      },
+      {
+        type: "paragraph",
+        text:
+          "C:\\Users\\admin\\AppData\\Local\\@adobe\\aio-cli\\AEM-migration-config.yaml",
+        variant: "highlight",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Update the file with the paths to your AEM-sdk-dispatcher source and ams-dispatcher source, then save the changes.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/dispatcher/dispatcher-config.webp",
+        alt: "dispatcher-config",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 6: Run the Dispatcher Converter",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Once everything is set up, execute the Dispatcher conversion command:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: "aio AEM-migration:dispatcher-converter -t=ams",
+      },
+      {
+        type: "paragraph",
+        text: "After conversion it looks like this:",
+      },
+      {
+        type: "image",
+        src: "images/blogs/dispatcher/dispatcher-logs.webp",
+        alt: "dispatcher-logs",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
+        },
+      },
+      {
+        type: "paragraph",
+        text:
+          "After the conversion, navigate to the target folder. You will find a newly converted Dispatcher folder. Replace its src folder with the AEM-sdk-dispatcher source files.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Note",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If you encounter any errors during the process, check the logs in the following file for details:",
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: `./
+├── conf.d
+│   ├── available_vhosts
+│   │   └── default.vhost
+│   ├── dispatcher_vhost.conf
+│   ├── enabled_vhosts
+│   │   ├── README
+│   │   └── default.vhost -> ../available_vhosts/default.vhost
+│   ├── rewrites
+│   │   ├── default_rewrite.rules
+│   │   └── rewrite.rules
+│   └── variables
+│       ├── custom.vars
+│       └── global.vars
+└── conf.dispatcher.d
+    ├── available_farms
+    │   └── default.farm
+    ├── cache
+    │   ├── default_invalidate.any
+    │   ├── default_rules.any
+    │   ├── marketing_query_parameters.any
+    │   └── rules.any
+    ├── clientheaders
+    │   ├── clientheaders.any
+    │   └── default_clientheaders.any
+    ├── dispatcher.any
+    ├── enabled_farms
+    │   ├── README
+    │   └── default.farm -> ../available_farms/default.farm
+    ├── filters
+    │   ├── default_filters.any
+    │   └── filters.any
+    ├── renders
+    │   └── default_renders.any
+    └── virtualhosts
+        ├── default_virtualhosts.any
+        └── virtualhosts.any`,
+      },
+
+      {
+        type: "paragraph",
+        text: "Your Dispatcher file structure should look like this.",
+      },
+      {
+        type: "paragraph",
+        text: "After the conversion make some changes in Dispatcher.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Delete Virtual Host Files",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to conf.d/enabled_vhosts. Delete any virtual host files whose names contain author or flush.",
+          "Remove all virtual host files in conf.d/available_vhosts that are not linked.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Remove or Comment Unnecessary vHosts",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Remove or comment out virtual host files that do not reference port 80.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Rewrites",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Go to the conf.d/rewrites directory.",
+          "Delete files like base_rewrite.rules. Also, remove any Include statements in the virtual host files referencing these files.",
+          "If only one file remains in the folder, rename it to rewrite.rules and update the Include statements in the virtual host files accordingly.",
+          "If there are multiple virtual host-specific files, merge their contents into the corresponding Include statements in the relevant virtual host files.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Variables",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to the conf.d/variables directory.",
+          "Delete the ams_default.vars file and remove any Include statements in virtual host files referencing it.",
+          "If only one file remains, rename it to custom.vars and update all Include statements in the virtual host files to reflect this new name.",
+          "If multiple files remain, copy their contents into the corresponding Include statements in the relevant virtual host files.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Remove Allowlists",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Delete the conf.d/whitelists folder.",
+          "Remove any Include statements in virtual host files referencing files in this folder.",
+          "Replace PUBLISH_DOCROOT with DOCROOT.",
+          "Remove references to the following variables: DISP_ID, PUBLISH_FORCE_SSL, PUBLISH_WHITELIST_ENABLED.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Cache",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to conf.dispatcher.d/cache.",
+          "Delete files prefixed with ams_.",
+          "If the folder is empty, copy the rules.any file from the standard Dispatcher configuration found in the SDK src folder into this folder and update the $include statements referencing the ams_*_cache.any files.",
+          "If only one file remains with a _cache.any suffix, rename it to rules.any and update the $include statements in the farm files.",
+          "If multiple farm-specific cache files remain, merge their contents into the corresponding $include statements in the farm files.",
+          "Delete files with the suffix _invalidate_allowed.any.",
+          "Copy default_invalidate.any from the standard Dispatcher configuration into this folder and update the cache/allowedClients section in the farm files.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Client Headers",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to conf.dispatcher.d/clientheaders.",
+          "Delete files prefixed with ams_.",
+          "If only one file remains with a _clientheaders.any suffix, rename it to clientheaders.any and update the $include statements in the farm files.",
+          "If only one file remains with a _cache.any suffix, rename it to rules.any and update the $include statements in the farm files.",
+          "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+          "Copy default_clientheaders.any from the standard Dispatcher configuration into this folder and replace outdated $include statements in the farm files.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: `Replace:
+
+$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_publish_clientheaders.any"
+$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_common_clientheaders.any"
+
+With:
+
+$include "../clientheaders/default_clientheaders.any"`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Filters",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to conf.dispatcher.d/filters.",
+          "Delete files prefixed with ams_.",
+          "If only one file remains, rename it to filters.any and update the $include statements in the farm files.",
+          "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+          "Copy default_filters.any from the standard Dispatcher configuration and update outdated $include statements in the farm files.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: '$include "../filters/default_filters.any"',
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Renders",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to conf.dispatcher.d/renders.",
+          "Delete all files in this folder.",
+          "Copy default_renders.any from the standard Dispatcher configuration into this folder.",
+          "Update the renders section in each farm file with the default_renders.any include.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: '$include "../renders/default_renders.any"',
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Check Virtual Hosts",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Rename the directory conf.dispatcher.d/vhosts to conf.dispatcher.d/virtualhosts and navigate to it.",
+          "Delete files prefixed with ams_.",
+          "If only one file remains, rename it to virtualhosts.any and update the $include statements in the farm files.",
+          "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+          "Copy default_virtualhosts.any from the standard Dispatcher configuration and update outdated $include statements in the farm files.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: '$include "../virtualhosts/default_virtualhosts.any"',
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Include Custom Variables",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "In the conf.d/variables/custom.vars file, ensure it is included in each virtual host file. This file contains custom domain names.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Validate the Dispatcher",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to the Dispatcher folder.",
+          "Run the validation command.",
+          "Ensure Docker is installed on your system. The output should confirm successful validation.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "bash",
+        code: "bin\\validate src\\",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/dispatcher/dispatcher-phases.webp",
+        alt: "dispatcher-phases-img",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Start the Dispatcher",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Now start the Dispatcher in a Docker image with deployment information. Make sure you have the AEM Publish instance running.",
+          "With your AEM Publish server running on Windows on port 4503, you can start the Dispatcher by running the following command.",
+          "After running the command, verify that the Dispatcher starts successfully.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "bash",
+        code: "bin\\docker_run src host.docker.internal:4503 8080",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/dispatcher/starting-dispatcher.webp",
+        alt: "starting-dispatcher",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This completes the main steps for converting and validating an AMS Dispatcher configuration for AEM as a Cloud Service.",
+        variant: "closing",
+      },
+    ],
   },
   {
     slug: "spa-component-mapping",
@@ -27,7 +868,242 @@ export const articles = [
     author: "Yash Sakharkar",
     description:
       "Discover how AEM components are mapped to frontend components in an AEM SPA implementation.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "The basic concept is to map the AEM component to React component. Basically, the AEM Component runs at the server side and exports the content in the form of JSON Model API, so that the JSON file, for example en.model.json, is consumed by our React Component running at the client side in the browser. We'll know more about the following concept with the help of the following diagram.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/flowchart.webp",
+        alt: "AEM Flowchart",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to map AEM component to React component",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create an AEM component",
+            text: "Create an AEM component by right clicking on the components folder under the wknd-spa-react project and selecting Create Component. Add the label, title and component group to the component and create it.",
+          },
+          {
+            title: "Create the dialog",
+            text: "Let's consider 'test' as our component in the wknd-spa-react project and its path will be wknd-spa-react/components/test. Create the dialog box through which the author can author the fields.",
+          },
+          {
+            title: "Create a Sling Model",
+            text: "Create a Sling Model so that you can map the authored values with the backend. Add adaptables, adapters and resourceType to the @Model annotation. Inherit the ComponentExporter interface to the service implementation class, and override the getExportedType() method which returns the resourceType of the component.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/createaemcomponent.webp",
+        alt: "Creating AEM Component",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/testcomponent.webp",
+        alt: "Test Component Image",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.adobe.aem.guides.wknd.spa.react.core.models.impl;
+
+import com.adobe.aem.guides.wknd.spa.react.core.models.Test;
+import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.export.json.ExporterConstants;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+@Model(
+    adaptables = SlingHttpServletRequest.class,
+    adapters = {Test.class, ComponentExporter.class},
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+    resourceType = TestModelImpl.RESOURCE_TYPE
+)
+@Exporter(
+    name = ExporterConstants.SLING_MODEL_EXPORTER_NAME,
+    extensions = ExporterConstants.SLING_MODEL_EXTENSION
+)
+public class TestModelImpl implements Test {
+
+    static final String RESOURCE_TYPE =
+        "wknd-spa-react/components/test";
+
+    @ValueMapValue
+    private String name;
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getExportedType() {
+        return TestModelImpl.RESOURCE_TYPE;
+    }
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text: "It is mandatory to implement ComponentExporter as it is used to export the content of our component in JSON format.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/GetExporterType Method.webp",
+        alt: "Component Exporter Method",
+      },
+
+      {
+        type: "paragraph",
+        text: "On hitting test.model.json you will find the response in JSON format.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/jsonfile.webp",
+        alt: "en.model.json URL Image",
+      },
+
+      {
+        type: "paragraph",
+        text: "In the ui.frontend folder/src, right click on the components folder and create a Test.js file. Import React and MapTo from the react and @adobe/aem-react-editable-components libraries.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/reactcomponent.webp",
+        alt: "Creating React Component",
+      },
+
+      {
+        type: "paragraph",
+        text: "Create a class component and write a JSX script in the render() method. At last, add the MapTo() function and export the class using the AEM component resource type.",
+      },
+
+      {
+        type: "code",
+        language: "javascript",
+        code: `import React, { Component } from "react";
+import { MapTo } from "@adobe/aem-react-editable-components";
+
+export const TestEditConfig = {
+  emptyLabel: "Test",
+  isEmpty: function (props) {
+    return !props || !props.name;
+  },
+};
+
+export default class Test extends Component {
+  render() {
+    if (TestEditConfig.isEmpty(this.props)) {
+      return null;
+    }
+
+    return (
+      <p className="TestComponents">
+        {this.props.name}
+      </p>
+    );
+  }
+}
+
+MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
+      },
+
+      {
+        type: "paragraph",
+        text: "With MapTo() you can map your React component to the Sling Model using the resourceType.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/maptomethod.webp",
+        alt: "Map To Method Image",
+      },
+
+      {
+        type: "paragraph",
+        text: "Import your React component in the import-component.js file and similarly import your import-component.js file in index.js.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/importreactcomponent.webp",
+        alt: "Import Component.js Image",
+      },
+
+      {
+        type: "paragraph",
+        text: "MapTo() will look for the Sling Model registered with the same resource type that we have passed in MapTo().",
+      },
+
+      {
+        type: "paragraph",
+        text: "Build the ui.frontend folder with $ mvn clean install -PautoInstallPackage. Search for your component and you will find the minified form of JavaScript in the ui.apps folder.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/minifiedjs.webp",
+        alt: "Minified JS Image",
+      },
+
+      {
+        type: "paragraph",
+        text: "Deploy the SPA code to AEM using Maven: $ mvn clean install -PautoInstallSinglePackage.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Open AEM, select Sites from Navigation, click on the Create button and select Page. Choose the template, add a title to the page and click Done.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/createaempage.webp",
+        alt: "Creating AEM Page",
+      },
+
+      {
+        type: "paragraph",
+        text: "Add the 'test' component, author it and you will find the data rendered on your page.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/Add component on page.webp",
+        alt: "Adding Component To Page",
+      },
+
+      {
+        type: "paragraph",
+        text: "Click on Preview and inspect your page. In the Network tab you will find en.model.json. The Layout Container has a sling:resourceType of your component and is recognized by the SPA Editor using the :type property, just like the Text and Image components.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/responsivegrid.webp",
+        alt: "Inspect test.model.json Image",
+      },
+    ],
   },
   {
     slug: "spa-getting-started",
@@ -37,7 +1113,421 @@ export const articles = [
     author: "Suchita Mishra",
     description:
       "Explore the fundamentals of AEM SPA Editor and how to build single-page applications with AEM.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Firstly we'll look into the approaches that we have with us to build a web application.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Approaches",
+      },
+
+      {
+        type: "list",
+        items: [
+          {
+            title: "Traditional Approach ( Client - Server )",
+            text: "In traditional approach, the client makes a request of a page to the server and the server will return the HTML i.e., the content, and when the client needs another page, he makes another request to the server and the server will return the different responses for the specified content.",
+          },
+          {
+            title: "Single Page Application (SPA)",
+            text: "In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it's moving from page to page, it doesn't make any request to the server and all the content is present at the client side only.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 1.webp",
+        alt: "traditional approach",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 2.webp",
+        alt: "SPA approach",
+      },
+
+      {
+        type: "paragraph",
+        text: "If a client makes some request which is not present at the client side, in that case the client will make the request to the server for the specific content and the server will return the content in the form of Json.",
+      },
+
+      {
+        type: "paragraph",
+        text: "With SPA, the initial request is a bit slow as the server tries to dump the content as much as possible as per the SPA configurations, but the subsequent request is faster as the client serves the content from the client side only and not the server side.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is SPA?",
+      },
+
+      {
+        type: "paragraph",
+        text: "SPA stands for Single Page Application. It is a web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. In a traditional multi-page application, when you navigate from one page to another, the browser requests a new page from the server, and the entire page is reloaded.",
+      },
+
+      {
+        type: "paragraph",
+        text: "In contrast, a Single Page Application loads a single HTML page and dynamically updates it's content as the user interacts with the application. This is often achieved using JavaScript frameworks or libraries such as Angular, React, or Vue.js. SPAs provide a smoother and more seamless user experience because they can update specific parts of the page without requiring a full page reload.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Why SPA?",
+      },
+
+      {
+        type: "paragraph",
+        text: "Single Page Applications (SPAs) are favored for several reasons, and their adoption is driven by the desire to enhance user experiences and streamline web development. Here are some key reasons why SPAs are often preferred:",
+      },
+
+      {
+        type: "list",
+        items: [
+          {
+            title: "Seamless User Experience",
+            text: "SPAs provide a smoother and more seamless user experience by dynamically updating content without the need for full page reloads. This leads to faster response times and a more fluid interaction, creating a more engaging and enjoyable user interface.",
+          },
+          {
+            title: "Reduced Loading Time",
+            text: "Traditional multi-page applications often involve reloading the entire page, resulting in longer loading times. SPAs, on the other hand, load initial resources upfront and fetch additional data asynchronously, reducing latency and making the application feel more responsive.",
+          },
+          {
+            title: "Asynchronous Data Loading",
+            text: "SPAs leverage asynchronous data loading, often using AJAX or similar techniques. This allows for fetching data in the background, updating the content without requiring a complete page refresh. It contributes to a dynamic and interactive user experience.",
+          },
+          {
+            title: "Efficient Resource Utilization",
+            text: "SPAs can be more resource-efficient as they load resources, such as scripts and stylesheets, only once during the initial page load. Subsequent interactions with the application involve fetching only the necessary data, minimizing redundant requests to the server.",
+          },
+          {
+            title: "Client-Side Routing",
+            text: "SPAs handle navigation on the client side, updating the URL and rendering content dynamically. This reduces the need for server requests during navigation, contributing to a more responsive and fluid application.",
+          },
+          {
+            title: "Mobile Responsiveness",
+            text: "SPAs are well-suited for mobile devices due to their ability to load content dynamically and provide a responsive user interface. This is crucial in the current era where a significant portion of web traffic comes from mobile devices.",
+          },
+          {
+            title: "Support for Offline Mode",
+            text: "Some SPAs can incorporate service workers and caching strategies, enabling them to function partially or entirely offline. This is particularly beneficial for users with intermittent internet connectivity.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Why SPA with AEM?",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 3.webp",
+        alt: "SPA with AEM",
+      },
+
+      {
+        type: "paragraph",
+        text: "Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How can we implement SPA in AEM?",
+      },
+
+      {
+        type: "paragraph",
+        text: "There are basically four technologies/frameworks to develop SPA:",
+      },
+
+      {
+        type: "list",
+        items: [
+          "React JS",
+          "Angular JS",
+          "Vue JS",
+          "Handlebar & Ember",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "We would be working with React js to develop an AEM SPA application.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Creating an AEM SPA Project",
+      },
+
+      {
+        type: "paragraph",
+        text: "Note: Ensure that a fresh instance of AEM, started in Author mode, is running locally.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Create the project:",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Open the command line terminal and enter the following maven command.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "bash",
+        code: `mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
+archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D
+archetypeVersion=35 -D appTitle="SPA React" -D appId="spa-react" -D
+artifactId="aem-spa.react" -D groupId="com.adobe.aem.spa.react" -D
+frontendModule="react" -D aemVersion=6.5.0`,
+      },
+
+      {
+        type: "paragraph",
+        text: "[ Replace the AEM version accordingly ]",
+      },
+
+      {
+        type: "paragraph",
+        text: "The following folder and file structure is generated by the maven archetype on our local file system & each folder represents an individual Maven module.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/SPA Folder structure.webp",
+        alt: "SPA folder structure",
+      },
+
+      {
+        type: "paragraph",
+        text: "We will primarily be working with the ui.frontend module, which is the React app.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Deploy and build the project using the following command:",
+      },
+
+      {
+        type: "code",
+        language: "bash",
+        code: "mvn clean install -PautoInstallSinglePackage",
+      },
+
+      {
+        type: "paragraph",
+        text: "The build will take around a minute and should end with the BUILD SUCCESS message.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Ui.Frontend Module",
+      },
+
+      {
+        type: "paragraph",
+        text: "Ui.frontend module has the following folder structure",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/UI Frontend FS.webp",
+        alt: "UI frontend folder structure",
+      },
+
+      {
+        type: "paragraph",
+        text: "There are few important files that we should know in this structure i.e., .env.development, package.json & clientlib.config.js",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: ".env.development",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/env.webp",
+        alt: "env development",
+      },
+
+      {
+        type: "paragraph",
+        text: "This file contains the path of the JSON API which is consumed by the react app to display the content on the frontend module and also the root path of the frontend module.",
+      },
+
+      {
+        type: "paragraph",
+        text: "We can provide the content to the frontend in two ways:",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "via AEM",
+            text: "We need to provide the proxy path to the AEM which is added in the package.json file.",
+          },
+          {
+            title: "via static mock file",
+            text: "The static mock json file is added under the public folder.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/proxy path.webp",
+        alt: "proxy path",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/mock file path.webp",
+        alt: "mock file path",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "package.json",
+      },
+
+      {
+        type: "paragraph",
+        text: "This file consists of all the dependencies and the scripts required for the frontend module.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "clientlib.config.js",
+      },
+
+      {
+        type: "paragraph",
+        text: "This file has the configuration for the clientlib generator, i.e., the clientlibs are generated in this file.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "src folder",
+      },
+
+      {
+        type: "paragraph",
+        text: "All the React components, images and styles are kept in this folder",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/src folder.webp",
+        alt: "src folder",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How to create an SPA component?",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 4.webp",
+        alt: "SPA component creation",
+      },
+
+      {
+        type: "paragraph",
+        text: "In normal cases, AEM components render at server side, but SPA components should be rendered at client side as per the concept. So we'll be creating a React component and then we'll map the AEM component to the React component.",
+      },
+
+      {
+        type: "paragraph",
+        text: "The AEM component will not be having any rendering script, it will only have the dialog and the SPA component will have the rendering logic and this SPA component will get content from the AEM repository in the form of Json, and this complete client side application will be deployed in AEM in the form of client libraries.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Our SPA component should have the capability of authoring as well, as per the AEM basic principles. So, for authoring, the SPA development framework provides an SPA editor.",
+      },
+
+      {
+        type: "paragraph",
+        text: "SPA Editor: It adds the capability of authoring to the SPA component.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e, AEM component and React component and when we combine these two it makes a complete SPA component",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 5.webp",
+        alt: "SPA component",
+      },
+
+      {
+        type: "paragraph",
+        text: "These two sections have different responsibilities:",
+      },
+
+      {
+        type: "paragraph",
+        text: "AEM component is used to create dialog and sling model (used for content exporter) and the React component is used for rendering and the content for rendering is provided by the sling model in the form of json.",
+      },
+
+      {
+        type: "paragraph",
+        text: "But these two sections must be mapped as AEM component is at server side and React component is at client side. So, now the SPA framework comes into picture i.e., the React framework as it provides the functionality to map the AEM component to the React component.",
+      },
+
+      {
+        type: "paragraph",
+        text: "So, once we have a React component and an AEM component, we map both the components using MapTo() functionality which has two sections, the first section has the resource type of the AEM component & the other section is for the React component",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 6.webp",
+        alt: "SPA component mapping",
+      },
+
+      {
+        type: "paragraph",
+        text: "Hope you all understood the basic concept of AEM SPA. In the next blog, we'll look into how to create AEM components and React components and implement the mapping and rendering of the SPA components on the page.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Thanks for reading! 😁",
+      },
+    ],
   },
   {
     slug: "sidekick-customization",
@@ -47,7 +1537,234 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Learn how to customize the EDS Sidekick to support authoring workflows and project requirements.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Sidekick in terms of EDS?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the context of AEM Edge Delivery Services (EDS), the term \"Sidekick\" does not have a defined or standard meaning as it does in classic AEM. However, if you are referencing a \"sidekick\" in general, it could imply a supportive utility, feature, or tool designed to aid in managing or delivering content efficiently in the edge delivery context.",
+      },
+
+      {
+        type: "paragraph",
+        text: "In the Sidekick we can create two types of buttons.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/types-of-buttons.webp",
+        alt: "Types of buttons in the Sidekick",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To explain the customization of the Sidekick, we will add two buttons to it: a Google Assist action button, and an action container that will contain YouTube as an action button.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Customize the Sidekick",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the tools/sidekick folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To customize the Sidekick, we need to create a folder called tools in our GitHub repository, and under that we need to create a folder called sidekick.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/github-folder-structure.webp",
+        alt: "tools/sidekick folder structure in GitHub",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the config.json file",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the sidekick folder we need to create a file called config.json.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/config-json-file.webp",
+        alt: "config.json file inside the sidekick folder",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Add the JSON structure",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside that file we need to create the JSON structure as shown in the image below, adding our JSON under the plugins object. An action means a single button, and an action container means a dropdown type. So we are creating the google-assist action button, and also an action container called tools, under which we are creating YouTube as an action.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/config-file.webp",
+        alt: "config.json with the google-assist action and tools container",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "In the image above there are some terms, which are explained below.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "id",
+            text:
+              "We need to provide an id. This is the main thing, as it is also used while creating an action container.",
+          },
+          {
+            title: "title",
+            text: "This is the label shown on the Sidekick.",
+          },
+          {
+            title: "environments",
+            text:
+              "Here we specify in which environments we want that button to be displayed.",
+          },
+          {
+            title: "url",
+            text:
+              "Defines what action should be performed when that button is clicked.",
+          },
+          {
+            title: "passConfig",
+            text:
+              "With this property, whenever we go to the URL provided, we can see all the information such as the repo, owner and branch of our GitHub in the URL, which means it passes all the configuration.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/passconfig.webp",
+        alt: "URL showing the configuration passed by passConfig",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "passReferrer",
+            text:
+              "By default it is false if not provided. If it is true, the URL will show which page you came from, as shown below.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/passReference.webp",
+        alt: "URL showing the referrer passed by passReferrer",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "excludePaths",
+            text:
+              "This disables the action we have created on the pages under the paths we have provided.",
+          },
+          {
+            title: "includePaths",
+            text:
+              "Here we provide the paths on which that action should be displayed.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Final Result",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is how we customized the Sidekick. As you can see in the image below, the buttons have been added.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-customization/final-sidekick.webp",
+        alt: "Sidekick showing the new Google Assist button and tools container",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "sidekick-library",
@@ -57,7 +1774,352 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Explore the Sidekick Library and how it helps manage and extend Edge Delivery Services functionality.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Sidekick Library?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM Edge Delivery Services (EDS), the Sidekick Library is a set of utilities, tools, or pre-defined functions provided to enhance and simplify the development, management, and customization of edge delivery configurations. The Sidekick Library acts as a support framework, enabling developers to work more efficiently with EDS by offering reusable components, patterns, and APIs tailored for edge delivery use cases.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To create a Sidekick Library we need to do the setup in two places: first in the GitHub code/config of the git repo, and second in the file/content setup of the content repository.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/setup-list.webp",
+        alt: "Sidekick Library setup list",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Create the Sidekick Library",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the library.html file",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The first step is to create a file called library.html under the tools/sidekick folder in our GitHub repo.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/library-html-file.webp",
+        alt: "library.html file inside tools/sidekick",
+        style: {
+          maxWidth: "400px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Add the HTML code provided by Adobe",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the library.html file we need to add the HTML code provided by Adobe. You can get that code from the link below, and the code looks like the image that follows.",
+      },
+
+      {
+        type: "code",
+        code:
+          "https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/resources/sidekick/sidekick-library#sidekick-plugin-setup",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/library-html-code.webp",
+        alt: "HTML code added to library.html",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Add the action button in config.json",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next we need to create the action button in our Sidekick, so we will add the JSON below in the config.json file under the tools/sidekick folder. In this JSON, the URL should contain the path of the library.html file.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/config-json.webp",
+        alt: "config.json with the Sidekick library button",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Create the library Excel file",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next we need to create a folder hierarchy as tools/sidekick in the root folder of the project in Google Drive or SharePoint. Inside it, create an Excel file with the name library.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/library-excel.webp",
+        alt: "library Excel file in tools/sidekick",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Create the blocks folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the same hierarchy we will create a folder called blocks, in which we will keep all the blocks that we need in the Sidekick Library.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/blocks-folder.webp",
+        alt: "blocks folder inside tools/sidekick",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 6: Create a document for each block",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the blocks folder we will create a document for each block. In this case, I will only take the example of the cards block.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/cards-document.webp",
+        alt: "cards document inside the blocks folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 7: Add the block to its document",
+      },
+
+      {
+        type: "paragraph",
+        text: "In this cards document we will add the cards block.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/cards-block.webp",
+        alt: "cards block added to the cards document",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 8: Register the block in the library Excel",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next we will add the path of each block document (in this case, cards) in the library Excel that we created. This Excel has two columns: name and path. The name column holds the name of the block that should be displayed, and the path column holds the path of the block document.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/library-excel-properties.webp",
+        alt: "library Excel with name and path columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 9: Open the library from the Sidekick",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now if you click on the Sidekick Library button in the Sidekick, you will see that a new palette has been opened.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/library-pallet.webp",
+        alt: "Sidekick Library palette",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You can see that you get the cards option, and under it, whatever card we have added shows up on the right-hand side along with a copy option. You can copy it and paste it into any document.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Creating Block Variations",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You can also create variations of a block, and those will be visible in the Sidekick Library too. To create variations, follow the steps below.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Separate the variations",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "First, separate the two variations with a separator, which is a horizontal line or three hyphens (---).",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/variations-seperator.webp",
+        alt: "Two block variations separated by a horizontal line",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Add library metadata",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After that, add a table with the heading Library Metadata in each section. In it we can add a name and description, so that both variations have different names and are easy to choose.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/library-metadata.webp",
+        alt: "Library metadata table with name and description",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Choose a variation in the library",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now you can see in the Sidekick Library palette that two variations have been added, and you can choose either one.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/sidekick-library/varation-sidekick-library.webp",
+        alt: "Block variations shown in the Sidekick Library palette",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "dispatcher-vs-edge-delivery",
@@ -67,7 +2129,171 @@ export const articles = [
     author: "Shruti Meshram",
     description:
       "Learn how to customize the EDS Sidekick to support authoring workflows and project requirements.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Glad to have you here. Let's dive into another exciting learning experience.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Where Did the Dispatcher Go?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM as a Cloud Service's traditional Sites architecture, Dispatcher and Publish are still there, doing the same caching, load-balancing, and security job they always did. But with Edge Delivery Services, that whole tier disappears: content is pre-rendered to static HTML/JSON ahead of time, and delivery happens straight from Adobe's managed CDN (Fastly) with stateless, auto-scaling edge compute standing in for what Publish used to render on demand. So the Dispatcher didn't get replaced by an equivalent component. Its three jobs got absorbed and redistributed: caching moved to the CDN, load balancing became a property of Fastly's global anycast network rather than something you configure, and security moved to CDN-level rules and access control.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/dispatcher-vs-eds-cdn/dispatcher_vs_eds_cdn.webp",
+        alt: "AEM Dispatcher compared with the Edge Delivery Services CDN",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How Load Balancing Actually Happens in EDS",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Classic AEM needed load balancing because Dispatcher sits in front of a fixed set of Publish instances that can get overwhelmed under traffic spikes.",
+          "EDS removes that problem at the root: pages are pre-rendered to static HTML/JSON ahead of time, so there's no render step left to bottleneck.",
+          "The only \"compute\" left, turning a doc into HTML and applying blocks, runs as stateless, serverless edge functions on Fastly's network, not on a fixed server fleet.",
+          "Fastly's anycast routing automatically sends each request to the nearest healthy point of presence (PoP), so there's no manual routing decision to make.",
+          "Those edge functions scale horizontally on demand at each PoP, independent of every other region.",
+          "Net effect: load balancing stops being something you configure (no /renders list, no dispatcher farm) and becomes a built-in property of the CDN's global architecture.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/dispatcher-vs-eds-cdn/eds_anycast_load_balancing.webp",
+        alt: "Anycast load balancing across Fastly points of presence in EDS",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Caching in Edge Delivery Services",
+      },
+
+      {
+        type: "paragraph",
+        text: "Let's understand how caching happens in EDS.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Rendered HTML/JSON/media sits at up to three layers: the browser, the outer/BYO CDN (if you have one), and Adobe's inner CDN (Fastly). Each layer has its own copy, keyed by full URL.",
+          "When an author hits Publish, EDS calls the CDN's purge API directly and clears just the URLs/cache keys that actually changed. Nothing else in the cache is touched.",
+          "If push invalidation isn't wired up for your CDN vendor, EDS just falls back to short TTLs (5 minutes) so staleness self-heals quickly instead of being purged explicitly.",
+          "There's no filesystem cache tied to a specific server instance. Cache lives in the CDN's distributed edge network, so there's no \"flush all instances\" step.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "How This Differs from Dispatcher Caching",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Dispatcher caches on the local disk of each web server instance in front of Publish. EDS caches across a globally distributed CDN network, with no per-instance disk and no risk of one instance serving stale content while another is fresh.",
+          "Dispatcher relies on a flush agent, a replication agent configured on Publish that sends an HTTP flush request to Dispatcher whenever a page is activated. EDS calls the CDN's purge API directly as part of the publish pipeline, so there's no separate agent to configure or troubleshoot.",
+          "Classic Dispatcher setups often flush by path hierarchy (invalidate a page and everything beneath it, /*), which can over-purge. EDS purges by exact URL/cache key, which is more surgical.",
+          "Dispatcher caching is essentially one tier (in front of Publish). EDS caching is multi-tier by design: CDN and browser both cache, each with their own TTL, so freshness is tuned per layer rather than one flat rule.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/dispatcher-vs-eds-cdn/dispatcher_vs_eds_caching.webp",
+        alt: "Dispatcher caching compared with EDS multi-tier CDN caching",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Shortening URLs in EDS",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Path mapping (paths.yaml / paths.json) decides what public URL a piece of content gets at publish time. It's not a runtime rewrite, it's baked into how the content gets indexed and served.",
+          "The mapping works as a mountpoints-style rule: a content source path (e.g. a Google Drive folder, or /content/site/en/products/x when AEM is the source) is mapped to a shorter external path (/products/x).",
+          "Multiple mappings can coexist. You can shorten one section of the site while leaving another untouched, and even mount different content sources at different path prefixes.",
+          "When AEM is the source, this file is paths.json; when it's Google Drive/SharePoint, it's paths.yaml. Same concept, different format depending on the authoring surface.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Redirects",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Redirects are authored, not coded: a spreadsheet (or a redirects tab in the site's content sheet) with two columns, source path and destination.",
+          "On publish, this sheet becomes a redirects.json file, and the delivery pipeline checks it on every incoming request before rendering, so a match returns a 301 immediately, with no deploy needed.",
+          "Destinations can be relative (redirect within the same site) or fully-qualified external URLs (redirect off-site).",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Domain Entry",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "The inner CDN (aem.page / aem.live) always exists by default. A custom domain sits in front of it, it doesn't replace it.",
+          "If you're using the Adobe-managed CDN, the domain is attached through Cloud Manager's Custom Domains screen: you supply the domain, Adobe gives you a CNAME target, and you either bring your own TLS certificate or let Adobe auto-provision one (renews automatically).",
+          "If you're on a BYO CDN (Cloudflare, Akamai, CloudFront, your own Fastly), the domain is configured on your CDN vendor's side, then pointed at your aem.live origin. The config file (cdn.prod.host key) tells EDS which hostname is the \"production\" one for cache-header and push-invalidation purposes.",
+          "Each git branch can carry its own domain mapping (helix-config.yaml), so main maps to your production domain, while other branches map to staging/preview domains automatically.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/dispatcher-vs-eds-cdn/eds_url_and_domain_flow.webp",
+        alt: "URL mapping and custom domain flow in Edge Delivery Services",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+    ],
   },
   {
     slug: "create-a-block-in-aem-eds-with-universal-editor-authoring",
@@ -76,8 +2302,501 @@ export const articles = [
     date: "2026-09-10",
     author: "Harshal Farkade",
     description:
-      "Learn how to create a block in AEM EDS using Universal Editor.",
-    content: [],
+      "In EDS, a block is the fundamental unit of authorable, styleable, and scriptable content on a page, the EDS equivalent of a component.",
+    content: [
+      {
+        type: "heading",
+        level: 2,
+        text: "What Is a Block?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'In Edge Delivery Services (EDS), a block is the fundamental unit of authorable, styleable, and scriptable content on a page, the EDS equivalent of a "component." An author never writes HTML or JSON directly; they build a page in a document (Word / Google Doc) or in the Universal Editor, and EDS converts whatever they authored into a predictable chunk of DOM that a matching JavaScript file then decorates.',
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/block-insert-ue.png",
+        alt: "Block being inserted in Universal Editor",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "From the Universal Editor's point of view, a block is defined by three cooperating pieces, not just code:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Component-Definition",
+            text:
+              "What shows up in the Insert panel (title, icon / group) and which AEM resourceType backs it, so the editor knows how to render an authoring outline for it.",
+          },
+          {
+            title: "Component-Model",
+            text:
+              "The authorable schema: which fields (text, richtext, image reference, boolean, select…) an author can fill in, and their labels / order in the properties panel.",
+          },
+          {
+            title: "Component-Filter",
+            text:
+              "The rules for where the block is allowed to be used (e.g. only inside a Section) and, for container blocks, what child components it is allowed to contain.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once an author drops the block onto a page and fills in its fields inside the Universal Editor, EDS renders that authored content as plain semantic HTML on the page. The block's own decorate() function then receives that raw, EDS-generated markup and reshapes it into its final presentational structure, while the block's CSS scopes styling to just that block.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Mental model: the model / definition / filter JSON is the authoring contract that tells the Universal Editor how to let an author create and configure the block. The JS / CSS is the runtime behaviour that tells the browser how to actually render it. A block is incomplete until both sides exist and agree on the same block id.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What Does the Block Folder Structure Look Like?",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/block-folder-structure.png",
+        alt: "Block folder structure",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step 1: Create the Block Folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a folder named after the block, the way it is shown in the image above, and inside that folder create the files below:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "_teaser.json",
+            text:
+              "Defines the Universal Editor model for the block. It registers the block as an authorable component (definitions) and specifies which fields (image, title, button link, etc.) an author can fill in, along with their labels and order in the authoring panel.",
+          },
+          {
+            title: "teaser.js",
+            text:
+              "Contains the decorate() logic that transforms the authored DOM into the final markup.",
+          },
+          {
+            title: "teaser.css",
+            text: "Contains styles scoped to the block.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step 2: Add the Model to the _teaser.json File",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The model describes the fields available to the author. For example, a teaser can contain an image and a title.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/teaser-json-example.json.png",
+        alt: "_teaser.json model opened in VS Code",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "The Important Part: Model ID",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'The model has an ID such as "teaser". That ID connects the model to the block\'s Universal Editor registration.',
+      },
+
+      {
+        type: "code",
+        code: `Block
+  |
+  +--> model: "teaser"
+          |
+          +--> fields: image, title, body, ...`,
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step 3: How the Three JSON Files Fit Together",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once the model exists, the block needs to be registered in three areas:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "component-definition.json",
+            text:
+              "Registers the block as an available authorable component and contains information such as title/group and model reference.",
+          },
+          {
+            title: "component-models.json",
+            text:
+              "Provides the model/schema used by Universal Editor to understand the fields and authoring structure.",
+          },
+          {
+            title: "component-filters.json",
+            text:
+              "Controls where the component is allowed to be added, such as a section/container filter.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step 4: Why Do We Run npm run build:json",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Your block's model, _teaser.json, lives inside the block's own folder and is the file you actually edit day to day. But Universal Editor doesn't read files inside individual block folders directly. It reads three consolidated root files:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "component-definition.json",
+          "component-models.json",
+          "component-filters.json",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'Running npm run build:json scans every block\'s model file, merges the relevant entries into these three root files, and keeps them in sync with what you\'ve authored at the block level. In short: you edit the small, block-scoped file; this command "compiles" it into the big project-level files that the Universal Editor actually consumes.',
+      },
+
+      {
+        type: "code",
+        code: "npm run build:json",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/npm-build-json.png",
+        alt: "npm run build:json output",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Run this command every time you:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Add or remove a field from a block's model",
+          "Change a model's ID",
+          "Add a new block that needs to appear in the Insert panel",
+          "Change filter/definition rules for a block",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you skip this step, your changes will exist locally in the block folder but won't show up in the Universal Editor, since the editor never reads the block-level file directly.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step 5: Why Do We Run npm run lint",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Linting checks the project for configured formatting and code-quality problems. A block can work in the browser and still contain problems that the repository's CI checks reject. If fixable issues are reported, run:",
+      },
+
+      {
+        type: "code",
+        code: `npm run lint
+npm run lint:fix`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Always run lint again after the automatic fix. Some issues require manual correction.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Why Fix Lint Before Committing?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Lint can be part of the automated checks that run when a Pull Request is opened. Committing obvious lint problems can therefore create an avoidable CI failure.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/npm run lint fix.png",
+        alt: "npm run lint:fix output",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A clean lint result means the code meets the repository's configured quality rules, CI is less likely to fail for avoidable reasons, and reviewers can focus on functionality.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step 6: Commit and Push",
+      },
+
+      {
+        type: "code",
+        code: `git checkout -b feature/hero-banner-block
+git add .
+git commit -m "feat: add hero-banner block with model, definition & filter entries"
+git push origin feature/hero-banner-block`,
+      },
+
+      {
+        type: "paragraph",
+        text: "Then open a Pull Request against main.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What Happens in the Pull Request?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once a PR is opened, EDS doesn't just run your repository's own lint/build/test checks. It also triggers two additional automated checks that are specific to Edge Delivery Services: GitHub Actions and Adobe Code Sync. Both must complete, and both can block the merge if they fail.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "GitHub Actions",
+            text:
+              "Runs your repo's configured lint, build, and test scripts against the changed files. These are the same checks you ran locally, now enforced in CI so nothing gets merged that breaks the pipeline.",
+          },
+          {
+            title: "Adobe Code Sync",
+            text:
+              "Syncs your branch to a live .page preview environment and, on many repos, runs a Lighthouse audit against that preview, checking performance, accessibility, best practices, and SEO scores for the pages/blocks affected by the PR.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/Adobe-code-sync-check.png",
+        alt: "GitHub Actions checks passing on the Pull Request",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Why You Must Add a Test URL in the PR Comment",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Adobe Code Sync deploys every PR branch to its own preview environment, but it doesn't automatically know which page a reviewer should check to see your new block working. That's why the workflow requires you to manually add a comment on the PR with the test URL, pointing to the actual page where the block is authored and rendered:",
+      },
+
+      {
+        type: "code",
+        code: "https://main--<repo>--<owner>.aem.page/<path-to-test-page>",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Why this matters: without a test URL, a reviewer (or the CI bot, on repos where this is enforced) has no direct way to confirm the block actually renders correctly on a live page. The lint/build/test checks only confirm the code is valid. They don't confirm the block looks and behaves right when authored. The test URL is what closes that gap.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-with-universaleditor/added the url for adobe sync check.png",
+        alt: "Test URL added as a comment on the Pull Request",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What Happens If You Don't Add It?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "On repos where a test URL comment is a required step, the PR can be blocked from merging even if GitHub Actions and Adobe Code Sync both pass. A green CI status only proves the code compiles and passes automated checks. It doesn't prove the authored content renders correctly, so reviewers (or an automated required-comment check) will hold the merge until a working test URL is posted. In practice this usually shows up as one of the following:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "The PR sits with all checks green but is still not merge-eligible because a required review comment/checklist item is unchecked.",
+          "A reviewer requests changes simply asking \"what's the test URL?\" before they'll approve, since they have no way to visually verify the block.",
+          "If the branch preview was never verified, a broken block (wrong field mapping, missing CSS, decorate() error) can slip through even though lint/build/tests all passed, because none of those checks actually render the page.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What Happens After Adding the Test URL Comment",
+      },
+
+      {
+        type: "paragraph",
+        text: "Once the comment with the working .page URL is added:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Reviewers can open the link directly and see the block rendered with real authored content, not just read the code diff.",
+          "They can confirm styling, field mapping, and behavior all match what was intended, closing the loop that automated checks can't cover.",
+          "The PR becomes fully mergeable once GitHub Actions, Adobe Code Sync, and the manual visual verification via the test URL are all satisfied.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What Happens After Merging to main",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Verify the post-merge checks. The workflow also describes Adobe AEM Code Sync verification using a .page / .live test URL:",
+      },
+
+      {
+        type: "code",
+        code: "https://main--<repo>--<owner>.aem.page/<path-to-test-page>",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Verify that the block appears, authored content is present, styling works, and the rendered output matches what was authored, as shown at the start of this blog.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Quick Command Reference",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "npm run build:json",
+            text: "Regenerates consolidated component JSON from model files.",
+          },
+          {
+            title: "npm run lint",
+            text: "Runs lint/code-quality checks.",
+          },
+          {
+            title: "npm run lint:fix",
+            text:
+              "Automatically fixes lintable issues; run lint again afterward.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text:
+          "Thank you for reading. This guide covered what a block is, how the model, definition and filter JSON files work together, why build:json and lint matter, and how the Pull Request and test URL workflow verifies your block in Edge Delivery Services.",
+      },
+    ],
   },
   {
     slug: "authoring-in-the-universal-editor",
@@ -87,7 +2806,287 @@ export const articles = [
     author: "Ayush Khandekar",
     description:
       "Learn Authoring in the universal editor: Content Tree, Components, Actions in detail",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "In our last post, we covered what the Universal Editor is conceptually: an editor-as-a-service that connects to your live app instead of rendering it itself. This time, we're opening it up and walking through the actual authoring screen, panel by panel and action by action, the way an author or developer would actually use it day to day.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Canvas at a Glance",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'Once a page is opened in the Universal Editor, via the Sidekick\'s "AEM Editor" button or directly through an author URL, you land on a three-part screen: a slim toolbar across the top, the live preview of your page in the center (the "canvas"), and a panel on the right that toggles between the content tree, properties, and comments.',
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/authoring-universaleditor/content-tree-overview.webp",
+        alt: "Universal Editor canvas showing a live page preview alongside its content tree of Page, Main, Section, and block nodes",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Notice that the canvas on the left is rendering the real, live page (the same Hero block, same image, same copy your visitors would see) while the panel on the right shows that page's exact structure as a nested tree. Nothing in that tree is invented for the editor; it's a direct reflection of the components actually present on the page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Reading the Content Tree: Page > Main > Section > Block",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The content tree always follows the same nesting pattern, and once you recognize it, every page in the Universal Editor reads the same way:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Page",
+            text: "The root node. One per page, at the very top of the tree.",
+          },
+          {
+            title: "Main",
+            text:
+              "The page's main content container, corresponding to the <main> element in the rendered HTML. Everything an author can edit lives inside it.",
+          },
+          {
+            title: "Section",
+            text:
+              "A wrapper grouping one or more blocks together, matching EDS's own concept of a Section (the same one you can target with section metadata like a background style). A page can, and usually does, have several Sections stacked one after another.",
+          },
+          {
+            title: "Blocks and components",
+            text:
+              "The actual authored content inside a Section: a Hero, a Cards grid, a Banner, or a plain Text/Image/Title/Button. In the screenshot above, the first Section holds two Hero blocks, a Cards block, and two Banners.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'Expand a block itself and you\'ll often find its own editable fields listed as child rows, for example an "Image" and a "Text: Hero" row nested under a Hero node. Those correspond exactly to the fields defined in that block\'s JSON model, the same component-models.json pipeline we covered in the previous post. If a field is exposed in the model, it shows up here as something an author can click straight to.',
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Top Toolbar",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/authoring-universaleditor/top-toolbar.webp",
+        alt: "Universal Editor top toolbar showing the home, undo/redo, URL bar, permissions, preview, open, and Publish controls",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'The bar running across the top of the editor is mostly navigation and page-level actions rather than content editing: a home icon back to the console, undo/redo, the current author URL and page path, a permissions/collaborators icon, a device-preview toggle, an "open in a new tab" icon to view the page outside the editor frame, and, on the far right, the Publish button, which pushes the current state of the page live. The overflow menu next to it holds less-frequent actions like page properties and version history.',
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Right-Hand Panel Rail",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/authoring-universaleditor/action-icon-rail.webp",
+        alt: "Universal Editor's vertical icon rail with panel toggles and quick action icons",
+        style: {
+          maxWidth: "260px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "That thin strip of icons on the right edge does two different jobs, stacked in the same rail:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Panel toggles",
+            text:
+              'The top few icons switch what\'s showing in the right-hand panel: a properties/filter view, the content tree (the layers icon, which is the one selected in our screenshots, which is why we keep seeing "Content tree" as the panel heading), and a comments view for review and feedback threads.',
+          },
+          {
+            title: "Quick actions",
+            text:
+              "The icons below the toggles are a shortcut for whatever node is currently selected: add a component, duplicate it, delete it, or copy it. These mirror the same options you get from the right-click/context menu on a tree node, just one click away without opening that menu.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Component Actions: Add, Duplicate, Delete, Copy, Move",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Right-click any node in the content tree (or use its drag handle) and you get a context menu of actions. What's available depends on what kind of node you clicked:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/authoring-universaleditor/block-context-menu.webp",
+        alt: "Context menu on a Hero block showing Duplicate, Delete, Copy, Move down, and Move to bottom",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "On a block like Hero, the menu offers:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Duplicate",
+            text:
+              "Clones the block, content and all, directly below itself. The fastest way to build a second Hero or a third Card without starting from a blank field.",
+          },
+          {
+            title: "Delete",
+            text: "Removes the block from the page entirely.",
+          },
+          {
+            title: "Copy",
+            text:
+              "Copies the block to the clipboard so it can be pasted somewhere else on the same page, or on a different page altogether.",
+          },
+          {
+            title: "Move down / Move to bottom",
+            text:
+              "Reorders the block among its siblings without dragging, which is useful once a Section has more than a couple of blocks stacked in it.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/authoring-universaleditor/section-context-menu.webp",
+        alt: "Context menu on a Section showing an additional Add option above Duplicate, Delete, Copy, Move down, and Move to bottom",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "On a container like a Section (or Main), the same menu gains one more option at the top: Add. That's because a Section's whole job is to hold other components, so, unlike a leaf block, it needs a way to insert something new into itself. Selecting Add is what opens the component picker covered next.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Component Picker: Default Content vs. Blocks",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'Choosing Add (or the equivalent quick-action icon) opens a searchable "Search component" dialog listing everything that\'s allowed to be inserted at that point in the tree:',
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/authoring-universaleditor/search-component-dialog.webp",
+        alt: "Universal Editor's Search component dialog with All, Default Content, and Blocks tabs listing available components",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This dialog is a direct, visual read-out of the same JSON pipeline we walked through in the previous post. The two tabs, Default Content and Blocks, correspond to the two groups defined in the project's merged component-definition.json:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Default Content",
+            text:
+              "The small set of generic, built-in components every project ships with (Text, Title, Image, Button in this project's case), the simple pieces you reach for when a full block would be overkill.",
+          },
+          {
+            title: "Blocks",
+            text:
+              "Every custom block a developer has added a _<blockname>.json model for: Hero, Cards, Card, Banner, Article Meta, Author Profile, and so on. This list grows every time a new block is built and its model is merged in.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Which items actually appear here for a given container is also filter-controlled. A Section doesn't necessarily offer the exact same list as, say, inside a Cards block, because each container's allowed children are declared separately in component-filters.json. That's exactly the filter-and-container mechanism from the previous post, now visible as a UI you can click through rather than a JSON file you have to read.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Putting It Together",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          'None of what you see on this screen is arbitrary. It\'s a live, visual expression of the same three generated files (definitions, models, filters) covered in our overview post. The content tree is the component structure; the properties panel is the model\'s fields; the component picker is the definitions grouped and filtered per container. Once that mapping clicks, authoring in the Universal Editor stops feeling like "a new tool to learn" and starts feeling like a direct window into the project\'s own configuration.',
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text:
+          "Up next in this series: building a brand-new block from scratch (the JS, the CSS, and the JSON model) and watching it appear in this exact component picker. That guide is coming soon.",
+      },
+    ],
   },
   {
     slug: "eds-and-the-universal-editor-overview",
@@ -97,7 +3096,373 @@ export const articles = [
     author: "Ayush Khandekar",
     description:
       "Learn Authoring in the universal editor: Content Tree, Components, Actions in detail",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "If you've been anywhere near the Adobe Experience Manager ecosystem in the last couple of years, you've heard the term \"Edge Delivery Services\" thrown around a lot, often alongside claims of perfect Lighthouse scores and sites that go live in weeks. Most overviews stop at the marketing pitch. This one doesn't. We're going one level deeper into how a request actually flows through EDS, what a real project looks like, and how the Universal Editor connects to it under the hood.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Part 1: What Is Edge Delivery Services?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Edge Delivery Services (EDS), formerly known internally as \"Helix\" or \"Franklin\" (names you'll still see scattered across tool and repository names), is Adobe's modern content delivery framework, built directly into Adobe Experience Manager as a Cloud Service. Its core idea is simple: separate authoring from rendering. Content is authored somewhere, either in a document or in an AEM page through the Universal Editor, converted into clean, semantic HTML, and served straight from Adobe's edge network with no server-side application logic at request time.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "It's worth being precise about one thing: EDS is not a CDN replacement. It's designed to sit on top of your existing CDN, or Adobe's own managed CDN, and handle how content is authored, assembled, and shipped to that CDN.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "How a Page Actually Gets Served",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is the part most overviews skip, and it's the part that actually explains why EDS feels so fast to develop on. Every EDS project is built from three separate \"buses\":",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Code Bus",
+            text:
+              "Your HTML, CSS, and JavaScript, synced directly from your GitHub repository via the AEM Code Sync GitHub App.",
+          },
+          {
+            title: "Content Bus",
+            text:
+              "Your actual page content, pulled from wherever you author it: an AEM as a Cloud Service content source when the project uses the Universal Editor, or a connected Google Drive/SharePoint folder for document-based authoring.",
+          },
+          {
+            title: "Media Bus",
+            text:
+              "Images and other binary assets, optimized and served separately from the content that references them.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When a visitor requests a page, Helix Admin pulls the code from the code bus, the content from the content bus, and the assets from the media bus, merges them on the fly, and hands the result to the CDN. Your JavaScript only ever enhances DOM that is already valid, readable HTML, so nothing is client-render-blocking, which is a large part of why EDS scores so well on Core Web Vitals. There's no build step and no deploy pipeline in between. Pushing a commit to your repo, or publishing a change from your content source, updates the live site within seconds.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/eds-universaleditor-overview/architecture.webp",
+        alt: "Edge Delivery Services architecture diagram showing Experience Delivery, Content Management, CDN, and authoring layers",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You'll also come across two URL types once you set a project up: an aem.page URL, which is your preview environment showing unpublished changes, and an aem.live URL, which is the actual published site your visitors hit. Both sit behind the same code and content buses. The difference is simply which version of the content each one is pointed at.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Two Ways to Author, One Rendering Engine",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "It's a common misconception that EDS only means \"writing content in a Word or Google document.\" That's one valid authoring mode, document-based authoring, but it's not the only one. A project built on the Universal Editor / xwalk variant of Adobe's boilerplate is authored visually against a real AEM as a Cloud Service content source instead, and EDS renders that published AEM content through exactly the same block-based pipeline either way. The two modes differ mainly in one config file:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "fstab.yaml",
+            text:
+              "Used by document-based projects to mount a Google Drive folder or SharePoint site as the content root.",
+          },
+          {
+            title: "paths.json",
+            text:
+              "Used by Universal Editor / xwalk projects to map a real AEM content path (e.g. /content/your-site/) to the site root instead.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A project only needs one of these, not both, unless you're deliberately building a hybrid setup where some sections are authored in AEM and others as plain documents, which is a valid but distinct architecture decision.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Blocks: The Building Blocks of an EDS Page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Content needs a way to render as more than plain text, such as a carousel, an accordion, or a hero banner, and that's what blocks are for. A block is a structured, named section of content. EDS turns it into a corresponding div in the page's DOM, and a matching JavaScript/CSS pair in your repo's /blocks folder decorates it into the real UI. In a Universal Editor project, each block folder also carries a small JSON model file describing its authoring fields, more on that in Part 2. A typical project looks like this:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "/blocks/hero/hero.js and hero.css",
+          "/blocks/cards/cards.js and cards.css",
+          "/styles, /scripts, head.html",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Adobe maintains a small set of blocks in its boilerplate templates that ship with every new project, plus a larger, open-source Block Collection of commonly needed blocks (carousels, tabs, accordions, and similar) that you can pull in as a starting point and then fully restyle. Neither is meant to be used unmodified. The value is the content structure they define, not the exact CSS. Curious how a block actually gets built end to end? See our guide on creating a block with the Universal Editor.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Why Teams Are Actually Adopting EDS",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Performance that shows up in Lighthouse, not just marketing slides",
+            text:
+              "EDS sites are built performance-first from the ground up: minimal JavaScript, no heavy client-side framework, unbundled CSS/JS shipped as-is, and a rendering pipeline optimized for Core Web Vitals. A 100 Lighthouse score, which used to take serious specialist effort on a traditional stack, becomes a realistic default here.",
+          },
+          {
+            title: "SEO, and now GEO, by default",
+            text:
+              "Fast, semantic, server-rendered HTML has always been good for traditional search engine optimization (SEO). What's newer is that the same properties (clean markup, fast load times, clear content structure) also make a site easier for AI-driven \"answer engines\" to read and cite, which Adobe refers to as generative engine optimization (GEO).",
+          },
+          {
+            title: "Development speed, with no build step and no bundler",
+            text:
+              "There are no Maven builds, no Cloud Manager pipelines, and no OSGi bundles to manage. Developers write plain HTML, modern CSS, and vanilla JavaScript, and a published change goes live within seconds. That simplicity also makes EDS codebases very approachable for AI coding assistants, since there's no complex build graph to reason about.",
+          },
+          {
+            title: "Plays well with classic AEM",
+            text:
+              "EDS doesn't require a rip-and-replace project. EDS and classic AEM Sites can run side by side on the same domain, which is common on larger sites where only certain sections (like a blog, or a campaign microsite) move to EDS first, with content flowing both ways between the two. EDS also integrates with Adobe Target for personalization and experimentation, and with Adobe Launch/Tags.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Part 2: Authoring with the Universal Editor",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Universal Editor is a visual, what-you-see-is-what-you-get (WYSIWYG) editor built as a genuine editor-as-a-service. It works in tandem with AEM to author content, but runs independently of any specific front end rather than being baked into it. That's a deliberate design choice: it supports true decoupling of the implementation, letting developers use virtually any framework or architecture they want without imposing any SDK or technology constraint. Adobe positions it as the natural successor to the older Page Editor and SPA Editor for AEM in-context authoring going forward.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "How the Connection Actually Works",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Universal Editor doesn't render your page itself. It loads your live application in a remote frame and connects to it via a small JavaScript library embedded in your page. That library is what lets the editor detect editable regions, report the page's structure back as a content tree, and push authoring changes back into AEM in real time. For an EDS project, AEM renders the HTML but pulls in the scripts, styles, icons, and other resources straight from Edge Delivery Services, so everything an author edits is persisted back to AEM, while everything a visitor sees is still served through the same fast EDS pipeline described in Part 1.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/eds-universaleditor-overview/universaleditorsidepanel.webp",
+        alt: "Universal Editor canvas showing a page's content tree alongside a live in-context preview",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The content tree on the right mirrors the exact component structure of the page, so an author can jump straight to any component instead of hunting for it visually. Selecting a component, here an image and heading inside a Hero block, opens its properties directly in a side panel, letting you swap an asset, edit alt text, or change copy without ever leaving the visual preview.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/eds-universaleditor-overview/universaleditorpanel.webp",
+        alt: "Universal Editor properties panel for editing an image and text component in-context",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What Defines the Editable Fields",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The fields you see in that properties panel aren't generated automatically. They come from a small set of JSON model files that live alongside each block in the repository, and are merged into three root files the Universal Editor reads directly from the published site:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "component-definition.json",
+            text:
+              "What the editor's \"Insert component\" panel is built from, listing every component available to authors.",
+          },
+          {
+            title: "component-models.json",
+            text:
+              "The actual editable fields for each component (text, rich text, image, boolean, select, and more). This is what turns into the form you see in the side panel.",
+          },
+          {
+            title: "component-filters.json",
+            text:
+              "Controls which child components are allowed inside a given container, so an author can't drop a component somewhere it was never designed to go.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "These three root files are never hand-edited. They're generated from smaller fragment files, one per block, and rebuilt with a single command whenever a block's model changes. That's matched on the front end by the corresponding block's own CSS and JS, which decide how the same field actually renders once the page is live. Any field exposed this way shows up automatically in the Universal Editor, which is also how developers extend the editor for their own custom components.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Getting Started as a Developer",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For EDS projects specifically, Adobe provides a dedicated starter template built for exactly this Universal-Editor-plus-EDS combination, so you don't have to wire the connection up by hand. Instrumenting a fully custom, non-EDS AEM application instead is more involved. It means announcing the Universal Editor's service endpoint, loading its embed script, and defining a persistence connection back to your content source. But for a standard EDS project, the starter template handles nearly all of it out of the box.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Privacy-Respecting Operational Telemetry",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To help diagnose performance issues and measure experiments, EDS-powered sites collect a limited set of operational data, but only a small, sampled slice of total page views, and with personally identifiable information deliberately excluded. It's built for troubleshooting, not for tracking individual visitors.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Frequently Asked Questions",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Is Edge Delivery Services free?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "EDS is included as part of Adobe Experience Manager as a Cloud Service. It isn't a separately licensed add-on product.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What are the code bus, content bus, and media bus?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "They're the three sources merged to build every page on request: the code bus holds your HTML/CSS/JS from GitHub, the content bus holds authored content, and the media bus holds images and other binary assets. Splitting them apart is what lets a content change go live without any code redeploy.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Do I need to set up my own CDN?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Not necessarily. New EDS projects are reachable on .aem.page (preview) and .aem.live (published) domains immediately, backed by Adobe's own CDN. You can layer your own CDN on top of that if you need custom caching rules or a branded domain, but it isn't required to get started.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Do I need to know classic AEM to use the Universal Editor?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Not necessarily. The Universal Editor's WYSIWYG interface lets authors publish content confidently without deep AEM experience, while developers work in plain HTML/CSS/JS and simple JSON field definitions, rather than traditional AEM-specific component APIs.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Can I try it before committing to a project?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Yes. Adobe provides a ready-made tutorial environment for hands-on exploration, as well as a self-guided tutorial that walks through setting up a project from scratch in under half an hour.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Where to Go From Here",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you want to get hands-on, Adobe's aem.live documentation is the canonical source for EDS, alongside Experience League's Universal Editor documentation for the AEM side of things. Support is available through the Experience League Community, a Discord channel for quick questions, and formal support tickets for teams with a contractual SLA once their site is registered in Cloud Manager.",
+      },
+    ],
   },
   {
     slug: "indexing-eds",
@@ -107,7 +3472,179 @@ export const articles = [
     author: "Infodales",
     description:
       "Understand how indexing works in Edge Delivery Services to make website content discoverable.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Indexing?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Indexing is the process of organizing data in a way that makes it faster and more efficient to search, retrieve, and access specific information. In the context of databases, search engines, or content management systems like Adobe Experience Manager (AEM), indexing involves creating a structured data representation that allows queries to execute more quickly.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM EDS, the index is kept in a spreadsheet and can be accessed using JSON. You can index the entire site, index a specific section of your website, or choose which properties you want to index from a page. You can also index a particular section from a page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Perform Indexing",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the query-index file",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create an Excel file with the name \"query-index.xlsx\" in the root folder of your project.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/query-index-file.webp",
+        alt: "query-index.xlsx file in the project root folder",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the raw_index sheet",
+      },
+
+      {
+        type: "paragraph",
+        text: "Inside this file, create a sheet with the name \"raw_index\".",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/raw-index-sheet.webp",
+        alt: "raw_index sheet inside query-index.xlsx",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Add the headers to index",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next, in that sheet add path as a header, and add the other properties that you want to index. For example, if you want to index on the basis of metadata, you add title and it will pick og:title. Similarly, you can add a response header as well.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/headers-raw-index-sheet.webp",
+        alt: "raw_index sheet with header columns",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The highlighted properties can be added as headers in the document, and the property mentioned on the right-hand side is the one picked from the meta tags. These are not limited to the properties shown. Whatever property you add in a meta tag can be added in the query-index Excel file, and it will be picked from that meta tag.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "\"Last modified\" is the only property that is picked from a response header.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/meta-tag-properties.webp",
+        alt: "Index properties and the meta tags they are picked from",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Publish the page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Content is only indexed when you publish the page. I have a page named test under the cms folder. As soon as I publish it, it is reflected in the query-index Excel file, and it has also picked the metadata properties available on the page, as you can see in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/displaying-index-properties.webp",
+        alt: "Published page appearing in the query-index with its metadata",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Excluding a Page from the Index",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you do not want to index a particular page, create a metadata block on that page and add the property \"Robots\" with the value \"noindex\".",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/metadata-block.webp",
+        alt: "Metadata block with Robots set to noindex",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "form-rule-editor",
@@ -417,7 +3954,415 @@ export const articles = [
     author: "Gaffur Shaik",
     description:
       "Get started with AEM Forms and explore its capabilities for creating responsive digital forms.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 2,
+        text: "Overview",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Adobe Experience Manager Forms is a solution provided by Adobe for creating, managing, and optimizing electronic forms (both simple and complex) across various channels such as web and mobile. AEM Forms streamline the creation and management of forms, making it easier for businesses to digitize and improve their document-based processes. The AEM Forms Module is a powerful feature introduced by AEM for creating adaptive forms, enabling easy creation, updating, and publishing.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Types of AEM Forms",
+      },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "PDF Forms",
+            text:
+              "Known as offline forms, they are saved locally, and form data is sent when it gets online.",
+          },
+          {
+            title: "HTML Forms",
+            text:
+              "Browser forms with the form tag element in HTML code, styled and scripted for validation.",
+          },
+          {
+            title: "Adaptive Forms",
+            text:
+              "Easily adapted to screen size and responsive, customizable on the field for user ease.",
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/form-types.webp",
+        alt: "AEM Form Types",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Set Up Adobe Forms Add-on",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Ensure that the Adobe Forms add-on is installed and configured in your AEM instance. This add-on allows you to create, manage, and publish adaptive forms. Adobe Forms functionality is provided through the AEM Forms add-on. You can download the AEM Forms add-on from the Adobe website or get it through Adobe's software distribution portal.",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Form Add-On Service Pack",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/service-pack.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If any item is missing from the Forms Module interface, it means you haven't installed the Forms service pack.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/form-non.webp",
+        alt: "AEM Form is not setup",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If the AEM Form is installed successfully, this item will appear.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/formmodule.webp",
+        alt: "AEM Form setup done",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Adaptive Forms",
+      },
+      {
+        type: "paragraph",
+        text:
+          "An Adaptive Form is an interactive digital form that adjusts its layout and content dynamically based on the user's inputs or the device on which it is being viewed. It provides a user-friendly experience by adapting to different screen sizes, ensuring ease of filling out and navigation regardless of the device. Adaptive Forms are commonly used in web applications and mobile devices, allowing for a more responsive and user-centric form-filling experience.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Types to Create Adaptive Form",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Using a form data model",
+          "Using an XDP Form Template",
+          "Using an XML Schema Definition (XSD) or a JSON Schema",
+          "Using none or without a form model",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/formcreateby.webp",
+        alt: "AEM Form Types",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Step To Create an Adaptive Forms",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create an Adaptive Form Template",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Every adaptive form is based on an adaptive form template. The template defines the structure, initial content, theme, etc., the adaptive form inherits. You can create a new adaptive form template or use the out-of-the-box template when creating your adaptive form.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "To create an adaptive form template, follow these steps:",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create a folder",
+      },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Navigate to",
+            text: "Tool > General > Configuration Browser.",
+          },
+          "Create a Folder where you can store your template.",
+          {
+            title: "Give a suitable title",
+            text:
+              "Ensure that you have selected the Editable template.",
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/conffolder.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/selectET.webp",
+        alt: "AEM Form Types",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create a form template",
+      },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "To create a template",
+            text: "Go to Tool > General > Template.",
+          },
+          {
+            title: "Choose the folder",
+            text:
+              'Choose the folder you previously created, then click on the "Create" button to generate a template. In the subsequent step, the default template type is the Adaptive Form Template. Ensure that it is selected and proceed by clicking on the "Next" button.',
+          },
+          {
+            title: "Name the template",
+            text:
+              "Ensure that you have enabled the template. Every template at the minimum contains a layout container at the top. There’s an adaptive form container in the middle, and again, there’s a layout container at the bottom.",
+          },
+          {
+            title: "Enable the template",
+            text:
+              "Next, enable this adaptive form template so that it is available for the adaptive form authors to use. To do that, select the template and click on Enable.",
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/temp-folder.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/template.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/enable-temp.webp",
+        alt: "AEM Form Types",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create Adaptive Form",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/formmodule.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Go to Forms > Forms & Documents.",
+          "Create a folder to store your forms.",
+          "Open the folder and create the Adaptive Form.",
+          "Select the template for your adaptive form.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/form-temp.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Click Next.",
+          "Provide a meaningful title. There are some additional items like Form Model and Advanced.",
+          "This means you can also create forms using Form Data Model, Form Data Model, and Schema.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/select-datamodel.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Click on Create to create an Adaptive Form.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/fromcreate-by.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Open the form in Edit mode.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/formlable.webp",
+        alt: "AEM Form Types",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Add Fields to Adaptive Forms",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Drag components to the Panel (click on it to add fields).",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/add-text.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Search for the field (e.g. text, button, numeric box).",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/config-fields.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Add the required fields in the form and configure the fields.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/fields-in-form.webp",
+        alt: "AEM Form Types",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Go to Preview.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/Preview.webp",
+        alt: "AEM Form Types",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creating Form Fragments",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A fragment is a reusable component within a form, designed to serve a specific purpose such as presenting an address block or legal text. Leveraging fragments streamlines the process of creating and maintaining numerous forms, enhancing efficiency and consistency across form development.",
+      },
+      {
+        type: "numberedList",
+        items: [
+          "Go to Forms and Documents.",
+          "Create a folder for adaptive form fragments where you can save your form fragments.",
+          "Select the folder that you created above and create a form fragment.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/form-fragment.webp",
+        alt: "AEM Form Fragment",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Provide a meaningful title for the fragment form. A form Fragment can be based on a Form model and there are some advanced settings. In Form Model, you can select a form data model, Schema, Form Template, and No option.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Now we have created a basic form fragment. Title: Log In.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/fromfragment.webp",
+        alt: "AEM Form Fragment layout",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Every form fragment has a guide root panel. Add a component in the guide root panel called Panel.",
+      },
+      {
+        type: "paragraph",
+        text: "Add Fields",
+      },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Label",
+            text: "User ID, Type: Text Button.",
+          },
+          {
+            title: "Label",
+            text: "Password, Type: Text Button.",
+          },
+          {
+            title: "Label",
+            text: "Login, Type: Submit Button.",
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/LogIn-form.webp",
+        alt: "AEM Form Fragment layout",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Edit the properties of the fields in the panel.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "You can also add Form Fragment in your Adaptive Form.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Thank you for joining us on our AEM Forms journey through this blog. We appreciate your time and interest in exploring the fundamental concepts of AEM Forms, including Adaptive Forms and AEM Form Fragments.",
+      },
+    ],
   },
   {
     slug: "aem-introduction",
@@ -546,7 +4491,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/AEM_Architecture.webp",
+        src: "images/blogs/sites/AEM_Architecture.webp",
         alt: "AEM Architecture",
       },
 
@@ -600,7 +4545,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/AEM_framework.webp",
+        src: "images/blogs/sites/Aem_framework.webp",
         alt: "AEM OSGi Framework",
       },
 
@@ -693,7 +4638,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/AEM-Type.webp",
+        src: "images/blogs/sites/AEM-Type.webp",
         alt: "Types of AEM",
       },
 
@@ -856,7 +4801,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/eds/Architecture-picture.png",
+        src: "images/blogs/eds/introduction-to-eds/Architecture-picture.png",
         alt: "Edge Delivery Services Architecture",
       },
 
@@ -925,7 +4870,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/eds/implementation.png",
+        src: "images/blogs/eds/introduction-to-eds/implementation.png",
         alt: "Edge Delivery Services Implementation",
       },
 
@@ -985,7 +4930,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/eds/FourMainPartsofEDS.png",
+        src: "images/blogs/eds/introduction-to-eds/FourMainPartsofEDS.png",
         alt: "Four Main Parts of Edge Delivery Services",
         style: {
           maxWidth: "600px",
@@ -1014,7 +4959,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/eds/Edge.png",
+        src: "images/blogs/eds/introduction-to-eds/Edge.png",
         alt: "Edge CDN",
 
       },
@@ -1068,7 +5013,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/eds/Authoring-Author.png",
+        src: "images/blogs/eds/introduction-to-eds/Authoring-Author.png",
         alt: "EDS Authoring",
       },
 
@@ -1110,7 +5055,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/eds/Dev.png",
+        src: "images/blogs/eds/introduction-to-eds/Dev.png",
         alt: "EDS Development",
       },
 
@@ -1131,7 +5076,268 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Understand how document-based authoring enables content creation and publishing through familiar documents.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Document Based Authoring",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Document-Based Authoring (DBA) in Adobe Experience Manager (AEM) is a content authoring paradigm designed to simplify the creation, management, and delivery of structured content. Unlike traditional page-based authoring, where authors focus on creating and managing individual web pages, DBA allows authors to work with content in a more modular, reusable, and centralized way, often in the form of documents.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Currently, when a request comes in, the content is served through the publish instance. With Edge Delivery Services, the content is served through EDS and no publish instance is required. We can build and run a website on AEM as a Cloud Service without using AEM.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/content-is-served-through-documents.webp",
+        alt: "Content served through documents in Edge Delivery Services",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we will create a sample website to learn document based authoring. Below are the requirements to create a website:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "GitHub account",
+            text: "All your code will be kept in your GitHub repository.",
+          },
+          {
+            title: "Google account",
+            text:
+              "For now we are using Google Docs, so we need a Google account. Otherwise, a Microsoft account can be used as well.",
+          },
+          {
+            title: "Basic knowledge",
+            text: "You should have a basic understanding of HTML, CSS and JavaScript.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Create and Configure an Edge Delivery Services Project",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create a repository from the template",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a new repository in your GitHub using the Adobe boilerplate template:",
+      },
+
+      {
+        type: "code",
+        code: "https://github.com/adobe/aem-boilerplate",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/adobe-template.webp",
+        alt: "Creating a repository from the AEM boilerplate template",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Install the AEM Code Sync GitHub App",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Install the AEM Code Sync GitHub App on your repository. Open the URL below in the browser and click Install.",
+      },
+
+      {
+        type: "code",
+        code: "https://github.com/apps/aem-code-sync",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/aem-code-sync.webp",
+        alt: "Installing the AEM Code Sync GitHub App",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Create a folder in Google Drive",
+      },
+
+      {
+        type: "paragraph",
+        text: "Go to Google Drive and create a folder with the project name.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/folder-creation.webp",
+        alt: "Project folder created in Google Drive",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Create the documents and share them",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create three Docs files in the project folder with the names index, nav and footer. Give editor permission to the helix@adobe.com account, and add some content in them.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/docs-creation-google-drive.webp",
+        alt: "index, nav and footer documents in Google Drive",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Add the Drive path to fstab.yaml",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After that, go to GitHub. There is a file called fstab.yaml. Add the path of your Google Drive folder in it and commit the change.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/adding-path-to-git-code.webp",
+        alt: "Google Drive folder path added to fstab.yaml",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 6: Add the AEM Sidekick extension",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now add the AEM Sidekick extension to your browser, then go inside your project folder. In the Sidekick you will get the option to add the project. Add the project, and you can now preview or publish the pages.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/sidekick.webp",
+        alt: "AEM Sidekick with the Add project option",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 7: Open the preview and live URLs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There are two URLs you can use to see the pages. To create them you need the branch in which your code is available, your repo name and your owner name. The .page extension is used for preview and the .live extension for the published site, as shown below.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Preview URL",
+            text: "https://{branch}--{repo}--{owner}.aem.page/",
+          },
+          {
+            title: "Publish URL",
+            text: "https://{branch}--{repo}--{owner}.aem.live/",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Whenever you hit the URL, the index page available in that folder is displayed. If the index page is not present, it throws a 404 Not Found.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Below is how your website is going to look. For the content of the page, you can refer to the Google Drive folder used in this example.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/index-page.webp",
+        alt: "Final index page of the sample website",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+    ],
   },
   {
     slug: "adding-metadata-in-edge-delivery-services",
@@ -1141,7 +5347,192 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Learn how to add and manage page metadata in EDS to improve SEO and content discovery.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Metadata?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Metadata refers to the information embedded in a webpage or associated with its content that describes its characteristics, purpose, and other properties. Metadata is not typically visible to users but plays a crucial role in how search engines, browsers, and other systems interpret and interact with the webpage.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Metadata can be added to a page in two ways:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Using a block",
+            text: "Used to add page-level metadata.",
+          },
+          {
+            title: "Using a Google Sheet or Excel",
+            text: "Used for site-level or bulk metadata.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Using the Metadata Block",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To add metadata to a page, we add a block called the metadata block. It is a special block that is handled internally by the HTML rendering service to add meta tags in the head of the HTML structure.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There should be only one metadata block per page, and it should be placed at the bottom of the page. It can technically be kept anywhere, but the bottom is the convention. The image below shows how to create the block.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-block.webp",
+        alt: "Metadata block added to a page",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the image above, we have added title, description, image, template, color, theme and robots. If you don't add a title, the first h1 of the page is picked, and similarly for the description the first paragraph is picked. After adding the block, preview the page and you can see the values added in the meta tag section, as shown in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-added.webp",
+        alt: "Meta tags added in the page head",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "This is how we add metadata using the block.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Using an Excel Sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When we want to add metadata for a particular hierarchy, or for pages under a particular folder, or add metadata in bulk, we use an Excel sheet.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the metadata sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To add metadata using a Google Sheet or Excel, we need to create a file with the name metadata under the root folder, meaning the main folder where all the project files are kept.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-sheet-name.webp",
+        alt: "metadata sheet in the project root folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Add the URL column and meta tags",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the file we need to create a column called URL, where we define the hierarchy on which the metadata should be applied. The other columns are the meta tags that you want to apply, and their values.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-excel-properties.webp",
+        alt: "metadata sheet with URL column and meta tag columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If the URL is /**, the metadata is applied to all the pages. If you want to apply the meta tags only to the pages under a folder, for example /cms/, define it as shown in the image above.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Note: If you apply a meta tag, say \"Theme\", using both the metadata block and the sheet, the metadata block is given priority.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Verify the result",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/bulk-metadata-added.webp",
+        alt: "Bulk metadata applied to pages",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "As you can see, the metadata properties have been added to the pages.",
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "placeholders-in-edge-delivery-services",
@@ -1151,7 +5542,156 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Discover how placeholders support reusable content and dynamic authoring experiences in EDS.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Placeholder?",
+      },
+
+      {
+        type: "paragraph",
+        text: "Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables used to customize content based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.",
+      },
+
+      {
+        type: "paragraph",
+        text: "In most websites, there are strings or variables that are used throughout the site. Especially in sites that support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Placeholders can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of a multilingual site.",
+      },
+
+      {
+        type: "paragraph",
+        text: "In this blog, we will explain the placeholder concept using a multilingual site example where region-specific content is displayed using placeholders.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to implement placeholder for region-specific content",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create language-specific placeholder files",
+            text: "Let's say we have a site that is initially available only in English but is later expanded to French. To display the same content in both languages, create a placeholder sheet in each English and French hierarchy.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/language-specific-files.webp",
+        alt: "Language-specific placeholder files",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Add Key and Text columns",
+            text: "Inside the placeholder sheet, create two columns: Key and Text. For example, the English value can be 'First Name', while the French value can be 'Prénom'. The corresponding language value will then be displayed on the site.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/placeholder-spreadsheet-content.webp",
+        alt: "Placeholder spreadsheet content",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Add page metadata",
+            text: "Use page metadata to determine which placeholder values should be displayed. In this example, locale and Language metadata are added to the English and French pages.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/metadata-for-locale.webp",
+        alt: "Metadata for locale",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create the Author block",
+            text: "Inside the English and French pages, create an Author block containing only the block heading. The remaining data will be populated using JavaScript.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/Author-block.webp",
+        alt: "Author block",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Customize placeholder file loading",
+            text: "EDS provides an inbuilt library to read the placeholder file from the root folder. In this implementation, the logic is customized so that the placeholder file is read from the respective 'en' or 'fr' hierarchy based on the prefix available in aem.js.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/aemjs-code.webp",
+        alt: "AEM JavaScript placeholder logic",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create the block JavaScript and CSS",
+            text: "Write the required CSS and JavaScript for the block. The block reads the placeholder values and displays the corresponding content in English and French on their respective pages.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/block-code.webp",
+        alt: "Placeholder block code",
+      },
+
+      {
+        type: "paragraph",
+        text: "The metadata property 'locale' is read from the page, and based on its value, the corresponding placeholder values are retrieved and displayed on the page.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/final-output.webp",
+        alt: "Final placeholder output",
+      },
+
+      {
+        type: "paragraph",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "implementing-redirects-and-response-headers-in-edge-delivery-services",
@@ -1161,7 +5701,327 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Learn how to configure URL redirects and HTTP response headers in Edge Delivery Services.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What are Redirects?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Redirects in AEM Edge Delivery Services (EDS) are mechanisms to route user requests from one URL to another at the edge server level, reducing latency and improving performance. These redirects occur before requests reach the AEM origin server, ensuring faster response times and efficient content delivery.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Redirects can be done for internal links as well as external links.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Internal links",
+            text: "Redirects within the website.",
+          },
+          {
+            title: "External links",
+            text: "Redirects to external websites.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Internal Redirect",
+      },
+
+      {
+        type: "paragraph",
+        text: "Redirects between pages within the website are internal redirects.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the redirects sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For the redirect rules, you need to create an Excel sheet with the name redirects in the root folder of the project.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/redirects-excel-created.webp",
+        alt: "redirects Excel sheet created in the project root folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Add the Source and Destination columns",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the sheet we need to create two columns with the headers \"Source\" and \"Destination\", as shown in the image below. In the Source column we add the source URL, and in the Destination column we add the URL where it should redirect to.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/redirects-excel-properties.webp",
+        alt: "redirects sheet with Source and Destination columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Before the redirect rule",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Before the redirect rule is added, when we hit /dm in the URL we get a 404 Not Found, as you can see in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/404-not-found.webp",
+        alt: "404 Not Found page when opening /dm",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: After the redirect rule",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After creating the redirect rule, we can see that it redirects to the /demo/demo1 URL.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/redirect-url.webp",
+        alt: "/dm redirecting to /demo/demo1",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "External Redirect",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For external redirects, in the same sheet, replace the destination with any external URL and you will see that it lands on the external link.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/external-redirects-excel.webp",
+        alt: "redirects sheet with an external URL as the destination",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What are Custom HTTP Response Headers?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "HTTP response headers in Adobe Experience Manager (AEM) Edge Delivery Services (EDS) are metadata sent back from the server to the client (usually a web browser) in response to an HTTP request. These headers provide information about the server's response, including status codes, content details, cache directives, and security policies. In the context of AEM EDS, headers play a critical role in controlling and optimizing the delivery of content at the edge.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Add Response Headers to the Page",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the .helix folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To add headers to the pages, we need to create a folder with the name \".helix\" under the root folder of our project.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/helix-folder.webp",
+        alt: ".helix folder in the project root",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the headers sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside that folder we need to create an Excel sheet with the name \"headers\".",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/headers-file.webp",
+        alt: "headers Excel sheet inside the .helix folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Add the url, key and value columns",
+      },
+
+      {
+        type: "paragraph",
+        text: "In that sheet there will be three columns: url, key and value.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "url",
+            text:
+              "This column holds the path of a folder, and the header will be applied to the pages present under that folder.",
+          },
+          {
+            title: "key",
+            text: "This column holds the key of the header.",
+          },
+          {
+            title: "value",
+            text: "This column holds the value of the header.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/headers-file-properties.webp",
+        alt: "headers sheet with url, key and value columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Verify the headers on the page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the sheet above, the header \"author\" is applied to all the pages in the website, and the header \"cms\" is applied to the pages present under the cms folder.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/headers-added.webp",
+        alt: "Response headers visible in the browser",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Activate the headers sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "One more thing: whenever you create this headers sheet, you will get the option to activate it instead of publishing it. This is done for security reasons.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/Activating-headers-sheet.webp",
+        alt: "Activate option shown for the headers sheet",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "servlets",
@@ -1171,7 +6031,7 @@ export const articles = [
     author: "Shruti Meshram",
     description:
       "Explore how Sling Servlets handle HTTP requests and implement custom backend functionality in AEM.",
-    content: [],
+
   },
   {
     slug: "custom-button-and-console",
@@ -1221,17 +6081,1075 @@ export const articles = [
     author: "Shruti Kawadkar",
     description:
       "Explore the EDS project structure and understand how blocks, scripts, styles, and configuration work together.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you have opened an EDS project for the first time, the folder structure can look a little confusing. There is no components folder like we are used to in AEM Sites, no OSGi bundles, and no ui.apps. Instead you will find folders like blocks, scripts and styles sitting right at the root of the project. In this blog we will go through every important folder and file in an EDS project, understand what each one is responsible for, and see how a page actually loads from the moment a user opens it to the moment it is fully rendered on the screen.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "1. Project Structure Overview",
+      },
+
+      {
+        type: "paragraph",
+        text: "A typical EDS project looks like this:",
+      },
+
+      // TODO: add the project folder tree image here
+
+      {
+        type: "paragraph",
+        text:
+          "Each of these folders has a clear, single responsibility, so let's break them down one by one before we look at how they work together.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "scripts/",
+            text:
+              "Controls the page runtime and overall loading lifecycle. This is where the main JavaScript logic of the EDS project sits, including page decoration, block discovery, block loading, and execution of common site functionality. Files such as scripts.js act as the main entry point for processing the page.",
+          },
+          {
+            title: "blocks/",
+            text:
+              "Contains reusable page components such as hero banners, cards, columns, and custom blocks. Each block typically has its own JavaScript (.js) for behavior and CSS (.css) for styling. Blocks are identified from the page HTML and dynamically loaded during page processing.",
+          },
+          {
+            title: "styles/",
+            text:
+              "Contains global styles that apply across the whole website, such as common layouts, typography, spacing, variables, and shared design rules. Unlike block-specific CSS, these styles are generally used across multiple pages and components.",
+          },
+          {
+            title: "fonts/",
+            text:
+              "Contains the font files and related resources used by the website. These fonts are loaded and applied through the project's global styling configuration to maintain consistent typography.",
+          },
+          {
+            title: "icons/",
+            text:
+              "Contains reusable icon assets referenced throughout the website. These can be used by blocks or common site functionality without duplicating the same assets in multiple components.",
+          },
+          {
+            title: "models/",
+            text:
+              "Contains the source configuration and definitions used by Universal Editor for content authoring. These configurations define components, fields, properties, and authoring behavior, helping Universal Editor understand what content authors can create and edit.",
+          },
+          {
+            title: "Root configuration files",
+            text:
+              "Project-level configuration files that control different aspects of the EDS project, such as paths, metadata, sitemap and index configuration, component definitions, filters, and other project behavior. These files help connect the codebase, authoring setup, and EDS runtime configuration together.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Out of all of these, the relationship between head.html, the files inside scripts/, and the blocks loaded from blocks/ is the most important one to understand, because that is what actually decides how fast and how correctly your page loads.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "2. Page Request and Runtime Flow",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When a user opens a page, the browser first receives the page HTML and then starts loading the resources that the project needs. At a high level, this is what happens:",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "EDS delivers the page HTML, after which head.html provides the global resources and aem.js and scripts.js are loaded. This starts the page processing lifecycle, where the page sections and blocks are identified and prepared, the required block CSS and JavaScript resources are loaded, and finally the processed and decorated content is displayed to the user as the final page UI.",
+      },
+
+      // TODO: add the runtime flow image here
+
+      {
+        type: "paragraph",
+        text:
+          "This entire runtime flow is controlled by two JavaScript files, scripts/aem.js and scripts/scripts.js. Both files get loaded on every page, but they do not do the same job, so let's understand each one separately.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "3. head.html: Loading Global Resources",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "head.html is the very first thing that gets pulled in, and it is responsible for making sure the global resources are available before anything else runs.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/projectStructure-Eds/project_structure_head.webp",
+        alt: "head.html structure",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Think of head.html as the doorway. It does not decide how the page behaves, it simply makes sure the door is open and the right files are in the room before the actual work starts.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "4. scripts/aem.js: Core EDS Utilities",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "aem.js provides the core, reusable utility functions that are used to process a page. It does not know anything specific about your project. It just knows how to read metadata, prepare sections and load blocks. Some of its important functions are:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "getMetadata()",
+            text:
+              "Reads metadata values defined for the current page, such as the page title, description, template-related information, navigation settings, or other custom metadata used during page processing and rendering.",
+          },
+          {
+            title: "decorateSections()",
+            text:
+              "Identifies the sections present inside the main page content and prepares them by adding the required structure and classes. Once sections are identified, EDS can treat each section as a separate unit and load or process them at different stages of the page lifecycle.",
+          },
+          {
+            title: "decorateBlocks()",
+            text:
+              "Identifies the blocks available within the page sections and prepares them for further processing. It recognizes the block structure from the page HTML and ensures that each block can later be loaded with its corresponding resources.",
+          },
+          {
+            title: "decorateBlock()",
+            text:
+              "Prepares an individual block by adding the required classes, attributes, and block-specific information so that EDS can correctly identify, load, and render that block.",
+          },
+          {
+            title: "decorateButtons()",
+            text:
+              "Identifies links or elements in the page content that are intended to behave as buttons and applies the required button-related classes, allowing them to receive consistent button styling across the site.",
+          },
+          {
+            title: "decorateIcons()",
+            text:
+              "Identifies icon references within the page content and replaces or transforms them into the appropriate icon elements, making the required icon assets available for rendering.",
+          },
+          {
+            title: "loadBlock()",
+            text:
+              "Loads the CSS and JavaScript required for an individual block and then executes the block's decorate() function to transform the original block HTML into its final UI. This acts as the main connection between the EDS runtime and the corresponding component files inside the blocks/ folder.",
+          },
+          {
+            title: "loadSection()",
+            text:
+              "Loads and processes the blocks contained within a single section. This allows EDS to handle the page section by section rather than requiring all page content to be processed in exactly the same way or at the same time.",
+          },
+          {
+            title: "loadSections()",
+            text:
+              "Loads and processes multiple sections across the page, coordinating their loading so that the page content can be progressively prepared and rendered as part of the overall page lifecycle.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "The overall role of aem.js can be represented like this:",
+      },
+
+      // TODO: add the aem.js role image here
+
+      {
+        type: "heading",
+        level: 2,
+        text: "5. scripts/scripts.js: Project Page Lifecycle",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "While aem.js gives you the reusable EDS utilities, scripts.js is where your project decides how a page actually gets processed. Its main lifecycle looks like this:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/projectStructure-Eds/project_structure_loadpage.webp",
+        alt: "scripts.js lifecycle",
+        style: {
+          maxWidth: "220px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This divides page loading into three phases, Eager, Lazy and Delayed, and each phase loads a different set of resources depending on how important they are for the initial experience.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "6. Eager Loading",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The eager phase handles the content that is required the moment the page opens. It starts with loadEager(document), and the goal is simple: get the most important content on screen as fast as possible.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The process starts when loadEager() is executed. First, the page is prepared for processing. The main content of the page is then decorated so that the page structure can be properly identified and organized.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After decorating the main content, the system processes the sections and blocks present on the page. During the eager phase, priority is given to the first section because it generally contains the content that the user sees immediately when the page loads.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The required blocks inside this important section are loaded and decorated, allowing their HTML, CSS, and JavaScript to be processed. Once this processing is complete, the important content becomes visible to the user.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "7. decorateMain(): Preparing the Main Page Content",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "During the eager phase, the main page content is processed through decorateMain(), which internally runs these steps in order:",
+      },
+
+      // TODO: add the decorateMain() steps image here
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "decorateButtons()",
+            text:
+              "Identifies eligible links or page elements that should be displayed as buttons and applies the required classes and structure. This ensures that buttons are styled consistently across the page and behave according to the project's design.",
+          },
+          {
+            title: "decorateIcons()",
+            text:
+              "Identifies icon references in the page content and converts them into actual icon elements. The required icon files are typically loaded from the icons/ folder, for example icons/search.svg, allowing icons to be displayed consistently throughout the website.",
+          },
+          {
+            title: "buildAutoBlocks()",
+            text:
+              "Provides an extension point for automatically generating blocks based on the page content. In a fresh EDS project, this function usually exists as a placeholder, but developers can add custom logic to automatically convert specific content patterns into blocks.",
+          },
+          {
+            title: "decorateSections() and decorateBlocks()",
+            text:
+              "Work together to identify and prepare the structure of the page. decorateSections() identifies the different sections in the page content, while decorateBlocks() identifies the individual blocks inside those sections. This allows the EDS runtime to determine which blocks are present and load the required CSS and JavaScript resources for them.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "By the end of this process, EDS knows which sections exist on the page, which blocks live inside each section, and which block resources still need to be fetched.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "8. Runtime Block Lifecycle",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once decoration is complete, blocks get loaded as part of the section loading process. Put together, the full lifecycle of an existing block looks like this:",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When the browser first loads the page HTML, the scripts.js file starts the page processing lifecycle and calls decorateMain() to prepare and organize the main content. The page content is then divided into sections, and the blocks inside each section are identified and prepared for processing. Each section and its blocks are processed, and for every individual block, loadBlock() is called to load the required block CSS and import the corresponding block JavaScript. The block's decorate() function is then executed, transforming the original block HTML into the required structure, styling, and behavior. After all the required sections and blocks have been processed, the transformed content is rendered and displayed to the user as the final page interface.",
+      },
+
+      // TODO: add the block lifecycle image here
+
+      {
+        type: "paragraph",
+        text:
+          "Notice the division of responsibility here: the runtime is responsible for loading and executing a block, while the block's own JavaScript is responsible for transforming its own content. A typical block file looks as simple as this:",
+      },
+
+      {
+        type: "code",
+        code: `export default function decorate(block) {
+  // Transform the block DOM
+}`,
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "9. Lazy Loading",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After the critical content is displayed, EDS loads the remaining page content and resources in the Lazy phase. This is important because loading every section, block, image, style, and other resource immediately would increase the amount of work the browser has to perform during the initial page load. Moving non-critical work to Lazy allows EDS to prioritize what the user needs first and process the rest afterward.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The loadLazy() phase loads the remaining content that is not required immediately when the page first opens. It processes the remaining sections and blocks, and then loads additional page elements such as the header and footer. Lazy styles and fonts are also loaded during this phase, allowing the most important content to appear first while less critical resources are loaded afterward.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "10. Header and Footer Loading",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Header and Footer are not treated like regular page content. They are loaded separately, during this same lazy phase, and they can rely on page metadata to decide exactly what to load:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/projectStructure-Eds/project_structure_header_footer.webp",
+        alt: "Header and footer metadata flow",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If no metadata is configured, the implementation simply falls back to sensible default paths. So although Header and Footer are very much part of the runtime, they are handled a little differently from the blocks that live inside your main page content.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The header and footer can contain a significant amount of content and resources, such as navigation links, icons, images, menus, and other site-wide elements. Loading all of this during the initial page processing could add unnecessary work before the main page content becomes visible. Therefore, EDS loads the Header and Footer during the Lazy phase, allowing the main page content to get priority while these shared site elements are loaded afterward.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "11. Delayed Loading",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The last phase is the delayed phase, started using loadDelayed(). This is where scripts/delayed.js is loaded, well after the initial content has already been processed. This phase is meant for things that do not affect what the user sees first, such as analytics, third-party integrations, tracking scripts, and other non-critical functionality. Put together, the complete loading strategy of an EDS page is:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          { title: "Eager", text: "Critical page content" },
+          { title: "Lazy", text: "Remaining page resources" },
+          { title: "Delayed", text: "Non-critical functionality" },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "12. The blocks/ Folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The blocks/ folder contains the reusable components used to build different sections of an EDS page. Each component, such as a Hero, Cards, Columns, Header, or Footer, is maintained as an independent block.",
+      },
+
+      // TODO: add the blocks/ folder image here
+
+      {
+        type: "paragraph",
+        text: "Each block usually carries its own small set of files:",
+      },
+
+      // TODO: add the block files image here
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: ".js",
+            text:
+              "Contains the JavaScript that processes the block, transforms its HTML, and adds the required functionality and behavior.",
+          },
+          {
+            title: ".css",
+            text:
+              "Contains the styles specific to that block, including its layout, appearance, spacing, and responsive behavior.",
+          },
+          {
+            title: ".json",
+            text:
+              "Contains the block configuration used for Universal Editor authoring, defining how the component is exposed to authors and what content or fields can be configured.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "13. The styles/ Folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This folder holds the global project styles, split across three files that each load at a different point:",
+      },
+
+      // TODO: add the styles/ folder image here
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "styles.css",
+            text:
+              "Contains the global and critical styles, loaded as part of the initial page resources. This is where you typically find your CSS variables, base page styling, typography, responsive rules and common layout rules.",
+          },
+          {
+            title: "lazy-styles.css",
+            text:
+              "Contains styles that are not needed for the first render, so it is loaded during the lazy phase instead.",
+          },
+          {
+            title: "fonts.css",
+            text:
+              "Contains your @font-face declarations, which point to the actual font files kept in the fonts/ folder.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "14. The fonts/ and icons/ Folders",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The fonts/ folder simply holds the font files referenced from styles/fonts.css:",
+      },
+
+      // TODO: add the fonts/ folder image here
+
+      {
+        type: "paragraph",
+        text:
+          "And the icons/ folder holds the reusable icon assets that get picked up and rendered by the project's components:",
+      },
+
+      // TODO: add the icons/ folder image here
+
+      {
+        type: "heading",
+        level: 2,
+        text: "15. Universal Editor Runtime Support",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Along with running the published site, an EDS project also carries scripts that support the page when it is opened inside Universal Editor:",
+      },
+
+      // TODO: add the editor support scripts image here
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "editor-support.js",
+            text:
+              "Normally, when an author changes something in Universal Editor, the page does not need a full reload. Instead, Universal Editor fires content update events, and this script listens for them and updates just the affected part of the page.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When an author edits content in Universal Editor, the editor sends an update event, which is received by editor-support.js. The affected DOM element is then identified, and the updated content is processed before the affected region is replaced with the new content. The relevant content is then decorated again so that the updated element or block receives the required EDS structure, styling, and behavior without requiring the entire page to be reloaded.",
+      },
+
+      // TODO: add the editor-support.js flow image here
+
+      {
+        type: "paragraph",
+        text:
+          "The script listens for events like aue:content-patch, aue:content-update, aue:content-add, aue:content-move, aue:content-remove and aue:content-copy, which together let the author preview updates without a full page refresh.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "editor-support-rte.js",
+            text:
+              "Rich text fields often contain more than one DOM element, such as a heading, a couple of paragraphs and a link.",
+          },
+        ],
+      },
+
+      // TODO: add the editor-support-rte.js image here
+
+      {
+        type: "paragraph",
+        text:
+          "This script groups those related elements together so that Universal Editor can treat them as one single editable rich text region instead of several disconnected pieces.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "16. Published Page vs Universal Editor",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The same EDS project can run in two different contexts: a published website and the Universal Editor authoring environment. In both cases, the core EDS runtime is responsible for processing the page, identifying sections and blocks, and loading the required block resources. The main difference is that, in Universal Editor, additional editor support scripts enable authors to edit content directly and handle content changes dynamically without following the normal published-page experience.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/projectStructure-Eds/project_structure_comparison.webp",
+        alt: "Published page vs Universal Editor",
+        style: {
+          maxWidth: "400px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The regular EDS lifecycle is always what processes the page. The editor support scripts simply add the extra behavior needed for live editing on top of it.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "17. The models/ Folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This folder contains the source configuration used by Universal Editor:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/projectStructure-Eds/project_structure_model.webp",
+        alt: "models folder tree",
+        style: {
+          maxWidth: "250px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "These files define things like the available components, their fields, how and where they can be placed, page metadata and section configuration. From these source files, the actual configuration files get generated at the project root, i.e. component-definition.json, component-models.json and component-filters.json.",
+      },
+
+      // TODO: add the generated root files image here
+
+      {
+        type: "paragraph",
+        text:
+          "Block level configuration and component authoring deserve a blog of their own, so here we are only covering where these files sit in the project and how they connect to Universal Editor.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "18. Other Important Root Files",
+      },
+
+      {
+        type: "paragraph",
+        text: "A few more files at the project root round out the configuration:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "paths.json",
+            text:
+              "Maps content paths to public site paths, and can also hold mappings for project configuration and metadata resources. It follows AEM content path to path mapping to public URL.",
+          },
+          {
+            title: "helix-query.yaml",
+            text:
+              "Defines the configuration for the project's query index, which powers things like search, content listings, related content and sitemap generation.",
+          },
+          {
+            title: "helix-sitemap.yaml",
+            text:
+              "Configures sitemap generation, based on the page information already captured by the query index.",
+          },
+          {
+            title: "package.json",
+            text:
+              "Holds the project's development configuration: its dependencies, dev dependencies, and the npm scripts used for tasks like JavaScript linting, CSS linting, automatic lint fixing, JSON generation and other development tooling.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
-    slug: "block-options-eds",
+    slug: "blockoption-universal-editor-eds-eds",
     title: "Block Option in Edge Delivery Service",
     category: "AEM EDS",
     date: "",
     author: "Shruti Kawadkar",
     description:
       "Explore block options in EDS to customize block behavior, variations, and content presentation.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Picture this. You've just shipped a nice \"Promo\" block for your EDS site: an image next to some text and a button. Marketing loves it. Two weeks later someone messages you: \"Love it! Can we get one where the image is on the right instead?\" Then a week later: \"Actually, can the image be a full-width background too?\"",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You've got three choices here. Build three separate blocks and maintain three near-identical copies forever. Hard-code a compromise nobody's happy with. Or, the good option, give the same block a dropdown and let the author pick the flavor.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "That third option is called a Block Option, and once you see how it's wired up under the hood, you'll want to use it everywhere.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is a Block Option?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A Block Option lets a content author pick a variation of a block right inside Universal Editor, instead of a developer building a separate block for every variation. Instead of three blocks like this:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Promo Showcase Left",
+          "Promo Showcase Right",
+          "Promo Showcase Full",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "we build one block called Promo Showcase, and give it a single dropdown that behaves like a costume rack:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Layout Style",
+            text: "Image Left, Image Right, or Image Full",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Same fields, same JS file, same CSS file. The author just picks which \"costume\" the block wears on any given page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Property That Makes It All Work: name: \"classes\"",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is the one detail that's easy to miss, and it's the whole reason any of this works. In your block's model JSON, if you name a field exactly classes, AEM treats it as a reserved, protected field name. It's not just another piece of authored data. The value the author picks gets automatically stamped onto the block's outer <div> as a live CSS class.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Rename that same field to something else, say layoutStyle, and the magic disappears completely. It becomes an inert value that nobody reads, and it will not turn into a class on its own. The literal string classes is the entire spell. Here's what that field looks like in the block model:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_name_property.webp",
+        alt: "promo-showcase.json model with the classes field",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How the Final Class List Actually Gets Built",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is the part most blog posts skip, and it's exactly where people get confused the first time. The class you see on a block in the browser isn't added by one single thing. It's assembled in three separate stages, each one adding its own piece, in this order:",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Stage 1: EDS adds the default classes automatically",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The moment a block loads, EDS's own block-loading script runs a decoration step on every block on the page. This step doesn't know or care what your block does. It always adds two things automatically: the generic block class, and the block's own name as a class (lowercased, with spaces turned into hyphens, so \"Promo Showcase\" becomes promo-showcase). At this point, before any authoring choice is even considered, the element already looks like this:",
+      },
+
+      {
+        type: "code",
+        code: '<div class="block promo-showcase">',
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Stage 2: The classes field adds the author's pick",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is where our reserved field steps in. Because we named it classes, whatever the author selected in the Layout Style dropdown, say \"Image Right\", which maps to the value image-right, gets appended onto that same class list, right alongside the two classes EDS already added. Nothing gets overwritten; it's purely additive:",
+      },
+
+      {
+        type: "code",
+        code: '<div class="block promo-showcase image-right">',
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Stage 3: Your own JavaScript can add more classes at runtime",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This stage is optional and has nothing to do with authoring at all. Inside your block's JS file, you're free to add extra classes based on behavior, for example adding a .zoom class only while the user is hovering over the CTA button. These classes are never picked by the author and never live in the JSON model. They exist purely to support interactive states, and they come and go as the user interacts with the page.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Put together, one class list can end up carrying classes from all three sources at once, and each one is doing a completely different job:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Stage 1",
+            text: "EDS auto-adds block and promo-showcase",
+          },
+          {
+            title: "Stage 2",
+            text:
+              "The classes field adds image-right (from the author's dropdown pick)",
+          },
+          {
+            title: "Stage 3 (optional)",
+            text: "Your block's JS adds behavior classes like .zoom at runtime",
+          },
+          {
+            title: "Result",
+            text: "CSS reads whichever of these classes are present and renders accordingly",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once you can see those three stages separately, the whole feature stops feeling like magic. Nothing \"moves\" the image on its own. It's just three different mechanisms quietly contributing to the same class list, and your CSS selectors reacting to whichever classes happen to be there.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "See It in Action",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here is the exact same Promo Showcase content rendered with each Layout Style. Only the class changes between them. First, Layout Style set to Image Left (class image-left):",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp",
+        alt: "Promo Showcase with Layout Style set to Image Left",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Image Right (class image-right):",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_right_image.webp",
+        alt: "Promo Showcase with Layout Style set to Image Right",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Image Full (class image-full):",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp",
+        alt: "Promo Showcase with Layout Style set to Image Full",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Notice the Content, CTA, and Image never changed. Only the class name did, and that alone was enough to completely rebuild the layout.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "CSS Does the Actual Heavy Lifting",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once that class exists, there's nothing special about the CSS. It's exactly as ordinary as CSS gets:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_css.webp",
+        alt: "promo-showcase.css rules for image-right and image-full",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "No conditionals, no JavaScript deciding where things go. The class is the switch, and CSS selectors are the wiring.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What About JavaScript?",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here's the real decorate() function running behind this block:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_js.webp",
+        alt: "decorate() function in promo-showcase.js",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Read through it and you'll notice something: it never once looks at block.classList, and never checks which Layout Style was selected. All it does is take the authored rows (Image, Content, CTA) and wrap them into .promo-showcase-image and .promo-showcase-content containers, then remove the original rows. That's the entire job.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is exactly what Stage 2 and Stage 3 working together should feel like in the best case: the class from the classes field is already sitting on the block by the time this function runs, CSS has already claimed full responsibility for the visual differences, and the JavaScript stays completely layout-agnostic. It runs identically whether Layout Style is set to Image Left, Image Right, or Image Full, because it genuinely doesn't need to know or care. That's not a missing feature; for a purely visual option like this one, it's the correct amount of JavaScript to write.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Proof It's Real: the Rendered HTML",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Everything above is a nice theory until you open DevTools and see it happen. This is the moment the whole chain (dropdown, classes field, assembled class list, CSS) becomes undeniable:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_devtools_code.webp",
+        alt: "DevTools showing class=\"block promo-showcase image-right\"",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "That one class, sitting quietly in the inspector next to block and promo-showcase, is the entire payoff of everything explained above.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "select vs. multiselect",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Adobe's Block Options also support a multiselect component, letting authors combine multiple options at once. This is handy for independent toggles like \"large\" or \"highlighted.\" But layouts like ours aren't independent: an image can't sensibly be on the left and the right at the same time. Mixing those would just hand your authors a way to break the design.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Rule of thumb: reach for select when options compete with each other, and save multiselect for options that happily coexist.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Wrapping Up",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Block Options aren't a separate feature bolted onto EDS. They're a naming convention with real consequences. Name a field classes, and you've plugged the author's choice into a class list that EDS was already building for you, right alongside its own default classes and anything your JS adds later.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next time you catch yourself about to duplicate a block just to tweak its layout, pause and ask: could this just be a class? Nine times out of ten, the answer is yes, and your authors get one clean dropdown instead of a shelf full of near-identical blocks to choose from.",
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "block-creation-eds",
@@ -1241,7 +7159,318 @@ export const articles = [
     author: "Owais Pathan",
     description:
       "Learn to create custom, reusable blocks in EDS using JavaScript, CSS, and structured content.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is a Block?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A block is a modular, reusable unit of content or functionality that is designed to streamline content delivery and personalization at the edge. Blocks are the building blocks for rendering web pages or delivering experiences directly at the edge, enabling faster delivery and reduced latency by leveraging edge computing principles.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For the sake of this blog, we will create a cards block which will display multiple cards on the page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Create a Block",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To create a block, we add a table in the document and then add the content in it. Let us understand this with an example. Suppose we need to create a multiple cards section which looks something like the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Block-Cards.webp",
+        alt: "Final cards block layout",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "To create the above block, we will follow the steps below.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the table in the document",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "First of all, we need to create a table in the document where we want to add the block, in the manner shown below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Cards-Table.webp",
+        alt: "Cards table in the document",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In this table we give the title of the block in the first row, and then the image and description in the rows below. After creating this, when we preview the page we get the DOM that is created out of the box, as shown in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Out-of-the-box-dom.webp",
+        alt: "Out-of-the-box DOM generated for the block",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the block folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we need to rewrite this DOM structure using JavaScript and add CSS to make it look presentable. In the repository we have a folder called blocks. Inside it we need to create a folder named after the block, which is the name we gave in the first row of the table.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/github-code.webp",
+        alt: "cards folder inside the blocks folder in GitHub",
+        style: {
+          maxWidth: "220px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Create the JS and CSS files",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside this folder we create two files, one JS and one CSS. For this blog the names are cards.js and cards.css.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/cards-files.webp",
+        alt: "cards.js and cards.css files inside the cards folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Add the logic in cards.js",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside cards.js we add the logic below to make the block presentable. You can modify it as per your needs and project requirements.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/jscode.webp",
+        alt: "JavaScript code in cards.js",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Add the styles in cards.css",
+      },
+
+      {
+        type: "paragraph",
+        text: "Inside cards.css we add the styles below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/card-css.webp",
+        alt: "CSS code in cards.css",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After adding all the CSS and JS code, the block renders as shown below. These are the 5 steps in which you can create a block and publish it on the page.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/final-card-look.webp",
+        alt: "Final rendered cards block",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Separating Sections",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Whenever you create a block or write anything in the document, it comes under a section tag. If you want your next content to come under a different section, you need to separate the sections. Here is how.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you add any content to the page, this is how it comes under a section.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/section-image.webp",
+        alt: "Content placed under a single section",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To separate the sections, use a hyphen (\"-\") three times or a horizontal line, as shown in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/added-seperation.webp",
+        alt: "Section separator added to the document",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "After adding the separator, this is how the sections get separated.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/seperated-sections.webp",
+        alt: "Content split into separate sections",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How to Add Custom CSS to a Particular Section",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Suppose you have two sections as shown below and you want to apply a CSS class to each section, or add an attribute to a section. For that, create a table with the title Section Metadata. For a style, add style in the first column and its classes in the second. For an attribute, put the attribute name in the first column and the attribute value in the second, as shown below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Adding-CSS-in-section.webp",
+        alt: "Section Metadata table with style and attribute rows",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "This is how it gets added to the section, as shown below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Added-CSS-and-attribute.webp",
+        alt: "CSS class and attribute applied to the section",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Now your block is ready and you can preview it on the page.",
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
 
 
