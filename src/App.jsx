@@ -1,5 +1,5 @@
-import { HashRouter, Routes, Route, Navigate, Router, BrowserRouter } from "react-router-dom";
-import { Routes, Route, Navigate, Router } from "react-router-dom";
+
+import { Routes, Route, Navigate, Router, BrowserRouter } from "react-router-dom";
 import Header from "./common/header/Id-Header";
 import Footer from "./common/footer/Id-Footer";
 import "./App.css"
