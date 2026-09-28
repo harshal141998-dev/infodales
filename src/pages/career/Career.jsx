@@ -129,6 +129,7 @@ export default function CareerPage() {
     const [modalOpen, setModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Technical Position");
     const [form, setForm] = useState({ name: "", email: "", link: "", consent: false });
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdO4wxvifRuTRB-_h8wdi5kEDpnAa9jN9Tsd3TO-JK51wVNGQ/viewform?usp=header";
 
     const filteredJobs = useMemo(() => {
         const q = query.toLowerCase().trim();
@@ -143,9 +144,12 @@ export default function CareerPage() {
         });
     }, [filter, query]);
 
-    const openModal = (title) => {
-        setModalTitle(title);
-        setModalOpen(true);
+    // const openModal = (title) => {
+    //     setModalTitle(title);
+    //     setModalOpen(true);
+    // };
+    const handleApplyClick = () => {
+        window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
     };
 
     const closeModal = () => {
@@ -420,7 +424,8 @@ export default function CareerPage() {
                                         <Button
                                             size="medium"
                                             endIcon={<ArrowForwardIcon sx={{ fontSize: 14 }} />}
-                                            onClick={() => openModal(job.title)}
+                                            // onClick={() => openModal(job.title)}
+                                            onClick={handleApplyClick}
                                             disableElevation
                                             sx={{
                                                 bgcolor: "#0f172a",
@@ -559,7 +564,7 @@ export default function CareerPage() {
                         </Typography>
                     </Box>
                     <Box sx={{ flexShrink: 0 }}>
-                        <Button onClick={() => openModal("General Engineering & Architecture Inquiry")}
+                        <Button onClick={handleApplyClick}
                             disableElevation
                             sx={{ bgcolor: "#fff", color: "#020617", px: 3, py: 1.5, borderRadius: 10, fontWeight: 700, textTransform: "uppercase", fontSize: '0.75rem', letterSpacing: '0.05em', "&:hover": { bgcolor: "#f1f5f9", boxShadow: '0 0 20px rgba(255,255,255,0.3)' }, transition: 'all 0.3s' }}>
                             Submit General Profile
@@ -569,7 +574,7 @@ export default function CareerPage() {
             </Box>
 
             {/* APPLICATION MODAL */}
-            <Dialog open={modalOpen} onClose={closeModal} maxWidth="sm" fullWidth PaperProps={{ sx: { borderRadius: '1.5rem', p: 0, border: '1px solid #f1f5f9', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' } }} slotProps={{ backdrop: { sx: { bgcolor: 'rgba(2, 6, 23, 0.7)', backdropFilter: 'blur(12px)' } } }}>
+            {/* <Dialog open={modalOpen} onClose={closeModal} maxWidth="sm" fullWidth PaperProps={{ sx: { borderRadius: '1.5rem', p: 0, border: '1px solid #f1f5f9', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' } }} slotProps={{ backdrop: { sx: { bgcolor: 'rgba(2, 6, 23, 0.7)', backdropFilter: 'blur(12px)' } } }}>
                 <DialogContent sx={{ p: { xs: 4, sm: 5 } }}>
                     <IconButton onClick={closeModal} sx={{ position: "absolute", top: 24, right: 24, bgcolor: "#f1f5f9", color: '#64748b', width: 36, height: 36, '&:hover': { bgcolor: '#e2e8f0', color: '#0f172a' } }}>
                         <CloseIcon sx={{ fontSize: 20, }} />
@@ -603,7 +608,7 @@ export default function CareerPage() {
                         </Stack>
                     </Box>
                 </DialogContent>
-            </Dialog>
+            </Dialog> */}
         </Box >
     );
 }
