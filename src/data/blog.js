@@ -17824,7 +17824,7 @@ public class Products {
     slug: "blockoption-universal-editor-eds-eds",
     title: "Block Option in Edge Delivery Service",
     category: "AEM EDS",
-    date: "",
+    date: "2026-09-28",
     author: "Shruti Kawadkar",
     description:
       "Explore block options in EDS to customize block behavior, variations, and content presentation.",
@@ -18018,55 +18018,82 @@ public class Products {
         text: "See It in Action",
       },
 
-      {
-        type: "paragraph",
-        text:
-          "Here is the exact same Promo Showcase content rendered with each Layout Style. Only the class changes between them. First, Layout Style set to Image Left (class image-left):",
-      },
+      // {
+      //   type: "paragraph",
+      //   text:
+      //     "Here is the exact same Promo Showcase content rendered with each Layout Style. Only the class changes between them. First, Layout Style set to Image Left (class image-left):",
+      // },
 
-      {
-        type: "image",
-        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp",
-        alt: "Promo Showcase with Layout Style set to Image Left",
-        style: {
-          maxWidth: "500px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-        },
-      },
+      // {
+      //   type: "image",
+      //   src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp",
+      //   alt: "Promo Showcase with Layout Style set to Image Left",
+      //   style: {
+      //     maxWidth: "500px",
+      //     borderRadius: "8px",
+      //     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+      //   },
+      // },
 
-      {
-        type: "paragraph",
-        text: "Image Right (class image-right):",
-      },
+      // {
+      //   type: "paragraph",
+      //   text: "Image Right (class image-right):",
+      // },
 
-      {
-        type: "image",
-        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_right_image.webp",
-        alt: "Promo Showcase with Layout Style set to Image Right",
-        style: {
-          maxWidth: "500px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-        },
-      },
+      // {
+      //   type: "image",
+      //   src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_right_image.webp",
+      //   alt: "Promo Showcase with Layout Style set to Image Right",
+      //   style: {
+      //     maxWidth: "500px",
+      //     borderRadius: "8px",
+      //     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+      //   },
+      // },
 
-      {
-        type: "paragraph",
-        text: "Image Full (class image-full):",
-      },
+      // {
+      //   type: "paragraph",
+      //   text: "Image Full (class image-full):",
+      // },
 
-      {
-        type: "image",
-        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp",
-        alt: "Promo Showcase with Layout Style set to Image Full",
-        style: {
-          maxWidth: "500px",
-          borderRadius: "8px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-        },
-      },
+      // {
+      //   type: "image",
+      //   src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp",
+      //   alt: "Promo Showcase with Layout Style set to Image Full",
+      //   style: {
+      //     maxWidth: "500px",
+      //     borderRadius: "8px",
+      //     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+      //   },
+      // },
 
+            {
+  type: "blockOptionDemo",
+  label: "Layout Style:",
+  options: [
+    {
+      value: "left",
+      label: "Image Left",
+      className: "image-left",
+      image:
+        `${import.meta.env.BASE_URL}/images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp`,
+    },
+    {
+      value: "right",
+      label: "Image Right",
+      className: "image-right",
+      image:
+        `${import.meta.env.BASE_URL}images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_right_image.webp`,
+    },
+    {
+      value: "full",
+      label: "Image Full",
+      className: "image-full",
+      image:
+        `${import.meta.env.BASE_URL}/images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp`,
+    },
+  ],
+},
       {
         type: "paragraph",
         text:
