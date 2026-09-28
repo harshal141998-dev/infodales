@@ -55,7 +55,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image1.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image1.webp",
         alt: "Dispatcher Setup",
         width: {
           xs: "100%",
@@ -73,7 +73,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image2.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image2.webp",
         alt: "Dispatcher Setup",
         style: {
           maxWidth: "650px",
@@ -82,7 +82,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image3.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image3.webp",
         alt: "Dispatcher Setup",
         style: {
           maxWidth: "650px",
@@ -98,7 +98,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image4.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image4.webp",
         alt: "Dispatcher Setup",
         style: {
           maxWidth: "650px",
@@ -107,7 +107,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image5.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image5.webp",
         alt: "Dispatcher Setup",
         style: {
           maxWidth: "650px",
@@ -124,7 +124,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image6.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image6.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -137,7 +137,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image7.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image7.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -150,7 +150,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image8.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image8.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -163,7 +163,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image9.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image9.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -176,7 +176,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image10.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image10.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -190,13 +190,13 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image11.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image11.webp",
         alt: "Dispatcher Setup",
       },
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image12.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image12.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -215,7 +215,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/starting-dispatcher.webp",
+        src: "/images/blogs/dispatcher/dispatcher/starting-dispatcher.webp",
         alt: "Dispatcher Setup",
       },
 
@@ -228,7 +228,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image14.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image14.webp",
         alt: "Publish Instance Setup",
       },
 
@@ -242,7 +242,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image15.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image15.webp",
         alt: "Publish Instance Setup",
       },
 
@@ -256,7 +256,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image16.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image16.webp",
         alt: "Publish Instance Setup",
       },
 
@@ -284,7 +284,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image17.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image17.webp",
         alt: "dispatcher.any",
       },
 
@@ -301,7 +301,7 @@ export const articles = [
 
       {
         type: "image",
-        src: "/images/blogs/dispatcher/setup_image18.webp",
+        src: "/images/blogs/dispatcher/dispatcher/setup_image18.webp",
         alt: "dispatcher.any",
       },
 
@@ -458,7 +458,7 @@ export const articles = [
       },
       {
         type: "image",
-        src: "images/blogs/dispatcher/aio-cli-tools.webp",
+        src: "/images/blogs/dispatcher/aemcaas-dispatcher/aio-cli-tools.webp",
         alt: "aio-cli-tools-img",
         width: {
           xs: "100%",
@@ -489,7 +489,7 @@ export const articles = [
       },
       {
         type: "image",
-        src: "images/blogs/dispatcher/dispatcher-config.webp",
+        src: "/images/blogs/dispatcher/aemcaas-dispatcher/dispatcher-config.webp",
         alt: "dispatcher-config",
         width: {
           xs: "100%",
@@ -519,7 +519,7 @@ export const articles = [
       },
       {
         type: "image",
-        src: "images/blogs/dispatcher/dispatcher-logs.webp",
+        src: "/images/blogs/dispatcher/aemcaas-dispatcher/dispatcher-logs.webp",
         alt: "dispatcher-logs",
         width: {
           xs: "100%",
@@ -812,7 +812,7 @@ $include "../clientheaders/default_clientheaders.any"`,
 
       {
         type: "image",
-        src: "images/blogs/dispatcher/dispatcher-phases.webp",
+        src: "/images/blogs/dispatcher/aemcaas-dispatcher/dispatcher-phases.webp",
         alt: "dispatcher-phases-img",
         width: {
           xs: "100%",
@@ -843,7 +843,7 @@ $include "../clientheaders/default_clientheaders.any"`,
 
       {
         type: "image",
-        src: "images/blogs/dispatcher/starting-dispatcher.webp",
+        src: "/images/blogs/dispatcher/aemcaas-dispatcher/starting-dispatcher.webp",
         alt: "starting-dispatcher",
         width: {
           xs: "100%",
@@ -3750,7 +3750,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/clientlib_property.webp",
+      src: "/images/blogs/forms/form-rule-editor/clientlib_property.webp",
       alt: "properties",
     },
 
@@ -3773,7 +3773,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/folder_Structure.webp",
+      src: "/images/blogs/forms/form-rule-editor/folder_Structure.webp",
       alt: "folder structure",
     },
     {
@@ -3784,7 +3784,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/blog_js.webp",
+      src: "/images/blogs/forms/form-rule-editor/blog_js.webp",
       alt: "js code",
     },
 
@@ -3801,7 +3801,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/form_image.webp",
+      src: "/images/blogs/forms/form-rule-editor/form_image.webp",
       alt: "form image",
     },
 
@@ -3818,7 +3818,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/propertyadded.webp",
+      src: "/images/blogs/forms/form-rule-editor/propertyadded.webp",
       alt: "form image",
     },
 
@@ -3836,7 +3836,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/functiovisible.webp",
+      src: "/images/blogs/forms/form-rule-editor/functiovisible.webp",
       alt: "form image",
     },
     {
@@ -3862,7 +3862,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/funnctionset.webp",
+      src: "/images/blogs/forms/form-rule-editor/funnctionset.webp",
       alt: "form image",
     },
     {
@@ -3886,7 +3886,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/function_rule_editor/agefiled.webp",
+      src: "/images/blogs/forms/form-rule-editor/agefiled.webp",
       alt: "form image",
     },
     {
@@ -3909,7 +3909,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "video",
-      src: "images/blogs/function_rule_editor/screen-capture.mp4",
+      src: "/images/blogs/forms/form-rule-editor/screen-capture.mp4",
       alt: "screen-capture",
     },
   
@@ -3946,7 +3946,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/forms/flowchart.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/flowchart.webp",
       alt: "form-data-model-flow",
     },
 
@@ -3962,7 +3962,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/forms/mysql-connector.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/mysql-connector.webp",
       alt: "mysql-connector",
     },
     {
@@ -3972,12 +3972,12 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/forms/system-console.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/system-console.webp",
       alt: "system-console",
     },
     {
       type: "image",
-      src: "images/blogs/forms/system-console-2.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/system-console-2.webp",
       alt: "system-console-2",
     },
     {
@@ -3987,7 +3987,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/forms/system-console-3.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/system-console-3.webp",
       alt: "system-console-3",
     },
     {
@@ -3997,7 +3997,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/forms/Database.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/Database.webp",
       alt: "Database",
     },
     {
@@ -4007,7 +4007,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/forms/configuration.webp",
+      src: "/images/blogs/forms/submitting-adaptive-form/configuration.webp",
       alt: "configuration",
     },
     {
@@ -4044,7 +4044,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "video",
-      src: "images/blogs/forms/data-model-creation.mp4",
+      src: "/images/blogs/forms/submitting-adaptive-form/data-model-creation.mp4",
       alt: "data-model-creation",
     },
 
@@ -4070,7 +4070,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "video",
-      src: "images/blogs/forms/form submission.mp4",
+      src: "/images/blogs/forms/submitting-adaptive-form/form submission.mp4",
       alt: "form-submission",
     },
     {
@@ -4134,7 +4134,7 @@ git push origin feature/hero-banner-block`,
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/ocr.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/ocr.webp",
       alt: "OCR Data Extraction",
     },
 
@@ -4248,22 +4248,22 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/ds01.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/ds01.webp",
       alt: "Data Source",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/ds02.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/ds02.webp",
       alt: "Data Source",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/ds03.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/ds03.webp",
       alt: "Data Source",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/ds04.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/ds04.webp",
       alt: "Data Source",
     },
 
@@ -4279,17 +4279,17 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/fdm01.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/fdm01.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/fdm02.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/fdm02.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/fdm03.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/fdm03.webp",
       alt: "Form Data Model",
     },
     {
@@ -4298,12 +4298,12 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/fdm04.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/fdm04.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/fdm05.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/fdm05.webp",
       alt: "Form Data Model",
     },
 
@@ -4319,7 +4319,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/clib.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/clib.webp",
       alt: "Client lib",
     },
 
@@ -4335,42 +4335,42 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af01.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af01.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af02.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af02.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af03.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af03.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af04.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af04.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af05.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af05.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af06.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af06.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af07.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af07.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/ocr-data/af08.webp",
+      src: "/images/blogs/forms/ocr-data-aem-forms/af08.webp",
       alt: "Form Data Model",
     },
     {
@@ -4430,7 +4430,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/s2f.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/s2f.png",
       alt: "SMS Two-Factor Authentication",
     },
 
@@ -4572,17 +4572,17 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds01.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds01.png",
       alt: "Data Source",
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds02.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds02.png",
       alt: "Data Source",
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds03.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds03.png",
       alt: "Data Source",
     },
 
@@ -4598,17 +4598,17 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/fdm01.webp",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/fdm01.webp",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds04.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds04.png",
       alt: "Form Data Model",
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds05.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds05.png",
       alt: "Form Data Model",
     },
     {
@@ -4617,7 +4617,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds06.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds06.png",
       alt: "Form Data Model",
     },
     {
@@ -4626,7 +4626,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/ds07.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/ds07.png",
       alt: "Form Data Model",
     },
 
@@ -4642,7 +4642,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/af01.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af01.png",
       alt: "Adaptive Form",
     },
     {
@@ -4651,7 +4651,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/af02.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af02.png",
       alt: "Adaptive Form",
     },
     {
@@ -4660,12 +4660,12 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/af004.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af004.png",
       alt: "Adaptive Form",
     },
     {
       type: "image",
-      src: "images/blogs/sms/af03.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af03.png",
       alt: "Adaptive Form",
     },
     {
@@ -4675,7 +4675,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/af04.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af04.png",
       alt: "Adaptive Form",
     },
     {
@@ -4684,7 +4684,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/af05.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af05.png",
       alt: "Adaptive Form",
     },
     {
@@ -4693,7 +4693,7 @@ definitions:
     },
     {
       type: "image",
-      src: "images/blogs/sms/af06.png",
+      src: "/images/blogs/forms/sms-twoway-aem-forms/af06.png",
       alt: "Adaptive Form",
     },
 
@@ -11678,7 +11678,7 @@ public class ContextAwareConfigModel {
     },
     {
       type: "image",
-      src: "images/blogs/forms/form submission/server.webp",
+      src: "/images/blogs/forms/form-submission/server.webp",
       alt: "Fake SMTP Server",
     },
 
@@ -11698,7 +11698,7 @@ public class ContextAwareConfigModel {
     },
     {
       type: "image",
-      src: "images/blogs/forms/form submission/configuration2.webp",
+      src: "/images/blogs/forms/form-submission/configuration2.webp",
       alt: "Configuration",
     },
     {
@@ -11719,7 +11719,7 @@ public class ContextAwareConfigModel {
     },
     {
       type: "image",
-      src: "images/blogs/forms/form submission/regform.webp",
+      src: "/images/blogs/forms/form-submission/regform.webp",
       alt: "registration",
     },
     {
@@ -11741,12 +11741,12 @@ public class ContextAwareConfigModel {
     },
     {
       type: "image",
-      src: "images/blogs/forms/form submission/formprop.webp",
+      src: "/images/blogs/forms/form-submission/formprop.webp",
       alt: "Form properties",
     },
     {
       type: "image",
-      src: "images/blogs/forms/form submission/formprop2.webp",
+      src: "/images/blogs/forms/form-submission/formprop2.webp",
       alt: "Form properties",
     },
     {
@@ -11757,12 +11757,12 @@ public class ContextAwareConfigModel {
 
     {
       type: "image",
-      src: "images/blogs/forms/form submission/formtest.webp",
+      src: "/images/blogs/forms/form-submission/formtest.webp",
       alt: "Test Form",
     },
     {
       type: "image",
-      src: "images/blogs/forms/form submission/smtp.webp",
+      src: "/images/blogs/forms/form-submission/smtp.webp",
       alt: "SMTP Server",
     },
 
@@ -12830,7 +12830,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/form-types.webp",
+        src: "/images/blogs/forms/forms-introduction/form-types.webp",
         alt: "AEM Form Types",
       },
 
@@ -12852,7 +12852,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/service-pack.webp",
+        src: "/images/blogs/forms/forms-introduction/service-pack.webp",
         alt: "AEM Form Types",
       },
       {
@@ -12862,7 +12862,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/form-non.webp",
+        src: "/images/blogs/forms/forms-introduction/form-non.webp",
         alt: "AEM Form is not setup",
       },
       {
@@ -12872,7 +12872,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/formmodule.webp",
+        src: "/images/blogs/forms/forms-introduction/formmodule.webp",
         alt: "AEM Form setup done",
       },
 
@@ -12903,7 +12903,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/formcreateby.webp",
+        src: "/images/blogs/forms/forms-introduction/formcreateby.webp",
         alt: "AEM Form Types",
       },
 
@@ -12951,12 +12951,12 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/conffolder.webp",
+        src: "/images/blogs/forms/forms-introduction/conffolder.webp",
         alt: "AEM Form Types",
       },
       {
         type: "image",
-        src: "images/blogs/forms/selectET.webp",
+        src: "/images/blogs/forms/forms-introduction/selectET.webp",
         alt: "AEM Form Types",
       },
 
@@ -12991,17 +12991,17 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/temp-folder.webp",
+        src: "/images/blogs/forms/forms-introduction/temp-folder.webp",
         alt: "AEM Form Types",
       },
       {
         type: "image",
-        src: "images/blogs/forms/template.webp",
+        src: "/images/blogs/forms/forms-introduction/template.webp",
         alt: "AEM Form Types",
       },
       {
         type: "image",
-        src: "images/blogs/forms/enable-temp.webp",
+        src: "/images/blogs/forms/forms-introduction/enable-temp.webp",
         alt: "AEM Form Types",
       },
 
@@ -13012,7 +13012,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/formmodule.webp",
+        src: "/images/blogs/forms/forms-introduction/formmodule.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13026,7 +13026,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/form-temp.webp",
+        src: "/images/blogs/forms/forms-introduction/form-temp.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13039,7 +13039,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/select-datamodel.webp",
+        src: "/images/blogs/forms/forms-introduction/select-datamodel.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13050,7 +13050,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/fromcreate-by.webp",
+        src: "/images/blogs/forms/forms-introduction/fromcreate-by.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13061,7 +13061,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/formlable.webp",
+        src: "/images/blogs/forms/forms-introduction/formlable.webp",
         alt: "AEM Form Types",
       },
 
@@ -13078,7 +13078,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/add-text.webp",
+        src: "/images/blogs/forms/forms-introduction/add-text.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13089,7 +13089,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/config-fields.webp",
+        src: "/images/blogs/forms/forms-introduction/config-fields.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13100,7 +13100,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/fields-in-form.webp",
+        src: "/images/blogs/forms/forms-introduction/fields-in-form.webp",
         alt: "AEM Form Types",
       },
       {
@@ -13111,7 +13111,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/Preview.webp",
+        src: "/images/blogs/forms/forms-introduction/Preview.webp",
         alt: "AEM Form Types",
       },
 
@@ -13135,7 +13135,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/form-fragment.webp",
+        src: "/images/blogs/forms/forms-introduction/form-fragment.webp",
         alt: "AEM Form Fragment",
       },
       {
@@ -13150,7 +13150,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/fromfragment.webp",
+        src: "/images/blogs/forms/forms-introduction/fromfragment.webp",
         alt: "AEM Form Fragment layout",
       },
       {
@@ -13181,7 +13181,7 @@ function handleError(error) {
       },
       {
         type: "image",
-        src: "images/blogs/forms/LogIn-form.webp",
+        src: "/images/blogs/forms/forms-introduction/LogIn-form.webp",
         alt: "AEM Form Fragment layout",
       },
       {
