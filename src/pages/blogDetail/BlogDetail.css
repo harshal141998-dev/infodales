@@ -410,3 +410,39 @@
   background-color: #4caf7d;
 }
 
+/* Bullet Lists */
+.article-bullet-list {
+  list-style-type: disc;
+}
+
+.article-bullet-list li::marker {
+  color: #31567d;
+  font-size: 14px;
+}
+
+/* Code Blocks */
+.article-code {
+  width: 100%;
+  margin: 20px 0 28px;
+}
+
+.article-code-block {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 18px 20px;
+  background: #eef3f8;
+  border: 1px solid #d9e0e7;
+  border-radius: 8px;
+  color: #23466f;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.article-code-block code {
+  font-family: "Courier New", monospace;
+  color: #23466f;
+}
