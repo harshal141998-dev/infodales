@@ -7,13 +7,19 @@ export default function ScrollTopUp() {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [bottomOffset, setBottomOffset] = useState(32);
 
-  // Automatically scroll to top on every route change
+  // Automatically scroll to top on every route change,
+  // except when returning to /blog where the user's previous scroll position is restored
   useEffect(() => {
+    const savedBlogScroll = sessionStorage.getItem("blog_scroll_pos");
+    if (pathname === "/blog" && savedBlogScroll !== null) {
+      return;
+    }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
-  // Track scroll position and calculate scroll percentage
+  // Track scroll position, calculate scroll percentage, and adjust position to avoid covering footer icons
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -31,13 +37,34 @@ export default function ScrollTopUp() {
         const progress = Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100));
         setScrollProgress(progress);
       }
+
+      // Check footer overlap: when footer enters the viewport, push button up so it never covers footer icons
+      const footer = document.querySelector("footer");
+      const baseBottom = window.innerWidth < 600 ? 24 : 32;
+
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // If the top of the footer has entered the viewport
+        if (footerRect.top < viewportHeight) {
+          const overlap = viewportHeight - footerRect.top;
+          setBottomOffset(overlap + 24);
+        } else {
+          setBottomOffset(baseBottom);
+        }
+      } else {
+        setBottomOffset(baseBottom);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -63,7 +90,7 @@ export default function ScrollTopUp() {
         className="go-to-top-btn"
         sx={{
           position: "fixed",
-          bottom: { xs: 20, sm: 30 },
+          bottom: `${bottomOffset}px`,
           right: { xs: 16, sm: 30 },
           zIndex: 9999,
           display: "flex",
@@ -78,7 +105,7 @@ export default function ScrollTopUp() {
           outline: "none",
           boxShadow: "0 10px 25px -4px rgba(14, 165, 233, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3)",
           backdropFilter: "blur(8px)",
-          transition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "bottom 0.15s ease-out, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease, box-shadow 0.25s ease",
           fontFamily: "'Plus Jakarta Sans', 'Poppins', sans-serif",
           "&:hover": {
             transform: "translateY(-3px) scale(1.02)",
