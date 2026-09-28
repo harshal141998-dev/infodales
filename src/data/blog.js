@@ -8,370 +8,370 @@ export const articles = [
     description:
       "Understand how AEM Dispatcher improves performance, caching, and security for AEM websites.",
     content: [
-    {
-      type: "paragraph",
-      text: "I hope you all are doing well. Let's begin our learning with Dispatcher in AEM.",
-    },
-
-    {
-      type: "heading",
-      level: 2,
-      text: "1. Introduction",
-    },
-
-    {
-      type: "paragraph",
-      text: "Dispatcher is an Apache HTTP Web Server. It is used for exercising the functionalities such as caching, load balancing providing and limiting access of domains and security.",
-    },
-
-    {
-      type: "paragraph",
-      text: "AEM publish instance cannot communicate with the dispatcher (web server) and so AEM module helps in the task. It conveys the requests of the dispatcher to the Publish instance and provides the response from the publish instance to the dispatcher back again.",
-    },
-
-    {
-      type: "paragraph",
-      text: "First any request coming from the client goes to Content Delivery Network (CDN), if the response is available, is returned else it goes to Dispatcher where again the response availability is checked in cache. If found it is returned else it goes to the publish instance to fetch the response of the request and travels back the same route to serve the response to the client.",
-    },
-
-    {
-      type: "paragraph",
-      text: "Here we are setting up Apache 2.2 – 32 bit and Dispatcher 4.2.1.",
-    },
-
-    {
-      type: "heading",
-      level: 2,
-      text: "2. Setup For Dispatcher",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Download the provided version.",
-        "After download, open file to install it. You will find the following dialog box, click on next.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image1.webp",
-      alt: "Dispatcher Setup",
-      width: {
-        xs: "100%",
-        sm: "90%",
-        md: "80%",
+      {
+        type: "paragraph",
+        text: "I hope you all are doing well. Let's begin our learning with Dispatcher in AEM.",
       },
-    },
 
-    {
-      type: "list",
-      items: [
-        "Accept the license and click on next and then you will find a Server Information dialog box. Add your respective network domain, server name and a working email address so that you get all the server related problems via email. Select the default port as 80 or else you can change it to 8000 for current user. Here the port is set to 80.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image2.webp",
-      alt: "Dispatcher Setup",
-      style: {
-        maxWidth: "650px",
+      {
+        type: "heading",
+        level: 2,
+        text: "1. Introduction",
       },
-    },
 
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image3.webp",
-      alt: "Dispatcher Setup",
-      style: {
-        maxWidth: "650px",
+      {
+        type: "paragraph",
+        text: "Dispatcher is an Apache HTTP Web Server. It is used for exercising the functionalities such as caching, load balancing providing and limiting access of domains and security.",
       },
-    },
 
-    {
-      type: "list",
-      items: [
-        "Click on Next, select Typical and then click on Next again and you will find the default location of installed Apache Server in your system. You can either change it or keep it same.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image4.webp",
-      alt: "Dispatcher Setup",
-      style: {
-        maxWidth: "650px",
+      {
+        type: "paragraph",
+        text: "AEM publish instance cannot communicate with the dispatcher (web server) and so AEM module helps in the task. It conveys the requests of the dispatcher to the Publish instance and provides the response from the publish instance to the dispatcher back again.",
       },
-    },
 
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image5.webp",
-      alt: "Dispatcher Setup",
-      style: {
-        maxWidth: "650px",
+      {
+        type: "paragraph",
+        text: "First any request coming from the client goes to Content Delivery Network (CDN), if the response is available, is returned else it goes to Dispatcher where again the response availability is checked in cache. If found it is returned else it goes to the publish instance to fetch the response of the request and travels back the same route to serve the response to the client.",
       },
-    },
 
-    {
-      type: "list",
-      items: [
-        "Then click on Next, the setup is almost completed, click on install. Installation takes about 5 minutes.",
-        "After installation is complete click Finish.",
-      ],
-    },
+      {
+        type: "paragraph",
+        text: "Here we are setting up Apache 2.2 – 32 bit and Dispatcher 4.2.1.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image6.webp",
-      alt: "Dispatcher Setup",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "2. Setup For Dispatcher",
+      },
 
-    {
-      type: "list",
-      items: [
-        "Now after completion of installation process we need to check whether everything is properly installed or not. Hit the URL http://localhost to find.",
-      ],
-    },
+      {
+        type: "list",
+        items: [
+          "Download the provided version.",
+          "After download, open file to install it. You will find the following dialog box, click on next.",
+        ],
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image7.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Now your dispatcher is installed and is ready to get configured. For configuration purpose you will be requiring disp_apache2.2.dll, dispatcher.any and httpd.conf files. It is recommended to get them from your workspace.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image8.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Open the Apache and find modules folder. In modules folder paste disp_apache2.2.dll file. Then in conf folder paste dispatcher.any and httpd.conf files.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image9.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "httpd.conf file is the starting point of dispatcher so here you need to add LoadModule which is a DSO (Dynamically Shared Object). You need to provide entry of disp_apache2.2.dll file.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image10.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "In httpd.conf file you find your server root and administrator's email id which you added in server information dialog box.",
-        "In IfModule provide location of dispatcher.any and also set the log level. In Directory add the handler and your httpd.conf file is ready.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image11.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image12.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "heading",
-      level: 2,
-      text: "3. Setup For Publish Instance",
-    },
-
-    {
-      type: "list",
-      items: [
-        "In order to setup Publish instance copy the jar and license of AEM to a new folder and rename the jar to publish instance jar with required port number. By default it is 4503 but here we have set it to 4506.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/starting-dispatcher.webp",
-      alt: "Dispatcher Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Then open command prompt and go to the directory where you have your jar and type java -jar cq-publish-4506.jar. This will open your publish instance with following run modes.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image14.webp",
-      alt: "Publish Instance Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Now we need to configure the port of publish instance in our author so go to author instance, then go to welcome page of author instance, find Replication options and select Agents on Author. Select Default Agent (publish) and edit.",
-        "In Transport tab you will find the url, change the port to 4506.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image15.webp",
-      alt: "Publish Instance Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Now in publish instance, upload your project, acs commons and service pack and replicate them all from package manager console.",
-        "Service pack may not get replicated from Package Manager Console properly. If so, go to Activate Tree and provide the path of your service pack in crx console and uncheck On Modify. First dry run and see if your service pack is ready to replicate and if yes, then click on Activate.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image16.webp",
-      alt: "Publish Instance Setup",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Go to Felix console of publish instance and check whether all your bundles are Active or not once and if no then resolve the remaining dependencies which completes your publish instance setup.",
-      ],
-    },
-
-    {
-      type: "heading",
-      level: 2,
-      text: "4. dispatcher.any file",
-    },
-
-    {
-      type: "list",
-      items: [
-        "dispatcher.any file determines complete behavior of your dispatcher.",
-        "It has project specific /farms files (you can have single /farms file too, there is no restriction) where each farm file configures a set of load balanced renders.",
-        "Set your publish instance as a render via setting its port and IP address.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image17.webp",
-      alt: "dispatcher.any",
-    },
-
-    {
-      type: "list",
-      items: [
-        "In /virtualhosts file we configure domains which are allowed in headers. Set your preferred domains here.",
-        "/filter section sets the paths of requests that you want your dispatcher to handle. You can enable open consoles (crx content repository, OSGI console, servlet engines), non-public content directories (/bin, /content, /home and so on) and can also deny content grabbing.",
-        "/cache section consists of a docroot file wherein the dispatcher will store files relative to this directory, decline the subsequent requests and allow the web server to deliver them as regular static content.",
-        "/statfileslevel indicates the hierarchy up to which a .stat file gets created that checks the time of cache in the dispatcher and that of replication in publish environment. If time of modification in publish environment is greater than that of the cache then it means there is an updated version available and this will delete the previously generated cache and allow the entry of new cache in the provided level.",
-        "In /rules section of /cache we have to specify how caching should happen according to the url generated. You can have your own rule sets.",
-      ],
-    },
-
-    {
-      type: "image",
-      src: "/images/blogs/dispatcher/setup_image18.webp",
-      alt: "dispatcher.any",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Within the cache section we have /invalidate wherein we define which request needs to be available for dispatcher flushing after activation. You can set the dispatcher flush agent on both Author as well as on Publish but prefer setting it on publish because author is a development environment and modifications are tend to happen whereas publish is a read-only environment where unusual modifications happen only via publishing the pages by author instance.",
-        "Set the clients which can activate the content in /allowedClients section by providing the IP address and setting the /type “allow”.",
-        "/ignoreUrlParams section allows you to ignore query parameters passed in the url while caching the response.",
-        "Finally you can enable /auth_checker to check the whether the cached page which is requested for delivery matches its header with that of the one which is allowed via /filters by internally passing ‘?uri=’ parameter. If the status code becomes 200 then only the page is sent out for the delivery.",
-      ],
-    },
-
-    {
-      type: "heading",
-      level: 2,
-      text: "5. Publishing The Content And Checking On Dispatcher",
-    },
-
-    {
-      type: "list",
-      items: [
-        "Simply go to your author instance and select the page that you want to publish and hit Quick Publish.",
-        "Then go to your publish instance and check whether your published page is visible or not.",
-        "Go to your dispatcher and type http://localhost/ complete path of your page and done.",
-      ],
-    },
-
-    {
-      type: "heading",
-      level: 2,
-      text: "6. Errors And Possible Solutions",
-    },
-
-    {
-      type: "list",
-      items: [
-        {
-          title: "Service pack is not getting uploaded",
-          text: "replicate it in package manager and then use Activation tree from author instance to achieve the same.",
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image1.webp",
+        alt: "Dispatcher Setup",
+        width: {
+          xs: "100%",
+          sm: "90%",
+          md: "80%",
         },
-        {
-          title: "Bundle is not getting uploaded",
-          text: "Try force upload of snapshot of your project from packageManager(zip) or upload extracted snapshot from Felix console (do not forget to check start bundle) or (least recommended) change the port of your project’s pom.xml file to 4506 from 4503 and do single package.",
-        },
-        {
-          title: "Socket Error",
-          text: "Recheck your IP address in Allowed Clients section.",
-        },
-        {
-          title: "Null Pointer Exception",
-          text: "Agents on Author, Publish Queue might not be idle.",
-        },
-        {
-          title: "Problem in triggering the jar of publish instance",
-          text: "rename the quickstart file to crx-quickstart-old. Abort the starting process of from command prompt and rerun java -jar cq-publish-4506.jar. You will find a new quickstart file now which gets generated with respective script.",
-        },
-      ],
-    },
+      },
 
-    {
-      type: "paragraph",
-      text: "I hope you find this blog informative, please share and for more blogs please surf our website.",
-    },
+      {
+        type: "list",
+        items: [
+          "Accept the license and click on next and then you will find a Server Information dialog box. Add your respective network domain, server name and a working email address so that you get all the server related problems via email. Select the default port as 80 or else you can change it to 8000 for current user. Here the port is set to 80.",
+        ],
+      },
 
-    {
-      type: "paragraph",
-      text: "Thank you",
-    },
-  ],
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image2.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image3.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "list",
+        items: [
+          "Click on Next, select Typical and then click on Next again and you will find the default location of installed Apache Server in your system. You can either change it or keep it same.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image4.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image5.webp",
+        alt: "Dispatcher Setup",
+        style: {
+          maxWidth: "650px",
+        },
+      },
+
+      {
+        type: "list",
+        items: [
+          "Then click on Next, the setup is almost completed, click on install. Installation takes about 5 minutes.",
+          "After installation is complete click Finish.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image6.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now after completion of installation process we need to check whether everything is properly installed or not. Hit the URL http://localhost to find.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image7.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now your dispatcher is installed and is ready to get configured. For configuration purpose you will be requiring disp_apache2.2.dll, dispatcher.any and httpd.conf files. It is recommended to get them from your workspace.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image8.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Open the Apache and find modules folder. In modules folder paste disp_apache2.2.dll file. Then in conf folder paste dispatcher.any and httpd.conf files.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image9.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "httpd.conf file is the starting point of dispatcher so here you need to add LoadModule which is a DSO (Dynamically Shared Object). You need to provide entry of disp_apache2.2.dll file.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image10.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "In httpd.conf file you find your server root and administrator's email id which you added in server information dialog box.",
+          "In IfModule provide location of dispatcher.any and also set the log level. In Directory add the handler and your httpd.conf file is ready.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image11.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image12.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "3. Setup For Publish Instance",
+      },
+
+      {
+        type: "list",
+        items: [
+          "In order to setup Publish instance copy the jar and license of AEM to a new folder and rename the jar to publish instance jar with required port number. By default it is 4503 but here we have set it to 4506.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/starting-dispatcher.webp",
+        alt: "Dispatcher Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Then open command prompt and go to the directory where you have your jar and type java -jar cq-publish-4506.jar. This will open your publish instance with following run modes.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image14.webp",
+        alt: "Publish Instance Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now we need to configure the port of publish instance in our author so go to author instance, then go to welcome page of author instance, find Replication options and select Agents on Author. Select Default Agent (publish) and edit.",
+          "In Transport tab you will find the url, change the port to 4506.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image15.webp",
+        alt: "Publish Instance Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Now in publish instance, upload your project, acs commons and service pack and replicate them all from package manager console.",
+          "Service pack may not get replicated from Package Manager Console properly. If so, go to Activate Tree and provide the path of your service pack in crx console and uncheck On Modify. First dry run and see if your service pack is ready to replicate and if yes, then click on Activate.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image16.webp",
+        alt: "Publish Instance Setup",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Go to Felix console of publish instance and check whether all your bundles are Active or not once and if no then resolve the remaining dependencies which completes your publish instance setup.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "4. dispatcher.any file",
+      },
+
+      {
+        type: "list",
+        items: [
+          "dispatcher.any file determines complete behavior of your dispatcher.",
+          "It has project specific /farms files (you can have single /farms file too, there is no restriction) where each farm file configures a set of load balanced renders.",
+          "Set your publish instance as a render via setting its port and IP address.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image17.webp",
+        alt: "dispatcher.any",
+      },
+
+      {
+        type: "list",
+        items: [
+          "In /virtualhosts file we configure domains which are allowed in headers. Set your preferred domains here.",
+          "/filter section sets the paths of requests that you want your dispatcher to handle. You can enable open consoles (crx content repository, OSGI console, servlet engines), non-public content directories (/bin, /content, /home and so on) and can also deny content grabbing.",
+          "/cache section consists of a docroot file wherein the dispatcher will store files relative to this directory, decline the subsequent requests and allow the web server to deliver them as regular static content.",
+          "/statfileslevel indicates the hierarchy up to which a .stat file gets created that checks the time of cache in the dispatcher and that of replication in publish environment. If time of modification in publish environment is greater than that of the cache then it means there is an updated version available and this will delete the previously generated cache and allow the entry of new cache in the provided level.",
+          "In /rules section of /cache we have to specify how caching should happen according to the url generated. You can have your own rule sets.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/dispatcher/setup_image18.webp",
+        alt: "dispatcher.any",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Within the cache section we have /invalidate wherein we define which request needs to be available for dispatcher flushing after activation. You can set the dispatcher flush agent on both Author as well as on Publish but prefer setting it on publish because author is a development environment and modifications are tend to happen whereas publish is a read-only environment where unusual modifications happen only via publishing the pages by author instance.",
+          "Set the clients which can activate the content in /allowedClients section by providing the IP address and setting the /type “allow”.",
+          "/ignoreUrlParams section allows you to ignore query parameters passed in the url while caching the response.",
+          "Finally you can enable /auth_checker to check the whether the cached page which is requested for delivery matches its header with that of the one which is allowed via /filters by internally passing ‘?uri=’ parameter. If the status code becomes 200 then only the page is sent out for the delivery.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "5. Publishing The Content And Checking On Dispatcher",
+      },
+
+      {
+        type: "list",
+        items: [
+          "Simply go to your author instance and select the page that you want to publish and hit Quick Publish.",
+          "Then go to your publish instance and check whether your published page is visible or not.",
+          "Go to your dispatcher and type http://localhost/ complete path of your page and done.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "6. Errors And Possible Solutions",
+      },
+
+      {
+        type: "list",
+        items: [
+          {
+            title: "Service pack is not getting uploaded",
+            text: "replicate it in package manager and then use Activation tree from author instance to achieve the same.",
+          },
+          {
+            title: "Bundle is not getting uploaded",
+            text: "Try force upload of snapshot of your project from packageManager(zip) or upload extracted snapshot from Felix console (do not forget to check start bundle) or (least recommended) change the port of your project’s pom.xml file to 4506 from 4503 and do single package.",
+          },
+          {
+            title: "Socket Error",
+            text: "Recheck your IP address in Allowed Clients section.",
+          },
+          {
+            title: "Null Pointer Exception",
+            text: "Agents on Author, Publish Queue might not be idle.",
+          },
+          {
+            title: "Problem in triggering the jar of publish instance",
+            text: "rename the quickstart file to crx-quickstart-old. Abort the starting process of from command prompt and rerun java -jar cq-publish-4506.jar. You will find a new quickstart file now which gets generated with respective script.",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "I hope you find this blog informative, please share and for more blogs please surf our website.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Thank you",
+      },
+    ],
   },
   {
     slug: "aemcaas-dispatcher",
@@ -869,57 +869,57 @@ $include "../clientheaders/default_clientheaders.any"`,
     description:
       "Discover how AEM components are mapped to frontend components in an AEM SPA implementation.",
     content: [
-    {
-      type: "paragraph",
-      text: "The basic concept is to map the AEM component to React component. Basically, the AEM Component runs at the server side and exports the content in the form of JSON Model API, so that the JSON file, for example en.model.json, is consumed by our React Component running at the client side in the browser. We'll know more about the following concept with the help of the following diagram.",
-    },
+      {
+        type: "paragraph",
+        text: "The basic concept is to map the AEM component to React component. Basically, the AEM Component runs at the server side and exports the content in the form of JSON Model API, so that the JSON file, for example en.model.json, is consumed by our React Component running at the client side in the browser. We'll know more about the following concept with the help of the following diagram.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/flowchart.webp",
-      alt: "AEM Flowchart",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/flowchart.webp",
+        alt: "AEM Flowchart",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Steps to map AEM component to React component",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to map AEM component to React component",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Create an AEM component",
-          text: "Create an AEM component by right clicking on the components folder under the wknd-spa-react project and selecting Create Component. Add the label, title and component group to the component and create it.",
-        },
-        {
-          title: "Create the dialog",
-          text: "Let's consider 'test' as our component in the wknd-spa-react project and its path will be wknd-spa-react/components/test. Create the dialog box through which the author can author the fields.",
-        },
-        {
-          title: "Create a Sling Model",
-          text: "Create a Sling Model so that you can map the authored values with the backend. Add adaptables, adapters and resourceType to the @Model annotation. Inherit the ComponentExporter interface to the service implementation class, and override the getExportedType() method which returns the resourceType of the component.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create an AEM component",
+            text: "Create an AEM component by right clicking on the components folder under the wknd-spa-react project and selecting Create Component. Add the label, title and component group to the component and create it.",
+          },
+          {
+            title: "Create the dialog",
+            text: "Let's consider 'test' as our component in the wknd-spa-react project and its path will be wknd-spa-react/components/test. Create the dialog box through which the author can author the fields.",
+          },
+          {
+            title: "Create a Sling Model",
+            text: "Create a Sling Model so that you can map the authored values with the backend. Add adaptables, adapters and resourceType to the @Model annotation. Inherit the ComponentExporter interface to the service implementation class, and override the getExportedType() method which returns the resourceType of the component.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/createaemcomponent.webp",
-      alt: "Creating AEM Component",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/createaemcomponent.webp",
+        alt: "Creating AEM Component",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/testcomponent.webp",
-      alt: "Test Component Image",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/testcomponent.webp",
+        alt: "Test Component Image",
+      },
 
-    {
-      type: "code",
-      language: "java",
-      code: `package com.adobe.aem.guides.wknd.spa.react.core.models.impl;
+      {
+        type: "code",
+        language: "java",
+        code: `package com.adobe.aem.guides.wknd.spa.react.core.models.impl;
 
 import com.adobe.aem.guides.wknd.spa.react.core.models.Test;
 import com.adobe.cq.export.json.ComponentExporter;
@@ -958,50 +958,50 @@ public class TestModelImpl implements Test {
         return TestModelImpl.RESOURCE_TYPE;
     }
 }`,
-    },
+      },
 
-    {
-      type: "paragraph",
-      text: "It is mandatory to implement ComponentExporter as it is used to export the content of our component in JSON format.",
-    },
+      {
+        type: "paragraph",
+        text: "It is mandatory to implement ComponentExporter as it is used to export the content of our component in JSON format.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/GetExporterType Method.webp",
-      alt: "Component Exporter Method",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/GetExporterType Method.webp",
+        alt: "Component Exporter Method",
+      },
 
-    {
-      type: "paragraph",
-      text: "On hitting test.model.json you will find the response in JSON format.",
-    },
+      {
+        type: "paragraph",
+        text: "On hitting test.model.json you will find the response in JSON format.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/jsonfile.webp",
-      alt: "en.model.json URL Image",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/jsonfile.webp",
+        alt: "en.model.json URL Image",
+      },
 
-    {
-      type: "paragraph",
-      text: "In the ui.frontend folder/src, right click on the components folder and create a Test.js file. Import React and MapTo from the react and @adobe/aem-react-editable-components libraries.",
-    },
+      {
+        type: "paragraph",
+        text: "In the ui.frontend folder/src, right click on the components folder and create a Test.js file. Import React and MapTo from the react and @adobe/aem-react-editable-components libraries.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/reactcomponent.webp",
-      alt: "Creating React Component",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/reactcomponent.webp",
+        alt: "Creating React Component",
+      },
 
-    {
-      type: "paragraph",
-      text: "Create a class component and write a JSX script in the render() method. At last, add the MapTo() function and export the class using the AEM component resource type.",
-    },
+      {
+        type: "paragraph",
+        text: "Create a class component and write a JSX script in the render() method. At last, add the MapTo() function and export the class using the AEM component resource type.",
+      },
 
-    {
-      type: "code",
-      language: "javascript",
-      code: `import React, { Component } from "react";
+      {
+        type: "code",
+        language: "javascript",
+        code: `import React, { Component } from "react";
 import { MapTo } from "@adobe/aem-react-editable-components";
 
 export const TestEditConfig = {
@@ -1026,84 +1026,84 @@ export default class Test extends Component {
 }
 
 MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
-    },
+      },
 
-    {
-      type: "paragraph",
-      text: "With MapTo() you can map your React component to the Sling Model using the resourceType.",
-    },
+      {
+        type: "paragraph",
+        text: "With MapTo() you can map your React component to the Sling Model using the resourceType.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/maptomethod.webp",
-      alt: "Map To Method Image",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/maptomethod.webp",
+        alt: "Map To Method Image",
+      },
 
-    {
-      type: "paragraph",
-      text: "Import your React component in the import-component.js file and similarly import your import-component.js file in index.js.",
-    },
+      {
+        type: "paragraph",
+        text: "Import your React component in the import-component.js file and similarly import your import-component.js file in index.js.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/importreactcomponent.webp",
-      alt: "Import Component.js Image",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/importreactcomponent.webp",
+        alt: "Import Component.js Image",
+      },
 
-    {
-      type: "paragraph",
-      text: "MapTo() will look for the Sling Model registered with the same resource type that we have passed in MapTo().",
-    },
+      {
+        type: "paragraph",
+        text: "MapTo() will look for the Sling Model registered with the same resource type that we have passed in MapTo().",
+      },
 
-    {
-      type: "paragraph",
-      text: "Build the ui.frontend folder with $ mvn clean install -PautoInstallPackage. Search for your component and you will find the minified form of JavaScript in the ui.apps folder.",
-    },
+      {
+        type: "paragraph",
+        text: "Build the ui.frontend folder with $ mvn clean install -PautoInstallPackage. Search for your component and you will find the minified form of JavaScript in the ui.apps folder.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/minifiedjs.webp",
-      alt: "Minified JS Image",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/minifiedjs.webp",
+        alt: "Minified JS Image",
+      },
 
-    {
-      type: "paragraph",
-      text: "Deploy the SPA code to AEM using Maven: $ mvn clean install -PautoInstallSinglePackage.",
-    },
+      {
+        type: "paragraph",
+        text: "Deploy the SPA code to AEM using Maven: $ mvn clean install -PautoInstallSinglePackage.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Open AEM, select Sites from Navigation, click on the Create button and select Page. Choose the template, add a title to the page and click Done.",
-    },
+      {
+        type: "paragraph",
+        text: "Open AEM, select Sites from Navigation, click on the Create button and select Page. Choose the template, add a title to the page and click Done.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/createaempage.webp",
-      alt: "Creating AEM Page",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/createaempage.webp",
+        alt: "Creating AEM Page",
+      },
 
-    {
-      type: "paragraph",
-      text: "Add the 'test' component, author it and you will find the data rendered on your page.",
-    },
+      {
+        type: "paragraph",
+        text: "Add the 'test' component, author it and you will find the data rendered on your page.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/Add component on page.webp",
-      alt: "Adding Component To Page",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/Add component on page.webp",
+        alt: "Adding Component To Page",
+      },
 
-    {
-      type: "paragraph",
-      text: "Click on Preview and inspect your page. In the Network tab you will find en.model.json. The Layout Container has a sling:resourceType of your component and is recognized by the SPA Editor using the :type property, just like the Text and Image components.",
-    },
+      {
+        type: "paragraph",
+        text: "Click on Preview and inspect your page. In the Network tab you will find en.model.json. The Layout Container has a sling:resourceType of your component and is recognized by the SPA Editor using the :type property, just like the Text and Image components.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/spa-component-mapping/responsivegrid.webp",
-      alt: "Inspect test.model.json Image",
-    },
-  ],
+      {
+        type: "image",
+        src: "/images/blogs/spa/spa-component-mapping/responsivegrid.webp",
+        alt: "Inspect test.model.json Image",
+      },
+    ],
   },
   {
     slug: "spa-getting-started",
@@ -1114,420 +1114,420 @@ MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
     description:
       "Explore the fundamentals of AEM SPA Editor and how to build single-page applications with AEM.",
     content: [
-    {
-      type: "paragraph",
-      text: "Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog.",
-    },
+      {
+        type: "paragraph",
+        text: "Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Firstly we'll look into the approaches that we have with us to build a web application.",
-    },
+      {
+        type: "paragraph",
+        text: "Firstly we'll look into the approaches that we have with us to build a web application.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Approaches",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Approaches",
+      },
 
-    {
-      type: "list",
-      items: [
-        {
-          title: "Traditional Approach ( Client - Server )",
-          text: "In traditional approach, the client makes a request of a page to the server and the server will return the HTML i.e., the content, and when the client needs another page, he makes another request to the server and the server will return the different responses for the specified content.",
-        },
-        {
-          title: "Single Page Application (SPA)",
-          text: "In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it's moving from page to page, it doesn't make any request to the server and all the content is present at the client side only.",
-        },
-      ],
-    },
+      {
+        type: "list",
+        items: [
+          {
+            title: "Traditional Approach ( Client - Server )",
+            text: "In traditional approach, the client makes a request of a page to the server and the server will return the HTML i.e., the content, and when the client needs another page, he makes another request to the server and the server will return the different responses for the specified content.",
+          },
+          {
+            title: "Single Page Application (SPA)",
+            text: "In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it's moving from page to page, it doesn't make any request to the server and all the content is present at the client side only.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 1.webp",
-      alt: "traditional approach",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 1.webp",
+        alt: "traditional approach",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 2.webp",
-      alt: "SPA approach",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 2.webp",
+        alt: "SPA approach",
+      },
 
-    {
-      type: "paragraph",
-      text: "If a client makes some request which is not present at the client side, in that case the client will make the request to the server for the specific content and the server will return the content in the form of Json.",
-    },
+      {
+        type: "paragraph",
+        text: "If a client makes some request which is not present at the client side, in that case the client will make the request to the server for the specific content and the server will return the content in the form of Json.",
+      },
 
-    {
-      type: "paragraph",
-      text: "With SPA, the initial request is a bit slow as the server tries to dump the content as much as possible as per the SPA configurations, but the subsequent request is faster as the client serves the content from the client side only and not the server side.",
-    },
+      {
+        type: "paragraph",
+        text: "With SPA, the initial request is a bit slow as the server tries to dump the content as much as possible as per the SPA configurations, but the subsequent request is faster as the client serves the content from the client side only and not the server side.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "What is SPA?",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "What is SPA?",
+      },
 
-    {
-      type: "paragraph",
-      text: "SPA stands for Single Page Application. It is a web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. In a traditional multi-page application, when you navigate from one page to another, the browser requests a new page from the server, and the entire page is reloaded.",
-    },
+      {
+        type: "paragraph",
+        text: "SPA stands for Single Page Application. It is a web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. In a traditional multi-page application, when you navigate from one page to another, the browser requests a new page from the server, and the entire page is reloaded.",
+      },
 
-    {
-      type: "paragraph",
-      text: "In contrast, a Single Page Application loads a single HTML page and dynamically updates it's content as the user interacts with the application. This is often achieved using JavaScript frameworks or libraries such as Angular, React, or Vue.js. SPAs provide a smoother and more seamless user experience because they can update specific parts of the page without requiring a full page reload.",
-    },
+      {
+        type: "paragraph",
+        text: "In contrast, a Single Page Application loads a single HTML page and dynamically updates it's content as the user interacts with the application. This is often achieved using JavaScript frameworks or libraries such as Angular, React, or Vue.js. SPAs provide a smoother and more seamless user experience because they can update specific parts of the page without requiring a full page reload.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Why SPA?",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Why SPA?",
+      },
 
-    {
-      type: "paragraph",
-      text: "Single Page Applications (SPAs) are favored for several reasons, and their adoption is driven by the desire to enhance user experiences and streamline web development. Here are some key reasons why SPAs are often preferred:",
-    },
+      {
+        type: "paragraph",
+        text: "Single Page Applications (SPAs) are favored for several reasons, and their adoption is driven by the desire to enhance user experiences and streamline web development. Here are some key reasons why SPAs are often preferred:",
+      },
 
-    {
-      type: "list",
-      items: [
-        {
-          title: "Seamless User Experience",
-          text: "SPAs provide a smoother and more seamless user experience by dynamically updating content without the need for full page reloads. This leads to faster response times and a more fluid interaction, creating a more engaging and enjoyable user interface.",
-        },
-        {
-          title: "Reduced Loading Time",
-          text: "Traditional multi-page applications often involve reloading the entire page, resulting in longer loading times. SPAs, on the other hand, load initial resources upfront and fetch additional data asynchronously, reducing latency and making the application feel more responsive.",
-        },
-        {
-          title: "Asynchronous Data Loading",
-          text: "SPAs leverage asynchronous data loading, often using AJAX or similar techniques. This allows for fetching data in the background, updating the content without requiring a complete page refresh. It contributes to a dynamic and interactive user experience.",
-        },
-        {
-          title: "Efficient Resource Utilization",
-          text: "SPAs can be more resource-efficient as they load resources, such as scripts and stylesheets, only once during the initial page load. Subsequent interactions with the application involve fetching only the necessary data, minimizing redundant requests to the server.",
-        },
-        {
-          title: "Client-Side Routing",
-          text: "SPAs handle navigation on the client side, updating the URL and rendering content dynamically. This reduces the need for server requests during navigation, contributing to a more responsive and fluid application.",
-        },
-        {
-          title: "Mobile Responsiveness",
-          text: "SPAs are well-suited for mobile devices due to their ability to load content dynamically and provide a responsive user interface. This is crucial in the current era where a significant portion of web traffic comes from mobile devices.",
-        },
-        {
-          title: "Support for Offline Mode",
-          text: "Some SPAs can incorporate service workers and caching strategies, enabling them to function partially or entirely offline. This is particularly beneficial for users with intermittent internet connectivity.",
-        },
-      ],
-    },
+      {
+        type: "list",
+        items: [
+          {
+            title: "Seamless User Experience",
+            text: "SPAs provide a smoother and more seamless user experience by dynamically updating content without the need for full page reloads. This leads to faster response times and a more fluid interaction, creating a more engaging and enjoyable user interface.",
+          },
+          {
+            title: "Reduced Loading Time",
+            text: "Traditional multi-page applications often involve reloading the entire page, resulting in longer loading times. SPAs, on the other hand, load initial resources upfront and fetch additional data asynchronously, reducing latency and making the application feel more responsive.",
+          },
+          {
+            title: "Asynchronous Data Loading",
+            text: "SPAs leverage asynchronous data loading, often using AJAX or similar techniques. This allows for fetching data in the background, updating the content without requiring a complete page refresh. It contributes to a dynamic and interactive user experience.",
+          },
+          {
+            title: "Efficient Resource Utilization",
+            text: "SPAs can be more resource-efficient as they load resources, such as scripts and stylesheets, only once during the initial page load. Subsequent interactions with the application involve fetching only the necessary data, minimizing redundant requests to the server.",
+          },
+          {
+            title: "Client-Side Routing",
+            text: "SPAs handle navigation on the client side, updating the URL and rendering content dynamically. This reduces the need for server requests during navigation, contributing to a more responsive and fluid application.",
+          },
+          {
+            title: "Mobile Responsiveness",
+            text: "SPAs are well-suited for mobile devices due to their ability to load content dynamically and provide a responsive user interface. This is crucial in the current era where a significant portion of web traffic comes from mobile devices.",
+          },
+          {
+            title: "Support for Offline Mode",
+            text: "Some SPAs can incorporate service workers and caching strategies, enabling them to function partially or entirely offline. This is particularly beneficial for users with intermittent internet connectivity.",
+          },
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Why SPA with AEM?",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Why SPA with AEM?",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 3.webp",
-      alt: "SPA with AEM",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 3.webp",
+        alt: "SPA with AEM",
+      },
 
-    {
-      type: "paragraph",
-      text: "Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.",
-    },
+      {
+        type: "paragraph",
+        text: "Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "How can we implement SPA in AEM?",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "How can we implement SPA in AEM?",
+      },
 
-    {
-      type: "paragraph",
-      text: "There are basically four technologies/frameworks to develop SPA:",
-    },
+      {
+        type: "paragraph",
+        text: "There are basically four technologies/frameworks to develop SPA:",
+      },
 
-    {
-      type: "list",
-      items: [
-        "React JS",
-        "Angular JS",
-        "Vue JS",
-        "Handlebar & Ember",
-      ],
-    },
+      {
+        type: "list",
+        items: [
+          "React JS",
+          "Angular JS",
+          "Vue JS",
+          "Handlebar & Ember",
+        ],
+      },
 
-    {
-      type: "paragraph",
-      text: "We would be working with React js to develop an AEM SPA application.",
-    },
+      {
+        type: "paragraph",
+        text: "We would be working with React js to develop an AEM SPA application.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Creating an AEM SPA Project",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Creating an AEM SPA Project",
+      },
 
-    {
-      type: "paragraph",
-      text: "Note: Ensure that a fresh instance of AEM, started in Author mode, is running locally.",
-    },
+      {
+        type: "paragraph",
+        text: "Note: Ensure that a fresh instance of AEM, started in Author mode, is running locally.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Create the project:",
-    },
+      {
+        type: "paragraph",
+        text: "Create the project:",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        "Open the command line terminal and enter the following maven command.",
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          "Open the command line terminal and enter the following maven command.",
+        ],
+      },
 
-    {
-      type: "code",
-      language: "bash",
-      code: `mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
+      {
+        type: "code",
+        language: "bash",
+        code: `mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
 archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D
 archetypeVersion=35 -D appTitle="SPA React" -D appId="spa-react" -D
 artifactId="aem-spa.react" -D groupId="com.adobe.aem.spa.react" -D
 frontendModule="react" -D aemVersion=6.5.0`,
-    },
+      },
 
-    {
-      type: "paragraph",
-      text: "[ Replace the AEM version accordingly ]",
-    },
+      {
+        type: "paragraph",
+        text: "[ Replace the AEM version accordingly ]",
+      },
 
-    {
-      type: "paragraph",
-      text: "The following folder and file structure is generated by the maven archetype on our local file system & each folder represents an individual Maven module.",
-    },
+      {
+        type: "paragraph",
+        text: "The following folder and file structure is generated by the maven archetype on our local file system & each folder represents an individual Maven module.",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/SPA Folder structure.webp",
-      alt: "SPA folder structure",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/SPA Folder structure.webp",
+        alt: "SPA folder structure",
+      },
 
-    {
-      type: "paragraph",
-      text: "We will primarily be working with the ui.frontend module, which is the React app.",
-    },
+      {
+        type: "paragraph",
+        text: "We will primarily be working with the ui.frontend module, which is the React app.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Deploy and build the project using the following command:",
-    },
+      {
+        type: "paragraph",
+        text: "Deploy and build the project using the following command:",
+      },
 
-    {
-      type: "code",
-      language: "bash",
-      code: "mvn clean install -PautoInstallSinglePackage",
-    },
+      {
+        type: "code",
+        language: "bash",
+        code: "mvn clean install -PautoInstallSinglePackage",
+      },
 
-    {
-      type: "paragraph",
-      text: "The build will take around a minute and should end with the BUILD SUCCESS message.",
-    },
+      {
+        type: "paragraph",
+        text: "The build will take around a minute and should end with the BUILD SUCCESS message.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Ui.Frontend Module",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Ui.Frontend Module",
+      },
 
-    {
-      type: "paragraph",
-      text: "Ui.frontend module has the following folder structure",
-    },
+      {
+        type: "paragraph",
+        text: "Ui.frontend module has the following folder structure",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/UI Frontend FS.webp",
-      alt: "UI frontend folder structure",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/UI Frontend FS.webp",
+        alt: "UI frontend folder structure",
+      },
 
-    {
-      type: "paragraph",
-      text: "There are few important files that we should know in this structure i.e., .env.development, package.json & clientlib.config.js",
-    },
+      {
+        type: "paragraph",
+        text: "There are few important files that we should know in this structure i.e., .env.development, package.json & clientlib.config.js",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: ".env.development",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: ".env.development",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/env.webp",
-      alt: "env development",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/env.webp",
+        alt: "env development",
+      },
 
-    {
-      type: "paragraph",
-      text: "This file contains the path of the JSON API which is consumed by the react app to display the content on the frontend module and also the root path of the frontend module.",
-    },
+      {
+        type: "paragraph",
+        text: "This file contains the path of the JSON API which is consumed by the react app to display the content on the frontend module and also the root path of the frontend module.",
+      },
 
-    {
-      type: "paragraph",
-      text: "We can provide the content to the frontend in two ways:",
-    },
+      {
+        type: "paragraph",
+        text: "We can provide the content to the frontend in two ways:",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "via AEM",
-          text: "We need to provide the proxy path to the AEM which is added in the package.json file.",
-        },
-        {
-          title: "via static mock file",
-          text: "The static mock json file is added under the public folder.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "via AEM",
+            text: "We need to provide the proxy path to the AEM which is added in the package.json file.",
+          },
+          {
+            title: "via static mock file",
+            text: "The static mock json file is added under the public folder.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/proxy path.webp",
-      alt: "proxy path",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/proxy path.webp",
+        alt: "proxy path",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/mock file path.webp",
-      alt: "mock file path",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/mock file path.webp",
+        alt: "mock file path",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "package.json",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "package.json",
+      },
 
-    {
-      type: "paragraph",
-      text: "This file consists of all the dependencies and the scripts required for the frontend module.",
-    },
+      {
+        type: "paragraph",
+        text: "This file consists of all the dependencies and the scripts required for the frontend module.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "clientlib.config.js",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "clientlib.config.js",
+      },
 
-    {
-      type: "paragraph",
-      text: "This file has the configuration for the clientlib generator, i.e., the clientlibs are generated in this file.",
-    },
+      {
+        type: "paragraph",
+        text: "This file has the configuration for the clientlib generator, i.e., the clientlibs are generated in this file.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "src folder",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "src folder",
+      },
 
-    {
-      type: "paragraph",
-      text: "All the React components, images and styles are kept in this folder",
-    },
+      {
+        type: "paragraph",
+        text: "All the React components, images and styles are kept in this folder",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/src folder.webp",
-      alt: "src folder",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/src folder.webp",
+        alt: "src folder",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "How to create an SPA component?",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "How to create an SPA component?",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 4.webp",
-      alt: "SPA component creation",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 4.webp",
+        alt: "SPA component creation",
+      },
 
-    {
-      type: "paragraph",
-      text: "In normal cases, AEM components render at server side, but SPA components should be rendered at client side as per the concept. So we'll be creating a React component and then we'll map the AEM component to the React component.",
-    },
+      {
+        type: "paragraph",
+        text: "In normal cases, AEM components render at server side, but SPA components should be rendered at client side as per the concept. So we'll be creating a React component and then we'll map the AEM component to the React component.",
+      },
 
-    {
-      type: "paragraph",
-      text: "The AEM component will not be having any rendering script, it will only have the dialog and the SPA component will have the rendering logic and this SPA component will get content from the AEM repository in the form of Json, and this complete client side application will be deployed in AEM in the form of client libraries.",
-    },
+      {
+        type: "paragraph",
+        text: "The AEM component will not be having any rendering script, it will only have the dialog and the SPA component will have the rendering logic and this SPA component will get content from the AEM repository in the form of Json, and this complete client side application will be deployed in AEM in the form of client libraries.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Our SPA component should have the capability of authoring as well, as per the AEM basic principles. So, for authoring, the SPA development framework provides an SPA editor.",
-    },
+      {
+        type: "paragraph",
+        text: "Our SPA component should have the capability of authoring as well, as per the AEM basic principles. So, for authoring, the SPA development framework provides an SPA editor.",
+      },
 
-    {
-      type: "paragraph",
-      text: "SPA Editor: It adds the capability of authoring to the SPA component.",
-    },
+      {
+        type: "paragraph",
+        text: "SPA Editor: It adds the capability of authoring to the SPA component.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e, AEM component and React component and when we combine these two it makes a complete SPA component",
-    },
+      {
+        type: "paragraph",
+        text: "Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e, AEM component and React component and when we combine these two it makes a complete SPA component",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 5.webp",
-      alt: "SPA component",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 5.webp",
+        alt: "SPA component",
+      },
 
-    {
-      type: "paragraph",
-      text: "These two sections have different responsibilities:",
-    },
+      {
+        type: "paragraph",
+        text: "These two sections have different responsibilities:",
+      },
 
-    {
-      type: "paragraph",
-      text: "AEM component is used to create dialog and sling model (used for content exporter) and the React component is used for rendering and the content for rendering is provided by the sling model in the form of json.",
-    },
+      {
+        type: "paragraph",
+        text: "AEM component is used to create dialog and sling model (used for content exporter) and the React component is used for rendering and the content for rendering is provided by the sling model in the form of json.",
+      },
 
-    {
-      type: "paragraph",
-      text: "But these two sections must be mapped as AEM component is at server side and React component is at client side. So, now the SPA framework comes into picture i.e., the React framework as it provides the functionality to map the AEM component to the React component.",
-    },
+      {
+        type: "paragraph",
+        text: "But these two sections must be mapped as AEM component is at server side and React component is at client side. So, now the SPA framework comes into picture i.e., the React framework as it provides the functionality to map the AEM component to the React component.",
+      },
 
-    {
-      type: "paragraph",
-      text: "So, once we have a React component and an AEM component, we map both the components using MapTo() functionality which has two sections, the first section has the resource type of the AEM component & the other section is for the React component",
-    },
+      {
+        type: "paragraph",
+        text: "So, once we have a React component and an AEM component, we map both the components using MapTo() functionality which has two sections, the first section has the resource type of the AEM component & the other section is for the React component",
+      },
 
-    {
-      type: "image",
-      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 6.webp",
-      alt: "SPA component mapping",
-    },
+      {
+        type: "image",
+        src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 6.webp",
+        alt: "SPA component mapping",
+      },
 
-    {
-      type: "paragraph",
-      text: "Hope you all understood the basic concept of AEM SPA. In the next blog, we'll look into how to create AEM components and React components and implement the mapping and rendering of the SPA components on the page.",
-    },
+      {
+        type: "paragraph",
+        text: "Hope you all understood the basic concept of AEM SPA. In the next blog, we'll look into how to create AEM components and React components and implement the mapping and rendering of the SPA components on the page.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Thanks for reading! 😁",
-    },
-  ],
+      {
+        type: "paragraph",
+        text: "Thanks for reading! 😁",
+      },
+    ],
   },
   {
     slug: "sidekick-customization",
@@ -3472,7 +3472,179 @@ git push origin feature/hero-banner-block`,
     author: "Infodales",
     description:
       "Understand how indexing works in Edge Delivery Services to make website content discoverable.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Indexing?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Indexing is the process of organizing data in a way that makes it faster and more efficient to search, retrieve, and access specific information. In the context of databases, search engines, or content management systems like Adobe Experience Manager (AEM), indexing involves creating a structured data representation that allows queries to execute more quickly.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM EDS, the index is kept in a spreadsheet and can be accessed using JSON. You can index the entire site, index a specific section of your website, or choose which properties you want to index from a page. You can also index a particular section from a page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Perform Indexing",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the query-index file",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create an Excel file with the name \"query-index.xlsx\" in the root folder of your project.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/query-index-file.webp",
+        alt: "query-index.xlsx file in the project root folder",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the raw_index sheet",
+      },
+
+      {
+        type: "paragraph",
+        text: "Inside this file, create a sheet with the name \"raw_index\".",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/raw-index-sheet.webp",
+        alt: "raw_index sheet inside query-index.xlsx",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Add the headers to index",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next, in that sheet add path as a header, and add the other properties that you want to index. For example, if you want to index on the basis of metadata, you add title and it will pick og:title. Similarly, you can add a response header as well.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/headers-raw-index-sheet.webp",
+        alt: "raw_index sheet with header columns",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The highlighted properties can be added as headers in the document, and the property mentioned on the right-hand side is the one picked from the meta tags. These are not limited to the properties shown. Whatever property you add in a meta tag can be added in the query-index Excel file, and it will be picked from that meta tag.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "\"Last modified\" is the only property that is picked from a response header.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/meta-tag-properties.webp",
+        alt: "Index properties and the meta tags they are picked from",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Publish the page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Content is only indexed when you publish the page. I have a page named test under the cms folder. As soon as I publish it, it is reflected in the query-index Excel file, and it has also picked the metadata properties available on the page, as you can see in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/displaying-index-properties.webp",
+        alt: "Published page appearing in the query-index with its metadata",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Excluding a Page from the Index",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you do not want to index a particular page, create a metadata block on that page and add the property \"Robots\" with the value \"noindex\".",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/indexing-eds/metadata-block.webp",
+        alt: "Metadata block with Robots set to noindex",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "form-rule-editor",
@@ -14647,7 +14819,268 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     author: "Owais Pathan",
     description:
       "Understand how document-based authoring enables content creation and publishing through familiar documents.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Document Based Authoring",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Document-Based Authoring (DBA) in Adobe Experience Manager (AEM) is a content authoring paradigm designed to simplify the creation, management, and delivery of structured content. Unlike traditional page-based authoring, where authors focus on creating and managing individual web pages, DBA allows authors to work with content in a more modular, reusable, and centralized way, often in the form of documents.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Currently, when a request comes in, the content is served through the publish instance. With Edge Delivery Services, the content is served through EDS and no publish instance is required. We can build and run a website on AEM as a Cloud Service without using AEM.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/content-is-served-through-documents.webp",
+        alt: "Content served through documents in Edge Delivery Services",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we will create a sample website to learn document based authoring. Below are the requirements to create a website:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "GitHub account",
+            text: "All your code will be kept in your GitHub repository.",
+          },
+          {
+            title: "Google account",
+            text:
+              "For now we are using Google Docs, so we need a Google account. Otherwise, a Microsoft account can be used as well.",
+          },
+          {
+            title: "Basic knowledge",
+            text: "You should have a basic understanding of HTML, CSS and JavaScript.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Create and Configure an Edge Delivery Services Project",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create a repository from the template",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a new repository in your GitHub using the Adobe boilerplate template:",
+      },
+
+      {
+        type: "code",
+        code: "https://github.com/adobe/aem-boilerplate",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/adobe-template.webp",
+        alt: "Creating a repository from the AEM boilerplate template",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Install the AEM Code Sync GitHub App",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Install the AEM Code Sync GitHub App on your repository. Open the URL below in the browser and click Install.",
+      },
+
+      {
+        type: "code",
+        code: "https://github.com/apps/aem-code-sync",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/aem-code-sync.webp",
+        alt: "Installing the AEM Code Sync GitHub App",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Create a folder in Google Drive",
+      },
+
+      {
+        type: "paragraph",
+        text: "Go to Google Drive and create a folder with the project name.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/folder-creation.webp",
+        alt: "Project folder created in Google Drive",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Create the documents and share them",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create three Docs files in the project folder with the names index, nav and footer. Give editor permission to the helix@adobe.com account, and add some content in them.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/docs-creation-google-drive.webp",
+        alt: "index, nav and footer documents in Google Drive",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Add the Drive path to fstab.yaml",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After that, go to GitHub. There is a file called fstab.yaml. Add the path of your Google Drive folder in it and commit the change.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/adding-path-to-git-code.webp",
+        alt: "Google Drive folder path added to fstab.yaml",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 6: Add the AEM Sidekick extension",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now add the AEM Sidekick extension to your browser, then go inside your project folder. In the Sidekick you will get the option to add the project. Add the project, and you can now preview or publish the pages.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/sidekick.webp",
+        alt: "AEM Sidekick with the Add project option",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 7: Open the preview and live URLs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There are two URLs you can use to see the pages. To create them you need the branch in which your code is available, your repo name and your owner name. The .page extension is used for preview and the .live extension for the published site, as shown below.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Preview URL",
+            text: "https://{branch}--{repo}--{owner}.aem.page/",
+          },
+          {
+            title: "Publish URL",
+            text: "https://{branch}--{repo}--{owner}.aem.live/",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Whenever you hit the URL, the index page available in that folder is displayed. If the index page is not present, it throws a 404 Not Found.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Below is how your website is going to look. For the content of the page, you can refer to the Google Drive folder used in this example.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/document-based-authoring/index-page.webp",
+        alt: "Final index page of the sample website",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+    ],
   },
   {
     slug: "adding-metadata-in-edge-delivery-services",
@@ -14657,7 +15090,192 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     author: "Owais Pathan",
     description:
       "Learn how to add and manage page metadata in EDS to improve SEO and content discovery.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Metadata?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Metadata refers to the information embedded in a webpage or associated with its content that describes its characteristics, purpose, and other properties. Metadata is not typically visible to users but plays a crucial role in how search engines, browsers, and other systems interpret and interact with the webpage.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Metadata can be added to a page in two ways:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Using a block",
+            text: "Used to add page-level metadata.",
+          },
+          {
+            title: "Using a Google Sheet or Excel",
+            text: "Used for site-level or bulk metadata.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Using the Metadata Block",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To add metadata to a page, we add a block called the metadata block. It is a special block that is handled internally by the HTML rendering service to add meta tags in the head of the HTML structure.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There should be only one metadata block per page, and it should be placed at the bottom of the page. It can technically be kept anywhere, but the bottom is the convention. The image below shows how to create the block.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-block.webp",
+        alt: "Metadata block added to a page",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the image above, we have added title, description, image, template, color, theme and robots. If you don't add a title, the first h1 of the page is picked, and similarly for the description the first paragraph is picked. After adding the block, preview the page and you can see the values added in the meta tag section, as shown in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-added.webp",
+        alt: "Meta tags added in the page head",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "This is how we add metadata using the block.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Using an Excel Sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When we want to add metadata for a particular hierarchy, or for pages under a particular folder, or add metadata in bulk, we use an Excel sheet.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the metadata sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To add metadata using a Google Sheet or Excel, we need to create a file with the name metadata under the root folder, meaning the main folder where all the project files are kept.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-sheet-name.webp",
+        alt: "metadata sheet in the project root folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Add the URL column and meta tags",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the file we need to create a column called URL, where we define the hierarchy on which the metadata should be applied. The other columns are the meta tags that you want to apply, and their values.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/metadata-excel-properties.webp",
+        alt: "metadata sheet with URL column and meta tag columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If the URL is /**, the metadata is applied to all the pages. If you want to apply the meta tags only to the pages under a folder, for example /cms/, define it as shown in the image above.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Note: If you apply a meta tag, say \"Theme\", using both the metadata block and the sheet, the metadata block is given priority.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Verify the result",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/adding-metadata/bulk-metadata-added.webp",
+        alt: "Bulk metadata applied to pages",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "As you can see, the metadata properties have been added to the pages.",
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "placeholders-in-edge-delivery-services",
@@ -14668,155 +15286,155 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     description:
       "Discover how placeholders support reusable content and dynamic authoring experiences in EDS.",
     content: [
-    {
-      type: "paragraph",
-      text: "Happy to find you here. Welcome to another learning.",
-    },
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "What is Placeholder?",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Placeholder?",
+      },
 
-    {
-      type: "paragraph",
-      text: "Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables used to customize content based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.",
-    },
+      {
+        type: "paragraph",
+        text: "Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables used to customize content based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.",
+      },
 
-    {
-      type: "paragraph",
-      text: "In most websites, there are strings or variables that are used throughout the site. Especially in sites that support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.",
-    },
+      {
+        type: "paragraph",
+        text: "In most websites, there are strings or variables that are used throughout the site. Especially in sites that support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Placeholders can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of a multilingual site.",
-    },
+      {
+        type: "paragraph",
+        text: "Placeholders can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of a multilingual site.",
+      },
 
-    {
-      type: "paragraph",
-      text: "In this blog, we will explain the placeholder concept using a multilingual site example where region-specific content is displayed using placeholders.",
-    },
+      {
+        type: "paragraph",
+        text: "In this blog, we will explain the placeholder concept using a multilingual site example where region-specific content is displayed using placeholders.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Steps to implement placeholder for region-specific content",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to implement placeholder for region-specific content",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Create language-specific placeholder files",
-          text: "Let's say we have a site that is initially available only in English but is later expanded to French. To display the same content in both languages, create a placeholder sheet in each English and French hierarchy.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create language-specific placeholder files",
+            text: "Let's say we have a site that is initially available only in English but is later expanded to French. To display the same content in both languages, create a placeholder sheet in each English and French hierarchy.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/language-specific-files.webp",
-      alt: "Language-specific placeholder files",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/language-specific-files.webp",
+        alt: "Language-specific placeholder files",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Add Key and Text columns",
-          text: "Inside the placeholder sheet, create two columns: Key and Text. For example, the English value can be 'First Name', while the French value can be 'Prénom'. The corresponding language value will then be displayed on the site.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Add Key and Text columns",
+            text: "Inside the placeholder sheet, create two columns: Key and Text. For example, the English value can be 'First Name', while the French value can be 'Prénom'. The corresponding language value will then be displayed on the site.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/placeholder-spreadsheet-content.webp",
-      alt: "Placeholder spreadsheet content",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/placeholder-spreadsheet-content.webp",
+        alt: "Placeholder spreadsheet content",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Add page metadata",
-          text: "Use page metadata to determine which placeholder values should be displayed. In this example, locale and Language metadata are added to the English and French pages.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Add page metadata",
+            text: "Use page metadata to determine which placeholder values should be displayed. In this example, locale and Language metadata are added to the English and French pages.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/metadata-for-locale.webp",
-      alt: "Metadata for locale",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/metadata-for-locale.webp",
+        alt: "Metadata for locale",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Create the Author block",
-          text: "Inside the English and French pages, create an Author block containing only the block heading. The remaining data will be populated using JavaScript.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create the Author block",
+            text: "Inside the English and French pages, create an Author block containing only the block heading. The remaining data will be populated using JavaScript.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/Author-block.webp",
-      alt: "Author block",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/Author-block.webp",
+        alt: "Author block",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Customize placeholder file loading",
-          text: "EDS provides an inbuilt library to read the placeholder file from the root folder. In this implementation, the logic is customized so that the placeholder file is read from the respective 'en' or 'fr' hierarchy based on the prefix available in aem.js.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Customize placeholder file loading",
+            text: "EDS provides an inbuilt library to read the placeholder file from the root folder. In this implementation, the logic is customized so that the placeholder file is read from the respective 'en' or 'fr' hierarchy based on the prefix available in aem.js.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/aemjs-code.webp",
-      alt: "AEM JavaScript placeholder logic",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/aemjs-code.webp",
+        alt: "AEM JavaScript placeholder logic",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Create the block JavaScript and CSS",
-          text: "Write the required CSS and JavaScript for the block. The block reads the placeholder values and displays the corresponding content in English and French on their respective pages.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Create the block JavaScript and CSS",
+            text: "Write the required CSS and JavaScript for the block. The block reads the placeholder values and displays the corresponding content in English and French on their respective pages.",
+          },
+        ],
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/block-code.webp",
-      alt: "Placeholder block code",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/block-code.webp",
+        alt: "Placeholder block code",
+      },
 
-    {
-      type: "paragraph",
-      text: "The metadata property 'locale' is read from the page, and based on its value, the corresponding placeholder values are retrieved and displayed on the page.",
-    },
+      {
+        type: "paragraph",
+        text: "The metadata property 'locale' is read from the page, and based on its value, the corresponding placeholder values are retrieved and displayed on the page.",
+      },
 
-    {
-      type: "image",
-      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/final-output.webp",
-      alt: "Final placeholder output",
-    },
+      {
+        type: "image",
+        src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/final-output.webp",
+        alt: "Final placeholder output",
+      },
 
-    {
-      type: "paragraph",
-      text: "Thanks for reading 😄",
-    },
-  ],
+      {
+        type: "paragraph",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "implementing-redirects-and-response-headers-in-edge-delivery-services",
@@ -14826,7 +15444,327 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     author: "Owais Pathan",
     description:
       "Learn how to configure URL redirects and HTTP response headers in Edge Delivery Services.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What are Redirects?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Redirects in AEM Edge Delivery Services (EDS) are mechanisms to route user requests from one URL to another at the edge server level, reducing latency and improving performance. These redirects occur before requests reach the AEM origin server, ensuring faster response times and efficient content delivery.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Redirects can be done for internal links as well as external links.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Internal links",
+            text: "Redirects within the website.",
+          },
+          {
+            title: "External links",
+            text: "Redirects to external websites.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Internal Redirect",
+      },
+
+      {
+        type: "paragraph",
+        text: "Redirects between pages within the website are internal redirects.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the redirects sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For the redirect rules, you need to create an Excel sheet with the name redirects in the root folder of the project.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/redirects-excel-created.webp",
+        alt: "redirects Excel sheet created in the project root folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Add the Source and Destination columns",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside the sheet we need to create two columns with the headers \"Source\" and \"Destination\", as shown in the image below. In the Source column we add the source URL, and in the Destination column we add the URL where it should redirect to.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/redirects-excel-properties.webp",
+        alt: "redirects sheet with Source and Destination columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Before the redirect rule",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Before the redirect rule is added, when we hit /dm in the URL we get a 404 Not Found, as you can see in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/404-not-found.webp",
+        alt: "404 Not Found page when opening /dm",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: After the redirect rule",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After creating the redirect rule, we can see that it redirects to the /demo/demo1 URL.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/redirect-url.webp",
+        alt: "/dm redirecting to /demo/demo1",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "External Redirect",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For external redirects, in the same sheet, replace the destination with any external URL and you will see that it lands on the external link.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/external-redirects-excel.webp",
+        alt: "redirects sheet with an external URL as the destination",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What are Custom HTTP Response Headers?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "HTTP response headers in Adobe Experience Manager (AEM) Edge Delivery Services (EDS) are metadata sent back from the server to the client (usually a web browser) in response to an HTTP request. These headers provide information about the server's response, including status codes, content details, cache directives, and security policies. In the context of AEM EDS, headers play a critical role in controlling and optimizing the delivery of content at the edge.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Add Response Headers to the Page",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the .helix folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To add headers to the pages, we need to create a folder with the name \".helix\" under the root folder of our project.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/helix-folder.webp",
+        alt: ".helix folder in the project root",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the headers sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside that folder we need to create an Excel sheet with the name \"headers\".",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/headers-file.webp",
+        alt: "headers Excel sheet inside the .helix folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Add the url, key and value columns",
+      },
+
+      {
+        type: "paragraph",
+        text: "In that sheet there will be three columns: url, key and value.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "url",
+            text:
+              "This column holds the path of a folder, and the header will be applied to the pages present under that folder.",
+          },
+          {
+            title: "key",
+            text: "This column holds the key of the header.",
+          },
+          {
+            title: "value",
+            text: "This column holds the value of the header.",
+          },
+        ],
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/headers-file-properties.webp",
+        alt: "headers sheet with url, key and value columns",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Verify the headers on the page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the sheet above, the header \"author\" is applied to all the pages in the website, and the header \"cms\" is applied to the pages present under the cms folder.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/headers-added.webp",
+        alt: "Response headers visible in the browser",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Activate the headers sheet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "One more thing: whenever you create this headers sheet, you will get the option to activate it instead of publishing it. This is done for security reasons.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/redirects-in-eds/Activating-headers-sheet.webp",
+        alt: "Activate option shown for the headers sheet",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "servlets",
@@ -16883,14 +17821,392 @@ public class Products {
     ],
   },
   {
-    slug: "block-options-eds",
+    slug: "blockoption-universal-editor-eds-eds",
     title: "Block Option in Edge Delivery Service",
     category: "AEM EDS",
     date: "",
     author: "Shruti Kawadkar",
     description:
       "Explore block options in EDS to customize block behavior, variations, and content presentation.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Picture this. You've just shipped a nice \"Promo\" block for your EDS site: an image next to some text and a button. Marketing loves it. Two weeks later someone messages you: \"Love it! Can we get one where the image is on the right instead?\" Then a week later: \"Actually, can the image be a full-width background too?\"",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You've got three choices here. Build three separate blocks and maintain three near-identical copies forever. Hard-code a compromise nobody's happy with. Or, the good option, give the same block a dropdown and let the author pick the flavor.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "That third option is called a Block Option, and once you see how it's wired up under the hood, you'll want to use it everywhere.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is a Block Option?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A Block Option lets a content author pick a variation of a block right inside Universal Editor, instead of a developer building a separate block for every variation. Instead of three blocks like this:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Promo Showcase Left",
+          "Promo Showcase Right",
+          "Promo Showcase Full",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "we build one block called Promo Showcase, and give it a single dropdown that behaves like a costume rack:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Layout Style",
+            text: "Image Left, Image Right, or Image Full",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Same fields, same JS file, same CSS file. The author just picks which \"costume\" the block wears on any given page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "The Property That Makes It All Work: name: \"classes\"",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is the one detail that's easy to miss, and it's the whole reason any of this works. In your block's model JSON, if you name a field exactly classes, AEM treats it as a reserved, protected field name. It's not just another piece of authored data. The value the author picks gets automatically stamped onto the block's outer <div> as a live CSS class.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Rename that same field to something else, say layoutStyle, and the magic disappears completely. It becomes an inert value that nobody reads, and it will not turn into a class on its own. The literal string classes is the entire spell. Here's what that field looks like in the block model:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_name_property.webp",
+        alt: "promo-showcase.json model with the classes field",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How the Final Class List Actually Gets Built",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is the part most blog posts skip, and it's exactly where people get confused the first time. The class you see on a block in the browser isn't added by one single thing. It's assembled in three separate stages, each one adding its own piece, in this order:",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Stage 1: EDS adds the default classes automatically",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The moment a block loads, EDS's own block-loading script runs a decoration step on every block on the page. This step doesn't know or care what your block does. It always adds two things automatically: the generic block class, and the block's own name as a class (lowercased, with spaces turned into hyphens, so \"Promo Showcase\" becomes promo-showcase). At this point, before any authoring choice is even considered, the element already looks like this:",
+      },
+
+      {
+        type: "code",
+        code: '<div class="block promo-showcase">',
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Stage 2: The classes field adds the author's pick",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is where our reserved field steps in. Because we named it classes, whatever the author selected in the Layout Style dropdown, say \"Image Right\", which maps to the value image-right, gets appended onto that same class list, right alongside the two classes EDS already added. Nothing gets overwritten; it's purely additive:",
+      },
+
+      {
+        type: "code",
+        code: '<div class="block promo-showcase image-right">',
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Stage 3: Your own JavaScript can add more classes at runtime",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This stage is optional and has nothing to do with authoring at all. Inside your block's JS file, you're free to add extra classes based on behavior, for example adding a .zoom class only while the user is hovering over the CTA button. These classes are never picked by the author and never live in the JSON model. They exist purely to support interactive states, and they come and go as the user interacts with the page.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Put together, one class list can end up carrying classes from all three sources at once, and each one is doing a completely different job:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Stage 1",
+            text: "EDS auto-adds block and promo-showcase",
+          },
+          {
+            title: "Stage 2",
+            text:
+              "The classes field adds image-right (from the author's dropdown pick)",
+          },
+          {
+            title: "Stage 3 (optional)",
+            text: "Your block's JS adds behavior classes like .zoom at runtime",
+          },
+          {
+            title: "Result",
+            text: "CSS reads whichever of these classes are present and renders accordingly",
+          },
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once you can see those three stages separately, the whole feature stops feeling like magic. Nothing \"moves\" the image on its own. It's just three different mechanisms quietly contributing to the same class list, and your CSS selectors reacting to whichever classes happen to be there.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "See It in Action",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here is the exact same Promo Showcase content rendered with each Layout Style. Only the class changes between them. First, Layout Style set to Image Left (class image-left):",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp",
+        alt: "Promo Showcase with Layout Style set to Image Left",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Image Right (class image-right):",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_right_image.webp",
+        alt: "Promo Showcase with Layout Style set to Image Right",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Image Full (class image-full):",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp",
+        alt: "Promo Showcase with Layout Style set to Image Full",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Notice the Content, CTA, and Image never changed. Only the class name did, and that alone was enough to completely rebuild the layout.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "CSS Does the Actual Heavy Lifting",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once that class exists, there's nothing special about the CSS. It's exactly as ordinary as CSS gets:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_css.webp",
+        alt: "promo-showcase.css rules for image-right and image-full",
+        style: {
+          maxWidth: "300px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "No conditionals, no JavaScript deciding where things go. The class is the switch, and CSS selectors are the wiring.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What About JavaScript?",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here's the real decorate() function running behind this block:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_js.webp",
+        alt: "decorate() function in promo-showcase.js",
+        style: {
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Read through it and you'll notice something: it never once looks at block.classList, and never checks which Layout Style was selected. All it does is take the authored rows (Image, Content, CTA) and wrap them into .promo-showcase-image and .promo-showcase-content containers, then remove the original rows. That's the entire job.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is exactly what Stage 2 and Stage 3 working together should feel like in the best case: the class from the classes field is already sitting on the block by the time this function runs, CSS has already claimed full responsibility for the visual differences, and the JavaScript stays completely layout-agnostic. It runs identically whether Layout Style is set to Image Left, Image Right, or Image Full, because it genuinely doesn't need to know or care. That's not a missing feature; for a purely visual option like this one, it's the correct amount of JavaScript to write.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Proof It's Real: the Rendered HTML",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Everything above is a nice theory until you open DevTools and see it happen. This is the moment the whole chain (dropdown, classes field, assembled class list, CSS) becomes undeniable:",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_devtools_code.webp",
+        alt: "DevTools showing class=\"block promo-showcase image-right\"",
+        style: {
+          maxWidth: "650px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "That one class, sitting quietly in the inspector next to block and promo-showcase, is the entire payoff of everything explained above.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "select vs. multiselect",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Adobe's Block Options also support a multiselect component, letting authors combine multiple options at once. This is handy for independent toggles like \"large\" or \"highlighted.\" But layouts like ours aren't independent: an image can't sensibly be on the left and the right at the same time. Mixing those would just hand your authors a way to break the design.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Rule of thumb: reach for select when options compete with each other, and save multiselect for options that happily coexist.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Wrapping Up",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Block Options aren't a separate feature bolted onto EDS. They're a naming convention with real consequences. Name a field classes, and you've plugged the author's choice into a class list that EDS was already building for you, right alongside its own default classes and anything your JS adds later.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Next time you catch yourself about to duplicate a block just to tweak its layout, pause and ask: could this just be a class? Nine times out of ten, the answer is yes, and your authors get one clean dropdown instead of a shelf full of near-identical blocks to choose from.",
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "block-creation-eds",
@@ -16900,7 +18216,318 @@ public class Products {
     author: "Owais Pathan",
     description:
       "Learn to create custom, reusable blocks in EDS using JavaScript, CSS, and structured content.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What is a Block?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A block is a modular, reusable unit of content or functionality that is designed to streamline content delivery and personalization at the edge. Blocks are the building blocks for rendering web pages or delivering experiences directly at the edge, enabling faster delivery and reduced latency by leveraging edge computing principles.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For the sake of this blog, we will create a cards block which will display multiple cards on the page.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Steps to Create a Block",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To create a block, we add a table in the document and then add the content in it. Let us understand this with an example. Suppose we need to create a multiple cards section which looks something like the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Block-Cards.webp",
+        alt: "Final cards block layout",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "To create the above block, we will follow the steps below.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 1: Create the table in the document",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "First of all, we need to create a table in the document where we want to add the block, in the manner shown below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Cards-Table.webp",
+        alt: "Cards table in the document",
+        style: {
+          maxWidth: "350px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In this table we give the title of the block in the first row, and then the image and description in the rows below. After creating this, when we preview the page we get the DOM that is created out of the box, as shown in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Out-of-the-box-dom.webp",
+        alt: "Out-of-the-box DOM generated for the block",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 2: Create the block folder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we need to rewrite this DOM structure using JavaScript and add CSS to make it look presentable. In the repository we have a folder called blocks. Inside it we need to create a folder named after the block, which is the name we gave in the first row of the table.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/github-code.webp",
+        alt: "cards folder inside the blocks folder in GitHub",
+        style: {
+          maxWidth: "220px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 3: Create the JS and CSS files",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside this folder we create two files, one JS and one CSS. For this blog the names are cards.js and cards.css.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/cards-files.webp",
+        alt: "cards.js and cards.css files inside the cards folder",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 4: Add the logic in cards.js",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Inside cards.js we add the logic below to make the block presentable. You can modify it as per your needs and project requirements.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/jscode.webp",
+        alt: "JavaScript code in cards.js",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step 5: Add the styles in cards.css",
+      },
+
+      {
+        type: "paragraph",
+        text: "Inside cards.css we add the styles below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/card-css.webp",
+        alt: "CSS code in cards.css",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After adding all the CSS and JS code, the block renders as shown below. These are the 5 steps in which you can create a block and publish it on the page.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/final-card-look.webp",
+        alt: "Final rendered cards block",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Separating Sections",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Whenever you create a block or write anything in the document, it comes under a section tag. If you want your next content to come under a different section, you need to separate the sections. Here is how.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "If you add any content to the page, this is how it comes under a section.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/section-image.webp",
+        alt: "Content placed under a single section",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To separate the sections, use a hyphen (\"-\") three times or a horizontal line, as shown in the image below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/added-seperation.webp",
+        alt: "Section separator added to the document",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "After adding the separator, this is how the sections get separated.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/seperated-sections.webp",
+        alt: "Content split into separate sections",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How to Add Custom CSS to a Particular Section",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Suppose you have two sections as shown below and you want to apply a CSS class to each section, or add an attribute to a section. For that, create a table with the title Section Metadata. For a style, add style in the first column and its classes in the second. For an attribute, put the attribute name in the first column and the attribute value in the second, as shown below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Adding-CSS-in-section.webp",
+        alt: "Section Metadata table with style and attribute rows",
+        style: {
+          maxWidth: "450px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "This is how it gets added to the section, as shown below.",
+      },
+
+      {
+        type: "image",
+        src: "images/blogs/eds/block-in-documentbase-Eds/Added-CSS-and-attribute.webp",
+        alt: "CSS class and attribute applied to the section",
+        style: {
+          maxWidth: "550px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+        },
+      },
+
+      {
+        type: "paragraph",
+        text: "Now your block is ready and you can preview it on the page.",
+      },
+
+      {
+        type: "paragraph",
+        variant: "closing",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
 
 

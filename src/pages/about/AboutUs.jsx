@@ -206,7 +206,7 @@ export default function AboutUsPage() {
             </Box>
 
             {/* CORE CAPABILITIES PANEL */}
-            <Container maxWidth="lg" sx={{ mt: { xs: -8, md: -12 }, position: "relative", zIndex: 20, px: { xs: 2, sm: 3 } }}>
+            <Container maxWidth="lg" sx={{ mt: { xs: -8, md: -12 }, position: "relative", zIndex: 20, px: { xs: 2, sm: 3 }, mb: "24px" }}>
                 <Card sx={{ borderRadius: { xs: '1rem', sm: '1.5rem' }, p: { xs: 2.5, sm: 4, md: 6 }, boxShadow: "0 20px 50px rgba(15,23,42,0.08)", border: '1px solid #e2e8f0' }}>
                     <Divider sx={{ borderColor: "#f1f5f9", mb: { xs: 4, md: 6 } }} />
                     <Box sx={{ mb: 4 }}>
@@ -270,6 +270,7 @@ export default function AboutUsPage() {
                         borderRadius: "1rem",
                         boxShadow: "none",
                         transition: "all 0.3s",
+                        mb: "12px"
 
                     }}>
                         <Grid container>

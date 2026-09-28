@@ -9,7 +9,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { navRoutes } from "../../routes/Routes";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import XIcon from '@mui/icons-material/X';
 
 export default function Header() {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function Header() {
                         </MuiLink>
 
                         {/* Desktop nav */}
-                        <Stack direction="row" spacing={3} sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+                        <Stack direction="row" spacing={3} sx={{ display: { xs: "none", lg: "flex" }, alignItems: "center" }}>
                             {navRoutes.map((route) => (
                                 <MuiLink
                                     key={route.path}
@@ -48,7 +48,7 @@ export default function Header() {
                         </Stack>
 
                         {/* Desktop right-side actions: icons + Get in Touch */}
-                        <Stack direction="row" spacing={2} sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+                        <Stack direction="row" spacing={2} sx={{ display: { xs: "none", lg: "flex" }, alignItems: "center" }}>
 
                             <Button
                                 component={RouterLink}
@@ -130,7 +130,7 @@ export default function Header() {
                                         },
                                     }}
                                 >
-                                    <TwitterIcon sx={{ fontSize: 18 }} />
+                                    <XIcon sx={{ fontSize: 18 }} />
                                 </IconButton>
                             </Stack>
                         </Stack>
@@ -139,7 +139,7 @@ export default function Header() {
                         <IconButton
                             onClick={toggleDrawer(true)}
                             sx={{
-                                display: { xs: "flex", md: "none" },
+                                display: { xs: "flex", lg: "none" },
                                 color: "#cbd5e1",
                                 "&:hover": { color: "#fff", bgcolor: "rgba(255,255,255,0.05)" },
                             }}
