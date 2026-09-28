@@ -94,7 +94,7 @@ export default function Header() {
                                 </IconButton>
                                 <IconButton
                                     component="a"
-                                    href="mailto:contact@infodales.com"
+                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
                                     aria-label="Email"
                                     sx={{
                                         width: 40,
@@ -236,7 +236,7 @@ export default function Header() {
                             </IconButton>
                             <IconButton
                                 component="a"
-                                href="mailto:contact@infodales.com"
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
                                 aria-label="Email"
                                 sx={{
                                     width: 36,
