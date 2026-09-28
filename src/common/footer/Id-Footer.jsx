@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { footerRoutes } from "../../routes/Routes";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import XIcon from '@mui/icons-material/X';
 
 
 export default function Footer() {
@@ -37,7 +37,7 @@ export default function Footer() {
                             Infodales Tech Solutions
                         </Typography>
                         <Typography sx={{ fontSize: "0.75rem", color: "#64748b" }}>
-                            © 2025 Infodales Tech Solutions. All rights reserved.
+                            © 2026 Infodales Tech Solutions. All rights reserved.
                         </Typography>
                     </Box>
 
@@ -118,7 +118,7 @@ export default function Footer() {
                                 },
                             }}
                         >
-                            <TwitterIcon sx={{ fontSize: 18 }} />
+                            <XIcon sx={{ fontSize: 18 }} />
                         </IconButton>
                     </Stack>
                 </Box>
