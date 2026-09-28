@@ -208,54 +208,39 @@
 
 .article-image {
   width: 100%;
-
   margin: 30px 0 35px;
-
   text-align: center;
-}
-
-.article-image img[alt="EDS Authoring"] {
-  max-width: 650px;
-  /* Set your desired width */
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  /* Optional styling */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  /* Optional styling */
-}
-
-.article-image img[alt="EDS Development"] {
-  max-width: 650px;
-  /* Set your desired width */
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  /* Optional styling */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  /* Optional styling */
-}
-
-.article-image img[alt="Edge CDN"] {
-  max-width: 550px;
-  /* Set your desired width */
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  /* Optional styling */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  /* Optional styling */
 }
 
 .article-image img {
   display: block;
-
   width: 100%;
+  max-width: 650px;
   height: auto;
-
   margin: 0 auto;
-
   object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Small laptop / tablet */
+@media (max-width: 1200px) {
+  .article-image img {
+    max-width: 550px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .article-image img {
+    max-width: 480px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .article-image img {
+    max-width: 100%;
+  }
 }
 
 /* Author */
@@ -469,4 +454,11 @@
 .article-code-block code {
   font-family: "Courier New", monospace;
   color: #23466f;
+}
+
+.article-intro,
+.article-content,
+.article-paragraph,
+.article-list {
+  text-align: justify;
 }
