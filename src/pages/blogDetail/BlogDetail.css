@@ -156,7 +156,7 @@
 
 /* First heading */
 
-.article-content > .article-heading:first-child {
+.article-content>.article-heading:first-child {
   margin-top: 0 !important;
 }
 
@@ -213,26 +213,38 @@
 
   text-align: center;
 }
+
 .article-image img[alt="EDS Authoring"] {
-  max-width: 650px;       /* Set your desired width */
+  max-width: 650px;
+  /* Set your desired width */
   width: 100%;
   height: auto;
-  border-radius: 8px;     /* Optional styling */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Optional styling */
+  border-radius: 8px;
+  /* Optional styling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Optional styling */
 }
+
 .article-image img[alt="EDS Development"] {
-  max-width: 650px;       /* Set your desired width */
+  max-width: 650px;
+  /* Set your desired width */
   width: 100%;
   height: auto;
-  border-radius: 8px;     /* Optional styling */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Optional styling */
+  border-radius: 8px;
+  /* Optional styling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Optional styling */
 }
+
 .article-image img[alt="Edge CDN"] {
-  max-width: 550px;       /* Set your desired width */
+  max-width: 550px;
+  /* Set your desired width */
   width: 100%;
   height: auto;
-  border-radius: 8px;     /* Optional styling */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Optional styling */
+  border-radius: 8px;
+  /* Optional styling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Optional styling */
 }
 
 .article-image img {
@@ -330,6 +342,7 @@
     line-height: 1.75;
   }
 }
+
 .article-bottom {
   width: 100%;
   display: flex;
@@ -385,6 +398,7 @@
     font-size: 11px !important;
   }
 }
+
 .feedback-slider .MuiSlider-track {
   transition: background-color 0.3s ease;
 }
