@@ -56,6 +56,14 @@ function ContentItem({ item }) {
     );
   }
 
+  if (item.type === "centerParagraph") {
+    return (
+      <Typography className="article-centerParagraph">
+        {item.text}
+      </Typography>
+    );
+  }
+
   if (
     item.type === "list" ||
     item.type === "numberedList"

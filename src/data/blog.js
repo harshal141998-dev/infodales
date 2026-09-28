@@ -4587,7 +4587,7 @@ public class CustomPrefillServices implements DataProvider {
         alt: "Adaptive Form Fragments",
       },
       {
-        type: "heading",
+        type: "centerParagraph",
         level: 4,
         text: "Final Form",
       },
@@ -4676,7 +4676,7 @@ public class CustomPrefillServices implements DataProvider {
         alt: "Adaptive Form Home",
       },
       {
-        type: "paragraph",
+        type: "centerParagraph",
         text: "Select Image Choice component to add image.",
       },
       {
@@ -4685,7 +4685,7 @@ public class CustomPrefillServices implements DataProvider {
         alt: "Adaptive Form Home",
       },
       {
-        type: "paragraph",
+        type: "centerParagraph",
         text: "Select multiple Text Box to fetch data dynamically.",
       },
       {
@@ -4694,7 +4694,7 @@ public class CustomPrefillServices implements DataProvider {
         alt: "Adaptive Form Home",
       },
       {
-        type: "paragraph",
+        type: "centerParagraph",
         text: "Select the rule editor to provide the API key and fetch data using that key. You will use the code editor to write the necessary code for this operation.",
       },
       {
@@ -4718,7 +4718,7 @@ public class CustomPrefillServices implements DataProvider {
         alt: "Adaptive Form Home",
       },
       {
-        type: "paragraph",
+        type: "centerParagraph",
         text: "Source code similar to Adobe AEM Forms Documents",
       },
       {
@@ -4784,7 +4784,7 @@ function handleError(error) {
 }`,
       },
       {
-        type: "paragraph",
+        type: "centerParagraph",
         text: "Click on the Map Image to automatically populate the form with your current location.",
       },
       {

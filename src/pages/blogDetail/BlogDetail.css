@@ -171,6 +171,17 @@
   margin-bottom: 25px !important;
 }
 
+.article-centerParagraph {
+  color: #31567d !important;
+
+  font-size: 15px !important;
+  line-height: 2 !important;
+
+  margin-bottom: 25px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+}
+
 /* Lists */
 
 .article-list {
