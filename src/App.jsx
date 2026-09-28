@@ -1,14 +1,15 @@
-import { HashRouter, Routes, Route, Navigate, Router } from "react-router-dom";
+import {  Routes, Route, Navigate, Router } from "react-router-dom";
 import Header from "./common/header/Id-Header";
 import Footer from "./common/footer/Id-Footer";
 import "./App.css"
 import routes from "./routes/Routes";
 import ScrollTopUp from "./common/scrollTopUp/ScrollToTop";
+import { BrowserRouter } from "react-router-dom";
 
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Header />
       <ScrollTopUp />
       <Routes>
@@ -18,6 +19,6 @@ export default function App() {
         <Route path="/" element={<Navigate to="/home" replace />} />
       </Routes>
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }

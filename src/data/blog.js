@@ -4951,10 +4951,8 @@ definitions:
         text: "Let us begin the creation of College Application Form",
       },
       {
-        type: "bulletList",
-        items: [
-          "First navigate to create adaptive form and create your form.",
-        ],
+        type: "centerParagraph",
+        text: "First navigate to create adaptive form and create your form.",
       },
       {
         type: "image",
@@ -4967,10 +4965,9 @@ definitions:
         alt: "Adaptive form properties",
       },
       {
-        type: "bulletList",
-        items: [
-          "Choose a template of your choice, could be blank but here I have created a custom template, College Template, for the purpose of creation of the form and provide title to it. You will find the root panel wherein you can add a theme after clicking on configure. I have added Beryl theme.",
-        ],
+        type: "centerParagraph",
+        text: "Choose a template of your choice, could be blank but here I have created a custom template, College Template, for the purpose of creation of the form and provide title to it. You will find the root panel wherein you can add a theme after clicking on configure. I have added Beryl theme.",
+        
       },
       {
         type: "image",
@@ -4979,10 +4976,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "First you need to add 5 panels to your form with provided configuration. Ensure except for the first panel rest all are maked as hidden.",
-        ],
+        type: "centerParagraph",
+        text: "First you need to add 5 panels to your form with provided configuration. Ensure except for the first panel rest all are maked as hidden.",
       },
       {
         type: "image",
@@ -5016,10 +5011,8 @@ definitions:
         alt: "Admission Denied panel",
       },
       {
-        type: "bulletList",
-        items: [
-          "Now after adding panels, you need to add fields to them. Except for first name, mark all the fields as disabled.",
-        ],
+        type: "centerParagraph",
+        text: "Now after adding panels, you need to add fields to them. Except for first name, mark all the fields as disabled.",
       },
       {
         type: "image",
@@ -5028,11 +5021,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "First name , Last Name and Percentile Obtained in 10th are the fields in Personal details panel.",
-          "Add the First Name Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "First name , Last Name and Percentile Obtained in 10th are the fields in Personal details panel. First you need to add the First Name Configurations.",
       },
       {
         type: "image",
@@ -5041,10 +5031,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Add the Last Name Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Add the Last Name Configurations.",
       },
       {
         type: "image",
@@ -5053,10 +5041,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Add the Percentile Obtained in 10th Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Add the Percentile Obtained in 10th Configurations.",
       },
       {
         type: "image",
@@ -5065,10 +5051,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Applicable Stream is the field in Applicable Streams panel.",
-        ],
+        type: "centerParagraph",
+        text: "Applicable Stream is the field in Applicable Streams panel.",
       },
       {
         type: "image",
@@ -5077,10 +5061,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Applicable Stream is again a field in Available Streams panel.",
-        ],
+        type: "centerParagraph",
+        text: "Applicable Stream is again a field in Available Streams panel.",
       },
       {
         type: "image",
@@ -5089,11 +5071,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Name as per ID proof, Contact, Address, Select Blood Group and submit button are the field in Admission Details panel.",
-          "Add the Name as per ID proof Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Name as per ID proof, Contact, Address, Select Blood Group and submit button are the field in Admission Details panel. Add the Name as per ID proof Configurations.",
       },
       {
         type: "image",
@@ -5102,10 +5081,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Add the Contact Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Add the Contact Configurations.",
       },
       {
         type: "image",
@@ -5114,10 +5091,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Add the Address Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Add the Address Configurations.",
       },
       {
         type: "image",
@@ -5126,10 +5101,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Allow multiple lined in Address Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Allow multiple lined in Address Configurations.",
       },
       {
         type: "image",
@@ -5138,10 +5111,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Add the Select Blood Group Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Add the Select Blood Group Configurations.",
       },
       {
         type: "image",
@@ -5150,10 +5121,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Add the Submit Configurations.",
-        ],
+        type: "centerParagraph",
+        text: "Add the Submit Configurations.",
       },
       {
         type: "image",
@@ -5162,10 +5131,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "Candidate not applicable text is a field in Admission Denied panel.",
-        ],
+        type: "centerParagraph",
+        text: "Candidate not applicable text is a field in Admission Denied panel.",
       },
       {
         type: "image",
@@ -5174,10 +5141,8 @@ definitions:
         style: { maxWidth: "500px", maxHeight: "550px" },
       },
       {
-        type: "bulletList",
-        items: [
-          "With this your adaptive form is ready to add include the functionalities of rule editor.",
-        ],
+        type: "centerParagraph",
+        text: "With this your adaptive form is ready to add include the functionalities of rule editor.",
       },
       {
         type: "heading",
@@ -5201,10 +5166,8 @@ definitions:
         text: "Let us begin:",
       },
       {
-        type: "bulletList",
-        items: [
-          "Go to the First Name field, select rule editor, this will navigate you to the Rule Editor Console.",
-        ],
+        type: "centerParagraph",
+        text: "Go to the First Name field, select rule editor, this will navigate you to the Rule Editor Console.",
       },
       {
         type: "image",
@@ -5212,10 +5175,8 @@ definitions:
         alt: "Opening the Rule Editor for the First Name field",
       },
       {
-        type: "bulletList",
-        items: [
-          "We want Last Name to be enabled only when the First Name is not empty, and so select create.",
-        ],
+        type: "centerParagraph",
+        text: "We want Last Name to be enabled only when the First Name is not empty, and so select create.",
       },
       {
         type: "image",
@@ -5228,10 +5189,8 @@ definitions:
         alt: "First Name rule in the code editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "Similarly, we want the applicant to add 10th percentile only after last name is not empty.",
-        ],
+        type: "centerParagraph",
+        text: "Similarly, we want the applicant to add 10th percentile only after last name is not empty.",
       },
       {
         type: "image",
@@ -5239,10 +5198,8 @@ definitions:
         alt: "Last Name rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "Now if 10th percentile is greater than 75, we want Applicable Streams panel to be visible.",
-        ],
+        type: "centerParagraph",
+        text: "Now if 10th percentile is greater than 75, we want Applicable Streams panel to be visible.",
       },
       {
         type: "image",
@@ -5250,10 +5207,8 @@ definitions:
         alt: "Percentile greater than 75 rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "Now if 10th percentile is between 55-75, we want Available Streams panel to be visible.",
-        ],
+        type: "centerParagraph",
+        text: "Now if 10th percentile is between 55-75, we want Available Streams panel to be visible.",
       },
       {
         type: "image",
@@ -5261,10 +5216,8 @@ definitions:
         alt: "Percentile between 55 and 75 rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "Now if 10th percentile is less than 55, we want denied panel to be visible.",
-        ],
+        type: "centerParagraph",
+        text: "Now if 10th percentile is less than 55, we want denied panel to be visible.",
       },
       {
         type: "image",
@@ -5272,10 +5225,8 @@ definitions:
         alt: "Percentile less than 55 rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "After selecting any of the streams, Admission details panel must get available",
-        ],
+        type: "centerParagraph",
+        text: "After selecting any of the streams, Admission details panel must get available",
       },
       {
         type: "image",
@@ -5288,10 +5239,8 @@ definitions:
         alt: "Available Streams rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "In Admission Panel, we want to enable Contact only if Name as per ID proof is not empty.",
-        ],
+        type: "centerParagraph",
+        text: "In Admission Panel, we want to enable Contact only if Name as per ID proof is not empty.",
       },
       {
         type: "image",
@@ -5299,10 +5248,8 @@ definitions:
         alt: "Name as per ID proof rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "We want to enable Address only if Contact is not empty.",
-        ],
+        type: "centerParagraph",
+        text: "We want to enable Address only if Contact is not empty.",
       },
       {
         type: "image",
@@ -5310,10 +5257,8 @@ definitions:
         alt: "Contact rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "We want to enable Blood group only if Address is not empty.",
-        ],
+        type: "centerParagraph",
+        text: "We want to enable Blood group only if Address is not empty.",
       },
       {
         type: "image",
@@ -5321,10 +5266,8 @@ definitions:
         alt: "Address rule in the visual editor",
       },
       {
-        type: "bulletList",
-        items: [
-          "We want to enable submission after only if blood group is not empty.",
-        ],
+        type: "centerParagraph",
+        text: "We want to enable submission after only if blood group is not empty.",
       },
       {
         type: "image",
