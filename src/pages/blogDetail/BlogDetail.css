@@ -8,6 +8,14 @@
   color: #23466f;
 }
 
+.article-detail-page>div {
+  text-align: justify !important;
+}
+
+.article-detail-page>div>p {
+  text-align: left !important;
+}
+
 /* Back */
 
 .article-back {
@@ -501,3 +509,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   background: #000;
 }
+
+
+/* .article-intro,
+.article-content,
+.article-paragraph,
+.article-list {
+  text-align: justify;
+} */
