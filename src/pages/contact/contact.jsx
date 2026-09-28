@@ -649,7 +649,8 @@ export default function ContactPage() {
             <Grid size={{ xs: 12, md: 4 }}>
               <Box
                 component="a"
-                href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
+                // href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
+                href="https://www.google.com/maps/search/?api=1&query=21.197300682511592, 79.07007964394755"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-card-link"
