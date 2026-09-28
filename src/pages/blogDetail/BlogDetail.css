@@ -238,12 +238,22 @@
 .article-image img {
   display: block;
 
-  width: 100%;
+  /* Centered like the old site: ~80% of the column, capped so images never
+     stretch across the full page width on large screens */
+  width: 80%;
+  max-width: 740px;
   height: auto;
 
   margin: 0 auto;
 
   object-fit: contain;
+}
+
+/* Tablets and phones: use the full column width so screenshots stay readable */
+@media (max-width: 768px) {
+  .article-image img {
+    width: 100%;
+  }
 }
 
 /* Author */

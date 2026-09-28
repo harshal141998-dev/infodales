@@ -854,7 +854,451 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Shruti Meshram",
     description:
       "Discover how to use Rule Editor conditions to dynamically show or hide fields in Adaptive Forms.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi all! Hope you all are doing good. In today's blog, let us understand the functionalities of Show Hide in Rule Editor",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Introduction",
+      },
+      {
+        type: "paragraph",
+        text: "In AEM 6.5.xx, we have code editor as well as visual editor wherein you can apply your rules to be followed by the fields either by using functionalities of visual editor or by customizing your own logic in JavaScript and adding the same in code editor.",
+      },
+      {
+        type: "paragraph",
+        text: "AEM Rule Editor is a powerful tool provided by AEM Forms in order to:",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add custom functionalities in the fields of your form.",
+          "Set the behaviour of fields within the form structure.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Approach To study Rule Editor",
+      },
+      {
+        type: "paragraph",
+        text: "In this blog we will understand the power of rule editor by creating a simple College Application Form.",
+      },
+      {
+        type: "paragraph",
+        text: "The scenario states that first the candidate's eligibility needs to be checked and if found eligible the further sections of the form will be visible to the candidate for filling as per the eligibility criteria and if not then admission denied text will be shown which itself will be a part of the form.",
+      },
+      {
+        type: "paragraph",
+        text: "Prerequisites: A running AEM instance with forms addon package installed.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of College Application Form",
+      },
+      {
+        type: "paragraph",
+        text: "Let us begin the creation of College Application Form",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "First navigate to create adaptive form and create your form.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/create.webp",
+        alt: "Creating an adaptive form",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/form-properties.webp",
+        alt: "Adaptive form properties",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Choose a template of your choice, could be blank but here I have created a custom template, College Template, for the purpose of creation of the form and provide title to it. You will find the root panel wherein you can add a theme after clicking on configure. I have added Beryl theme.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/theme.webp",
+        alt: "Selecting the College Template",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "First you need to add 5 panels to your form with provided configuration. Ensure except for the first panel rest all are maked as hidden.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/hide-panel.webp",
+        alt: "Hiding all panels except the first",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/personal-details-panel.webp",
+        alt: "Personal Details panel",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/applicablestreamspanel.webp",
+        alt: "Applicable Streams panel",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/available-streams-panel.webp",
+        alt: "Available Streams panel",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/admission-details-panel.webp",
+        alt: "Admission Details panel",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/admission-denied.webp",
+        alt: "Admission Denied panel",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Now after adding panels, you need to add fields to them. Except for first name, mark all the fields as disabled.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/last-name-configuration.webp",
+        alt: "Marking fields as disabled",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "First name , Last Name and Percentile Obtained in 10th are the fields in Personal details panel.",
+          "Add the First Name Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/first-name-configuration.webp",
+        alt: "First Name field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add the Last Name Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/last-name.webp",
+        alt: "Last Name field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add the Percentile Obtained in 10th Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/peercentile.webp",
+        alt: "Percentile Obtained in 10th field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Applicable Stream is the field in Applicable Streams panel.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/applicable.webp",
+        alt: "Applicable Stream field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Applicable Stream is again a field in Available Streams panel.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/avvailable.webp",
+        alt: "Available Stream field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Name as per ID proof, Contact, Address, Select Blood Group and submit button are the field in Admission Details panel.",
+          "Add the Name as per ID proof Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/complete-name.webp",
+        alt: "Name as per ID proof field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add the Contact Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/contact.webp",
+        alt: "Contact field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add the Address Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/address-one.webp",
+        alt: "Address field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Allow multiple lined in Address Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/address-two.webp",
+        alt: "Address field with multiple lines enabled",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add the Select Blood Group Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/bloodgroup.webp",
+        alt: "Select Blood Group field configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Add the Submit Configurations.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/submit.webp",
+        alt: "Submit button configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Candidate not applicable text is a field in Admission Denied panel.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/text.webp",
+        alt: "Candidate not applicable text configuration",
+        style: { maxWidth: "500px", maxHeight: "550px" },
+      },
+      {
+        type: "bulletList",
+        items: [
+          "With this your adaptive form is ready to add include the functionalities of rule editor.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Adding Rules to Fields",
+      },
+      {
+        type: "paragraph",
+        text: "In AEM we have visual as well as code editor that enables an author to add functionalities using either none of them.",
+      },
+      {
+        type: "paragraph",
+        text: "Let us understand the scenario in detail so as to implement rules in the rule editor. Here first we want to check the eligibility of candidate. If the candidate is found eligible, the respective streams will appear for him to choose. As soon as the candidate selects a field, the candidate will have to enter admission details for official purpose and hence submit the form.",
+      },
+      {
+        type: "paragraph",
+        text: "In case the candidate does not qualify to secure admission in college, he will recieve the respective message.",
+      },
+      {
+        type: "paragraph",
+        text: "Let us begin:",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Go to the First Name field, select rule editor, this will navigate you to the Rule Editor Console.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/ruleeditorstart.webp",
+        alt: "Opening the Rule Editor for the First Name field",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "We want Last Name to be enabled only when the First Name is not empty, and so select create.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/firstname-visual.webp",
+        alt: "First Name rule in the visual editor",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/firstname-code.webp",
+        alt: "First Name rule in the code editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Similarly, we want the applicant to add 10th percentile only after last name is not empty.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/lastname-visual.webp",
+        alt: "Last Name rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Now if 10th percentile is greater than 75, we want Applicable Streams panel to be visible.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/percentile-one-visual.webp",
+        alt: "Percentile greater than 75 rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Now if 10th percentile is between 55-75, we want Available Streams panel to be visible.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/percentile-two-visual.webp",
+        alt: "Percentile between 55 and 75 rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Now if 10th percentile is less than 55, we want denied panel to be visible.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/percentile-three-visual.webp",
+        alt: "Percentile less than 55 rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "After selecting any of the streams, Admission details panel must get available",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/applicable-visual.webp",
+        alt: "Applicable Streams rule in the visual editor",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/available-visual.webp",
+        alt: "Available Streams rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "In Admission Panel, we want to enable Contact only if Name as per ID proof is not empty.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/complete-name-visual.webp",
+        alt: "Name as per ID proof rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "We want to enable Address only if Contact is not empty.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/contact-visual.webp",
+        alt: "Contact rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "We want to enable Blood group only if Address is not empty.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/address.webp",
+        alt: "Address rule in the visual editor",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "We want to enable submission after only if blood group is not empty.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/rule-editor-show-hide/bloodgroup-visual.webp",
+        alt: "Blood Group rule in the visual editor",
+      },
+      {
+        type: "paragraph",
+        text: "Now your form is ready. Preview it to find the functionalities working as per the scenario.",
+      },
+      {
+        type: "paragraph",
+        text: "Hope you enjoyed reading and understanding the concept of rule editor provided by AEM.",
+      },
+      {
+        type: "paragraph",
+        text: "Thanks for reading! 😄",
+      },
+    ],
   },
   {
     slug: "custom-prefill-services",
@@ -864,7 +1308,189 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Yash Sakharkar",
     description:
       "Learn how custom prefill services populate Adaptive Forms with data from external systems.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Welcome to the blog designed for developers new to the AEM Forms . This blog will walk you through some of the concepts like What is Custom Prefill Service In AEM Form ? and most importantly, How to Implement Custom Prefill Services In AEM Forms ? We'll cover these questions in this blog.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "What are Prefill Services in AEM Forms ?",
+      },
+      {
+        type: "paragraph",
+        text: "Prefill Services in AEM Forms are used to populate the form field with data before form is presented to the users. These services are useful for enhancing by reducing the amount of information users need to manually, ensuring data consistency, and improving form consistency rates.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "What are Custom Prefill Services in AEM Forms ?",
+      },
+      {
+        type: "paragraph",
+        text: "Custom Prefill Services in AEM (Adobe Experience Manager) Forms are tailored solutions designed to meet specific business requirements that are not addressed by out-of-the-box prefill functionalities. These services allow for more complex and dynamic data fetching, manipulation, and mapping to form fields based on unique logic and sources.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Steps to Implement Custom Prefill Services",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 1: Create an Adaptive Form",
+      },
+      {
+        type: "paragraph",
+        text: "To Create an Adaptive Form Navigate to Forms -> Forms and Document -> Create -> Select Adaptive Form -> Select any Template -> Enter Title and Name -> Click Create. Form which looks like this will appear.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/custom-prefill-services/adaptive-form.webp",
+        alt: "sampleAdaptive form",
+      },
+      {
+        type: "paragraph",
+        text: "Add the Component in the root panel for e.g Text box.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/custom-prefill-services/added-component-to-the-root-panel.webp",
+        alt: "added-component",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Step 2: Create a Backend Services that fetches and processes the data from the required sources.",
+      },
+      {
+        type: "paragraph",
+        text: "To Prefill an adaptive form using, Prefill Service. You must create a class that Implement com.adobe.forms.common.service.DataProvider Interface which will override getPrefillData(). Under this method we will write the business logic which will fetch the data and return the input stream of the data document.",
+      },
+      {
+        type: "paragraph",
+        text: "In the Code Snippet below we have Implemented the DataProvider Interface",
+      },
+      {
+        type: "code",
+        language: "java",
+        code: `package com.infodalesforms.core.service.impl;
+
+import com.adobe.forms.common.service.*;
+import org.apache.sling.api.resource.LoginException;
+import org.osgi.service.component.annotations.Component;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import javax.jcr.RepositoryException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+
+@Component(service = DataProvider.class)
+public class CustomPrefillServices implements DataProvider {
+    @Override
+    public String getServiceName() {
+        return "Custom Prefill Services";
+    }
+    @Override
+    public String getServiceDescription() {
+        return "Custom Prefill Services";
+    }
+    @Override
+    public PrefillData getPrefillData(DataOptions dataOptions) throws FormsException {
+        return new PrefillData() {
+            public InputStream getInputStream() {
+                try {
+                    return getData(dataOptions);
+                } catch (ParserConfigurationException | TransformerException | RepositoryException | LoginException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            public ContentType getContentType() {
+                return ContentType.XML;
+            }
+        };
+    }
+
+    public InputStream getData(DataOptions dataOptions) throws ParserConfigurationException,
+    TransformerException, RepositoryException, LoginException {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        Document document = documentBuilder.newDocument();
+
+        Element rootElement = document.createElement("data");
+        document.appendChild(rootElement);
+
+        Element name = document.createElement("name");
+        name.setTextContent("abc");
+        rootElement.appendChild(name);
+
+        Element lastName = document.createElement("lastname");
+        lastName.setTextContent("def");
+        rootElement.appendChild(lastName);
+
+        Element email = document.createElement("email");
+        email.setTextContent("abc@gmail.com");
+        rootElement.appendChild(email);
+        DOMSource domSource = new DOMSource(document);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        StreamResult streamResult = new StreamResult(byteArrayOutputStream);
+        TransformerFactory.newInstance().newTransformer().transform(domSource, streamResult);
+
+        return new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
+    }
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "Note : The text which are highlighted in black to create an elements in the above snippet should be similar to which you have provided after adding the textbox component in AEM Forms. In the below image, name field are similar to the one I have created an element in the code.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/custom-prefill-services/adaptive-forms-name-field.webp",
+        alt: "name fields",
+      },
+      {
+        type: "paragraph",
+        text: "Step 3: Deploy the code to AEM Environment using mvn clean install -PautoInstallBundle",
+      },
+      {
+        type: "paragraph",
+        text: "Step 4: Navigate to Your form -> Click on \"1\" symbol in the image -> Click on Setting Symbol Option -> There you will see the out of the box services as well as Custom Prefill Services that you have created through Java Code.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/custom-prefill-services/prefill-adaptive-form-1.webp",
+        alt: "prefill service 1",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/custom-prefill-services/prefill-services-2.webp",
+        alt: "prefill service 2",
+      },
+      {
+        type: "paragraph",
+        text: "Step 5: Click On Preview. You will see data get Prefilled into the Form.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/custom-prefill-services/preview-image.webp",
+        alt: "preview image",
+      },
+      {
+        type: "paragraph",
+        text: "So Using above mention Steps you can create your own Prefill Services in AEM Form. If you find this blog helpful, Please share it with your friends and colleagues.",
+      },
+    ],
   },
   {
     slug: "geolocation-forms",
@@ -874,7 +1500,229 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Nitish Bisen",
     description:
       "Explore how to integrate geolocation into AEM Forms to capture and use dynamic location information.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll guide you through creating dynamic forms that fetch and populate dropdown lists with city, state, and country data. By leveraging GeoNames for location data, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, including setting up a GeoNames account. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/geolocation.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "paragraph",
+        text: "Sign up for a GeoNames account and take note of your username. This username is required to access GeoNames REST APIs. Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/geonames-login.webp",
+        alt: "Create an account in Geolocation",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Create a Swagger file :",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Retrieve all countries",
+          "Retrieve child countries",
+        ],
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Create Data Sources",
+      },
+      {
+        type: "paragraph",
+        text: "To integrate AEM Forms with third-party applications, configure data sources in the cloud services settings. Use the Swagger files to set up these data sources. You will need to create two separate data sources: one for retrieving all countries and another for fetching child elements.",
+      },
+      {
+        type: "paragraph",
+        text: "To connect AEM Forms with third party api's, you first make a data source in cloud services. You can use the Swagger file to set up this data source.",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Log in to AEM and go to the Dashboard.",
+          "From Tools, select Cloud Services.",
+          "Pick or create a folder in Cloud Services to store your data sources.",
+          "Define settings like data type, endpoint URL, and authentication.",
+          "Save the data source",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/ds-01.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/ds-02.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Create Form Data Model",
+      },
+      {
+        type: "paragraph",
+        text: "Build your form data model using the data sources configured in the previous step, incorporating both data sources for a comprehensive model.",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Log in to AEM and go to the Dashboard.",
+          "Go to Forms > Data Integrations",
+          "Create an Form Data Model",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/fdm-01.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/fdm-02.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/fdm-03.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/fdm-04.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "paragraph",
+        text: "Save it.",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Create an Adaptive Form",
+      },
+      {
+        type: "paragraph",
+        text: "Create an adaptive form featuring multiple dropdown lists for selecting countries, states, and cities. Include one dropdown for listing countries and another for states and another for cities that dynamically updates based on the selected country.",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Log in to AEM and go to the Dashboard.",
+          "Go to Forms > Forms & Documents.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-01.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-02.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-03.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-04.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-05.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Populate the Countries Dropdown List",
+      },
+      {
+        type: "paragraph",
+        text: "The countries dropdown list is populated when the form is first loaded. The screenshot below illustrates the rule editor set up to populate the country options. Ensure you provide your GeoNames username for the functionality to work.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-06.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-07.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-08.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Populate the States Dropdown List",
+      },
+      {
+        type: "paragraph",
+        text: "The states dropdown list is populated when the form is first loaded. The screenshot below illustrates the rule editor set up to populate the state options. Ensure you provide your GeoNames username for the functionality to work.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-09.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Populate the City Dropdown List",
+      },
+      {
+        type: "paragraph",
+        text: "The cities dropdown list is populated when the form is first loaded. The screenshot below illustrates the rule editor set up to populate the cities options. Ensure you provide your GeoNames username for the functionality to work.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-10.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Final Form",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-11.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-12.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/geolocation-forms/af-13.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "paragraph",
+        text: "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge. Don't forget to follow me for upcoming blogs. Thank you!",
+      },
+    ],
   },
   {
     slug: "google-api-form",
@@ -884,7 +1732,183 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Nitish Bisen",
     description:
       "Discover how to integrate Google Maps APIs with AEM Forms for location-based form experiences.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll explore how to supercharge your Adobe Experience Manager (AEM) forms by integrating Google Maps APIs. We’ll guide you through creating dynamic forms that fetch and display the user’s current location like street, zipcode, city, state, and country data. By leveraging Google Maps APIs for geolocation, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, integrating Google Maps API keys to bring this functionality to life. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/google-apis.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "API's Integration",
+      },
+      {
+        type: "paragraph",
+        text: "To implement the Geolocation API in Adaptive Forms, follow these steps:",
+      },
+      {
+        type: "bulletList",
+        items: [
+          { title: "Obtain an API Key from Google", text: "Sign up for the Google Maps platform to receive an API key. You can start with a trial key that remains valid for one year." },
+          { title: "Create an Adaptive Form Fragment", text: "Design a form fragment with fields to display the current address." },
+          { title: "Invoke the Geolocation API", text: "Trigger the API call using the click event of an image object within the Adaptive Form." },
+          { title: "Process the API Response", text: "Parse the JSON data returned by the API and populate the Adaptive Form fields with the extracted address information." },
+        ],
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Create an Adaptive Form",
+      },
+      {
+        type: "paragraph",
+        text: "Create an adaptive form that includes an \"Image Choice\" component for selecting geolocations. The form should feature multiple text boxes for entering Lane Number, Lane Name, Zip Code, City, and State. These text boxes should dynamically update based on the user’s clicking on the map image.",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Log in to AEM and go to the Dashboard.",
+          "Go to Forms > Forms & Documents.",
+          "You can create an Adaptive Form or Adaptive Form Fragments",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-01.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-02.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "paragraph",
+        text: "Select Image Choice component to add image.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-03.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "paragraph",
+        text: "Select multiple Text Box to fetch data dynamically.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-04.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "paragraph",
+        text: "Select the rule editor to provide the API key and fetch data using that key. You will use the code editor to write the necessary code for this operation.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-05.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-06.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-07.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-09.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "paragraph",
+        text: "Source code similar to Adobe AEM Forms Documents",
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: `navigator.geolocation.getCurrentPosition(showPosition, handleError);
+
+function showPosition(position) {
+  console.log("I am inside the showPosition function");
+  console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+
+  var apiKey = "Provide your API Key";
+  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=" + apiKey;
+  console.log(url);
+
+  $.getJSON(url, function (data) {
+    if (data.status === "OK" && data.results.length > 0) {
+      var location = data.results[0].formatted_address;
+      console.log(location);
+
+      data.results[0].address_components.forEach(function(component) {
+        switch (component.types[0]) {
+          case "street_number":
+            streetNumber.value = component.long_name;
+            break;
+          case "route":
+            streetName.value = component.long_name;
+            break;
+          case "postal_code":
+            zipCode.value = component.long_name;
+            break;
+          case "locality":
+            city.value = component.long_name;
+            break;
+          case "administrative_area_level_1":
+            state.value = component.long_name;
+            break;
+        }
+      });
+    } else {
+      console.error("No results found or Geocode was not successful.");
+    }
+  }).fail(function() {
+    console.error("Failed to retrieve data from Google Maps API.");
+  });
+}
+
+function handleError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      console.error("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      console.error("Location information is unavailable.");
+      break;
+    case error.TIMEOUT:
+      console.error("The request to get user location timed out.");
+      break;
+    case error.UNKNOWN_ERROR:
+      console.error("An unknown error occurred.");
+      break;
+  }
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "Click on the Map Image to automatically populate the form with your current location.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/google-api-form/af-08.webp",
+        alt: "Integrate Geolocation with AEM Forms",
+      },
+      {
+        type: "paragraph",
+        text: "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge. Don't forget to follow me for upcoming blogs. Thank you!",
+      },
+    ],
   },
   {
     slug: "forms-introduction",
@@ -2096,7 +3120,215 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Nitish Bisen",
     description:
       "Learn how Adaptive Form Fragments enable reusable form sections and simplify form maintenance.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Adaptive Form Fragments are a feature within Adobe Experience Manager (AEM) Forms that allows for the creation of reusable form components. These fragments can be used across multiple adaptive forms, which are dynamic and responsive forms designed to provide a user-friendly experience on various devices and screen sizes.",
+      },
+      {
+        type: "paragraph",
+        text: "Adaptive Forms make it easy to create a form part, like a panel or a bunch of fields, just one time and use it again in different Adaptive Forms. These reusable parts are called Adaptive Form fragments.",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/fragments.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Key Features of Adaptive Form Fragments:",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Reusability:",
+      },
+      {
+        type: "paragraph",
+        text: "Adaptive Form Fragments can be created once and reused across multiple forms, reducing the effort needed to recreate common form components.",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Consistency:",
+      },
+      {
+        type: "paragraph",
+        text: "By using fragments, you ensure that the same design and functionality are applied consistently across different forms. This is particularly useful for maintaining brand standards and uniform user experiences.",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Efficiency:",
+      },
+      {
+        type: "paragraph",
+        text: "They streamline the form creation process, saving time and resources. When updates are needed, changing a fragment automatically updates all forms that use that fragment, simplifying maintenance and version control.",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Modularity:",
+      },
+      {
+        type: "paragraph",
+        text: "Adaptive Form Fragments promote a modular approach to form design. This modularity makes it easier to manage large and complex forms by breaking them down into smaller, manageable parts.",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Scalability:",
+      },
+      {
+        type: "paragraph",
+        text: "As organizations grow and their form requirements become more complex, Adaptive Form Fragments allow for scalable form management. New fragments can be added and existing ones can be modified without disrupting the entire form ecosystem.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Why Use Adaptive Form Fragments?",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Enhanced User Experience:",
+      },
+      {
+        type: "paragraph",
+        text: "Adaptive forms are designed to adjust to different screen sizes and devices, providing a seamless experience for users. Fragments ensure that this adaptability is consistently applied across all forms.",
+      },
+      {
+        type: "heading",
+        level: 4,
+        text: "Simplified Management:",
+      },
+      {
+        type: "paragraph",
+        text: "Managing forms becomes simpler as changes can be made to a fragment and reflected across all instances where the fragment is used. This reduces the workload for form administrators and developers.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Create an Adaptive Form Fragments",
+      },
+      {
+        type: "paragraph",
+        text: "To create an adaptive form fragments, follow these steps:",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Log in to AEM and go to the Dashboard.",
+          "Go to Forms > Forms & Documents.",
+          "Make a folder to keep all your forms fragments together.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-01.webp",
+        alt: "Adaptive Form Home",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-02.webp",
+        alt: "Adaptive Form Fragments Create",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-03.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Open the folder and create the Adaptive Form Fragments",
+          "Provide a meaningful title for your form fragments, You can also choose from additional options like Form Model and Advanced. This lets you create form fragments using Form Data Model, Form Template, Schema, or None. If you're not using any, just select \"none.\"",
+          "Click on Create to create an Adaptive Form Fragments.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-04.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-05.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-06.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Open the form and click on Edit mode.",
+          "Add fields to Adaptive Forms based on what you need.",
+          "As we create different sections for Basic Details, Permanent Address and Current Address.",
+          "Preview the form fragment.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-07.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-08.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-09.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-10.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "bulletList",
+        items: [
+          "Your form fragment is created.",
+          "Next, you need to add your form fragment to your form.",
+          "You can put your form fragment in your existing form, or you can make a new form.",
+          "Go to your form and click on edit mode.",
+          "Choose the Asset tab and look for Adaptive form Fragments.",
+          "Once you select the form fragment, you'll see all the form fragment models.",
+          "Pick your Form Fragment and just drag and drop it onto your main panel.",
+          "Open and Preview the Form fragment.",
+        ],
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-11.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-12.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-13.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "image",
+        src: "images/blogs/forms/adaptive-form-fragments/aff-14.webp",
+        alt: "Adaptive Form Fragments",
+      },
+      {
+        type: "paragraph",
+        text: "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge. Don't forget to follow me for upcoming blogs. Thank you!",
+      },
+    ],
   },
   {
     slug: "project-structure-eds",
