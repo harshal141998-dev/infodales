@@ -170,9 +170,18 @@ export default function BlogDetailPage() {
     <Box className="article-detail-page">
       <Container maxWidth={false}
         sx={{
-          maxWidth: "1250px",
-          margin: "0 auto",
-          px: { xs: 2, md: 3 },
+          // maxWidth: "1250px",
+          // margin: "0 auto",
+          // px: { xs: 2, md: 3 },
+          width: {
+            xs: "calc(100% - 40px)",
+            sm: "calc(100% - 60px)",
+            md: "calc(100% - 90px)",
+          },
+           width: "calc(100% - 100px)",
+           maxWidth: "1250px",
+           margin: "0 auto",
+           px: 0,
         }}>
 
         {/* Back */}
