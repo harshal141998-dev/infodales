@@ -4547,7 +4547,429 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Discover how AEM GraphQL delivers structured Content Fragment data to headless applications.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Welcome all, let's begin learning GraphQL.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Adobe Experience Manager is a headless Content Management System. The content from backend is delivered by two ways",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Application Programming Interface",
+          "GraphQL",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "GraphQL is a query based content delivery medium that is used to deliver precise data from any structured yet flexible source like Content Fragment to third party.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Single end point.",
+          "Status response is always 200.",
+          "Precise content delivery.",
+          "Precise content delivery.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "API",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Multiple end points.",
+          "Status response is 2nn, 3nn, 4nn, 5nn",
+          "Complete content delivery.",
+          "Caching is performed by HTTP Caching Headers.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Content Fragment",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "It is a feature of AEM that facilitates the delivery, creation plus management of flexible and scalable content in modular and reusable approach to third party.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to Configuration Browser from tools console check the checkboxes Cloud Configurations, Content Fragment Models and GraphQL Persistent Queries.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-one-65e2dc07e665a.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You will find your created folder in crx/de console.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-two-65e2dc0a5f3b1.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "From Navigation console, navigate to Assets then files and again create a folder and in cloud services add the path of our created folder.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-three-65e2dc0a143d9.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now inside that folder create content fragment.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-four-65e2dc070118c.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Add fields of your choice for your model.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-five-65e2dc06b92ad.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now from Tools console navigate to Assets then Content Fragment Models and then choose your model to create various content fragments.",
+          "Here in this example Content Fragment India model is created and from it Maharashtra, Andhra Pradesh, Madhya Pradesh and Rajasthan content fragments are created each specified with state, language, population and district.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-six-65e2dc0937997.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-sevenjpg-65e2dc08ca152.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You will find your created content fragments in crx/de.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/contentfragmentimage-eight-65e2dc0606534.webp",
+        alt: "Content Fragment",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now your content fragments are ready.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "GraphQL Implementation",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here we are using GraphQL in AEM 6.5 with service pack of 6.5.18.",
+          "In GraphQL we set up an endpoint which is resource specific in order to retrieve data from that particular resource. For that navigate to Tools then Assets and click GraphQL.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-one-65e2dc0eb19b8.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Create an endpoint and provide the schema of your content fragment model.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-two-65e2dc126bb28.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now from Tools go to Generals and hit GraphQL editor.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-three-65e2dc11edaf5.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You will find a console in front of you. Select your end point and now you are ready to fire queries to get your data.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-four-65e2dc0d64109.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now in order to get all your schema available in your defined endpoint fire the provided query:",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "graphql",
+        code: `{  __schema
+    { types
+        {
+            name
+            description
+        }
+    }
+}`,
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-five-65e2dc0d449a0.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You can retrieve your created schema either by path or by list. Here name of your schema is your model name which is the endpoint.",
+          "When you retrieve data by path you can select only one content fragment at a time and accordingly display the required data.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "graphql",
+        code: `query { indiaByPath (_path : "/content/dam/graphql-case-study/andhra-pradesh")
+               {item {
+                       state,
+                       language,
+                       population,
+                       districts
+                   }
+               }
+           }`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we are selecting Andhra Pradesh by passing its path and retrieving the data.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-six-65e2dc105ef87.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "We can also get all the available content fragments if we pass the schema by list.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "graphql",
+        code: `query {
+    indiaList {
+      items {
+            _path,
+            _variation,
+            state,
+            population,
+            language,
+            districts
+        }
+    }
+  }`,
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-seven-65e2dc101273a.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Also in order to retrieve the only selected data you can add filters.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "graphql",
+        code: `query {
+    indiaList (filter : {
+        state : {
+        _expressions : {
+            value : "Maharashtra",
+            _operator : EQUALS_NOT
+        }
+    }
+    }) {
+        items {
+        state,
+        language,
+        population,
+        districts
+        }
+    }
+    }`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we are retrieving all the content fragments excluding Maharashtra.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-eight-65e2dc0b4dae9.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now if we want to cache our queries then just add Persisted Queries and provide a name to it.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-nine-65e2dc0ed3b9c.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "This will cache your query and then you can copy the url of selected query and hit on any browser to consume the data.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-ten-65e2dc1166e00.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-graphql/graphql-eleven-65e2dc0b6a29f.webp",
+        alt: "GraphQL",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You can also publish the query directly and you will find the replication on your published instance with all your data associated with your respective end point.",
+          "You can easily fetch the previous queries from History and reuse them.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you find this blog helpful and interesting. Please share and for more blogs surf our website.",
+      },
+    ],
   },
   {
     slug: "slightly-in-aem",
@@ -4557,7 +4979,354 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Discover how HTL (Sightly) separates presentation logic from business logic in AEM.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hello, welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Slightly in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In this blog we will be discussing Slightly in AEM. We will be focused upon understansing what exactly slightly is and what advantages does it provide.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What Slightly",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Slightly, commaonly referred as sly is a templating engine which is indeed a part of AEM's Slightly templating framework. It is segregates the business logic and presentation logic. It offers a cleaner way to develop frontend scripts.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The main purpose of Slightly is not only to provide a clean, easy and maintainable rendering in AEM compared to JSP but also protects injection attacks.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Syntax",
+      },
+
+      {
+        type: "paragraph",
+        text: "Slightly offers a very simple syntax.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Expression Language or Interpolation",
+            text:
+              "Just like JSP, Slightly also offers expression language. The syntax for the same is ${expression}. This is used to evaluate the expression and display the result. It is used to display the value of a variable or an object.",
+          },
+          {
+            title: "Attributes",
+            text:
+              "Attributes are used to inject data and the syntax is data-sly, for example data-sly-use, data-sly-repeat and data-sly-include.",
+          },
+          {
+            title: "Dynamic Data Rendering",
+            text:
+              "Snippets like data-sly-test and data-sly-repeat allows helps to dynamically render the data.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Commonly Used Tags used in Slightly",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-use is used to include sling models in slightly.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-use.model="com.infodales.aem.core.models.HelloWorldModel">
+    \${model.message}
+</sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-test is a basic sly tag more over used like an if-else statement. It is used to test the condition and render the data accordingly.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-test="\${condition}">
+    <p>If condition is true, render this.</p>
+</sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "This is how we can actually use datasly-test to render the condition. It displays the name of the author if currentPage.author is not null",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-test.authorName="\${currentPage.author}">
+<p>Author: \${authorName}</p>
+</sly>
+<sly data-sly-test="\${!currentPage.author}">
+    <p>No author found</p>
+</sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-choose Is again a form of if-else statement that chooses the data to be rendered conditionally. Here we are using it to display the page title.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-choose>
+<sly data-sly-test="\${page.title}">
+    <h1>\${page.title}</h1>
+</sly>
+<sly data-sly-test="\${!page.title}">
+    <p>No title available</p>
+</sly>
+</sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-unwrap is used to remove the just outer sly tag keeping the inner content as it is hence removing the unwanted markups.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `                                <sly data-sly-test="\${true}">
+<sly data-sly-unwrap>
+    <div>
+        <p>Unwrap this div</p>
+    </div>
+</sly>
+                                </sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-call is used to call a template or a component. It is used to include the template or component in the current file.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: "<sly data-sly-call=\"${'template.html'}\"></sly>",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-set is used to set the value of a variable and use it in the template.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-set.hello="Hello World">
+    \${hello}
+</sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-attribute is used to set the attribute of an element dynamically.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: "<div data-sly-attribute.class=\"${'container-class'}\"></div>",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-text is used to display the text content of an element which can be from model or expression.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: "<div data-sly-text=\"${'Hello World'}\"></div>",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-include is used to include the content of a some fragments or templates for resue here.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: "<sly data-sly-include=\"${'header.html'}\"></sly>",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-repeat is a loop statement which is used to iterate over a list of items.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<ul>
+    <sly data-sly-repeat="\${items}">
+        <li>\${item}</li>
+    </sly>
+</ul>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-template Is used to add a resuable template in the current file.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-template.myTemplate>
+<div class="testComponent">\${componentData}</div>
+</sly>
+
+<sly data-sly-call="\${testTemplate @componentData='Data'}"></sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-resource is used to include another component and path manipulations. Here we are including customtext component and naming it as customText. Also we are performing path manipulations that produces path/before/this/path and path/after/this/path respectively.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<div data-sly-resource="\${'customText' @ resourceType='/apps/local-project/components/content/customtext'}"></div>
+<section data-sly-resource="\${'path/before' @ appendPath='this/path'}"></section>
+<section data-sly-resource="\${'path/after' @ prependPath='this/path'}"></section>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-skip In order to skip all the unwanted code when false id returned this tag is used.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-skip="\${!page.title}">
+    <h1>\${page.title}</h1>
+</sly>`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "data-sly-append Is used to append the content of an element or a variable.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: "<sly data-sly-append=\" ${page.description}\"></sly>",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "@context is one of the freqently used slightly attribute. @context = 'html' escapes the specail characters ensuring the content is treated as html.@context='url' ensures that the url is encoded properly. @context='text' ensures that the content is treated as plain text and @context='unsafe' renders the content without escaping which is really dangerous as it prone to XSS(cross-site-scripting) attacks.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<div data-sly-use.script="testscript.js" data-sly-context="\${'unsafe'}">
+    \${script.dynamicContent}
+</div>
+
+<div data-sly-use.text="markuptext" data-sly-context="\${'html'}">
+    \${text.htmlContent}
+</div>
+
+<a href="\${homepage.url @ context='url'}">Home Page</a>
+
+<div data-sly-use.text="plaintext" @context="text">
+    \${text.plainTextContent}
+</div>`,
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we come to the conclusion of the blog where we have understood how we can produce a frontent scripts using Slightly with some commonly used sly tags and their syntax.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "templates",
@@ -4567,7 +5336,352 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Learn how to create editable templates, configure policies, and enable flexible page authoring in AEM.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, happy to find you. Welcome to another blog.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Editable Templates in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Editable Templates are pre-designed feature of AEM that outline the layout, design, and components for a web page. They serve as guides, establishing how content should be organized on a page. By defining the arrangement of elements such as text, images, and other components, templates help maintain consistency across different pages.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of Templates",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Let us understand the concept of templates in AEM by creating one.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In order to create a template, we need to have a template type. Here we are using a page as a template type. To do so navigate to tools, general, templates and create one template.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/templatesUIfolder.webp",
+        alt: "templatesUIfolder",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/pagetemplatetype.webp",
+        alt: "pagetemplatetype",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/createtemplate.webp",
+        alt: "createtemplate",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Having created the template, we can see that it is in draft state. This means while creating a page with this template, the template itself will not be visible. Hence we need to enable it.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/drafttemplate.webp",
+        alt: "drafttemplate",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/enablingtemplate.webp",
+        alt: "enablingtemplate",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now let us simply create a page with the template created. Go to the sites, create a page, choose content template to create page and here we have named it as home page.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/contenttemplatepagecreation.webp",
+        alt: "contenttemplatepagecreation",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/homepage.webp",
+        alt: "homepage",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After creating so, let us add some components to the page but for that we need to add them to the policies of the template. Policies are set of rules that not only allows the component to be added in on the page but also can add some styling to it. To do so, go to edit template and you will open the template of the created page.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/edittemplates.webp",
+        alt: "edittemplates",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now here at the top right corner, we can see structure and on clicking it we can see structure, initial and layout.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/structureinitiallayout.webp",
+        alt: "structureinitiallayout",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Structure: When we add components to the sturure, those components cannot de removed from the page directly and will be present in all the pages created with this template before or after adding the componnet.",
+          "Initial Content: When we add components to the initial content, those components can be removed from the page directly and will be present in all the pages created with this template after adding the componnet.",
+          "Layout: This adjests the layout of the container added on the template and also the components added.",
+          "Lets add a component to the template. Click on the container, go to policies and add a component. Here we have added breadcrumb component in structure and text component in initial content.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/policies.webp",
+        alt: "policies",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/structurepolicy.webp",
+        alt: "structurepolicy",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/addingbreadcrumb.webp",
+        alt: "addingbreadcrumb",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/completepagefromtemplate.webp",
+        alt: "completepagefromtemplate",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now let us understand the this in crx/de. In conf folder, there exists your project folder there in you find settings, wcm and templates. In templates your templates are stored with policies, structure and inital content. In template types, your base template is stored.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/conffolder.webp",
+        alt: "conffolder",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Custom Template Types",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We can even create our own custom template type for the purpose of creation of a template. Simply copy the predefined template type and configure it. Let us understand how do we actually configure it.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In inital jcr:content, we need to add the sling:resourceType as our page component of the project. Also we can predefine the template to which the template type will be configured.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/customtemplatetype.webp",
+        alt: "customtemplatetype",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/initialjcrcontent.webp",
+        alt: "initialjcrcontent",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Similarly to root and container of the inital, we need to add the sling:resourceType property that points to the container comnponent of the project.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/initialcontainer.webp",
+        alt: "initialcontainer",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In jcr:content of the template type, we need to add the description as well as the title of the template type.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/title.webp",
+        alt: "title",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In jcr:content of policies, we need to add the cq:policies that points to project level page policies and leaving the sling:resourceType pointing to core components policy mapping untouched.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/policiesjcr.webp",
+        alt: "policiesjcr",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In structure jcr:content, root and container, we need to add sling:resourceType pointing to the same page component.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/structurejcrcontent.webp",
+        alt: "structurejcrcontent",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/structurejcrcontainer.webp",
+        alt: "structurejcrcontainer",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "This ensures completion of creation of a custom template type for the p[urpose of creation of the template. When you navigate to tools then to templates and then to your project wherein you have specified the template type, you ca start to create a template with the custom template type now.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/customtemplateavailable.webp",
+        alt: "customtemplateavailable",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Template Content Policies and Page Policies",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Policies in templates as discussed earlier are indeed the configurations which describe the set of components allowed as well as design and style configured.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "cq:policy, in created templates is an important property that provides a reference to the content policy for paragraph system of the page along with the references to the actual components whereas the actual policy definations are stored under /settings/wcm/policies/wcm/foundation/components. Pages policies are the content policies for the main parsys container of the page.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/contentpolicies.webp",
+        alt: "contentpolicies",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Unavailibility of Templates while Creating a Page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There comes a scenario that having created a template successfully, you may not be able to find one while crerating a page in project hierarchy. There could be two reasons, either it is in draft state or the template is not allowed in the hierarchy. If it is in draft state, you need to enable it as discussed above but what if we need to allow it in a hierarchy.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Suppose you need to create a page in we-retail site hierarchy with your custom template. Despite being enabled, this custom template is not available in the hierarchy. This is because the template is not allowed in the hierarchy. To allow it, select the page within which you need to allow the template and click on the properties. Here you can see the advance tab. In advance tab, you will find template settings, allowed templates, add the path of the template in the allowed paths and there you go. You have the template available for creatinf the page.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/weretailhierarchy.webp",
+        alt: "weretailhierarchy",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/allowedtemplate.webp",
+        alt: "allowedtemplate",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/templates/templateavailable.webp",
+        alt: "templateavailable",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have successfully created a template and a page out of it. We also have a clear idea of structure, inital content and layout as well as we have a clear idea of where exactly this is stored in the crx/de. We have also understood the creation and configuration of custom template types what content and page policies are how to troubleshood unavailibility of termplates in the hierarchy.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "system-user",
@@ -4577,7 +5691,218 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Understand how to create service users and configure secure repository access for AEM operations.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hello, hope you are all doing well. Welcome to another blog.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "System User in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "System users are designated accounts created to handle system-level tasks or to provide specific permissions to certain processes or services within the AEM platform. These accounts are not intended for human use, but are linked to automated operations, integrations, or system functions within AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of System User",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to create a system user we need to follow the following steps.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You ned to go the explorer console (http://localhost:4502/crx/explorer/index.jsp) of aem and click on user administration.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/explorerconsole.webp",
+        alt: "explorerconsole",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You need to simply create a new system user. Here we have created aem_bot user.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/createsystemuser.webp",
+        alt: "createsystemuser",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now having created a system user, we need to add permissions to it. In order to do so go to useradmin console and search for aem_bot and add the required permissions.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/permissionstosystemuser.webp",
+        alt: "permissionstosystemuser",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "This user is stored in the system folder within home folder in crx/de.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/homefolder.webp",
+        alt: "homefolder",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "System users can also be created using configurations. In configMgr (http://localhost:4502/system/console/configMgr), search for an ACS configuration factory called Ensure Service User. This is a configuration factory that actually creates the system user and adds permissions to it. Here we have created a system user called aem-service-bot within aembots folder. Also we have added permisions to it.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/ensureserviceuser.webp",
+        alt: "ensureserviceuser",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/permissionsconfig.webp",
+        alt: "permissionsconfig",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "type=allow says that the permissions are being granted (deny could be used) and privileges=jcr:read,jcr:all,rep:write defines for what the permissions are actually granted.",
+          "jcr:read grants reading permision.",
+          "jcr:all grants all the permissions like read, write, delete, modify etc.",
+          "rep:write grants the permission of write.",
+          "path=/content/local-project being the repository location where the granted permissions are exercised.",
+          "There are some more commonly used permissions like jcr:modifyProperties, jcr:addChildNodes, jcr:removeChildNodes, rep:readProperties, rep:readNodes and crx:replicate with selfexplainatory names.",
+          "This created system user can be loacted in crx/de under home folder.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/configurationstore.webp",
+        alt: "configurationstore",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Configuring System User",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to configure the system user we need to follow the following steps.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now we need to first get the bundle id so that we can bind the created system user.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/bundleid.webp",
+        alt: "bundleid",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Search for Apache Sling Service User Mapper Service Ammendment (http://localhost:4502/system/console/configMgr) which is a factory configuration. Here we need to add the system configuration.",
+          "Now we need to add the bundle id: reference name = name of the system user.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/system-user/botammendment.webp",
+        alt: "botammendment",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Consuming System User",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now the system user is ready to be consumed. We need to create a utility class wherein there exists a map. This map consumes our reference name with whihch the system user is binds with the bundle id. It indeed returns a resource resolver",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.infodales.aem.core.util;
+
+import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public final class SubserviceConsumption {
+    private SubserviceConsumption() {
+    }
+    public ResourceResolver subserviceResolver(ResourceResolverFactory factory) throws LoginException {
+        final Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put(factory.SUBSERVICE, "bot");
+        return factory.getServiceResourceResolver(parameters);
+    }
+}`,
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we have sucessfully created a system user, provided permissions to it via explorer and ensure user configurations and have configured it. We have also consumed the system user via a parameter map that returns a resource resolver which can be used to access a recource in the provided path and perform permitted operations on it.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "repoinit",
@@ -4587,7 +5912,111 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Discover how RepoInit automates repository setup, service users, and access control configurations in AEM.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi reader welcome to another blog.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Repoinit in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Repoinit is a tool used for automating repository initialization tasks. It’s a script-based approach that helps configure the underlying Java Content Repository by defining the structure and settings for the repository, such as creating nodes, assigning properties, and configuring permissions.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Purpose of Repoinit",
+      },
+
+      {
+        type: "paragraph",
+        text: "Repoinit serves the following purposes:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Automating Repository Setup : Rather than manually configuring nodes, properties, and permissions within the JCR, repoinit enables you to define these settings in a script that can be executed at startup or during deployment. This reduces manual effort and ensures consistency.",
+          "Customizing Repository Structures : Repoinit offers a standardized method for tailoring the content repository to meet specific project needs, like setting up new nodes, access control lists (ACLs), properties, or even custom node types.",
+          "Improving Deployment Flexibility : By scripting repository configurations, repoinit allows you to easily replicate these setups across various AEM environments (e.g., from development to production), which helps maintain consistency and reduces the chance for configuration errors.",
+          "Integration and Setup : Repoinit is also useful when integrating AEM with other systems or for configuring custom content structures, workflows, or user access during initialization.",
+          "Managing Permissions : Through repoinit, administrators can set detailed permissions on specific repository nodes, ensuring that only authorized users or systems have access to certain content.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Understanding the Basic Script of Repoinit",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You can find repoinit in AEM\\crx-quickstart\\launchpad\\config\\org\\apache\\sling\\jcr\\repoinit wherein there exisits RepositoryInitializerScript of type .config.",
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: `:org.apache.felix.configadmin.revision:=L"1"
+scripts=[ \\
+"create\\ path\\ (sling:OrderedFolder)\\ /content/dam/local-project", \\
+"create\\ path\\ (nt:unstructured)\\ /content/dam/local-project/jcr:content", \\
+"set\\ properties\\ on\\ /content/dam/local-project/jcr:content\\n\\ \\ set\\ cq:conf{String}\\ to\\ /conf/local-project\\n\\ \\ set\\ jcr:title{String}\\ to\\ \\"Local\\ Project\\"\\nend", \\
+]
+service.factoryPid="org.apache.sling.jcr.repoinit.RepositoryInitializer"
+service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`,
+      },
+
+      {
+        type: "paragraph",
+        text: "Let us understand the meaning of each line.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          ":org.apache.felix.configadmin.revision:=L\"1\" This line specifies the revision number for the configuration. It is a part of the Apache Felix Configuration Admin specification, which is used for managing configurations in OSGi-based environments (which AEM uses).L\"1\" indicates that this is the first version (or revision) of the configuration, and it is often used for versioning the configuration of services.",
+          "scripts=[ ... ] : This part begins the definition of a list of scripts that will be executed in sequence when the RepositoryInitializer service starts up.",
+          "create path (sling:OrderedFolder) : This command creates a path in the repository with a node type of sling:OrderedFolder. This is a special type of node that allows you to store child nodes in a specific order.",
+          "create path (nt:unstructured) : This command creates a path in the repository with a node type of nt:unstructured.",
+          "set properties on /content/dam/local-project/jcr:content : This part specifies that you want to set properties on the node /content/dam/local-project/jcr:content created earlier.",
+          "set cq:conf{String} to /conf/local-project : This sets a property called cq:conf on the jcr:content node. The value of the property is /conf/local-project, which is likely referring to a configuration for this content (possibly related to a particular project or feature).",
+          "set jcr:title{String} to \"Local Project\" : This sets another property called jcr:title with the value \"Local Project\". The jcr:title property is commonly used to give a human-readable title to content.",
+          "end : This marks the end of the property-setting block.",
+          "service.factoryPid=\"org.apache.sling.jcr.repoinit.RepositoryInitializer\" : This line indicates that this configuration is meant for the RepositoryInitializer service in AEM, which is responsible for initializing the repository based on the provided repoinit scripts.",
+          "service.factoryPid : refers to the factory PID (Persistent Identifier) that is used to create the service instance. It links the configuration to the service for repository initialization.",
+          "service.pid=\"org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project\" service.pid stands for the Service PID, which uniquely identifies this particular instance of the RepositoryInitializer service. The ~local-project suffix indicates that this particular instance of the service is related to the \"local-project\" configuration.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we have understood the importance of repoinit and what the script for repoinit says.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "contentasaservice",
@@ -4597,7 +6026,389 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Explore how AEM delivers reusable content through APIs to websites, apps, and headless channels.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, hope you are doing well. Welcome to another blog.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Content as a Service in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Content as a Service in AEM is a powerful feature of AEM that circulates content in structured format like JSON instead of serving it as mear webpages thus aiding in its usage across multiple platforms including mobile apps, IoT devices. This content can be consumed by various other websites, applications, and devices.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Features of Content as a Service in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Content as a Service thus provides a variety of powerful features that include:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Headless Content Delivery : Headless content delivery in AEM is like having a supercharged content hub that feeds all your digital experiences—websites, mobile apps, kiosks, or even smart devices—without being tied to a specific front-end design. Think of AEM as the brain of your content. It stores and manages everything—text, images, videos, structured data—and makes it available through APIs. These APIs act like messengers, delivering content to any front-end framework you choose, whether it’s React, Angular, Vue.js, or even something new in the future. This setup gives developers the freedom to build fast, modern, and interactive applications while letting content creators work in AEM without worrying about code. It’s a flexible, scalable way to keep content consistent across platforms, ensuring that updates happen in one place but appear everywhere your audience interacts with your brand.",
+          "Content Fragments in AEM are like neatly organized content blocks that you can create once and reuse across multiple platforms. They help structure content in a way that’s flexible, consistent, and API-friendly, making them perfect for headless content delivery. Once created, these fragments can be referenced anywhere within AEM pages, or they can be delivered directly to websites, mobile apps, or other digital platforms through APIs. For more details on content fragments, refer our blog on content fragments (https://infodales.com/blogs/ContentFragments.html).",
+          "GraphQL & REST APIs : If you're familiar with GraphQL, you'll love AEM’s implementation. Instead of making multiple requests to retrieve different pieces of content, GraphQL lets you ask for exactly what you need in a single request. This makes content delivery faster and more efficient, reducing unnecessary data transfers. It’s perfect for structured content like product catalogs, blogs, FAQs, and content fragments, where you only want specific fields rather than an entire data set. For more details refer our Graphql (https://infodales.com/blogs/aem-graphql.html) blog where the content fragments are actualy exported using GraphQL AEM content Services also supports REST APIs, provides a flexible way to fetch content in JSON format. It follows a more traditional API structure, where each request retrieves predefined content endpoints. This is useful when you need to integrate AEM with other systems or when working with applications that rely on RESTful architecture.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we will be creating a few content fragments which store data of stars. This data will be then exported as a JSON RESTful API endpoint.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of Content Fragment Model and respective Content Fragments.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To begin with, we need to have a few content fragments that stores the data of stars. We will be creating a content fragment model and proceed with adding content fragments.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to tools and then to assets and then to content fragments. Here you can see a few folders. Go to your project folder and then create a content Fragment model.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/cfmodel.webp",
+        alt: "cfmodel",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/createcfmodel.webp",
+        alt: "createcfmodel",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/createcf1.webp",
+        alt: "createcf1",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/completecfmodel.webp",
+        alt: "completecfmodel",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Having created the content fragment model, we need to create a few content fragments. To do so, navigate to navigations, assets and then files. Now create a folder, here we have created Stars Data folder.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/assets.webp",
+        alt: "assets",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/starsfolder.webp",
+        alt: "starsfolder",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Within this folder will reside all the content fragments. To do so, we need to add the folder where in there exists our content fragment model in the cloud configurations of the stars data folder. Select the folder and go to properties and in cloud configurations, add the path of the folder in which we have the content fragment model.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/properties1.webp",
+        alt: "properties1",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/properties2.webp",
+        alt: "properties2",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/cloudconfigurations.webp",
+        alt: "cloudconfigurations",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Having done so, we have created a few content fragmengs which are now ready to be exported.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/allcf.webp",
+        alt: "allcf",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Endpoint Creation",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we have all the prerequisits ready for the creation of an endpoint which will sore the data of the content fragments. Here is the code snippet for the same which we will be understanding.",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.constants;
+
+public class StarEndpointConstant {
+    public static final String ENDPOINTPATH = "/bin/stars";
+    public static final String STAR_PARENT_FOLDER_PATH = "/content/dam/stars-data";
+    public static final String STAR_MASTER = "/jcr:content/data/master";
+    public static final String STAR_NAME = "starName";
+    public static final String DATEOFDISCOVERY = "discoveryDate";
+    public static final String SPECTRALINFO = "spectralType";
+    public static final String SPECTRUM = "spectrum";
+    public static final String SOLAR_MASS = "solarMass";
+    public static final String IS_PART_OF_BINARY_STAR_SYSTEM = "isPartOfBinaryStarSystem";
+    public static final String PART_OF_BINARY_STAR_SYSTEM = "Part of Binary Star System";
+    public static final String DISCOVERY = "discovery";
+}`,
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.servlets;
+
+import com.local.core.constants.StarEndpointConstant;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.osgi.service.component.annotations.Component;
+import javax.jcr.*;
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+@Component(service = {Servlet.class}, property = {
+        "sling.servlet.paths="+ StarEndpointConstant.ENDPOINTPATH,
+        "sling.servlet.methods=GET"
+})
+public class StarsServlet extends SlingSafeMethodsServlet {
+
+    private String discoveryDate;
+    private List<String> spectral;
+    private String solarMass;
+    private String isPartOfBinaryStarSystem;
+
+    @Override
+    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        ResourceResolver resolver = request.getResourceResolver();
+        Resource resource= resolver.getResource(StarEndpointConstant.STAR_PARENT_FOLDER_PATH);
+        Node starData = resource.adaptTo(Node.class);
+        try {
+            JSONObject starJSONObject = new JSONObject();
+            NodeIterator stars = starData.getNodes();
+            while(stars.hasNext()){
+                Node star =  stars.nextNode();
+                String name = star.getName();
+                if(!name.contains(":")){
+                    Node starMaster = resolver.getResource(star.getPath()+ StarEndpointConstant.STAR_MASTER).adaptTo(Node.class);
+                    String starName = starMaster.getProperty(StarEndpointConstant.STAR_NAME).getValue().getString();
+                    JSONObject starDataJsonObject = new JSONObject();
+                    JSONObject starSpectrumJsonObject = new JSONObject();
+                    if(starMaster.hasProperty(StarEndpointConstant.DATEOFDISCOVERY)){
+                        Calendar calendar = starMaster.getProperty(StarEndpointConstant.DATEOFDISCOVERY).getValue().getDate();
+                        int year = calendar.get(calendar.YEAR);
+                        int month = calendar.get(calendar.MONTH);
+                        int day = calendar.get(calendar.DAY_OF_MONTH);
+                        discoveryDate = year + "-" + month + "-" + day;
+                        starDataJsonObject.put(StarEndpointConstant.DISCOVERY, discoveryDate);
+                    }
+                    if(starMaster.hasProperty(StarEndpointConstant.SPECTRALINFO)){
+                        spectral = new ArrayList<>();
+                        Value[] spectralProperties = starMaster.getProperty(StarEndpointConstant.SPECTRALINFO).getValues();
+                        for(Value spectralProperty : spectralProperties) {
+                            spectral.add(spectralProperty.toString());
+                        }
+                        for(String spectrum : spectral){
+                            starSpectrumJsonObject.put(spectrum.split(":")[0], spectrum.split(":")[1]);
+                        }
+                        starDataJsonObject.put(StarEndpointConstant.SPECTRUM,starSpectrumJsonObject);
+                    }
+                    if(starMaster.hasProperty(StarEndpointConstant.SOLAR_MASS)){
+                        solarMass = starMaster.getProperty(StarEndpointConstant.SOLAR_MASS).getValue().toString();
+                        starDataJsonObject.put(StarEndpointConstant.SOLAR_MASS, solarMass);
+                    }
+                    if(starMaster.hasProperty(StarEndpointConstant.IS_PART_OF_BINARY_STAR_SYSTEM)){
+                        if(starMaster.getProperty(StarEndpointConstant.IS_PART_OF_BINARY_STAR_SYSTEM).getBoolean()){
+                            starDataJsonObject.put(StarEndpointConstant.PART_OF_BINARY_STAR_SYSTEM, "YES");
+                        }else{
+                            starDataJsonObject.put(StarEndpointConstant.PART_OF_BINARY_STAR_SYSTEM, "YES");
+                        }
+                    }
+                    starJSONObject.put(starName, starDataJsonObject);
+                }
+            }
+            out.println(starJSONObject);
+        } catch (RepositoryException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalArgumentException illegalArgumentException) {
+            illegalArgumentException.printStackTrace();
+        } catch (JSONException jsonException){
+            jsonException.printStackTrace();
+        }
+    }
+
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now let us step by step understand what does this code tries to do.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "We have created a servlet which is registered by path and we expect to recieve a json response from this servlet when this path is hit.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `    @Component(service = {Servlet.class}, property = {
+    "sling.servlet.paths="+ StarEndpointConstant.ENDPOINTPATH,
+    "sling.servlet.methods=GET"
+})`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "We are mapping all the properties defined in the content fragments (star name, date of discovery, spectral, is part of binary star system and solar mass).",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/alpha-centuri-a.webp",
+        alt: "alpha centuri a",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "starSpectrumJsonObject puts all the spectal data. This is a multi field property, and so the spectral property value is first added in a List of String and then is added in starSpectrumJsonObject with key as substring before \":\" and value as after \":\". Having collected this data, it is then added in starDataJsonObject.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `if(starMaster.hasProperty(StarEndpointConstant.SPECTRALINFO)){
+    spectral = new ArrayList<>();
+    Value[] spectralProperties = starMaster.getProperty(StarEndpointConstant.SPECTRALINFO).getValues();
+    for(Value spectralProperty : spectralProperties) {
+        spectral.add(spectralProperty.toString());
+    }
+    for(String spectrum : spectral){
+         starSpectrumJsonObject.put(spectrum.split(":")[0], spectrum.split(":")[1]);
+    }
+    starDataJsonObject.put(StarEndpointConstant.SPECTRUM,starSpectrumJsonObject);
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Discovery date is a date object added. This date object extracted using calendar object and constants.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `if(starMaster.hasProperty(StarEndpointConstant.DATEOFDISCOVERY)){
+    Calendar calendar = starMaster.getProperty(StarEndpointConstant.DATEOFDISCOVERY).getValue().getDate();
+    int year = calendar.get(calendar.YEAR);
+    int month = calendar.get(calendar.MONTH);
+    int day = calendar.get(calendar.DAY_OF_MONTH);
+        discoveryDate = year + "-" + month + "-" + day;
+    starDataJsonObject.put(StarEndpointConstant.DISCOVERY, discoveryDate);
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "This is then added in the starJSONObject and this is provided in the response of the code.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/contentasaservice/response.webp",
+        alt: "response",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have now understood how content fragments are exported as a JSON RESTful API endpoint. This created response is now ready to be consumed by any other application.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "junits",
@@ -4607,7 +6418,257 @@ definitions:
     author: "Owais Pathan",
     description:
       "Learn how to write unit tests for AEM components, services, and models to improve code reliability.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, hope you are doing well. Welcome to another blog.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What is Unit Testing",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Unit testing in Java is the process of testing individual methods or classes in isolation to verify their correctness. It ensures that each unit of code works as expected, improving reliability and supporting Test-Driven Development (TDD). Frameworks like JUnit and TestNG are commonly used for writing and automating unit tests using assertions to validate expected outputs.For unit testing in java a framework is used called Junit 5.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Lets have a look on how we can perform unit testing in AEM for that we will take the example of sling model and perform unit testing on it. We are using Junit5 framework specifically.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I have a component in which i have title, description and a multifield naming tags in which we can add multiple tags and below is the sling model for the component",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.infodales.core.models;
+
+import com.infodales.core.pojo.SamplePojo;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+import javax.inject.Inject;
+import java.util.List;
+
+@Model(adaptables = Resource.class,
+defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class SampleModel {
+
+@ValueMapValue
+private String title;
+
+@Inject
+private List<SamplePojo> castInfo;
+
+    public String getTitle() {
+    return title;
+    }
+
+    public List<SamplePojo> getCastInfo() {
+        return castInfo;
+        }
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text: "And below is the pojo class \"SamplePojo\"",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `            package com.infodales.core.pojo;
+
+            import org.apache.sling.api.resource.Resource;
+            import org.apache.sling.models.annotations.Model;
+            import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+            @Model(adaptables = Resource.class)
+            public class SamplePojo {
+
+            @ValueMapValue
+            private String cardTitle;
+
+            @ValueMapValue
+            private String cardImage;
+
+            public String getCardTitle() {
+            return cardTitle;
+            }
+
+            public String getCardImage() {
+            return cardImage;
+            }
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the above code we need to test the getter's and setter's of the fields, So to write the Junits for the above code we will create a class called SampleModelTest, In that we will be using \"AemContextExtension\" it is a JUnit 5 extension provided by the AEM Mocks library (io.wcm.testing.mock.aem.junit5). It is used to simplify and enhance unit testing of Adobe Experience Manager (AEM) components, services, and Sling models by automatically managing an instance of AemContext.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Also we need to generate the json of the component that we have created as i have create the card component which has one textfield for title and one multifield inside that multifield we have cardTitle and cardImage, below is the json for that, this json needs to kept in the code under the resources folder under test package",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/junits/json.webp",
+        alt: "json",
+      },
+
+      {
+        type: "paragraph",
+        text: "Below is the final Test class for our class.",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.infodales.core.models;
+
+import com.infodales.core.pojo.SamplePojo;
+import com.infodales.core.testcontext.AppAemContext;
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import org.apache.sling.api.resource.Resource;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.List;
+
+import static junit.framework.Assert.assertEquals;
+
+@ExtendWith(AemContextExtension.class)
+public class SampleModelTest {
+
+private final AemContext aemContext = AppAemContext.newAemContext();
+
+private SampleModel sampleModel;
+
+@BeforeEach
+void setUp() {
+aemContext.addModelsForClasses(SampleModel.class);
+aemContext.load()
+.json("/content/techcombank/web/vn/en/samplejson.json", "/content");
+aemContext.currentResource("/content/sample");
+Resource resource = aemContext.request().getResource();
+sampleModel = resource.adaptTo(SampleModel.class);
+}
+
+@Test
+void testTitle() {
+String expectedTitle = "Companies";
+assertEquals(expectedTitle, sampleModel.getTitle());
+}
+
+@Test
+void testCastInfo() {
+List<SamplePojo> castInfo = sampleModel.getCardInfo();
+    SamplePojo samplePojo = castInfo.get(0);
+
+    String ExpectedCardTitle = "Infodales";
+    assertEquals(ExpectedCardTitle, samplePojo.getCardTitle());
+
+    String ExpectedCardImage = "/content/dam/Infodales/actress/Infodales.jpg";
+    assertEquals(ExpectedCardImage, samplePojo.getCardImage());
+    }
+
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In the above code first of all we need to annotate our class with @ExtendWith(AemContextExtension.class) it Integrates AEM Mocks into JUnit 5.",
+          "Next is we have initialize AEM Context and SampleModel.AppAemContext.newAemContext() is a custom method (from AppAemContext) that creates an AemContext instance.",
+          "Next we added the setup method it runs before each test method, inisde that method",
+        ],
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "First we have loaded test data from a JSON file (samplejson.json), simulating content in AEM.",
+          "We have registered SampleModel as a Sling model using addModelsForClasses().",
+          "Next is we have set the current resource to /content/sample, meaning sampleModel adapts from this resource.",
+          "The method adaptTo(SampleModel.class) Converts the resource into a SampleModel instance.",
+          "Now the json has adapted to our sling model.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "@Test it is used to mark a method as test method in testTitle() method we are checking weather our expected value is similar to that of the value form the json for that we use assertEquals method",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/junits/TestTitleMethod.webp",
+        alt: "TestTitleMethod",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Similarly in the testCastInfo() method we are testing card title and cardImage values weather they are similar to that of present in the json as in json we only added one value so we will test that only.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/junits/cardInfoTest.webp",
+        alt: "cardInfoTest",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we will run the junit class by clicking on run button as shown in the below image",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/junits/testclass.webp",
+        alt: "testclass",
+      },
+
+      {
+        type: "paragraph",
+        text: "As you can see the above test cases have passed.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/junits/passedtestcases.webp",
+        alt: "passedtestcases",
+      },
+
+      {
+        type: "paragraph",
+        text: "Thanks for reading 😄",
+      },
+    ],
   },
   {
     slug: "event-handler-and-listener",
@@ -4617,7 +6678,284 @@ definitions:
     author: "Yash Sakharkar",
     description:
       "Understand how AEM event handlers and listeners respond to repository changes and application events.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 4,
+        text: "Overview",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "An Event Handler manages events at the Sling level, while an Event Listener handles events at the JCR level. Both are responsible for executing actions when an event occurs. .",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Event Handler (OSGi Event Handler) in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "An OSGi Event Handler listens for OSGi events, including resource modifications, workflow events, and system events. It is implemented using org.osgi.service.event.EventHandler and registered via OSGi service properties.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Syntax",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `@Component(service = EventHandler.class,
+immediate = true,
+property = {
+EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/ADDED",
+EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/REMOVED",
+EventConstants.EVENT_FILTER + "+(path=/content/we-retail/us/en/*)"
+})
+public class SampleEventHandler implements EventHandler {`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How to create Event Handler In AEM",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.sample.core.listeners;
+
+import org.apache.sling.api.SlingConstants;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventConstants;
+import org.osgi.service.event.EventHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Component(service = EventHandler.class,
+immediate = true,
+property = {
+      EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/ADDED",
+      EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/REMOVED",
+               EventConstants.EVENT_FILTER + "+(path=/content/we-retail/us/en/*)"
+})
+public class SampleEventHandler implements EventHandler {
+private final Logger logger = LoggerFactory.getLogger(getClass());
+@Override
+public void handleEvent(Event event) {
+logger.info("Event Topic" + event.getTopic(),event.getProperty(SlingConstants.PROPERTY_PATH));
+}
+}`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Logs",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/event-handler-and-listener/eventhandler.webp",
+        alt: "Event-Listener-image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the example above, we created a class named SampleEventHandler, which implements the EventHandler interface and overrides the handleEvent method. Additionally, we have defined the event topics that should trigger the event.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Event Listener (JCR Event Listener) in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A JCR Event Listener listens for changes in the JCR repository, such as node additions, modifications, or deletions. It is implemented using javax.jcr.observation.EventListener and registered via ObservationManager.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Syntax",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `@Component(service = EventListener.class,
+immediate = true)
+public class SampleEventListener implements EventListener {`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How to create Event Listener In AEM",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.sample.core.listeners;
+import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.observation.Event;
+import javax.jcr.observation.EventIterator;
+import javax.jcr.observation.EventListener;
+import java.util.HashMap;
+import java.util.Map;
+
+@Component(service = EventListener.class,
+immediate = true)
+public class SampleEventListener implements EventListener {
+private final Logger logger = LoggerFactory.getLogger(getClass());
+
+@Reference
+private ResourceResolverFactory resourceResolverFactory;
+@Activate
+@Modified
+protected void Activate() throws LoginException, RepositoryException {
+   Map<String,Object> map = new HashMap<>();
+   map.put(ResourceResolverFactory.SUBSERVICE,"test");
+    ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(map);
+    Session session = resourceResolver.adaptTo(Session.class);
+    session.getWorkspace().getObservationManager().addEventListener(this,
+          Event.PROPERTY_ADDED | Event.NODE_ADDED | Event.NODE_REMOVED | Event.PROPERTY_CHANGED,
+          "/content/we-retail/us/en",
+          true,
+          null,null,false
+          );
+    logger.info("--Property Changed Or removed --");
+}
+@Override
+public void onEvent(EventIterator events) {
+   logger.info("Event Listener Called");
+   while (events.hasNext()){
+      try {
+         logger.info("Event Path is " + events.nextEvent().getPath());
+      } catch (RepositoryException e) {
+         throw new RuntimeException(e);
+      }
+   }
+}
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the example above, we created SampleEventListener, which implements the EventListener interface and overrides the onEvent method. Using ObservationManager, we can add an event listener and define event types such as PROPERTY_ADDED, PROPERTY_CHANGED, and NODE_ADDED to trigger the event.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "ResourceChangeListener in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The ResourceChangeListener in AEM listens for changes in Sling resources (e.g., content modifications in /content, configuration updates in /conf, etc.). It is more efficient than JCR Event Listeners because it operates at the Sling level rather than directly in the JCR repository.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Syntax",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `@Component(service = ResourceChangeListener.class,
+immediate = true,
+property = {
+      ResourceChangeListener.PATHS + "=" + "/content/we-retail/us/en",
+      ResourceChangeListener.CHANGES + "=" + "ADDED",
+      ResourceChangeListener.CHANGES + "=" + "CHANGED",
+      ResourceChangeListener.CHANGES + "=" + "REMOVED"
+})
+@ServiceDescription("SampleResourceChangeListener")
+public class SampleResourceChangeListener implements ResourceChangeListener {`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How to create ResourceChangeListener In AEM",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.sample.core.listeners;
+import org.apache.sling.api.resource.observation.ResourceChange;
+import org.apache.sling.api.resource.observation.ResourceChangeListener;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.propertytypes.ServiceDescription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+
+@Component(service = ResourceChangeListener.class,
+immediate = true,
+property = {
+      ResourceChangeListener.PATHS + "=" + "/content/we-retail/us/en",
+      ResourceChangeListener.CHANGES + "=" + "ADDED",
+      ResourceChangeListener.CHANGES + "=" + "CHANGED",
+      ResourceChangeListener.CHANGES + "=" + "REMOVED"
+})
+@ServiceDescription("SampleResourceChangeListener")
+public class SampleResourceChangeListener implements ResourceChangeListener {
+private final Logger logger = LoggerFactory.getLogger(getClass());
+@Override
+public void onChange( List<ResourceChange> list) {
+ list.forEach(resourceChange -> {
+     logger.info("Event Type = {}", resourceChange.getType());
+     logger.info("Event Path = {}", resourceChange.getPath());
+     logger.info("Event External = {}", resourceChange.isExternal());
+ });
+}
+}`,
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/event-handler-and-listener/resourcelistener.webp",
+        alt: "resource-listener-image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the example above we have created the SampleResourceChangeListener which implements ResourceChangeListener and overrides onChange event , the event will get triggered when we change , add , remove the Node .",
+      },
+    ],
   },
   {
     slug: "sitemap",
@@ -4627,7 +6965,192 @@ definitions:
     author: "Yash Sakharkar",
     description:
       "Learn how to generate XML sitemaps in AEM to help search engines discover and index website pages.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 4,
+        text: "What is a sitemap ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM (Adobe Experience Manager), a sitemap is a structured XML file that lists the URLs of a website to help search engines like Google and Bing crawl and index the content efficiently. AEM provides multiple ways to generate and manage sitemaps, including sitemap.xml for search engines and HTML sitemaps for users. .",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Why Are Sitemaps Important?",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Better SEO (Search Engine Optimization) – Helps search engines find and index content faster.",
+          "Improves Website Crawling – Ensures all important pages are discovered, even those not well-linked.",
+          "Enhances User Experience – HTML sitemaps help users navigate large websites easily.",
+          "Supports Multiple Content Types – Video, images, news, and e-commerce sites benefit from specialized sitemaps.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "XML Sitemap (For Search Engines)",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Used primarily by search engines like Google, Bing, and Yahoo.",
+          "Helps search engines crawl and index the website efficiently.",
+          "Enhances User Experience – HTML sitemaps help users navigate large websites easily.",
+          "For e.g we have the url for google ,https://www.google.com/sitemap.xml",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/sitemap/googlesitemap.webp",
+        alt: "google-sitemap-image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Similarly we can create the site map for our site created on AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How to implement Sitemap on Author Instance",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to http://localhost:4502/system/console/configMgr.",
+          "Search for the org.apache.sling.sitemap.impl.SitemapGeneratorManagerImpl",
+          "Checked on All on-demand checkbox.",
+          "Save the changes",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/sitemap/sitemap-generator-image.webp",
+        alt: "sitemap-generator-image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Checking on All on Demand will allow you to create the sitemap .",
+          "Note : allOnDemand configuration is having a drawback as it processes data and generates a sitemap everytime we hit the URL to generate a sitemap.",
+          "Similarly search for PageTreeSitemapGeneratorImpl in config manager.",
+          "This configuration allows you to add the last modified date and also will represent data in xml format.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/sitemap/page-tre-sitemap-generator-image.webp",
+        alt: "page-tre--sitemap-generator-image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to http://localhost:4502/sites.html/content open page properties , on Advanced check the Generated Sitemap check box.",
+          "Now on the browser hit this url http://localhost:4502/content/sample.sitemap.xml.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: `This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<url>
+<loc>/content/sample.html</loc>
+<lastmod>2019-02-11T17:34:23.056Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en.html</loc>
+<lastmod>2024-03-27T17:17:13.153Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/contact-us.html</loc>
+<lastmod>2020-02-06T17:29:33.318Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq.html</loc>
+<lastmod>2021-01-26T20:47:39.275Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/who-is-csa.html</loc>
+<lastmod>2022-05-25T20:13:01.403Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/do-i-need-travel-protection.html</loc>
+<lastmod>2022-05-25T19:44:14.081Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/when-can-i-buy-travel-protection-.html</loc>
+<lastmod>2019-03-13T17:05:47.527Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/when-does-coverage-begin.html</loc>
+<lastmod>2019-03-13T17:07:39.002Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/maximum-trip-length.html</loc>
+<lastmod>2019-03-13T17:08:54.688Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/can-my-traveling-companions-and-i-be-insured-on-the-same-plan-.html</loc>
+<lastmod>2019-03-13T17:09:55.142Z</lastmod>
+</url>`,
+      },
+
+      {
+        type: "paragraph",
+        text: "Similarly you can create SiteMap on publish instances too.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Dispatcher Configuration for SiteMap",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Include the following entry in the dispatcher/src/conf.dispatcher.d/filters/filters.any file.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: "/0201 { /type \"allow\" /path \"/content/*\" /selectors '(sitemap-index|sitemap)' /extension \"xml\" }",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Include the .xml extension in the rewrite rules within the dispatcher/src/conf.d/rewrites/rewrite.rules file.",
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: "RewriteCond %{REQUEST_URI} (.html|.jpe?g|.webp|.svg|.xml)$",
+      },
+    ],
   },
   {
     slug: "slingjobs",
@@ -4637,7 +7160,344 @@ definitions:
     author: "Yash Sakharkar",
     description:
       "Discover how to schedule and execute background jobs in AEM using Sling Jobs and schedulers.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 3,
+        text: "Overview of Sling Jobs in Adobe Experience Manager (AEM)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Apache Sling Jobs are a mechanism in AEM to perform asynchronous tasks reliably. They are built using the Sling Event and Job Handling framework, enabling you to offload tasks like data processing, page replication, or integration workflows that don't need to happen in real-time.In this blog, we will see how to schedule a job in AEM so that it executes at a particular interval of time.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "What is Sling Jobs ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM, Sling Jobs are a part of the event-driven architecture that enables task scheduling, processing, and management in an asynchronous and persistent manner. They are used to perform long-running or non-blocking tasks like importing data, sending notifications, or cleaning up resources.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How Sling Jobs Work",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Job Creation",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In AEM, the Sling Job Manager allows you to create jobs using the JobBuilder. By calling jobManager.createJob(TOPIC), you define the job's topic (which is essentially the type of job you're creating). The TOPIC is a unique identifier that helps link the job to a specific Job Consumer that processes jobs with that topic. Once the job is created with the topic, you can add additional properties or parameters (key-value pairs) to specify the task’s details. These properties are used during job execution to provide any necessary data for processing the job. For e.g Creating a job with a specific topic",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: "JobBuilder jobBuilder = jobManager.createJob(\"com/example/processFile\");",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Topic: \"com/example/processFile\" — this identifies the type of job. Properties : You can add data that the job consumer will need to process the job.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Job Submission",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After the job is created, it needs to be submitted to the Sling Job Manager. When a job is submitted, it does not execute immediately but gets added to a job queue. The Job Manager ensures that the job is stored in the queue with its associated topic and properties. The queue is responsible for organizing and scheduling jobs for execution based on priorities, concurrency settings, and job availability. Submission allows AEM to manage when and how the job will be processed without blocking other operations.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: "jobManager.addJob(\"com/example/processFile\", properties);",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Topic: \"com/example/processFile\" — this identifies the type of job. Properties : You can add data that the job consumer will need to process the job.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Job Execution",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Once a job is queued, Job Consumers are responsible for executing the job. AEM manages a pool of worker threads that process jobs asynchronously. These worker threads are part of a dedicated thread pool designed for job execution, ensuring that long-running tasks don't interfere with the user-facing application. The Job Consumer—a service listening for specific topics—picks up jobs from the queue and processes them in the background. The execution process is decoupled from the main application flow, meaning it happens in parallel, improving performance and ensuring the system remains responsive.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: "@Component(service = JobConsumer.class,property = { JobConsumer.PROPERTY_TOPICS + \"=com/example/processFile\" })",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How to create and schedule the sling Job",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We can schedule the job at specific intervals of time using job builder andscheduler builder .In the below code we are creating a simple job using the job manager and scheduling that job to execute after every one minute.",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.sample.core.servlets;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.apache.sling.event.jobs.JobBuilder;
+import org.apache.sling.event.jobs.JobManager;
+import org.apache.sling.event.jobs.ScheduledJobInfo;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import java.util.*;
+
+@Component(
+service = Servlet.class,
+property = {
+"sling.servlet.paths=/bin/schedulejob",
+"sling.servlet.methods=POST"
+}
+)
+public class SampleJobSchedulerServlet extends SlingAllMethodsServlet {
+private static final String TOPIC = "content/archival/scheduled/job";
+@Reference
+JobManager jobManager;
+
+@Override
+protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+Collection<ScheduledJobInfo> myJobs = jobManager.getScheduledJobs(TOPIC, 1, null);
+List<String> listOfString = new ArrayList<>();
+listOfString.add("custom value");
+if (myJobs.isEmpty()) {
+   Map<String, Object> map = new HashMap<>();
+   map.put("customParam", "Hello, this is a sample Sling job!");
+   JobBuilder jobBuilder = jobManager.createJob(TOPIC);
+   jobBuilder.properties(map);
+   JobBuilder.ScheduleBuilder scheduleBuilder = jobBuilder.schedule();
+   scheduleBuilder.cron("0 * * * * ?");
+   scheduleBuilder.daily(0, 0);
+   if(scheduleBuilder.add() ==null){
+      scheduleBuilder.add(listOfString);
+   }
+   else {
+      response.getWriter().write("Scheduled Job for " +TOPIC);
+   }
+   }
+   }
+   }`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the above code, we define a scheduled job by invoking the jobManager.createJob() method and assigning it a topic (\"content/archival/scheduled/job\"). We then verify if the job is already scheduled by calling jobManager.getScheduledJobs(). If it’s not, we use ScheduleBuilder to configure the job to run daily at midnight and add it to the queue with scheduleBuilder.add().",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.sample.core.jobs;
+
+import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.consumer.JobConsumer;
+import org.osgi.service.component.annotations.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Component(service = JobConsumer.class, immediate = true,
+      property = {
+            JobConsumer.PROPERTY_TOPICS + "=" + "content/archival/scheduled/job"
+      })
+public class SampleJobConsumer implements JobConsumer {
+private final Logger logger = LoggerFactory.getLogger(getClass());
+@Override
+public JobResult process(Job job) {
+   String customParam = (String) job.getProperty("customParam");
+   logger.info("Custom Param: ", customParam);
+   return JobResult.OK;
+}
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the above code, we define a Job Consumer component that listens for jobs on the \"content/archival/scheduled/job\" topic. When a scheduled job is triggered, this component executes logic. You can access job properties or custom parameters to process the archival task as needed. If the task completes successfully, return JobResult.OK to indicate that the job was successfully executed.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How to trigger the job",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Test the Servlet:",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Use Postman to send a request to the path /bin/schedulejob.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Check the Response :",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "If the status code is 200, you will receive the response: \"Scheduled Job for content/archival/scheduled/job\".",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to slingevent",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Go to http://localhost:4502/system/console/slingevent",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Search for your Job Topic Name",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "for e.g content/archival/scheduled/job you will find you job has been schedule under scheduled job section",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/slingjobs/cronjob.webp",
+        alt: "cron-job-image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Also you will find logs of when it was created and finished",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/slingjobs/slingstatistics.webp",
+        alt: "sling-statistics-image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to Logs:",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Go to http://localhost:4502/system/console/slinglog.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Create Logger for Job Consumer:",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Set up a logger for the job consumer in the Sling log.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Verify Job Execution :",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You will observe that the job runs repeatedly according to the schedule specified in the cron expression.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/slingjobs/slinglogs.webp",
+        alt: "sling-logs-image",
+      },
+    ],
   },
   {
     slug: "content-fragments",
@@ -4647,7 +7507,223 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Explore how AEM Content Fragments enable structured, reusable content for headless and omnichannel experiences.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, welcome to another blog.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Content fragments in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "today we will be focusing upon what is a content fragment, why is it used and how exactly can we create one.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In Adobe Experience Manager (AEM), Content Fragments are pieces of content that are created in a structured way and can be reused across different pages, apps, and channels. Think of them as building blocks for content that can be shared and used consistently, whether you’re working on a website, a mobile app, or even an email campaign.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A Content Fragment Model is essentially a template that defines what kind of content you can have in a fragment — like text, numbers, dates, and so on. It helps organize and structure content so it can be reused easily across your platforms.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Aids Content Fragments Provide",
+      },
+
+      {
+        type: "paragraph",
+        text: "Content fragments actually make work alot easy by providing",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Structured Content : Instead of just throwing in random text, content fragments are organized by fields like titles, body text, dates, and more. This structure makes it easy to manage and reuse.",
+          "Reusability : Content fragments aren’t limited to one page or project. Once you create one, you can use it anywhere—on a website, in an app, or in emails. This saves you from copying and pasting the same content over and over.",
+          "API Access : Need to pull content from AEM into another system? No problem. Content fragments can be accessed through AEM's GraphQL API or REST APIs to serve content everywhere.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Hence, they help in dynamic content injection, maintain consistency and multichanel delivery.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of Content Fragments",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now having an idea of this powerful feature of aem, lets try and create one. We will be creating a for the purpose of storing data of varios stars.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "First we need to create a Content Fragment Model. Navigate to content fragment model from tools.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/cfmodel.webp",
+        alt: "cfmodel",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/createcfmodel.webp",
+        alt: "createcfmodel",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In this model, we need to add the fields of the content fragments. We can specify the field labels, their data types, property types and various other properties.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/cfmodelraw.webp",
+        alt: "cfmodelraw",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here we have a text field, a multifield, a boolean field, a date field and a numfield.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/completecfmodel.webp",
+        alt: "completecfmodel",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After creating a model we are ready to create various content fragments using this model. In order to do so, navigate to Assets and create a folder stars.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/assets.webp",
+        alt: "assets",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/starsfolder.webp",
+        alt: "starsfolder",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now we need to add cloud configurations to this folder so that it allows the creation of content fragments. To do so go to its properties, navigate to cloud configurations tab and then add the path of the folder in which we have our content fragment model.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/properties1.webp",
+        alt: "properties1",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/properties2.webp",
+        alt: "properties2",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/cloudconfigurations.webp",
+        alt: "cloudconfigurations",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Having added the cloud configurations, simply create the content fragment using the model and add the respective data.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/createcf1.webp",
+        alt: "createcf1",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/createcf2.webp",
+        alt: "createcf2",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/createcf3.webp",
+        alt: "createcf3",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/createcf4.webp",
+        alt: "createcf4",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-fragments/allcf.webp",
+        alt: "allcf",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This is how we create content fragments whose data can be exported by graphql or as a REST API.",
+      },
+
+      {
+        type: "paragraph",
+        text: "I hope you ejoyed this learning.",
+      },
+    ],
   },
   {
     slug: "etc-mapping",
@@ -4657,7 +7733,425 @@ definitions:
     author: "Yash Sakharkar",
     description:
       "Understand how AEM resource mappings help manage URL resolution and resource access.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 3,
+        text: "Overview",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM (Adobe Experience Manager), ETC Mapping is primarily used for routing or transforming content based on a defined mapping between the source and the destination locations in the repository. The term ETC refers to \"Experience Targeted Content\", which is used to manage how content is structured, served, or redirected within AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "What is ETC Mapping in AEM ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the context of Adobe Experience Manager (AEM), ETC Mapping typically refers to the Experience Targeted Content (ETC) system, which is used to map content or redirect requests to different locations or resources based on specific conditions, such as user profile, geographical location, or language preferences. However, ETC Mapping is not a standard, widely recognized term in AEM documentation. It might be referring to a specific implementation within your organization or an alias for content mapping used in certain workflows.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Request-Resource Mapping",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/request-resource-mapping.webp",
+        alt: "resource-request-mapping",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Local Domain Setup",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In the setup, a local domain is configured.",
+          "A user requests this domain in their browser.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Request Reaches Apache Server",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "The request is first directed to the Apache server.",
+          "However, the Apache server does not know what specific content should be served for the requested domain.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Request Moves to AEM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Since Apache lacks this information, it forwards the request to the AEM server.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "AEM Resolves the Content",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "AEM serves the identified content back to the client (browser).",
+          "This completes the request-response cycle.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/request-resource-mapping-with-url.webp",
+        alt: "request-resource-mapping-with-url",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Client Request",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "The client requests a page using the URL: public:4503/women.html.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Request Reaches Apache Server",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "The request is first directed to the Apache server.",
+          "The Apache server, however, does not know what specific content should be served for the requested URL",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Request Forwarded to AEM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Since the Apache server cannot resolve the content, it forwards the request to the AEM server for handling.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "AEM Resolves the Content Path",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In AEM, the requested URL /women.html is mapped to the actual content path: /content/we-retail/us/en/women.html.",
+          "This mapping ensures that AEM serves the correct content for the requested page.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "URL Rewriting",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "AEM automatically hides the internal content structure (/content/we-retail/us/en) in the URL, presenting a cleaner and user-friendly URL (/women.html) to the client.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Response Sent to Client",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "AEM serves the content at /content/we-retail/us/en/women.html back to the client, but the client sees the cleaner URL public:4503/women.html.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "How ETC Mapping Works",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "ETC Mapping in AEM facilitates this process by defining the rules for mapping short, user-friendly URLs to the actual internal content paths..",
+          "This process is also known as URL rewriting in AEM.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "For the local setup, add the domain to the host file",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Navigate to C:\\Windows\\System32\\Drivers\\etc\\hosts.",
+          "Add the following entry: 127.0.0.1 publish.4503.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Steps to Create ETC Mapping in AEM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Login in to the publish instance",
+          "Open the CRX/DE Lite interface in your browser:",
+          "http://localhost:4503/crx/de/index.jsp.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Navigate to the ETC Mapping Node",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Go to the path: /etc/map.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Create a New Node for the Domain",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Under /etc/map, create a new node for the domain (if it does not exist).",
+          "Example: If your domain is public, create a node named http (for HTTP domains) or https (for HTTPS domains).",
+          "Inside this node, create another node for the specific domain this node should be of type “sling:Mapping”, e.g., public.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/etc-map-node-path.webp",
+        alt: "etc-map-node-path",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Configure Properties for the Mapping Node",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/publish-4503-home.webp",
+        alt: "AEM-tools-page",
+      },
+
+      {
+        type: "paragraph",
+        text: "Add the following properties to the mapping node:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "sling:internalRedirect: If the domain name matches the node name, we use sling:internalRedirect. When you enter the domain name in the browser, it internally redirects to the specified content path.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Create a node for Clientlibs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a new node under the publish node, and name it, for example, etc_clientlibs. Add the following properties to the mapping node:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Set the value of sling:match to etc[.]clientlibs/(.+).",
+          "Set the value of sling:internalRedirect to /etc.clientlibs/$1.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When the node name does not match the domain name, we use the sling:match property. In this case, sling:match captures everything after the domain (matching etc[.]clientlibs/(.+)) and stores it in a variable. This variable ($1) is then resolved and appended in the sling:internalRedirect property, such as in /etc.clientlibs/$1. Here, $1 corresponds to whatever matches (.+) in the sling:match property.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/etc_clientlibs_image.webp",
+        alt: "etc-map-node-path",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Click Save All. Then, access http://publish:4503 in your browser, and you will be redirected to the home page.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/home-html-image.webp",
+        alt: "home-html-image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a node under the http folder, for example, named publish_home (of type sling:mapping).",
+      },
+
+      {
+        type: "paragraph",
+        text: "Add the following properties to this node:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "sling:internalRedirect: /content/we-retail/us/en/home.html.",
+          "sling:match : publish.4503/$.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Explanation: As discussed earlier, any request that matches the sling:match value (in this case, publish.4503/$) will resolve to the content path specified in the sling:internalRedirect property.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/publish_home_image.webp",
+        alt: "publish_home_image",
+      },
+
+      {
+        type: "paragraph",
+        text: "Create a configuration for the rest of the pages.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now, let's assume you are accessing domain/page.html in the browser. The path should resolve to /content/page.html, but the /content part will be hidden, displaying only /page.html. This approach is known as URL rewriting in AEM.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Modify the publish.4503 node.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Add the following values to the sling:internalRedirect property:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "/content/we-retail/us/en",
+          "/",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Explanation: Whenever you access publish.4503/pagename.html, the system will automatically resolve the path starting with /content/we-retail/us/en or /, hiding this part of the path. As a result, only publish.4503/pagename.html will be displayed in the browser.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/modified_publish_node.webp",
+        alt: "modified_publish_node",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now, if you access http://publish:4503/women.html in the browser… it looks like",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/etc-mapping/women_html_image.webp",
+        alt: "women_html_image",
+      },
+
+      {
+        type: "paragraph",
+        text: "Conclusion:",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "ETC mapping in AEM is a powerful tool for optimizing URL structures, enhancing user experience, and simplifying content management by effectively handling internal redirects and URL rewriting. By leveraging properties like sling:match and sling:internalRedirect, you can create clean, user-friendly URLs that align with your project’s requirements while maintaining seamless backend functionality.",
+      },
+    ],
   },
   {
     slug: "clientlibs",
@@ -4667,7 +8161,416 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Learn how AEM Client Libraries organize, manage, and deliver CSS and JavaScript assets.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, welcome to another learning",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Clientlibs in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we will learn what are clientlibs, properties in clientlibs and how to include them in aem component.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Clientlibs are cq:ClientLibraryFolder which help an aem developer to segregate css and js. There are two types of clientlibs, one at component level which is created within the component itself (generally they are bound component specific clientlibs) and global level clientlibs (they are common for more than one components) which are present within the clientlibs folder of the project it self.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We will be understanding the concept of clientlibs using a democomponent, having simply 3 h1 tags.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/componentslightly.webp",
+        alt: "componentslightly",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/componentonpage.webp",
+        alt: "componentonpage",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to create a clientlib, simply right click, create, in type select cq:ClientLibraryfolder and provide name.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/creation_One.webp",
+        alt: "creation One",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here in clientlibs, you can segregate css and js files, hence you need to create css folder, js folder, css.txt file and js.txt file.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/folders.webp",
+        alt: "folders",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Properties in Clientlibs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Clientlibs have a few special properties each proving an additional functionality",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Categories : It is a multi property that adds a clientlib to a group that is when referred, the clientlib gets loaded.",
+          "Allow Proxy : It is a boolean property which allows the clientlibs to load at dispatcher level via a proxy servlet",
+          "Embed : It is a multi property that allows inclusion of various other clientlibs by adding their respective categories such that they combine together to form one single clientlib.",
+          "Dependency : It is again a multi property that actually adds refers another clientlib by adding its category to it such that the clientlib do not merge with the original clientlib rather loads itself. also it helps to add other dependencies like that of jQuery.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Including Clientlibs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we have an idea about how exactly the clientlibs are created. Now we need to add the html and css to them and understand how do we include clientlibs to our component.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In democlientlibs, we have created hey.css and hi.css within css folder and hey.js and hi.js in js folder. In base file, we actually add the entries of the js as well as css files that will load along with the clientlibs and also these files load as per the sequence added.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/heycss.webp",
+        alt: "heycss",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hicss.webp",
+        alt: "hicss",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/demobase.webp",
+        alt: "demobase",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/heyjs.webp",
+        alt: "heyjs",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hijswithoutdependency.webp",
+        alt: "hijswithoutdependency",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hijswithoutdependency.webp",
+        alt: "hijswithoutdependency",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now we need to add properties to democlientlibs",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/democlientlibspropertiesraw.webp",
+        alt: "democlientlibspropertiesraw",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now inorder to add the clientlibs to component, just add the following snippet as shown. Here we have added name of the categories. Also we have stated clientlib.all this means alls the js as well as css files will load. We can specify which type of files do we want to load, clientlib.css will load only css files and clientlib.js will load only js files.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/clientlibsinclusionsnippet.webp",
+        alt: "clientlibsinclusionsnippet",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/pagewithoutembedanddependency.webp",
+        alt: "pagewithoutembedanddependency",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now as we can see the heading tags have changed their colours as per the clientlibs added. Also one thing to be noted that we have added hey.js first and then hi.js and hence hey is getting printed first and then hi in the console.",
+          "Now let us understand dependency. Let us create a glbal level clientlibs named helloclientlibs, under the clientlibs folder of local-project.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/helloclientlibs.webp",
+        alt: "helloclientlibs",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/helloclientlibsproperties.webp",
+        alt: "helloclientlibsproperties",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hellocss.webp",
+        alt: "hellocss",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hellojs.webp",
+        alt: "hellojs",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Having created the helloclientlibs, now we will add it as a dependency. In dependency property of democlientlibs,we have added categories of helloclientlibs.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hellodependency.webp",
+        alt: "hellodependency",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "We can clearly see that hello.css and hello.js is applied.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/dependencysuccess.webp",
+        alt: "dependencysuccess",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Similarly we will create functional clientlib. As you can see, it is a component level client created just like democlientlibs with only morning.js that has a function which prints greeting message.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/functionalcomplete.webp",
+        alt: "functionalcomplete",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "We will call this method in hi.js. Here we are simply calling the greet functional reference when we click on hi heading.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/hijswithembed.webp",
+        alt: "hijswithembed",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/embedsuccess.webp",
+        alt: "embedsuccess",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In inspect element, source tab, we can find two network calls, one to democlientlibs and other to helloclientlib whereas functional clientlib merges with democlientlib to form an embed clientlib.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/sourcetab.webp",
+        alt: "sourcetab",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Core Componnet Clientlibs Model",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Okay so till now we have understood how a set of stylesheets and js script files are included in slightly. Now there comes a question what if a developer need more control over the clientlibs. He wants a certain set of stylesheet to be applied only to a printed copy of the page or ensure the clientlibs to load after completion of html parsing. Well these things cannot be achieved by including clientlibs in this way. AEM provides Core Component's Clientlibraries model to achieve this.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we have created a simple demonstration component with editconfig as dialog. Also we have added a simple paragraph and provided a class called para to it. Also we have creared a clientlib folder called coreclientlib and added a stylesheet.css and script.js flies in the same way as demonstrated earlier.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/deonstrationcomponent.webp",
+        alt: "deonstrationcomponent",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/coreclientlibs.webp",
+        alt: "coreclientlibs",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/demonstrationcategories.webp",
+        alt: "demonstrationcategories",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/stylesheet.webp",
+        alt: "stylesheet",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/script.webp",
+        alt: "script",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we have included this clientlib as a core component model clientlib and also we have specified a few attributes to it.",
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-use.clientlibs="\${'com.adobe.cq.wcm.core.components.models.ClientLibraries' @
+    categories='demonstration.coreclientlibs',
+    media='print',
+    async=true,
+    defer=true,
+    onload='console.log(\\'loaded: \\' + this.src)',
+    crossorigin='anonymous'}">
+    \${clientlibs.jsAndCssIncludes @ context="unsafe"}
+</sly>
+
+<div>
+  <p class="para">Hello Learner</p>
+</div>`,
+      },
+
+      {
+        type: "paragraph",
+        text: "Let us understand every attribute.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "media='print' : This ensures that the stylesheet css properties will be applied only to the printed copy. media='screen' and media='all' ensures that the css gets applied during on-screen rendering and for all the media types respectively.",
+          "async='true' : This is an important parameter that contrtols the loading of the provided javascript files asynchronously. This means the javascript will keep on loading along with other resources and the page will also keep on rendering simultaneously. Now there could be some functions in the script which must load only after completion of page loading. In such scenarios, these functions must be added within DOMContentLoaded event listner explicitely.",
+          "defer='true' : Now this ensures that javascript is loaded only after completion of parsing of all the escaped html characters and when the page content is ready to render. async and defer actually increase the page performance.",
+          "onload : This attribute defines a simple function that gets called after complete loading of javascript.",
+          "crossorigin='anonymous' : This handles Cross Origin Resurce Sharing. anonymous in this case is allowing all the other resources to load without authentication (both cookie creds authentication and HTTP authentication). This is dangerous. crossorigin='use-credentials' is always preferred.",
+          "${clientlibs.jsAndCssIncludes @ context=\"unsafe\"} is actually an alternative to clientlib.all where context=\"unsafe\" tells that output is treated as raw HTML. ${clientlibs.cssIncludes @ context=\"unsafe\"} and ${clientlibs.jsIncludes @ context=\"unsafe\"} are again self expalinatory.",
+          "The component is added on the page. The text colour remains as it is even if the css has loaded successfully. Also the console prints the onload function even if it is not written in script.js file. Also in the printed preview of the page, the css gets applied properly. All these observations hereby justify the conditional attributes applied.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/loadcss.webp",
+        alt: "loadcss",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/loadjs.webp",
+        alt: "loadjs",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/clientlibs/printmode.webp",
+        alt: "printmode",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have now a clear idea of what exactly are clientlibs, how to ceate them, which property provides which feature and how to include them in any component.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "content-transfer-tool",
@@ -4677,7 +8580,498 @@ definitions:
     author: "Ankit Pardhi",
     description:
       "Discover how the Content Transfer Tool migrates AEM content from on-premise or AMS to AEM Cloud.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "If you're planning to migrate your existing Adobe Experience Manager (AEM) content to AEM as a Cloud Service, the Content Transfer Tool (CTT) is your go-to solution. Developed by Adobe, this tool simplifies the migration process by enabling you to move content from an on-premise or AEM Managed Services (AMS) instance to AEM Cloud. In this, we’ll give you a straightforward overview of how the Content Transfer Tool works and why it’s essential for a smooth migration to the cloud.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What is the Content Transfer Tool (CTT)?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Content Transfer Tool is designed to help you migrate content from a Source AEM instance (such as on-premise or AMS) to a Target AEM Cloud Service instance. Not only does it move your content, but it also transfers groups automatically, making the migration process more efficient. One of the best features of the CTT is that it integrates seamlessly with the Cloud Acceleration Manager, providing you with an enhanced migration experience.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here’s why that matters:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Self-service extraction: Migrate content once and deploy it across multiple environments simultaneously.",
+          "User-friendly experience: The tool has helpful loading indicators, error handling, and guardrails to keep things running smoothly.",
+          "Persistent logs: You can always access ingestion logs for troubleshooting purposes.",
+          "Validation reports: You get detailed reports to verify that everything migrated successfully, including groups and user roles.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "The Two Main Phases of Content Transfer",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The migration process using CTT happens in two main phases: Extraction and Ingestion. Let’s break these down.",
+      },
+
+      {
+        type: "paragraph",
+        text: "1. Extraction Phase",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the extraction phase, content is pulled from the source AEM instance and placed into a temporary cloud storage area called a migration set. Adobe provides this cloud storage space, and it's where your content will \"live\" while it’s transferred from your source instance to the cloud.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Key things to remember about the Extraction Phase:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Migration Set: A cloud storage area where the content is temporarily stored during migration.",
+          "Top-Up Feature: After the initial content extraction, you can transfer only the new changes made to the content since the last transfer, reducing the need for a complete content freeze.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "2. Ingestion Phase",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once the content is in the migration set, the next step is ingesting it into the target AEM Cloud Service instance. This phase moves the content from the migration set into your cloud instance.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Key things to remember about the Ingestion Phase:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Delta Content Ingestion: Only new or changed content is applied during ingestion to avoid overwriting all your content.",
+          "Wipe Option: Disable this option to apply only the changes (delta content) on top of the existing content.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Attributes of a Migration Set",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A migration set is a critical part of the CTT workflow. Here are the essential details you need to know:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Maximum Migration Sets: You can create up to 10 migration sets within a single project in Cloud Acceleration Manager.",
+          "Unique Naming: Each migration set must have a unique name for easy identification.",
+          "Differential Content Transfer: With the top-up feature, you only transfer the content changes made since the previous migration, helping you minimize downtime before going live.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Important: After the first big content transfer, Adobe recommends frequent differential content top-ups. This reduces the content freeze period during the final transfer before you go live on the AEM Cloud.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Migration Set Expiry",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A migration set will expire after approximately 45 days of inactivity. But don’t worry, you’ll get plenty of warnings before this happens. You can extend the expiration by performing any of these actions:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Edit the description of the migration set.",
+          "Extract more content into it.",
+          "Ingest content from it.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "You’ll also see visual indicators on the project card and in the migration job table, reminding you that a migration set is approaching expiration.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Prerequisites for Content Transfer Tool",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Content Transfer Tool facilitates migration to AEM, but certain conditions must be met for successful usage:",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "AEM Version: Supports AEM 6.3 or higher.",
+          "Segment Store Size: Handles repositories with fewer than 750 million JCR nodes and an online compacted size of up to 500 GB on Author and 50 GB on Publish. For larger sizes, consult Adobe Customer Care.",
+          "Repository Size: Supports up to 20 TB for File Data Store. Larger sizes are possible for Amazon S3 and Azure Data Stores. Pre-copy steps can speed up transfers.",
+          "Lucene Index Size: Total Lucene index size should not exceed 25 GB, excluding /oak:index/lucene and /oak:index/damAssetLucene.",
+          "Immutable Paths: Cannot migrate immutable paths directly. For specific paths like /etc, AEM Forms to AEM Forms as a Cloud Service is supported.",
+          "MongoDB Node Property Limit: MongoDB node property values must not exceed 16 MB. Run an oak-run script to identify and convert large property values to Binary if needed.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "What’s Next?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now that you have an understanding of the Content Transfer Tool (CTT) and how it can help move content from your existing AEM instance to AEM Cloud, it’s time to get started. Before diving into the tool, make sure to review the Prerequisites for Content Transfer Tool to ensure everything is in place for a smooth migration.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Step-by-Step Guide to Using the Content Transfer Tool (CTT) for AEM Migration",
+      },
+
+      {
+        type: "paragraph",
+        text: "Best Practices Before Running CTT",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Run revision cleanup or compaction on the source AEM instance to reduce the repository size.",
+          "Perform a data store consistency check using the oak-run jar to avoid any unexpected behavior.",
+          "Ensure there is enough free disk space on the source instance (at least 1.5 times the repository size) for temporary extraction.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 1: Installing the Content Transfer Tool",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "First, install the Content Transfer Tool on your AEM source instance (AEM 6.3 or higher). You can download this tool from the AEM Software Distribution Portal (https://experience.adobe.com/downloads).",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Go to the Software Distribution Portal and search for the Content Transfer Tool.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/CttToolDownloadsImage1.webp",
+        alt: "CTT Tool Downloads Image",
+      },
+
+      {
+        type: "numberedList",
+        start: 2,
+        items: [
+          "Download the tool and upload it to your AEM source instance using Package Manager.",
+          "Once installed, you will see a new card for Content Transfer under tools > operations > content transfer on your AEM start screen.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/ViewCttToolInAEM2.webp",
+        alt: "View CTT Tool in your AEM instances",
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 2: Retrieve your Access Token from the Cloud Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To migrate content using the Content Transfer Tool (CTT), you will need to retrieve an Access Token from your AEM as a Cloud Service environment. This token is required to authenticate the migration set when uploading content from the source AEM instance.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here’s how to retrieve your Access Token:",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Login to your AEM as a Cloud Service Author instance using your admin credentials.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/RetriveAccessToken3.webp",
+        alt: "Retrieve Access Token",
+      },
+
+      {
+        type: "numberedList",
+        start: 2,
+        items: [
+          "Once logged in, navigate to the following URL in your browser: /libs/granite/migration/token.json This will trigger the system to generate and display the Access Token needed for the migration.",
+          "The JSON response will appear on the screen, containing your Access Token. The format of the JSON response will look like this: { \"token\": \"your-access-token-string\" }",
+          "Copy the Access Token from the JSON response and save it securely for use in the migration process. You’ll need to input this token when setting up your Migration Set in the Transfer Tool UI.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 3: Creating a Migration Set",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The next step is to create a migration set. A migration set defines all the content (pages, digital assets, etc.) you wish to transfer.",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Go to the Content Transfer Tool UI in AEM, and click Create New Migration Set.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/CreateMigrationSet4.webp",
+        alt: "creating a migration set",
+      },
+
+      {
+        type: "numberedList",
+        start: 2,
+        items: [
+          "Name your migration set (for example, “WKND Base Content”).",
+          "Enter the Cloud Service Destination URL. This is the URL of the AEM as a Cloud Service environment you want to migrate to.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/UploadAccessToken5.webp",
+        alt: "upload access token",
+      },
+
+      {
+        type: "numberedList",
+        start: 4,
+        items: [
+          "Enter the Retrieved Access Token from the cloud service by navigating to /libs/granite/migration/token.json.",
+          "Choose which content paths to include in your migration set (e.g., /content/WKND, /conf/WKND, /assets/WKND).",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/AddMigrationPath6.webp",
+        alt: "Add path for migration",
+      },
+
+      {
+        type: "numberedList",
+        start: 6,
+        items: [
+          "Save the migration set. After this, a new migration set will be created.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 4: Extraction Phase",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now it’s time to extract the content from your AEM source instance.",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Select your migration set and click Extract.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/ExtractMigrationSet7.webp",
+        alt: "Extract Migration set",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/RunningMigrationset8.webp",
+        alt: "Image of Running Migration Set",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/FinishedMigrationSet9.webp",
+        alt: "Finished Migration set running",
+      },
+
+      {
+        type: "numberedList",
+        start: 2,
+        items: [
+          "The extraction will pull the content from your source repository and upload it to Adobe-managed temporary cloud storage.",
+          "You can monitor the extraction by viewing the logs.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 5: Ingestion Phase",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once extraction is complete, the next step is to ingest the content into your AEM as a Cloud Service environment.",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Select your migration set again and click Ingest.",
+          "Choose whether to wipe existing content on the target cloud instance. It’s recommended to wipe the target instance for the first migration to ensure a clean environment.",
+          "You can choose to ingest on the Author, Publish, or both environments.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/InjectMigrationSet10.webp",
+        alt: "Inject Migration Set",
+      },
+
+      {
+        type: "numberedList",
+        start: 4,
+        items: [
+          "Click Ingest to start the process. You can monitor the ingestion progress in the logs.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/PandingInjection11.webp",
+        alt: "Running Injection",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/FinishedInjectionMigrationSet12.webp",
+        alt: "Injection Finished",
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 6: Verifying the Migration",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once the ingestion process is complete, log into your AEM as a Cloud Service environment to verify that all your content has been successfully transferred.",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Navigate to Sites Console to check if all pages have been migrated.",
+          "Check Assets to ensure all digital files have been migrated.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/content-transfer-tool/ViewMigationInCloudAEM13.webp",
+        alt: "View content in AEM Cloud instance",
+      },
+
+      {
+        type: "paragraph",
+        text: "Step 7: Top-up Migration (Delta Migration)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For ongoing projects, content might still be edited on the AEM source instance after the initial migration. The Content Transfer Tool allows you to perform Delta Migrations, where only newly added or changed content is migrated.",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "After creating new content (e.g., a new page), go to the Content Transfer Tool and select your migration set.",
+          "Click Extract, but this time, turn off the option to overwrite the staging container to preserve previously migrated content.",
+          "Perform the Ingestion as usual, and the new or updated content will be added to the AEM cloud environment.",
+          "Verify that the new content has been migrated by checking your Sites Console and Assets in the cloud.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Thank you for taking the time to explore this blog. I hope it provided valuable insights and enhanced your understanding of the topic.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Stay tuned for more informative content, and keep learning and growing! 😊",
+      },
+    ],
   },
   {
     slug: "query-builder",
@@ -4687,7 +9081,349 @@ definitions:
     author: "Suchita Mishra",
     description:
       "Explore how AEM Query Builder retrieves repository content using flexible search predicates.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "If we talk about the Search APIs available in AEM, we have two options available with us i.e., Query Builder and JCR SQL2. We'll look into the query builder concept in this blog and get all the questions related to this topic cleared. So, let's get started.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Query Builder",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In Adobe Experience Manager (AEM), a Query Builder is a powerful and flexible tool that allows us to create and execute queries to retrieve content from the AEM repository. It provides a structured and efficient way to search for specific content based on various criteria.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Query Builder uses SQL-like syntax, but it's specifically designed for querying the AEM repository. We can build queries using a web-based interface or by constructing queries programmatically using the QueryBuilder API. It basically simplifies the process of searching for content and enables users to define complex queries with conditions and filters.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "For example, we could ask the Query Builder to find all pages of a certain type in a specific part of our website. It's a handy tool for quickly locating and working with the content we're interested in within AEM.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have a Query Builder Debugger Tool which can be used to execute the search queries on the JCR (Java Content Repository). We can use this tool for dry run purposes for our AEM queries.",
+      },
+
+      {
+        type: "paragraph",
+        text: "AEM Query Builder debugger URL:",
+      },
+
+      {
+        type: "paragraph",
+        text: "http://localhost:4502/libs/cq/search/content/querydebug.html",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/query-builder/query-builder-console.png",
+        alt: "Query debugger console",
+      },
+
+      {
+        type: "paragraph",
+        text: "In the Query builder console, run a simple query like:",
+      },
+
+      {
+        type: "paragraph",
+        text: "type = cq:Page",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This query will provide us all the nodes having their primary type as cq:Page and we will get the search results in the form of hits.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/query-builder/query-debugger-console.png",
+        alt: "Query debugger console",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Query builder comprises of queries, so let's just look into what all a query consists of:",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Predicates - If we don't provide any parameter, the predicate type is mirrored in the final query.",
+          "Parameters - Predicate parameter",
+          "Value - Value of predicate",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/query-builder/query.png",
+        alt: "Query",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "List of Standard predicates",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here's the list of available standard predicates that we'll be using to write our query.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "type : It is used for searching a particular type of node only. For ex. cq:Page, dam:Asset, nt:unstructured, etc.",
+          "path : It defines a particular path or hierarchy that needs to be searched.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "path.self = true : If true, it searches the sub nodes including the main node given in the path and if false, it searches the sub nodes only.",
+          "path.exact = true : If it is true, the exact path is matched, if false all the descendants are included.",
+          "path.flat = true : If true, then it searches the direct children only.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "property : This is used for search based on JCR property.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "property.value : It defines the property value to be searched. Multiple values of the particular property could be given using n_property.value = xyz.",
+          "property.depth : It is used to specify the number of levels to search beneath a node. For example, when property.depth is set to 3, the search extends up to 3 levels below the base node. This parameter is mostly used for nested search.",
+          "property.and : In the case of multiple properties, the default behavior involves applying an OR operator. To switch to an AND operator set property.and = true.",
+          "property.operation : equals, unequals, like, not, exists.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "“equals” for exact match (default)",
+          "“unequals” for unequality comparison",
+          "“like” for using the jcr:like xpath function",
+          "“not” for no match, (value param will be ignored)",
+          "“exists” for existence matches. (value can be true – property must exist).",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "fulltext : used for full text search",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "fulltext.relPath : can specify the relative path to search in (eg. property or subnode)",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "daterange : This predicate facilitates searching within a date property range.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "daterange.property : Specify the date property on which query needs to run.",
+          "daterange.lowerBound : Fix a lower bound date range eg. 2020-08-31",
+          "daterange.lowerOperation : “>” (default) or “>=”",
+          "daterange.upperBound : Fix a upper bound date range eg. 2023-01-25",
+          "daterange.upperOperation : “<” (default) or “<=”",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "relativedaterange : It is an extension of daterange which uses relative offsets to server time. It also supports 1s 2m 3h 4d 5w 6M 7y.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "relativedaterange.lowerBound : Lower bound offset, default=0",
+          "relativedaterange.upperBound : Upper bound offset.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "nodename : This is used to search exact node names within the result set. It allows certain wildcards, such as nodename = text*, which searches for \"text\" and any characters following it. Similarly, nodename = text? looks for all records starting with \"text\" but excludes results containing only \"text.\"",
+          "tagid : This predicate is used to search for a specific tag on a page by specifying its exact tagid. (Note:- It searches for tags within /etc/tags, so the service user used for the query must have access to this path as well.)",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "tagid.property : this can be used to specify the path of node where tags are stored.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "tagsearch : It searches for matching tag.",
+          "mainasset : mainasset=true means search only Dam Asset and not the subassets.",
+          "group : This predicate is used to create logical conditions in your query. You can create complex conditions using OR & AND operators in different groups.",
+          "orderBy : This predicate is used to sort the result sets obtained in the query. e.g. orderby=@jcr:score or orderby=@jcr:content/cq:lastModified",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "orderby.sort : You may define the sorting way for the search results e.g. orderby.desc=true or orderby.sort = desc for descending and orderby.asc=true or orderby.sort=asc for ascending.",
+          "orderby.case : support case insensitive orderby.case=ignore (since 6.2)",
+          "orderby=my predicate (eg: orderby=path) : this can also be used to sort by path.",
+        ],
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "p.hits=full : Use this when you want to return all the properties in a node.",
+          "p.hits=selective : Use this if you want to return selective properties in search results. Use this with p.properties=sling:resourceType jcr:primaryType Example :- p.properties = jcr:path",
+          "p.nodedepth : Use this when you need properties of a node and its child nodes in the same search result. Use this with p.hits=full",
+          "p.facets=true : This will be used to Search Facets based search for the assigned Query. If you want to calculate the count of tags which are present in your search result or you want to know how many templates for a particular page are there etc, you may go with Facets based search.",
+          "p.guesstotal : The purpose of the p.guessTotal parameter is to return the appropriate number of results that can be shown by combining the minimum viable p.offset and p.limit values. The advantage of using this parameter is improved performance with large result sets. This avoids calculating the full total (e.g calling result.getSize()) and reading the entire result set.",
+          "p.offset : defines start of index means from which index you want to fetch records from query result.",
+          "p.limit : defines page size. In simple words how many records you want to fetch. Each query result will display results from p.offset to p.offset + p.limit.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Query Builder JAVA API",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now that we've gone through the number of standard predicates available with us, let's use these queries in our java code and get the required result via Java API.",
+      },
+
+      {
+        type: "paragraph",
+        text: "We can use AEM queries in three ways in java:",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "Using HTTP request",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `Session session = request.getResourceResolver().adaptTo(Session.class);
+PredicateGroup root = PredicateGroup.create(request.getParameterMap());
+Query query = queryBuilder.createQuery(root, session);`,
+      },
+
+      {
+        type: "numberedList",
+        start: 2,
+        items: [
+          "Using Predicates",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `PredicateGroup group = new PredicateGroup();
+group.add(new Predicate("mypath", "path").set("path", "/content/mysite"));
+group.add(new Predicate("mytype", "type").set("type", "cq:Page"));
+Query query = queryBuilder.createQuery(group, session);`,
+      },
+
+      {
+        type: "numberedList",
+        start: 3,
+        items: [
+          "Using Hash Map",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `Map<String, String> predicateMap = new HashMap();
+predicateMap.put("path", "/content/mysite");
+predicateMap.put("type", "cq:Page");
+Query query = queryBuilder.createQuery(PredicateGroup.create(predicateMap), session);`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "When we get the query, we can simply get the search results in the form of hits and we can iterate over the list of results i.e., hits and use that result in our java code.",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `//Get search results
+SearchResult result = query.getResult();
+List<Hit> resultList = result.getHits();
+
+//Iterate query results
+for (Hit hit : resultList ) {
+    // Write your logic here
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Hope you got the concept of query builder and how to write queries and use those queries in our java code as well. We'll go through some sample set of examples of creating queries in the next blog.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Thanks for reading! 😄",
+      },
+    ],
   },
   {
     slug: "experience-fragment",
@@ -4697,7 +9433,191 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Learn how Experience Fragments enable reusable, consistent experiences across pages and channels.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, happy to find you here. Hope you are doing well.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Experiencefragments in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we will be understanding the functionality of experience fragments. How to create them and what functionality do they provide.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Suppose you have a component which will remain the same throughout the pages of your website such that even its authored content also remains the same, it becomes tidious to add the component on every page and author the same data to it. In order to solve this, aem provides experience fragments. It provides a component to become an experience fragment and serve the discussed functionality.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creation of an Experience Fragment",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we will be using a demo componentnent as an experience fragment. To create n experience fragment :",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Go to the experience fragments from navigation, and create a folder. In this folder, you will have your experience fragment.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/experiencefrag.webp",
+        alt: "experiencefrag",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/create-folder.webp",
+        alt: "create folder",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now create an experience fragment. We need to select a template and for the purpose we are using web variation.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/createef.webp",
+        alt: "createef",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex1.webp",
+        alt: "creation of ex1",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Go to edit template, add the demo component to the policies and now add the component to the container. This is how you have succcessfully created your experience fragment. Author it and see the result on the page. For the purpose we are displaying the text and path fields only via properties.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex2.webp",
+        alt: "creation of ex2",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex4.webp",
+        alt: "creation of ex4",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex5.webp",
+        alt: "creation of ex5",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex6.webp",
+        alt: "creation of ex6",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now having created the experience fragment, you need to add this in your website pages. This is done by adding the experience fragment component to the template and authoring it by providing the path to our experience fragment.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex7.webp",
+        alt: "creation of ex7",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex8.webp",
+        alt: "creation of ex8",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex9.webp",
+        alt: "creation of ex9",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex10.webp",
+        alt: "creation of ex10",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex11.webp",
+        alt: "creation of ex11",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex12.webp",
+        alt: "creation of ex12",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/experience-fragment/creation-of-ex13.webp",
+        alt: "creation of ex13",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now this creates your experience fragment particular to the template. Every page created by this template will have this component.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we have understood how to create an experience fragment and how to use them. Also we have briefly discussed the use case of experience fragments.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed blog and the concept of experience fragments.",
+      },
+    ],
   },
   {
     slug: "osgi-factory-cardinality-and-limit",
@@ -4707,7 +9627,278 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Understand OSGi factory configuration cardinality and limits when managing multiple configuration instances in AEM.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Use case for OSGi Factory Configuration",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Lets say we have a configuration and we need it to have different values for its attributes defined for different scenarios. Speaking of a hypothetical scenario, say you are dealing with multiple api calls whose urls and timeout period are consumed via OSGi configurations. You need to create a separate configuration each having the same attributes and same attribute definations which are api url and timeout period. In this case aem provides a facility to group them all to be various instances of one OSGi configuration which is declared as an OSGi factory.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Creation of OSGi Configuration Factory",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Lets begin by creating an interface called ApiHandlerService, where you will add the methods which you want to find in the configuration.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.services;
+
+public interface ApiHandlerService {
+    String getApiEndpont();
+    int getTimeout();
+    String callApi();
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now we need to create the respective object class defination for the same interface. We need to add the name to the same. This is the name from which we will be able to find configuration in the felix console. Then for each method, we need to add the attribute defination, consisting of two properties, name and description. We can also add the default value for the method, the way we have added timeout. Also we have added limit to the timeout by fixing its range.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.services;
+
+import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+
+@ObjectClassDefinition(
+        name = "Api Handeler Configuration"
+)
+public @interface ApiHandlerConfig {
+    @AttributeDefinition(
+            name = "Api Endpoint",
+            description = "This provides the enpoint url"
+    )
+    String apiEndpoint();
+
+    @AttributeDefinition(
+            name = "Timeout in seconds",
+            description = "This provides the timeout in seconds",
+            min = "1",
+            max = "60"
+    )
+    int timeout() default 50;
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After creating the object class defination, we need to create the implementation class. In Component annotation, provide the property configurationPolicy = ConfigurationPolicy.REQUIRE. This is added for factory configuration. Also in Designate annotation, provide a property factory = true. This ensures successful creation of the factory configuration. In callApi() method, we are actually consuming the values set in an instance of the configuration factory.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.services.impl;
+import com.local.core.services.ApiHandlerConfig;
+import com.local.core.services.ApiHandlerService;
+import org.apache.sling.caconfig.annotation.Configuration;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
+import org.osgi.service.component.annotations.Modified;
+import org.osgi.service.metatype.annotations.Designate;
+
+@Component(
+    service = ApiHandlerService.class,
+    configurationPolicy = ConfigurationPolicy.REQUIRE, // This is for factory configuration
+    immediate = true
+)
+@Designate(ocd= ApiHandlerConfig.class, factory = true)
+public class ApiHandlerServiceImpl implements ApiHandlerService {
+
+    private String apiEndpoint;
+    private int timeout;
+
+    @Activate
+    @Modified
+    protected void activate(ApiHandlerConfig config){
+        this.apiEndpoint = config.apiEndpoint();
+        this.timeout = config.timeout();
+    }
+
+    @Override
+    public String getApiEndpont() {
+        return "";
+    }
+
+    @Override
+    public int getTimeout() {
+        return 0;
+    }
+
+    @Override
+    public String callApi() {
+        return "Calling at API :: " + apiEndpoint + " with timeout :: " + timeout;
+    }
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now after creating the factory configuration, you will need to cisit the felix console (http://localhost:4502/system/console/configMgr) to find the configuration factory in there with a + sign.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-factory-cardinality-and-limit/plus.webp",
+        alt: "plus",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You need to add instances in the factory which will get stored with a unique Persistent Identity (PID). Here we have created two instances for the factory with fake api, one showing the todo and the other showing the recipies.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-factory-cardinality-and-limit/configuration1.webp",
+        alt: "configuration1",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-factory-cardinality-and-limit/configuration2.webp",
+        alt: "configuration2",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After creating these, we now will create a manager class which will iterate over the instances and create get the values entered for the endpoint and respective timeouts. Here in order to consume multiple values from the OSGi factory, we have created a list of type ApiHandlerService via Reference annotation with property cardinality = ReferenceCardinality.MULTIPLE. This tells the sling that with this reference, multiple services will be bound.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.services.impl;
+
+import com.local.core.services.ApiHandlerService;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component(
+        service = ApiHandlerManager.class
+)
+public class ApiHandlerManager {
+
+    @Reference(cardinality = ReferenceCardinality.MULTIPLE)
+    private List<ApiHandlerService> apiHandlerServices;
+
+    public void handlerRequests() {
+        List<String> requestsHandeled = new ArrayList<>();
+        for(ApiHandlerService apiHandlerService : apiHandlerServices){
+            requestsHandeled.add(apiHandlerService.callApi());
+        }
+        for(String requestOutput : requestsHandeled)
+            System.out.println(requestOutput);
+    }
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now we will retrieve the values hence recieved from a servlet. Here particularly in this example we are showing the values in stdout.log file in crx-quickstart\\logs\\stdout.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.servlets;
+
+import com.local.core.services.impl.ApiHandlerManager;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@Component(
+        service = Servlet.class,
+        property = {
+                "sling.servlet.paths=/bin/apiHandler",
+                "sling.servlet.methods=GET"
+        }
+)
+public class ApiHandlerServlet extends SlingSafeMethodsServlet {
+    @Reference
+    private ApiHandlerManager apiHandlerManager;
+    @Override
+    protected void doGet(SlingHttpServletRequest request,
+     SlingHttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("Servlet Invoked");
+        apiHandlerManager.handlerRequests();
+        out.println("check logs");
+    }
+}`,
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-factory-cardinality-and-limit/output.webp",
+        alt: "output",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "So here we have understood the concepts of factory configurations with a small example of cadinality and limit. Also we have understood how to retrieve the values of each instance via a servlet. Here we have printed the values in logs but you can have the direct access to the values in servlet itself by changing the return type of the method handlerRequests().",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "cloud-services",
@@ -4717,7 +9908,355 @@ definitions:
     author: "Nitish Bisen",
     description:
       "Explore the cloud-native capabilities of AEM as a Cloud Service for scalable digital experiences.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 3,
+        text: "What’s AEM as a Cloud Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "It is designed to provide a scalable, agile, and fully managed digital experience platform for organizations to create, manage, and deliver compelling digital experiences across channels.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Features of AEM as a Cloud Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM as a Cloud Service offers a range of powerful features designed to enhance digital experience management and streamline content delivery. Here are some key features of AEM as a Cloud Service:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/cloud-services/features.jpg",
+        alt: "AEM Cloud Features",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Scalibility",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "One of the significant advantages of Adobe Cloud Services for businesses is its scalability. With Adobe Cloud Services, you can effortlessly adjust your resources up or down based on your needs. Adobe allows you to increase or decrease instances as per your request, providing flexibility and cost-effectiveness. Moreover, Adobe Cloud Services features reactive auto-scaling capabilities, which intelligently detect when additional capacity is needed. This proactive approach ensures that your applications and services can handle sudden spikes in traffic or increased workload seamlessly, without compromising performance or user experience.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Updates",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM as a Cloud Service provides continuous updates and improvements without the need for manual upgrades. This ensures that businesses always have access to the latest features, security patches, and performance enhancements.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Security and Compilances",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Adobe places a strong emphasis on security and compliance within AEM as a Cloud Service. It incorporates robust security measures, undergoes regular audits, and holds various compliance certifications to guarantee data protection and adherence to regulatory standards.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "API's & Integration",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM as a Cloud Service offers comprehensive API and integration capabilities, including RESTful and GraphQL APIs, Adobe I/O Runtime for custom microservices, seamless integration with Adobe Experience Cloud solutions and third-party systems, headless CMS support, integration frameworks like Adobe Cloud Manager, robust security measures, and authentication mechanisms. These features enable organizations to build connected digital experiences, leverage data-driven insights, extend functionality through custom developments, and integrate seamlessly with external systems and services.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Low Cost",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM as a Cloud Service provides excellent value for businesses as it offers a cost-effective solution compared to similar offerings in the market. Despite its affordability, it doesn't compromise on quality and provides a wide range of robust features and high-performance capabilities.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Microservices Architecture",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Microservice architecture in AEM as a Cloud Service enables modular and scalable development by breaking down complex applications into smaller, independently deployable services. This approach enhances flexibility, facilitates continuous delivery, and improves fault tolerance and resilience in AEM implementations.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Comparing Cloud-Based Infrastructure with On-Premise and Adobe Managed Solutions",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/cloud-services/comparing.jpg",
+        alt: "AEM Cloud vs On-Premises",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Author and Publisher instances in the system can be seamlessly scaled up or down in response to real-time traffic demands, ensuring continuous availability without any downtime. This system supports both vertical scaling (increasing resources on existing instances) and horizontal scaling (adding more instances to the infrastructure).",
+          "Access to the AEM Author environment is managed through Adobe Identity Management Services (IMS) and administered via the Adobe Admin Console. AEM Assets as a Cloud Service exclusively provides an authoring environment where content creation and management take place. Notably, the system maintains a clear separation between code/configurations and content.",
+          "Data handling within the Author and Publish instances is facilitated through the Content Repository Service, enabling efficient reading and storage operations. Changes to code and configurations are now managed via Git repositories integrated with the Cloud Manager. Deployment of these changes occurs through specialized production or non-production pipelines within the Cloud Manager environment, with APIs available for pipeline triggering and monitoring.",
+          "The system leverages the Sling Content Distribution feature for content publishing, diverging from traditional Content Replication methods. This architecture fully decouples Author and Publish instances, ensuring seamless publish events and consistent state across the publishing service. This model operates on the principles of the Publish-Subscribe model.",
+          "For handling heavy asset loads, a scalable shared data store is implemented to store and serve all assets, thereby relieving primary AEM instances from this resource-intensive task.",
+          "Additionally, advanced networking capabilities are available via the Cloud Manager APIs, allowing for the configuration of Flexible and Dedicated egress IP setups as well as Virtual Private Network (VPN) connections, enhancing the system's networking flexibility and security measures.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "AEM Cloud Architecture Overview",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The AEM Cloud architecture is designed to provide a robust and scalable platform for managing and delivering digital experiences. At its core, the architecture comprises several key components that work together seamlessly to ensure efficient content management, delivery, and operational excellence. Let's explore these components in detail:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/cloud-services/architecture.webp",
+        alt: "AEM as a Cloud Architecture",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Image Source : Adobe (https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/overview/architecture#:~:text=AEM%20as%20a%20Cloud%20Service%20is%20made%20up%20of%20high,on%20their%20respective%20use%20cases.)",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Content Management Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In the context of Content Management in Adobe Experience Manager (AEM) as a Cloud Service, Identity Management Service and Asset Compute Service are two important components that enhance the capabilities and efficiency of managing digital content.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "- Identity Management Service",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "User Authentication: IMS handles user authentication, allowing users to securely log in to the AEM environment using their credentials.",
+          "Access Controls: IMS enforces access controls based on user roles and permissions, ensuring that users have appropriate access to content and functionality.",
+          "Single Sign-On (SSO): IMS supports Single Sign-On integration, allowing users to access multiple applications and services within the AEM ecosystem without having to re-enter their credentials.",
+          "Identity Federation: IMS can integrate with external identity providers (IdPs) for identity federation, enabling seamless authentication and access management across different systems.",
+          "User Profile Management: IMS manages user profiles, preferences, and settings, providing a personalized experience for users based on their roles and permissions.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "- Asset Compute Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Asset Compute Service (ACS) in AEM as a Cloud Service is a serverless compute platform that automates the processing and transformation of digital assets (images, videos, documents, etc.) within the AEM environment.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Experience Delivery Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Experience Delivery Service focuses on delivering rich and personalized experiences to end-users across various channels and devices. It leverages content targeting, personalization algorithms, and adaptive delivery mechanisms to optimize user engagement and satisfaction.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "- Data Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Data service in AEM as a Cloud Service plays a crucial role in providing access to essential customer data, including licensing metrics (e.g., Content Requests, Storage, Users) and usage reports (e.g., uploads, downloads). This data can be accessed through APIs or within product user interfaces like Cloud Manager, enabling organizations to monitor and analyze key performance indicators related to their digital experiences.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "- Real-Users Metric Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM as a Cloud Service is responsible for gathering essential metrics from customer experiences, including but not limited to page views, core web vitals, and conversion events. It also handles queries related to this data",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Container Orchestration Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Container Orchestration Service orchestrates and manages containerized applications within the AEM Cloud environment. It ensures scalability, resilience, and efficient resource utilization through automated deployment, scaling, and monitoring of containerized services.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Edge Delivery Services",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM can seamlessly integrate with GitHub code repositories, enabling developers to build and enhance experiences with Edge Delivery Services. This integration unlocks a range of new configuration options for the associated experiences. These options include setting up the Adobe-Managed CDN for optimized content delivery, as well as accessing valuable licensing metrics and SLA reports for performance monitoring and optimization.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Content Repository Services",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Content Repository Services provide a centralized and scalable storage solution for digital assets, documents, and content fragments. They offer version control, metadata management, and efficient retrieval mechanisms to support content-rich applications and workflows.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Replication Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Replication Service facilitates content synchronization and replication across multiple environments and geographic locations. It ensures consistency and availability of content by efficiently transferring updates, changes, and configurations between different instances of the AEM Cloud architecture.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Testing Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The Testing Service enables automated testing, validation, and quality assurance of digital experiences and applications within the AEM Cloud environment. It supports continuous integration (CI) and continuous delivery (CD) pipelines, ensuring reliable and error-free deployments.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "CI/CD Service",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The CI/CD Service streamlines the software development lifecycle by automating build, test, and deployment processes. It integrates with version control systems, testing frameworks, and deployment pipelines to enable rapid iteration, feedback, and delivery of enhancements and updates. Together, these key components form a comprehensive and scalable architecture for AEM Cloud, empowering organizations to create, deliver, and optimize engaging digital experiences efficiently and effectively.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Migrating to AEM as a Cloud Service",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here are the different steps of Migration:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/cloud-services/Migration.jpg",
+        alt: "AEM as a Cloud Architecture",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Planning: Identify the components that need to be migrated and create a detailed plan with tasks and timelines.",
+          "Estimation: Assess the complexity of the migration items and break them down into manageable units for estimation.",
+          "Execution: Develop migration scripts, rules, and tools required for the actual data and application migration.",
+          "Testing: Conduct thorough testing to validate all functionalities, ensuring they work as expected post-migration. Perform full regression testing to catch any issues.",
+          "Performance Testing: Measure the performance of the migrated application against predefined benchmarks to ensure optimal performance.",
+          "UAT: Business teams and end-users perform validation tests to ensure that the migrated system meets their requirements and expectations. Get sign-off from stakeholders.",
+          "Go-Live: Deploy the migrated system into production, making it live for users.",
+          "Post-Launch: Provide training sessions for authors and end-users to familiarize them with new features and functionalities of the migrated system.",
+          "Optimization: Continuously monitor user interactions and system performance post-migration. Make necessary adjustments and optimizations based on feedback and data analysis to improve the system's effectiveness and efficiency.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "AEM as a Cloud Service revolutionizes digital experiences by offering unmatched scalability, performance, and security. This cloud-native solution empowers businesses to elevate their digital presence, streamline content management, and deliver seamless customer journeys across multiple channels, marking a significant step forward in the era of digital transformation.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Don't forget to follow me for upcoming blogs. Thank you!",
+      },
+    ],
   },
   {
     slug: "context-aware-configuration",
@@ -4727,7 +10266,323 @@ definitions:
     author: "Ankit Pardhi",
     description:
       "Learn how Context-Aware Configuration provides site-specific settings to AEM components and services.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 3,
+        text: "Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Managing the settings for different parts of a website can be a headache, especially for large sites with varied needs. Adobe Experience Manager (AEM) has a powerful tool called Context Aware Configuration (CA-Config) that makes this job much easier. CA-Config allows you to apply different settings to different sections of your website based on their specific requirements.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Think of CA-Config like a smart manager for your website’s settings. For example, if you run a global website, you can use CA-Config to ensure each regional section of your site shows the right content for that area. This means your visitors in the USA see different information than visitors in Japan, all managed smoothly from one place.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The real benefit of CA-Config is its simplicity and precision. You can control settings exactly where you need them without dealing with complicated setups. This makes it easier to keep your site running smoothly, no matter how big or complex it gets. In this blog, we’ll explore how CA-Config works and how it can help you manage your website more effectively.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What is Context Aware Configuration?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Context Aware Configuration (CA-Config) in Adobe Experience Manager (AEM) is a powerful feature that allows for the flexible and dynamic application of settings and configurations based on the context of content within the AEM hierarchy. It enables the definition of configurations that are specific to content resources or resource trees, rather than being globally applied.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "With CA-Config, configurations can be tailored to different sections of a website or application, such as regional sites or tenant-specific pages. This is particularly useful for large, multi-faceted websites that serve diverse audiences with varying needs. CA-Config supports hierarchy-based inheritance, which means that configurations can inherit settings from their parent context, allowing for a structured and organized approach to configuration management.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "One of the key benefits of CA-Config is its ability to provide context-specific settings without the need for complex coding or deployment processes. It simplifies the management of environment-specific configurations, enabling developers to adjust application behavior dynamically, based on the specific site or content context.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "n practice, CA-Config is implemented by defining configuration properties in Sling, creating context configurations under the /conf folder, and associating these configurations with content paths. This approach not only streamlines the configuration process but also enhances the scalability and maintainability of AEM projects",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Advantages of Using CA-Config",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The main advantages of using CA-Config over traditional OSGi configurations include:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Context-specific settings: Configurations can be applied to specific areas of the content tree, allowing for greater flexibility.",
+          "Hierarchy-based inheritance: Settings can inherit from parent configurations, making it easier to manage configurations across a site.",
+          "Simplified management: CA-Config simplifies the management of configurations, especially for large sites with complex structures.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "How To Create Context Aware Configuration",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step : 1 Creating OSGi Configuration",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Define an interface similar to creating an OSGi configuration.",
+          "Use the @Configuration annotation instead of the usual OSGi annotations.",
+          "Provide labels, descriptions, names, and specify the collection property (true or false).",
+          "Define properties using the @Property annotation.",
+          "Provide label and description.",
+          "Default values can be provided if needed.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `import org.apache.sling.caconfig.annotation.Configuration;
+import org.apache.sling.caconfig.annotation.Property;
+
+@Configuration(  name = "Test Context Aware Configuration",
+                                description = "Context Aware Configuration.")
+public @interface ContextAwareConfig {
+    @Property( label = "Site Country",
+    description="value for the site country")
+    String siteCountry();
+
+    @Property( label = "Site Owner",
+    description="value for the site owner")
+    String siteOwner();
+
+    @Property( label = "Site Language",
+    description="value for the site language")
+    String siteLanguage();
+}`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step : 2 Call OSGi configuration in Sling Model",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "First, we create a model class that can work with configurations.",
+          "Inside this model class, we define a function that needs information like the current page and the resource resolver.",
+          "Context-aware configurations are based on resources that understand their context. To access configurations, we use the ConfigurationResolver service.",
+          "We can obtain the ConfigurationBuilder through the ConfigurationResolver service. This service provides a method to retrieve the ConfigurationBuilder.",
+          "Alternatively, we can directly adapt our content resource to the ConfigurationBuilder interface to access the configuration.",
+          "The ConfigurationBuilder can retrieve configurations as ValueMap or by adapting the configuration resources. Sometimes, we need to specify a configuration name, but it's often automatically derived from annotations.",
+          "The ConfigurationResolver internally uses the ConfigurationResourceResolver to fetch configuration resources. These resources are usually stored under the bucket name sling:configs.",
+          "Once you have the ConfigurationBuilder, it offers only one method called 'as'. This 'as' method returns your context-aware configuration, which you can then use anywhere in your application.",
+          "Finally, we execute the function using the @PostConstruct annotation. Inside this function, we initialize variables with values retrieved from the configuration.",
+        ],
+      },
+
+      {
+        type: "paragraph",
+        text: "You can refer below code",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `@Model(
+adaptables = {SlingHttpServletRequest.class},
+adapters = {ContextAwareConfig.class},
+defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+            )
+public class ContextAwareConfigModel {
+    private String siteCountry;
+    private String siteOwner;
+    private String siteLanguage;
+    @SlingObject
+    ResourceResolver resourceResolver;
+    private ContextAwareConfig CAConfig;
+    @ScriptVariable
+    Page currentPage;
+    @PostConstruct
+    void init() {
+        ContextAwareConfig CAConfig=getCAConfiguration(currentPage.getPath(),resourceResolver);
+        siteCountry=CAConfig.siteCountry();
+        siteOwner=CAConfig.siteOwner();
+        siteLanguage=CAConfig.siteLanguage();
+    }
+    ContextAwareConfig getCAConfiguration( String currentPage, ResourceResolver resourceResolver){
+        String currentPath = StringUtils.isNotBlank(currentPage) ? currentPage : StringUtils.EMPTY;
+        Resource contentResource = resourceResolver.getResource(currentPath);
+        if (contentResource != null) {
+            ConfigurationBuilder configurationBuilder = contentResource.adaptTo(ConfigurationBuilder.class);
+            if (configurationBuilder != null) {
+                return configurationBuilder.as(ContextAwareConfig.class);
+            }
+        }
+        return null;
+    }
+    public String getSiteCountry() {
+        return siteCountry;
+    }
+
+    public String getSiteOwner() {
+        return siteOwner;
+    }
+
+    public String getSiteLanguage() {
+        return siteLanguage;
+    }
+}`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step : 3 Create Component",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In component display the value of CA configuration",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "html",
+        code: `<sly data-sly-use.ConfigValue="com.weretail.core.models.impl.ContextAwareConfigModel">
+    <h4>>Site Country : \${ConfigValue.siteCountry}</h4>
+    <h4>Site Owner : \${ConfigValue.siteOwner}</h4>
+    <h4>>Site Language : \${ConfigValue.siteLanguage}</h4>
+</sly>`,
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step : 4 Create Folder",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Create a folder sturucture under /conf/project according to your site",
+          "Folders jcr:primarytype would be sling:folder",
+          "Node name would be your configurations relative path",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/context-aware-configuration/Screenshot-2024-03-13-193115.webp",
+        alt: "Text",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Add property and value to the node that you have defined in your configuration",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/context-aware-configuration/Screenshot-2024-03-13-192641.webp",
+        alt: "Screenshot 2024 03 13 192641",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/context-aware-configuration/Screenshot-2024-03-13-192729.webp",
+        alt: "Screenshot 2024 03 13 192729",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/context-aware-configuration/Screenshot-2024-03-13-192757.webp",
+        alt: "Screenshot 2024 03 13 192757",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step : 5 Add rererence to your site",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Inside /content/mysite under the specific site hierarchy, add property sling:configRef = [path of the folder that has a configuration for that specific site] in jcr: content.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/context-aware-configuration/Screenshot-2024-03-13-193534.webp",
+        alt: "Screenshot 2024 03 13 193534",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Step : 6 Add component to your page",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "When we utilize a component on a webpage, it acquires its configuration based on the sling:configRef path. If, within a hierarchy, a specific configuration is not explicitly defined, the component inherits configuration values from its parent. For instance, if we do not define sling:configRef in ca/b1/jcr:content, it will inherit configuration settings from the ca parent.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/context-aware-configuration/endResult.webp",
+        alt: "endResult",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Context Aware Configuration (CA-Config) in Adobe Experience Manager (AEM) significantly simplifies the management of website settings, particularly for large and complex sites. By allowing configurations to be tailored to specific sections of a site, CA-Config ensures that content is relevant and localized for different audiences. Its flexibility and precision reduce the need for complex inheritance structures, making it easier to maintain consistency across the site. Implementing CA-Config involves defining configuration properties, integrating them with Sling Models, and creating components that display these configurations. This streamlined approach enhances the scalability and maintainability of AEM projects, ensuring a smooth and efficient content management experience.",
+      },
+    ],
   },
   {
     slug: "targeting-in-aem",
@@ -4737,7 +10592,570 @@ definitions:
     author: "Suchita Mishra",
     description:
       "Discover how AEM targeting uses audiences and contextual data to deliver personalized experiences.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Content personalization in short means delivering the right content to the right person in real-time.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The targeting engine is the mechanism that drives the logic for targeted content. You can use either AEM or Adobe Target as the targeting engine, AEM provides a built-in targeting engine that processes page requests and determines the content to display. AEM as a targeting engine only supports Experience Targeting but Adobe Target should be used for A/B testing.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Let us see how to use the AEM targeting engine to enable the experience targeting for a web page.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Setup ContextHub",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "ContextHub is a framework for storing, manipulating, and presenting context data. The ContextHub Javascript API enables us to access stores to create, update, and delete data as necessary. To enable the ContextHub features and to link to the ContextHub JavaScript libraries, including the <contexthub> component in the <head> section of our web page.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Add the below HTL code to the overridden customheaderlibs.html file of your page component(here the page component is extending from core page component - core/wcm/components/page/v2/page)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "<sly data-sly-resource=\" ${'contexthub' @ resourceType = 'granite/contexthub/components/contexthub'}\"/>",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image.png",
+        alt: "image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "ContextHub includes a segmentation engine that manages segments and determines which segments are resolved for the current context.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Once the ContextHub is enabled for the project, client context data can be explored through the browser local storage.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-1.png",
+        alt: "image1",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Configuration Browser - EnableContextHub Segments",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Enable the ContextHub segments for your site under Configuration Browser.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Tools → General → Configuration Browser → Select the project → Properties → Check ContextHub Segments",
+      },
+
+      {
+        type: "paragraph",
+        text: "Save and Close",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-2.png",
+        alt: "image2",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Configure Segment Path and ContextHub Path",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Assign Segment path and ContextHub path to your site root node, the default ContextHub path is /libs/settings/cloudsettings/legacy",
+      },
+
+      {
+        type: "paragraph",
+        text: "& segment path — /conf/<tenant>/settings/wcm/segments",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-3.png",
+        alt: "image3",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create Brand",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a Brand to manage the Audiences through Activities console,",
+      },
+
+      {
+        type: "paragraph",
+        text: "Tools → Personalization → Activities, Create Brand",
+      },
+
+      {
+        type: "paragraph",
+        text: "Select Brand Template, add a title, and Create.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-4.png",
+        alt: "image4",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create Audiences - Create ContextHub Segment",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "An audience, called segment in ContextHub, is a class of visitors defined by specific criteria, which then determines who sees a targeted activity.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Create the required Audiences,",
+      },
+
+      {
+        type: "paragraph",
+        text: "Tools → Personalization → Audiences,",
+      },
+
+      {
+        type: "paragraph",
+        text: "Create ContextHub Segments under the corresponding project.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-5.png",
+        alt: "image5",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Specify the required boost factor, If there is more than one segment that gets resolved the one with a higher boost factor is selected.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-6.png",
+        alt: "image6",
+      },
+
+      {
+        type: "paragraph",
+        text: "Create.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Assign the segments to the audience accordingly (similarly as shown below), by editing the segment we've created.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-7.png",
+        alt: "image7",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Create Activities",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Activities consist of audiences that you are targeting, and the period of time when the targeting is applied.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "First Create an Area under Brand and create the Activity inside the Area,",
+      },
+
+      {
+        type: "paragraph",
+        text: "Tools → Personalization → Activities",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Enter Title, Name and select the Target Engine as ContextHub.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-8.png",
+        alt: "image8",
+      },
+
+      {
+        type: "paragraph",
+        text: "Add Experience for each audience",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-9.png",
+        alt: "image9",
+      },
+
+      {
+        type: "paragraph",
+        text: "Set the Duration and Priority",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-10.png",
+        alt: "image10",
+      },
+
+      {
+        type: "paragraph",
+        text: "And Save.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Enable Target Configuration",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Enable the Target Configuration — Brand, Area to the root page properties or to the specific page(you can configure more than one brand).",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-11.png",
+        alt: "image11",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-12.png",
+        alt: "image12",
+      },
+
+      {
+        type: "paragraph",
+        text: "Save and Close.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now we are done with all the configurations and we can go ahead with the authoring part which will be done in the targeting mode of AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Author Targeted Content",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Author targeted content using the Targeting mode of AEM. Targeting mode provides tools for creating content for the experiences of your marketing activities.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Select Targeting Mode from the Dropdown.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-13.png",
+        alt: "image13",
+      },
+
+      {
+        type: "paragraph",
+        text: "Select the Brand and Activity and click on Start Targeting.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-14.png",
+        alt: "image14",
+      },
+
+      {
+        type: "paragraph",
+        text: "On required components select the Target option.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-15.png",
+        alt: "image15",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now select the Audience and define the experience for the components,",
+      },
+
+      {
+        type: "paragraph",
+        text: "Default - Default experience",
+      },
+
+      {
+        type: "paragraph",
+        text: "Summer Female - the experience for female users in Summer",
+      },
+
+      {
+        type: "paragraph",
+        text: "Summer Male - the experience for male users in Summer",
+      },
+
+      {
+        type: "paragraph",
+        text: "Winter Female - the experience for female users in Winter",
+      },
+
+      {
+        type: "paragraph",
+        text: "Winter Male - the experience for male users in Winter",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Select the corresponding audience and edit the component data, also we need to set the targeting engine i.e, ContextHub, by clicking on settings.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-16.png",
+        alt: "image16",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-17.png",
+        alt: "image17",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now author the targeted component according to the audiences.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-18.png",
+        alt: "image18",
+      },
+
+      {
+        type: "paragraph",
+        text: "Summer Female:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-19.png",
+        alt: "image19",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Similarly, edit the authoring for the rest of the audiences accordingly.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Summer Male:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-20.png",
+        alt: "image20",
+      },
+
+      {
+        type: "paragraph",
+        text: "Winter Female:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-21.png",
+        alt: "image21",
+      },
+
+      {
+        type: "paragraph",
+        text: "Winter Male:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-22.png",
+        alt: "image22",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Save all the authoring changing for different audiences and click next.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-23.png",
+        alt: "image23",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The target audiences and experiences are defined as we added in the Activities (can be modified if needed).",
+      },
+
+      {
+        type: "paragraph",
+        text: "Click next.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-24.png",
+        alt: "image24",
+      },
+
+      {
+        type: "paragraph",
+        text: "Define the duration and Priority and Save it.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have successfully saved our activity and now we will get different personalized experiences for different audiences and seasons based on what we configured.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We can verify the targeting and personalization by viewing the page in the preview mode. On the top left corner we'll have the contextHub option available which will provide some contextHub features, using which we can verify the experiences that the particular audience/user will get along with the resolved segments.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-25.png",
+        alt: "image25",
+      },
+
+      {
+        type: "paragraph",
+        text: "PERSONA - defines the user i.e., which user is logged in.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "LOCATION - defines from what location that user is actually logging in from.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In our case, we can test the experiences by defining the persona.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Summer Female User:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-26.png",
+        alt: "image26",
+      },
+
+      {
+        type: "paragraph",
+        text: "Summer Male User:",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/targeting-in-aem/image-27.png",
+        alt: "image27",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "So, we have verified the targeting and we are successfully able to get the personalized content based on the segments/audiences that we created.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Hope you find the blog insightful. Thanks!! 😄",
+      },
+    ],
   },
   {
     slug: "indexing",
@@ -4747,7 +11165,302 @@ definitions:
     author: "Shruti Meshram",
     description:
       "Understand how Oak indexes improve AEM repository query performance and content retrieval.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Happy to find you all well. Let us discuss in today's blog an efficient way to perform search operations in AEM.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Indexing is a technique which enables the user to retrieve data with minimal node traversal and in minimum amount of time. Suppose, an AEM user wants to find all the images present in crx/de console which actually is categorized as a slow query in AEM as the process search gets terminated due to 100000+ node traversal. This is a case where you need to perform indexing upon desired property to retrieve the data (i.e images). Also in case where you need to enhance the search performance, it is recommended to perform indexing so that the data retrieval is cost efficient. Oak query engine supports XPath, SQL-2 and JQOM and Apache Oak-based backend allows multiple indexes to be plugged in a repository. PropertyIndex is predefined in repository itself, Apache Lucene and Apache Solr can be customized.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "While executing a query",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Case 1: No index is applied",
+      },
+
+      {
+        type: "paragraph",
+        text: "Traversal Index is by default used to run the search.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Case 2:Multiple indexes as applicable for a search",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Oak internally finds out the most cost efficient index and implements it for the search.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Diagrammatic Representation of Handling Indexes",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-one.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Creating Indexes in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Oak supports Lucene indexing for property search (where an index is applied directly upon a property) as well as full text search. Here we will be focusing upon creating lucene indexings.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Steps for creating indexes in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Under oak:index, in crx/de create indexing-in-aem as QueryIndexDefinition and add a mandatory property type lucene as shown in the xml. Also add the provided properties and rename the prop0 node as properties and you may also rename nt:base to nt:unstructured.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-two.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After successfully creating the index, you can find the generated index here (http://localhost:4502/libs/granite/operations/content/diagnosistools/indexManager.html)",
+      },
+
+      {
+        type: "paragraph",
+        text: "You need to find all the info as well as its consistency in",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-three.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Also your index will be available in quickstart itself \\crx-quickstart\\repository\\index If you are able to find the generated index in both the locations then congrats! You have successfully created your first index.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Lucene Indexing Example",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Oak engine for both property search as well as for full text search internally implements lucene indexing. Let us understand by an example. We need to search all the nodes in crx/de with property property dam:Asset from nt:base. Then for this we need to navigate to crx/de console, click on tools, the Query and select SQL-2 rather than XPath, enter the query for the search i.e",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "SELECT * FROM [nt:base] WHERE [jcr:primaryType] = 'dam:Asset'",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          ", to find the node traversal reaches its provided limit and so the process search terminates.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-four.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Also while checking the query explanation from operation console (http://localhost:4502/libs/granite/operations/content/diagnosistools/queryPerformance.html), an error message gets displayed",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-five.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This triggers the need of creating an index over the property jcr:primaryType with sole reason to minimize the nodes traversed for the search to execute and generate the desired result.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to generate an index create assetType index (a node under /oak:index of type oak:QueryIndexDefinition) with provided properties.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-six.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Re run the same query to get the results. You can also find you index applied on the search when you find the explanation of your query.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-seven.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here at the top you can find the assetType index applied for the generated search after clicking on Explain button.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-eight.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/indexing/image-nine.webp",
+        alt: "Indexing in AEM",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Lucene Indexing Properties and Explanations",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "While performing lucene indexing, we have a variety of properties and nodes.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "1.Node with type oak:QueryIndexDefinition",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "It has to have a mandatory property “type” “String” “lucene” else the node itself don’t save.",
+          "“compatVersion” “Long” “2” version 1 is deprecated and does not support property restrictions and index time aggregation whereas version 2 is faster to run queries.",
+          "“evaluatePathRestrictions” “boolean” “true” set the run to consider path restrictions provided.",
+          "“excludedPaths” “String[]” consists of paths which need to be excluded from search run.",
+          "“includedPaths” “String[]” consists of paths included for the search.",
+          "“async” “String” “async” it allows the index to keep running in the background even it multiple tasks are executing at a time.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "2.Node name indexRules",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "They consist of configuration of index for provided node or property.",
+          "They consist of configuration of index for provided node or property.",
+          "Within this each first level node thus created will encounter the provided differed set of rules.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "3.nt:base",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "It consists of property definitions in the form of node created under it as a property.",
+          "There can be variety of property nodes on which the indexing needs to be done.",
+          "The name of the prop0 needs to be converted to the name of the property itself to be indexed also the name property must be changed to the indexed property name.",
+          "“isRegexp” ”boolean” “false”, if set to true, then it will be considered as a regular expression.",
+          "“ordered” “boolean” “true” so as to implement order by clause.",
+          "“propertyIndex” “boolean” “true” allows to check equality condition, not null condition and ordering condition.",
+          "“sync” “boolean” “true” requires propertyIndex condition to be true always and ensures that the changes to the content are available as soon as they are committed.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "4.Full text search in lucene indexing",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "And these indexes consist of entries of columns that contain the generated tokens. These inverted indexes fall handy while running the generated search.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Lucene indexing is hence a powerful mechanism that ensures fast retrieval of data. In case the requirement demands a customized property for the lucene search to execute, the property can also be generated in the backend.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The AEM crx/de itself has many ootb indexes which indeed avoids the traversal index search but in special cases, where node traversals exceed the declared limits, oak search engine applies lucene indexes for property, node as well as full text searches.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Hope you find this blog informative.",
+      },
+    ],
   },
   {
     slug: "form-submission",
@@ -6500,7 +13213,7 @@ function handleError(error) {
 
       {
         type: "image",
-        src: "images/blogs/sites/AEM_Architecture.webp",
+        src: "/images/blogs/sites/aem-introduction/AEM_Architecture.webp",
         alt: "AEM Architecture",
       },
 
@@ -6554,7 +13267,7 @@ function handleError(error) {
 
       {
         type: "image",
-        src: "images/blogs/sites/Aem_framework.webp",
+        src: "/images/blogs/sites/aem-introduction/Aem_framework.webp",
         alt: "AEM OSGi Framework",
       },
 
@@ -6647,7 +13360,7 @@ function handleError(error) {
 
       {
         type: "image",
-        src: "images/blogs/sites/AEM-Type.webp",
+        src: "/images/blogs/sites/aem-introduction/AEM-Type.webp",
         alt: "Types of AEM",
       },
 
@@ -6743,7 +13456,201 @@ function handleError(error) {
     author: "Shruti Meshram",
     description:
       "Learn how to configure and manage vanity URLs in AEM for user-friendly website addresses.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Lets begin today's learning regarding vanity urls and their handelling in AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Introduction",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Vanity URLs are nothing but friendly URLs. Suppose we have a URL:localhost/content/abc/def/ghi/organization/team.html which is not really eye catching to the users so AEM authors are provided the previllege to transform this URL into a more user friendly URL such as localhost:4502/organization/team.html which is indeed a vanity url of the provided one.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Adding Vanity URLs via Page Properties",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to do this, AEM Authors should open the page properties of the page and set up the friendly.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageOne.webp",
+        alt: "PageWithOriginalURL",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageTwo.webp",
+        alt: "PageProperties",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Go to Basic tab and find vanity path as a multifield to add the required vanity url and select save and close.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageThree.webp",
+        alt: "VanityURLsMultifield",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There in you also find a Redirect checkbox, if checked, the vanity url generates a status code of 302 along with initiator as other and reaches the parent url through internal redirect.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The vanity URL on the other hand provides a status code of 200 with initiator as the vanity url itself",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageFour.webp",
+        alt: "PageWithFriendlyURL",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageFive.webp",
+        alt: "RedirectCheckbox",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageSix.webp",
+        alt: "StatusCodeCheckWithoutRedirect",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageSeven.webp",
+        alt: "StatusCodeCheckWithRedirect",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Dispatcher Configuration of Vanity URLs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Everytime an author adds a vanity url, its entry needs to be made at the dispatcher level and this becomes tedious so, in AEM dispatcher has an auto allow feature listed in vanity tree.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "All the map entries for vanity urls are available in localhost:4502/system/console/jcrresolver stating external redirect with status code 302.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageEight.webp",
+        alt: "JCRResolverConsole",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to exercise auto-filter mechanism of dispatcher content/software distribution package needs to be downloaded (a feature of AEM Cloud as a Service) and configured in the dispatcher itself.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In dispatcher, /vhost, we specify the rules for vanity_urls. Also we can specify which file should store vanity urls and after how many seconds the file must get refreshed.",
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: `   /vanity_urls{
+   /url "/libs/granite/dispatcher/content/vanityUrls.html"
+   /file "/temp/vanity-urls"
+/delay "400"
+    }`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here /libs/content/dispatcher/content/vanityUrls.html is a page that displays all the vanity urls available in AEM.",
+      },
+
+      {
+        type: "paragraph",
+        text: "/temp/vanity-urls is file that stores all the vanity urls",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/vanity-urls/ImageNine.webp",
+        alt: "VanityURLPage",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "/delay 400 is the time period till which the /temp/vanity-urls file will not get refreshed if the time difference between current moment and file's last modification is less than that of /delay.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A refreshed request can be explicitly trigerred by just requesting a non-existing url to ensure /delay elapse.",
+      },
+
+      {
+        type: "paragraph",
+        text: "For example : localhost/non-existing/page.html",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "It is recommended to use rewrite rules instead of default mechanism to ensure namespace resolutions, higherlevel logic implementation and increased performance.",
+      },
+
+      {
+        type: "code",
+        language: "text",
+        code: "RewriteRule ^/home /content/abc/def/ghi/home.html [PT,L,NC]",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "L (i.e last flag) is used to increase the performance as it skips the unnecessary rules without generating a proxy request. PT (i.e pass through flag) looks for a vanity url starting with provided initals and then fetches the complete path from the renderer. NC (i.e no case sensitivity) ignores casings.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you find this blog informative and helpful and if so please do like.",
+      },
+    ],
   },
   {
     slug: "osgi-configuration-factory",
@@ -6753,7 +13660,368 @@ function handleError(error) {
     author: "Yash Sakharkar",
     description:
       "Understand how OSGi factory configurations manage multiple configurable service instances in AEM.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 3,
+        text: "What is OSGI In AEM ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "OSGi is a fundamental element in the technology stack of Adobe Experience Manager (AEM). It is used to control the composite bundles of AEM and their configuration. OSGi “provides the standardized primitives that allow applications to be constructed from small, reusable, and collaborative components. These components can be composed into an application and deployed”.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What is OSGI Configuration In AEM ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "OSGi Configurations in AEM are used to set up and customize the properties of OSGi components and services. These Configurations are often stored in configuration files or managed through the AEM Web Console.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What is OSGI Factory Configuration In AEM ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "OSGi Factory Configuration in Adobe Experience Manager (AEM) refers to a way of creating multiple instances of an OSGi service, each with its own unique configuration. This is particularly useful when you need several instances of a service with different settings.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Key Concepts of OSGi Factory Configuration",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Factory Configuration",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Unlike standard OSGi Configurations, which apply a single configuration to a single service instance, factory Configurations allow multiple instances of a service to be created, each with a unique configuration. Each instance is created with a distinct configuration, enabling different behavior or settings for each instance.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Identifiers",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Each factory configuration instance is identified by a unique identifier, typically appended to the configuration’s PID (Persistent Identifier).",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Configuration Format",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Factory Configurations often use .config or .cfg.json files, with a filename pattern that includes a factory identifier.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Now we will see Implementation of factory configuration",
+      },
+
+      {
+        type: "paragraph",
+        text: "Here is the code to create Osgi Configuration :",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.demo.core.conf;
+
+import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.AttributeType;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+
+@ObjectClassDefinition(name = "Osgi Factory Configuration", description = "Osgi Factory Configuration Demo")
+public @interface OsgiFactoryConfiguration {
+    @AttributeDefinition(name = "configId",description = "ConfigId",type = AttributeType.INTEGER)
+    int configurationId();
+    @AttributeDefinition(name = "configName",description = "ConfigName",type = AttributeType.STRING)
+    String configName() default "Config #";
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a Service which contains the methods to get Configuration Name and Ids. :",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.demo.core.services;
+
+import java.util.List;
+
+public interface OsgiFactoryConfigService {
+    int getConfigurationId();
+    String getConfigName();
+    public OsgiFactoryConfigService get(int configId);
+    List<OsgiFactoryConfigService> getAllConfiguration();
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a Java Class with @Component Annotation and Implements the service and override all the Methods. Under @Designate Annotation include the Configuration class, to include the configuration class use \"ocd\" Interface. ocd is @ObjectClassDefinition Annotation is used to define a class or interface that describes the configuration options available for a particular OSGi service or component. This annotation helps in creating a clear and structured way to handle configuration properties, making them easier to manage and understand.",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.demo.core.services.impl;
+
+import com.demo.core.conf.OsgiFactoryConfiguration;
+import com.demo.core.conf.OsgiFactoryConfigurator;
+import com.demo.core.services.OsgiFactoryConfigService;
+import org.osgi.service.cm.Configuration;
+import org.osgi.service.cm.ConfigurationAdmin;
+import org.osgi.service.component.annotations.*;
+import org.osgi.service.metatype.annotations.Designate;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.List;
+
+@Component(service = OsgiFactoryConfigService.class, configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Designate(ocd = OsgiFactoryConfiguration.class,factory = true)
+public class OsgiConfigurationFactoryImpl implements OsgiFactoryConfigService {
+    private int configurationId;
+    private String configurationName;
+    List<OsgiFactoryConfigService> list;
+
+    @Activate
+    @Modified
+    public void activate(final OsgiFactoryConfiguration config) throws IOException {
+        configurationId = config.configurationId();
+        configurationName = config.configName();
+    }
+
+    @Reference(service = OsgiFactoryConfigService.class,
+              cardinality = ReferenceCardinality.MULTIPLE
+            , policy = ReferencePolicy.DYNAMIC)
+    public void bindOSGiFactoryConfig(final OsgiFactoryConfigService configService) {
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        list.add(configService);
+    }
+
+    public void unbindOSGiFactoryConfig(final OsgiFactoryConfigService configService) {
+        list.remove(configService);
+
+    }
+
+    @Override
+    public int getConfigurationId() {
+        return configurationId;
+    }
+
+    @Override
+    public String getConfigName() {
+        return configurationName;
+    }
+
+    @Override
+    public List<OsgiFactoryConfigService> getAllConfiguration() {
+        return list;
+    }
+
+    @Override
+    public OsgiFactoryConfigService get(int configId) {
+        for (OsgiFactoryConfigService confFact : list) {
+            if (configurationId == confFact.getConfigurationId())
+                return confFact;
+        }
+        return null;
+    }
+
+}`,
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Cardinality in AEM ?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Cardinality in OSGi is specified using annotations or XML Configurations and indicates whether a service dependency is mandatory or optional, and whether the component expects a single instance or multiple instances of the service.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Cardinality Options",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Mandatory Single (1..1)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The component requires exactly one instance of the service. The component cannot function without this service, and only one instance is expected.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Optional Single (0..1)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The component can function without the service (optional), but if the service is present, only one instance is expected.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Mandatory Multiple (1..n)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The component requires at least one instance of the service but can accept multiple instances. It must have at least one service bound to function properly.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Optional Multiple (0..n)",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "The component can function without the service, but if the service is available, it can bind to multiple instances.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create a Java Class with @Model as an annotation through which we can get all the Configurations that passed from Felic console",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.demo.core.models.impl;
+
+import com.demo.core.models.OsgiConfigurationModel;
+import com.demo.core.services.OsgiFactoryConfigService;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+
+import java.util.List;
+
+@Model(adaptables = SlingHttpServletRequest.class,
+        adapters = OsgiConfigurationModel.class,
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
+    @OSGiService
+    OsgiFactoryConfigService osgiFactoryConfigService;
+    @Override
+    public List<OsgiFactoryConfigService> getAllConfigurations() {
+        return osgiFactoryConfigService.getAllConfiguration();
+    }
+}`,
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Create the components and with the help of Slightly we can display all the Configurations in AEM page.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-configuration-factory/slightlycode.webp",
+        alt: "Language copies image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now Redirect to localhost:4502/system/console/configMgr and search you configuration name.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After refreshing the Page you will find all the Configurations with the unique identifier.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-configuration-factory/FelixConsole.webp",
+        alt: "Language copies image",
+      },
+
+      {
+        type: "paragraph",
+        text: "Click On '+' icon to add the Configurations",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-configuration-factory/felixconsole2.webp",
+        alt: "Language copies image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now login in to the AEM , Go to site Console and open the page",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/osgi-configuration-factory/osgifactorypage.webp",
+        alt: "Language copies image",
+      },
+    ],
   },
   {
     slug: "aem-msm",
@@ -6763,7 +14031,358 @@ function handleError(error) {
     author: "Yash Sakharkar",
     description:
       "Discover how AEM Multi Site Manager simplifies multi-site content management using blueprints and live copies.",
-    content: [],
+    content: [
+      {
+        type: "heading",
+        level: 3,
+        text: "What is MSM?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "MSM is a Multi Site Manager in Adobe Experience Manager that allows you to reuse content across multiple sites. MSM lets you create live copies and blueprints of sites or pages and how the content is Synchronized between them. MSM also works with translation tools to create and maintain multilingual sites.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "What is the use of MSM in AEM?",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Creating and managing the sites that are in multiple languages and countries.",
+          "Reusing and replicating the same content across multiple websites while maintaining consistent branding and content.",
+          "Translate content automatically using i18n translation.",
+          "Publishing content changes from the blueprints to live copies.",
+          "Localizing content for different cultures or regions by detaching elements of the live copies.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Advantages of MSM in AEM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "It minimizes the time and effort required to manage multiple websites that share the same content.",
+          "It ensures consistency in the look of all the WebPages across different sites.",
+          "Translate content automatically using i18n translation.",
+          "It allows AEM developers to specify relationships between the sites so that changes made on one site will automatically be reflected on other sites.",
+          "It integrates with translation tools like i18n to create and maintain multilingual sites.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Important terms used with MSM",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Language Copies",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Language copies are the type of live copies in AEM that are created from a source page in a different language. Language copies allow you to reuse the content structure and layout of the page while translating the content into other languages. Language copies can be created using the “Language Copy” command in AEM wizard which also integrates with third-party translation tools.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/Languagemasterdiagram.webp",
+        alt: "Language master diagram",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Blueprints",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "A blueprint is a structural definition of your site that you can use as a source for managing and creating live copies. A live copy is a copy of a page branch that inherits from the source and can be synchronized with it. A blueprint configuration identifies an existing copy that you want to use as the source of one or more live copies. You can also specify the rollout configuration to use for synchronizing the content between the blueprint and the live copies. A blueprint rollout will push all modifications to all of its live copies.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/blueprints-copies.webp",
+        alt: "country specific website",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Live Copies",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Live Copies in MSM are the copies of source pages or sites that inherit the content and structure from the source but can also be modified independently. Live copies allow you to reuse the content across multiple sites and pages, and synchronize them with the source needed.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Advantages of using live copies in AEM",
+      },
+
+      {
+        type: "numberedList",
+        items: [
+          "You can manage multiple sites and pages that share the same content with less effort and time.",
+          "You can ensure the consistency and accuracy of content across different sites or pages.",
+          "You can customize the content of live copies to suit different regions and languages.",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Now step to step we will see how to create Language Copies in MSM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Create a page e.g. Language Master by right clicking on your project.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/CreateLanguagemaster.webp",
+        alt: "Create Language master image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Similarly, create a master page for “English” by right clicking on Language Master. Click on create -> Language Copy tab.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/creating-language-copy.webp",
+        alt: "creating language copy image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Click on the Add Pages button and select the language of which copies you wish to make. Currently we have selected English (en).",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/Add-language-master-page.webp",
+        alt: "Add language master page image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After selecting a page, Click “Next” on the next tab. Click on Translation Setting and select Default Configuration and on the Left hand side you will find Target Language Here, you can select what language copies you want to make. In the below Image we have selected Hindi as a language.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/Creating-hindi-language-copy.webp",
+        alt: "Creating hindi language copy image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In this way you can create the language copies of many languages. In the below Image we have created language copies in French, Italian, German languages.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/Language-copiesss.webp",
+        alt: "Language copies image",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Steps to create Blueprints in MSM in AEM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Click on the create button and select Site -> Select your project Blueprint.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/blue-print-1.webp",
+        alt: "blue print 1 image",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/blue-print-2.webp",
+        alt: "blue print 2 image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Note: In case you do not find your project. Go to Tools -> Sites -> Blueprints and there, create your Blueprint.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In the properties section, mention “Title” and “Name” of your site and select the “Site Owner” and also mention the languages in which the site should be displayed.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/blueprint-3.webp",
+        alt: "blueprint 3 image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In the below Image you can find the live copies of English and Hindi under India(hi) page.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/blueprint4.webp",
+        alt: "blueprint 4 image",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now the question is if we can create live copies with Blueprints then what’s the use of live copy option in Sites?",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Consider we have a Site in French and English language, but there should be a need of creating the site in other languages, e.g. Spanish in such a case you can create a Live Copy of Spanish language.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Steps to create the live copies in MSM",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In the below Image we have created a page “Master Copy” and under it we have a test component.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/master-copy.webp",
+        alt: "master copy image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Click on the page you have created and author it. Here we have a test page under which I have added a “Text” component and authored it.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/text-component.webp",
+        alt: "text component image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now to create a live copy of the test page in French language, Click on create live copy -> Language Master Page -> select live copy (French Page).",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/live-copy.webp",
+        alt: "live copy image",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/French-Live-Copy.webp",
+        alt: "French live copy image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Click on the Next Button -> Choose the destination for which page you need to create a live copy.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/french-live-copy-destination.webp",
+        alt: "french live copy destination image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Add Title and Name, also select the Rollout Configs i.e. Standard Rollout Config, and Push on Modify. Click on the Next Button.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/creating-french-live-copy.webp",
+        alt: "creating french live copy image",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/created-french-copy.webp",
+        alt: "created french live copy image",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now to create a Live Copy of the Master Copy (Test Page) inside the French page. Again, Click on Live Copy -> Open master Copy there you will find the Test Page. Select that Page -> Select the destination as French Page -> Inside the French Page Test will be created. In the below Image, you will find a Test Page, Its URL will be /fr/fr/test.html.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/aem-msm/French-Test-Component.webp",
+        alt: "french test component image",
+      },
+    ],
   },
   {
     slug: "introduction-to-eds",
@@ -7274,7 +14893,310 @@ function handleError(error) {
     author: "Shruti Meshram",
     description:
       "Explore how Sling Servlets handle HTTP requests and implement custom backend functionality in AEM.",
-     
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to see you. Welcome to a new blog.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Servlets in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In this blog we will be understanding what are servlets in AEM plus what are the ways in which they are registered. Also we will understand in brief which type to use and when. Lets begin!",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What are Servlets",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Servlets are java classes which are meant to handle HTTP requests and their respective responses also allowing the developer to generate dynamic content. They provide variety of methods like doGET, doPOST, doPUT, doOPTIONS and doHEAD.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "doGET - Handles HTTP GET requests, typically used to retrieve data from the server. It is used to serve resources and render data without altering the server's state.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "doPOST - Handles HTTP POST requests, used for submitting data to the server to create or modify resources. It is generally used for form submissions, API requests, or sending data that may change the server state.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "doPUT - Handles HTTP PUT requests, which are used to update an existing resource or create a new one if it doesn’t exist.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "doOPTIONS - Handles HTTP OPTIONS requests, used by clients to discover what HTTP methods are supported by the server for a given resource. It is generally used for handeling CORS(Cross Origin Resource Sharing) and checking server's capability.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "doHEAD - Handles HTTP HEAD requests, which are similar to GET but do not return the body of the response, only headers.",
+      },
+
+      {
+        type: "heading",
+        level: 4,
+        text: "Registering a Servlet",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "There are tow ways in which a servlet is actually registered in aem",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "By Path",
+            text:
+              "Whenever we have to test the reponse or functioning of the servlet prior, it is preferred to register it by path. Also whenever any custom endpoint is created in the aem environment, they generally are not tied to any sort of aem resource, like components. In such case too, the servlet is preferred to be registered by path. An example is creating an endpoint from content fragments.",
+          },
+          {
+            title: "By Resource Type",
+            text:
+              "Now when a servlet is supposed to act on a specific resource or is supposed to work within the context of a specific resource or perform logic specifically related to the content or inputs recieved from the page, at this moment we are ought to register the servlet by resource type.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Registering by Path",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In order to register a servlet by path, you need to add the following snippet to it. Remember the path must begin with /bin.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `@Component(
+        service = Servlet.class,
+        property = {
+                "sling.servlet.paths=/bin/asset",
+                "sling.servlet.methods=GET",
+                "sling.servlet.extension=json"
+        }
+)`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here we have created a servlet that reads the metadata properties of an asset.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.servlets;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.osgi.service.component.annotations.Component;
+
+import javax.jcr.Node;
+import javax.jcr.Property;
+import javax.jcr.PropertyIterator;
+import javax.naming.spi.Resolver;
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Properties;
+
+@Component(
+        service = Servlet.class,
+        property = {
+                "sling.servlet.paths=/bin/asset",
+                "sling.servlet.methods=GET",
+                "sling.servlet.extension=json"
+        }
+)
+public class AssetPathServlet extends SlingSafeMethodsServlet {
+    @Override
+    protected void doGet(SlingHttpServletRequest request,
+    SlingHttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("Get Invoked");
+        try(ResourceResolver resolver = request.getResourceResolver()){
+            Resource resource = resolver.getResource("/content/dam/Sample/sun.jpg");
+            Node asset = resource.adaptTo(Node.class);
+            Node metadata = asset.getNode("jcr:content").getNode("metadata");
+            out.println(metadata.getName());
+            PropertyIterator allProperties = metadata.getProperties();
+
+            if(allProperties.hasNext()){
+                while(allProperties.hasNext()){
+                    Property property = allProperties.nextProperty();
+                    out.println(property.getName());
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here as you can see the servlet is registered by /bin/assets.json. On hitting the servlet in the postman, we are able to see its response in the console.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/servlets/postsmanpath.webp",
+        alt: "postsmanpath",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Register by Resource",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In order to register your servlet by a resource type, you need to first create a component and add it on a page. In this case we have added a demo component on a page.",
+          "You need to add the following snippet to your servlet. The same functionality we will achieve by registering the servlet by resource type.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `@Component(
+            service = Servlet.class
+    )
+    @SlingServletResourceTypes(
+        resourceTypes = "/apps/local-project/components/servletresource",
+        methods = HttpConstants.METHOD_GET
+    )`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After registering your servlet with resource type, you need to hit it on the postman to recieve its response. The path to the servlet will be the path of the page on which your component is present ending till the location of the component itself.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.servlets;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.servlets.HttpConstants;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
+import org.osgi.service.component.annotations.Component;
+
+import javax.jcr.Node;
+import javax.jcr.Property;
+import javax.jcr.PropertyIterator;
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@Component(
+        service = Servlet.class
+)
+@SlingServletResourceTypes(
+    resourceTypes = "/apps/local-project/components/servletresource",
+    methods = HttpConstants.METHOD_GET
+)
+public class AssetResourceServlet extends SlingSafeMethodsServlet {
+    @Override
+    protected void doGet(SlingHttpServletRequest request,
+    SlingHttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("Get Invoked");
+        try(ResourceResolver resolver = request.getResourceResolver()){
+            Resource resource = resolver.getResource("/content/dam/Sample/sun.jpg");
+            Node asset = resource.adaptTo(Node.class);
+            Node metadata = asset.getNode("jcr:content").getNode("metadata");
+            out.println(metadata.getName());
+            PropertyIterator allProperties = metadata.getProperties();
+
+            if(allProperties.hasNext()){
+                while(allProperties.hasNext()){
+                    Property property = allProperties.nextProperty();
+                    out.println(property.getName());
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+}`,
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/servlets/postmanresource.webp",
+        alt: "postmanresource",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Here we have learnt what are servlets, how they are registered and when to use which way to register it. Also we have tested both the servlets as registered by resource as well as by path.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "custom-button-and-console",
@@ -7284,7 +15206,206 @@ function handleError(error) {
     author: "Suchita Mishra",
     description:
       "Learn how to extend the AEM authoring interface with custom console actions and buttons.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Adobe Experience Manager (AEM) is a comprehensive content management solution for building websites, mobile apps, and forms. AEM's flexibility allows developers to customize its interface extensively. In this blog, we'll walk through the steps to create a custom button in the AEM console and how to add a custom navigation tab and console.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Prerequisites",
+      },
+
+      {
+        type: "paragraph",
+        text: "Before we start, ensure you have the following:",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Running AEM instance (AEM 6.x)",
+          "Basic knowledge of AEM and Sling",
+          "Familiarity with JSP, and front-end technologies like HTML, CSS, Javascript",
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creating a Custom Button in an AEM Console",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In AEM, all the core content and components resides in the /libs directory in CRX. When customization or modification is required, it's best practice to overlay the specific node from /libs to the /apps directory. This approach ensures that the original content remains untouched, allowing for safer and more manageable updates. By overlaying and modifying nodes in /apps, you can tailor your AEM instance to meet unique requirements while maintaining a clear distinction between out-of-the-box functionality and custom development.",
+      },
+
+      {
+        type: "paragraph",
+        text: "Let's create a custom button in the AEM Sites Console.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "All related nodes for the Sites Console are located under /libs/wcm/core/content/sites. Within jcr:content, the /actions/selection node contains all the available buttons that appear when selecting any page in the Sites Console. To customize or add new functionality, we can overlay and modify any node as needed. In this scenario, we'll create a new button which will simply redirect us to a new page, on click of it. To do this, we'll overlay the /selection node under /apps and create a new node named \"opennewpage\" with a \"data\" sub-node and add respective properties to it as shown below.",
+      },
+
+      {
+        type: "paragraph",
+        text: "/apps overlayed node structure",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/apps-overlay-structure.png",
+        alt: "apps overlay structure",
+      },
+
+      {
+        type: "paragraph",
+        text: "opennewpage node properties",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/opennewpage-node-properties.png",
+        alt: "opennewpage node properties",
+      },
+
+      {
+        type: "paragraph",
+        text: "data node properties",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/data-node-properties.png",
+        alt: "data node properties",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Save all the nodes & we've successfully customized the AEM Sites Console by adding a custom button.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "To check the availability of our custom button, navigate to the Sites Console at http://localhost:4502/sites.html/content, select any page, we'll spot our custom button in the selection bar (as shown below). Clicking on it will smoothly redirect us based on the URL specified in its data node's href property.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/custom-button.png",
+        alt: "opennewpage node properties",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "This slight adjustment enhances the console's usability, granting users a more fluid and user-friendly interaction.",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Creating a Custom Tool Navigation Menu and a new Console",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Now let's create a custom console in our AEM environment. To achieve this, we need to overlay the tools node from /libs/cq/core/content/nav/tools to /apps. Once overlaid, we can add our own navigation menu by creating a new node and configuring the necessary properties (as shown below).",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/tools-menu.png",
+        alt: "navigation menu",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After setting up the navigation menu, the next step is to add a subnode under our custom \"console-menu\" node. This subnode will represent the AEM console tool, which can be configured to perform any additional functionality we require. By creating this subnode and adding the respective properties according to our needs, we ensure the custom console tool is fully functional and integrated seamlessly into the AEM console.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/console-tool.png",
+        alt: "console tool",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We've configured the tool to redirect to the new console page located at /apps/[project]/content/sample-console.html. The next step involves creating this page. First, create a node of type cq:Page at the project level. This node should be assigned a meaningful title and the property sling:resourceType, which will reference the specific page component we plan to use.",
+      },
+
+      {
+        type: "paragraph",
+        text: "sample-console page",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/console-page.png",
+        alt: "console page",
+      },
+
+      {
+        type: "paragraph",
+        text: "sample-console node properties",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/console-page-properties.png",
+        alt: "console-page-properties",
+      },
+
+      {
+        type: "paragraph",
+        text: "jcr:content node properties",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/page-jcr-properties.png",
+        alt: "page-jcr-properties",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After establishing the cq:Page node, the next task is to develop the page component itself. This involves configuring the HTML and any associated scripts within the page component to display the desired content on our custom console. The page component's HTML should be crafted to present the necessary interface and functionality required for our console.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "After creating the page component and adding the content & styling to it (can be done accordingly), we have sucessfully created our custom AEM console. Upon clicking our sample console tool, it effortlessly redirects us to the meticulously designed page we've created.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/custom-button-and-console/console.png",
+        alt: "console",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "With that, we've successfully added a custom button to the AEM console, created a unique navigation menu, and personalized the AEM console itself. I hope you've found this blog helpful. Thanks for reading along! 😄",
+      },
+    ],
   },
   {
     slug: "introduction-to-components-and-sling-model",
@@ -7294,7 +15415,231 @@ function handleError(error) {
     author: "Shruti Meshram",
     description:
       "Learn how to build reusable AEM components and use Sling Models to efficiently access and manage content in the JCR.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hello, good to see you. Let us begin with a new learning.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Introduction to Components and Sling Model",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Today we will understand the basics of components and sling model in AEM.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "What are Components",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Components are the building blocks of content on a page. A component is a reusable unit of functionality that can be placed on a page to represent specific content or behavior, such as a text block, image, carousel, form, or other interactive elements. Components are responsible for rendering content and logic on a web page and are used extensively in AEM’s Editable Templates and Pages.",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "How Do AEM Components Work",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          {
+            title: "Rendering Content",
+            text:
+              "A component is usually called within a page’s HTML by its resource type . The page requests content, which the component renders based on its configuration and underlying logic.",
+          },
+          {
+            title: "Dialog Configuration",
+            text:
+              "Components have dialogs where authors can configure the properties of the component, such as uploading an image or adding text. This dialog makes it easy for authors to personalize the content without needing to write code.",
+          },
+          {
+            title: "Editable Content",
+            text:
+              "Components allow AEM authors to interact with the content directly in the AEM author interface. They can use drag-and-drop functionality to add, move, or remove components on a page.",
+          },
+        ],
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Creation of Component",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "First you need to go to crx/de and in your project, go to components and then create component.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/createComponent.webp",
+        alt: "createComponent",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "You will get a dialog box wherein you need to add all the details for the component creation which includes the pre filled ones.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/componentDialog.webp",
+        alt: "componentDialog",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Therein you need to rename the .jsp file to .html file and also add a cd:dialog. This is the dialog in which the fiels persists which are then authored. Here we have created the text field, path field, date picker and a chekbor. For every such field, we have to add a different sling:resourceType. These sling:resourceTypes can be found from the ADOBE Granite UI (https://developer.adobe.com/experience-manager/reference-materials/6-5/granite-ui/api/jcr_root/libs/granite/ui/index.html).",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/dialogconfiguration.webp",
+        alt: "dialogconfiguration",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/fields.webp",
+        alt: "fields",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Then, you simple need to add the component on the page. You need to edit template, add the component to the cointainer's policy and then simply drop your component.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/editTemplate.webp",
+        alt: "editTemplate",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/addingPolicy.webp",
+        alt: "addingPolicy",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Creating Sling Model",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now we need tto render the authored values of the component via sling model.",
+          "@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL) This defines that the Sling Model can be adapted from a Resource and pecifies how fields in the model should be injected.",
+          "@ValueMapValue annotation is specifically used to inject properties from a Sling Resource into a Sling Model. It works with ValueMaps, which are essentially key-value pairs that store resource properties in AEM. The @Inject annotation can be used with different types, and AEM will automatically resolve the correct source for the injection. Here we are using it to inject ResourceResolver",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.models;
+
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.jcr.Node;
+
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class DemoComponentModel {
+
+    @Inject
+    ResourceResolver resolver;
+
+    @ValueMapValue
+    String text;
+    @ValueMapValue
+    String linkTo;
+    @ValueMapValue
+    String showCheck;
+
+    String nodeName;
+
+    public String getText() {
+        return text;
+    }
+
+    public String getLinkTo() {
+        return linkTo;
+    }
+
+    public String getShowCheck() {
+        return showCheck;
+    }
+
+    public String getNodeName() {
+        return nodeName;
+    }
+
+    @PostConstruct
+    protected void init() {
+        try{
+            Resource resource = resolver.getResource(linkTo);
+            Node node = resource.adaptTo(Node.class);
+            nodeName = node.getName();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+}`,
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/introduction-to-components-and-sling-model/complete.webp",
+        alt: "complete",
+      },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have created a simple component and have learnt how to render its authoreded values using a sling model.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "tabs-and-multifields",
@@ -7304,7 +15649,387 @@ function handleError(error) {
     author: "Shruti Meshram",
     description:
       "Discover how to use tabs and multifields in AEM dialogs to create organized and flexible authoring experiences.",
-    content: [],
+    content: [
+      {
+        type: "paragraph",
+        text: "Hi, happy to find you here. Welcome to another blog",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Tabs and Multifield in AEM",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We will be learning how tabs are created in a component and how do we handle multifield. Also we will be focusing upon some more annotations of sling model. Here we have taken a small example of authoring product details like product name, description and product quantity. Here is the simple outlook of the dialog's xml which we are going to create in this blog. We have created a component called tabsandmultifielddemo where you can find the jcr:title and group as provided.",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/xmlstructure.webp",
+        alt: "xmlstructure",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/componentlayout.webp",
+        alt: "componentlayout",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Tabs",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "In order to create tabs, you need to follow the following steps-",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "In items, create a node called tabs with sling:resourceType = granite/ui/components/coral/foundation/tabs",
+          "Then, create items and within items will reside your tabs, here tabone and tabtwo. the sling:resourceType for both will be same as provided, the jcr:title will differ. It will be Tab One and Tab Two respectively.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/generictabproperties.webp",
+        alt: "generictabproperties",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now here you need to again add items within it columns within it again items and then columns and then in these items we can add our fields. This is because items define a container that can hold different components or fields. This allows you to structure the dialog in a hierarchical way, ensuring it’s organized and easier to manage. columns are used within items to organize fields in a specific layout (like multiple columns side by side), which is particularly useful when you want to present multiple fields on a single tab in an organized and visually appealing manner. Similarly, you need to create the same structure for tabtwo.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/itemscolumnsitemscolumns.webp",
+        alt: "itemscolumnsitemscolumns",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "For tabone, in this the last items container node hence created, create 3 fields called productName, productPrice and productDescrition with the provided propertied.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/productName.webp",
+        alt: "productName",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/productDescription.webp",
+        alt: "productDescription",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/productPrice.webp",
+        alt: "productPrice",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Multifield",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Since there could be a list of products with provided set of information and creating a component for each product scpecification is a bad idea, so aem provides a facility of creating a multifield for the same same.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Multifields allow authors to input a dynamic, flexible number of values in a single field. This is ideal for situations where the number of items is not fixed or known in advance. To create the multifield, follow the following steps.",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Create a node called multifield with sling:resourceType = granite/ui/components/coral/foundation/form/multifield. Within multifield, create a node called field. The names must be same, the property name of field is important. Here we have named it as products.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/multifield.webp",
+        alt: "multifield",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here you can find the properties to be added in multifield and field nodes.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/multifieldproperties.webp",
+        alt: "multifieldproperties",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/fieldproperties.webp",
+        alt: "fieldproperties",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Now create the productListNames, productListDescription and productListPrice as created for tabone. Ensure tehre are no duplicate names for any two widgets.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/productListName.webp",
+        alt: "productListName",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/productListDescription.webp",
+        alt: "productListDescription",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/productListPrice.webp",
+        alt: "productListPrice",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "After creating the component, drag and drop it on a page, here we have added it on Test page. The dialog box of the component hence created will look like this.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/authimageOne.webp",
+        alt: "authimageOne",
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/authimageTwo.webp",
+        alt: "authimageTwo",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Sling Model",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "Having authored values, we need to retrieve the values from backend. For this we need to create the sling model",
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.models;
+
+import com.adobe.xmp.schema.service.StandardRelaxNGProvider;
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
+import com.local.core.pojo.Products;
+import org.apache.commons.math.analysis.solvers.BrentSolver;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.models.annotations.*;
+import org.apache.sling.models.annotations.injectorspecific.Self;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.List;
+
+@Model(adaptables = SlingHttpServletRequest.class)
+public class TabAndMultifieldModel {
+
+    @Self
+    SlingHttpServletRequest request;
+
+    @Inject
+    @Via("resource")
+    @Named("productName")
+    @Required
+    String product;
+
+    @Inject
+    @Via("resource")
+    @Required
+    String productDescription;
+
+    @Inject
+    @Via("resource")
+    @Optional
+    @Default(values = "1")
+    String productPrice;
+
+    @Inject
+    @Via("resource")
+    @Optional
+    private List<Products> products;
+
+    String info;
+
+    @PostConstruct
+    protected void init() {
+        info = product + " || " + productDescription;
+        ResourceResolver resolver = request.getResourceResolver();
+        try{
+
+            PageManager pageManager = resolver.adaptTo(PageManager.class);
+            if(pageManager != null){
+                Page currentPage = pageManager.getContainingPage(request.getResource());
+                info = currentPage.getTitle() + " :: " + info;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public String getProductPrice() {
+        return productPrice;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+    public List<Products> getProducts() {
+        return products;
+    }
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here we have added SlingHttpServletRequest as adaptables, this is to recieve those objects which cannot be recieved directly from Resource.",
+          "@Inject is used to map the values for tabs and multifield exclusively.",
+          "@Via is here used to map the field through resource.",
+          "Here we have not added defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, rather have added annotations @Required and @Optional here.",
+          "@Named is used to map the field name to a substitue name referred in the backend.",
+          "To add the multifield, we need to create a pojo class annoted with model, having field names same as that of the name property and applied @Inject to it.",
+          "Here the list of pojo needs to be named with that of the field name and here in our case it is products.",
+        ],
+      },
+
+      {
+        type: "code",
+        language: "java",
+        code: `package com.local.core.pojo;
+
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
+
+import javax.inject.Inject;
+
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class Products {
+    @Inject
+    String productListName;
+    @Inject
+    String productListDescription;
+    @Inject
+    String productListPrice;
+
+    public String getProductListName() {
+        return productListName;
+    }
+
+    public String getProductListDescription() {
+        return productListDescription;
+    }
+
+    public String getProductListPrice() {
+        return productListPrice;
+    }
+}`,
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "Here info string provides the collective values hence retrieved and processed from a method annoted with @PostConstruct, which gets called only after all the authoring is complete.",
+          "The values is hence recieved from Slightly using the following snippet in the .html file.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/htl.webp",
+        alt: "htl",
+      },
+
+      {
+        type: "bulletList",
+        items: [
+          "The final output looks like this:",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/images/blogs/sites/tabs-and-multifields/output.webp",
+        alt: "output",
+      },
+
+      {
+        type: "heading",
+        level: 3,
+        text: "Conclusion",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "We have created a component having multifield and tabs. Also we have learnt some more annotaions, the role of pojo and how exactlymultifield and tabs are rendered.",
+      },
+
+      {
+        type: "paragraph",
+        text:
+          "I hope you enjoyed the learing and have found the blog informative.",
+      },
+    ],
   },
   {
     slug: "adaptive-form-fragments",

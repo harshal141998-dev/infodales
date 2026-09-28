@@ -69,7 +69,7 @@ function ContentItem({ item }) {
     item.type === "numberedList"
   ) {
     return (
-      <Box component="ol" className="article-list">
+      <Box component="ol" className="article-list" start={item.start}>
         {item.items?.map((listItem, index) => (
           <li key={index}>
             {typeof listItem === "string" ? (
