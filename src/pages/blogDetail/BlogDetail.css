@@ -156,7 +156,7 @@
 
 /* First heading */
 
-.article-content > .article-heading:first-child {
+.article-content>.article-heading:first-child {
   margin-top: 0 !important;
 }
 
@@ -208,18 +208,24 @@
 
 .article-image {
   width: 100%;
+  min-width: 0;
   margin: 30px 0 35px;
   text-align: center;
 }
 
 .article-image img {
   display: block;
-  width: 100%;
-  max-width: 650px;
-  height: auto;
   margin: 0 auto;
+  width: auto;
+  height: auto;
+
+  /* !important beats any leftover inline max-width */
+  max-width: min(100%, var(--img-max, 650px)) !important;
+  max-height: min(70vh, 520px);
+
   object-fit: contain;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Small laptop / tablet */
@@ -236,10 +242,14 @@
   }
 }
 
-/* Mobile */
+/* Mobile: tighter height cap and spacing */
 @media (max-width: 600px) {
+  .article-image {
+    margin: 22px 0 26px;
+  }
+
   .article-image img {
-    max-width: 100%;
+    max-height: 360px;
   }
 }
 
@@ -327,6 +337,7 @@
     line-height: 1.75;
   }
 }
+
 .article-bottom {
   width: 100%;
   display: flex;
@@ -382,6 +393,7 @@
     font-size: 11px !important;
   }
 }
+
 .feedback-slider .MuiSlider-track {
   transition: background-color 0.3s ease;
 }

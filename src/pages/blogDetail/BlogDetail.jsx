@@ -79,49 +79,63 @@ function ContentItem({ item }) {
   }
 
   if (item.type === "bulletList") {
-  return (
-    <Box
-      component="ul"
-      className="article-list article-bullet-list"
-    >
-      {item.items?.map((listItem, index) => (
-        <li key={index}>
-          {typeof listItem === "string" ? (
-            listItem
-          ) : (
-            <>
-              <strong>{listItem.title}:</strong>{" "}
-              {listItem.text}
-            </>
-          )}
-        </li>
-      ))}
-    </Box>
-  );
-}
-
-if (item.type === "code") {
-  return (
-    <Box className="article-code">
+    return (
       <Box
-        component="pre"
-        className="article-code-block"
+        component="ul"
+        className="article-list article-bullet-list"
       >
-        <code>{item.code}</code>
+        {item.items?.map((listItem, index) => (
+          <li key={index}>
+            {typeof listItem === "string" ? (
+              listItem
+            ) : (
+              <>
+                <strong>{listItem.title}:</strong>{" "}
+                {listItem.text}
+              </>
+            )}
+          </li>
+        ))}
       </Box>
-    </Box>
-  );
-}
+    );
+  }
 
+  if (item.type === "code") {
+    return (
+      <Box className="article-code">
+        <Box
+          component="pre"
+          className="article-code-block"
+        >
+          <code>{item.code}</code>
+        </Box>
+      </Box>
+    );
+  }
+
+  // if (item.type === "image") {
+  //   const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
+
+  //   return (
+  //     <Box className="article-image">
+  //       <img
+  //         src={resolvedSrc}
+  //         alt={item.alt || ""}
+  //         style={item.style}
+  //       />
+  //     </Box>
+  //   );
+  // }
   if (item.type === "image") {
-    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
+    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, "")}`;
+    const { maxWidth, ...restStyle } = item.style || {};
 
     return (
       <Box className="article-image">
         <img
           src={resolvedSrc}
           alt={item.alt || ""}
-          style={item.style}
+          style={{ ...restStyle, "--img-max": maxWidth }}
         />
       </Box>
     );
@@ -185,10 +199,10 @@ export default function BlogDetailPage() {
             sm: "calc(100% - 60px)",
             md: "calc(100% - 90px)",
           },
-           width: "calc(100% - 100px)",
-           maxWidth: "1250px",
-           margin: "0 auto",
-           px: 0,
+          width: "calc(100% - 100px)",
+          maxWidth: "1250px",
+          margin: "0 auto",
+          px: 0,
         }}>
 
         {/* Back */}
