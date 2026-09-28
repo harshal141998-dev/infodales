@@ -20,7 +20,7 @@ import { articles } from "../../data/blog";
 import { useViewCounter } from "../../hooks/useViewCounter";
 
 import "../blogDetail/BlogDetail.css";
-
+import NotFound from "../NotFound/NotFound";
 
 function formatDate(date) {
   if (!date) return "";
@@ -159,14 +159,9 @@ export default function BlogDetailPage() {
   const { views } = useViewCounter(article?.slug, true);
 
   if (!article) {
-    return (
-      <Container>
-        <Typography>
-          Blog not found
-        </Typography>
-      </Container>
-    );
+    return <NotFound />;
   }
+
 
   const articleUrl = window.location.href;
 
