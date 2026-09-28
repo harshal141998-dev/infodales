@@ -7,7 +7,371 @@ export const articles = [
     author: "Shruti Meshram",
     description:
       "Understand how AEM Dispatcher improves performance, caching, and security for AEM websites.",
-    content: [],
+    content: [
+    {
+      type: "paragraph",
+      text: "I hope you all are doing well. Let's begin our learning with Dispatcher in AEM.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "1. Introduction",
+    },
+
+    {
+      type: "paragraph",
+      text: "Dispatcher is an Apache HTTP Web Server. It is used for exercising the functionalities such as caching, load balancing providing and limiting access of domains and security.",
+    },
+
+    {
+      type: "paragraph",
+      text: "AEM publish instance cannot communicate with the dispatcher (web server) and so AEM module helps in the task. It conveys the requests of the dispatcher to the Publish instance and provides the response from the publish instance to the dispatcher back again.",
+    },
+
+    {
+      type: "paragraph",
+      text: "First any request coming from the client goes to Content Delivery Network (CDN), if the response is available, is returned else it goes to Dispatcher where again the response availability is checked in cache. If found it is returned else it goes to the publish instance to fetch the response of the request and travels back the same route to serve the response to the client.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Here we are setting up Apache 2.2 – 32 bit and Dispatcher 4.2.1.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "2. Setup For Dispatcher",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Download the provided version.",
+        "After download, open file to install it. You will find the following dialog box, click on next.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image1.webp",
+      alt: "Dispatcher Setup",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "list",
+      items: [
+        "Accept the license and click on next and then you will find a Server Information dialog box. Add your respective network domain, server name and a working email address so that you get all the server related problems via email. Select the default port as 80 or else you can change it to 8000 for current user. Here the port is set to 80.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image2.webp",
+      alt: "Dispatcher Setup",
+      style: {
+        maxWidth: "650px",
+      },
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image3.webp",
+      alt: "Dispatcher Setup",
+      style: {
+        maxWidth: "650px",
+      },
+    },
+
+    {
+      type: "list",
+      items: [
+        "Click on Next, select Typical and then click on Next again and you will find the default location of installed Apache Server in your system. You can either change it or keep it same.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image4.webp",
+      alt: "Dispatcher Setup",
+      style: {
+        maxWidth: "650px",
+      },
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image5.webp",
+      alt: "Dispatcher Setup",
+      style: {
+        maxWidth: "650px",
+      },
+    },
+
+    {
+      type: "list",
+      items: [
+        "Then click on Next, the setup is almost completed, click on install. Installation takes about 5 minutes.",
+        "After installation is complete click Finish.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image6.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Now after completion of installation process we need to check whether everything is properly installed or not. Hit the URL http://localhost to find.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image7.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Now your dispatcher is installed and is ready to get configured. For configuration purpose you will be requiring disp_apache2.2.dll, dispatcher.any and httpd.conf files. It is recommended to get them from your workspace.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image8.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Open the Apache and find modules folder. In modules folder paste disp_apache2.2.dll file. Then in conf folder paste dispatcher.any and httpd.conf files.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image9.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "httpd.conf file is the starting point of dispatcher so here you need to add LoadModule which is a DSO (Dynamically Shared Object). You need to provide entry of disp_apache2.2.dll file.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image10.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "In httpd.conf file you find your server root and administrator's email id which you added in server information dialog box.",
+        "In IfModule provide location of dispatcher.any and also set the log level. In Directory add the handler and your httpd.conf file is ready.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image11.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image12.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "3. Setup For Publish Instance",
+    },
+
+    {
+      type: "list",
+      items: [
+        "In order to setup Publish instance copy the jar and license of AEM to a new folder and rename the jar to publish instance jar with required port number. By default it is 4503 but here we have set it to 4506.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/starting-dispatcher.webp",
+      alt: "Dispatcher Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Then open command prompt and go to the directory where you have your jar and type java -jar cq-publish-4506.jar. This will open your publish instance with following run modes.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image14.webp",
+      alt: "Publish Instance Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Now we need to configure the port of publish instance in our author so go to author instance, then go to welcome page of author instance, find Replication options and select Agents on Author. Select Default Agent (publish) and edit.",
+        "In Transport tab you will find the url, change the port to 4506.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image15.webp",
+      alt: "Publish Instance Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Now in publish instance, upload your project, acs commons and service pack and replicate them all from package manager console.",
+        "Service pack may not get replicated from Package Manager Console properly. If so, go to Activate Tree and provide the path of your service pack in crx console and uncheck On Modify. First dry run and see if your service pack is ready to replicate and if yes, then click on Activate.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image16.webp",
+      alt: "Publish Instance Setup",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Go to Felix console of publish instance and check whether all your bundles are Active or not once and if no then resolve the remaining dependencies which completes your publish instance setup.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "4. dispatcher.any file",
+    },
+
+    {
+      type: "list",
+      items: [
+        "dispatcher.any file determines complete behavior of your dispatcher.",
+        "It has project specific /farms files (you can have single /farms file too, there is no restriction) where each farm file configures a set of load balanced renders.",
+        "Set your publish instance as a render via setting its port and IP address.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image17.webp",
+      alt: "dispatcher.any",
+    },
+
+    {
+      type: "list",
+      items: [
+        "In /virtualhosts file we configure domains which are allowed in headers. Set your preferred domains here.",
+        "/filter section sets the paths of requests that you want your dispatcher to handle. You can enable open consoles (crx content repository, OSGI console, servlet engines), non-public content directories (/bin, /content, /home and so on) and can also deny content grabbing.",
+        "/cache section consists of a docroot file wherein the dispatcher will store files relative to this directory, decline the subsequent requests and allow the web server to deliver them as regular static content.",
+        "/statfileslevel indicates the hierarchy up to which a .stat file gets created that checks the time of cache in the dispatcher and that of replication in publish environment. If time of modification in publish environment is greater than that of the cache then it means there is an updated version available and this will delete the previously generated cache and allow the entry of new cache in the provided level.",
+        "In /rules section of /cache we have to specify how caching should happen according to the url generated. You can have your own rule sets.",
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/dispatcher/setup_image18.webp",
+      alt: "dispatcher.any",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Within the cache section we have /invalidate wherein we define which request needs to be available for dispatcher flushing after activation. You can set the dispatcher flush agent on both Author as well as on Publish but prefer setting it on publish because author is a development environment and modifications are tend to happen whereas publish is a read-only environment where unusual modifications happen only via publishing the pages by author instance.",
+        "Set the clients which can activate the content in /allowedClients section by providing the IP address and setting the /type “allow”.",
+        "/ignoreUrlParams section allows you to ignore query parameters passed in the url while caching the response.",
+        "Finally you can enable /auth_checker to check the whether the cached page which is requested for delivery matches its header with that of the one which is allowed via /filters by internally passing ‘?uri=’ parameter. If the status code becomes 200 then only the page is sent out for the delivery.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "5. Publishing The Content And Checking On Dispatcher",
+    },
+
+    {
+      type: "list",
+      items: [
+        "Simply go to your author instance and select the page that you want to publish and hit Quick Publish.",
+        "Then go to your publish instance and check whether your published page is visible or not.",
+        "Go to your dispatcher and type http://localhost/ complete path of your page and done.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "6. Errors And Possible Solutions",
+    },
+
+    {
+      type: "list",
+      items: [
+        {
+          title: "Service pack is not getting uploaded",
+          text: "replicate it in package manager and then use Activation tree from author instance to achieve the same.",
+        },
+        {
+          title: "Bundle is not getting uploaded",
+          text: "Try force upload of snapshot of your project from packageManager(zip) or upload extracted snapshot from Felix console (do not forget to check start bundle) or (least recommended) change the port of your project’s pom.xml file to 4506 from 4503 and do single package.",
+        },
+        {
+          title: "Socket Error",
+          text: "Recheck your IP address in Allowed Clients section.",
+        },
+        {
+          title: "Null Pointer Exception",
+          text: "Agents on Author, Publish Queue might not be idle.",
+        },
+        {
+          title: "Problem in triggering the jar of publish instance",
+          text: "rename the quickstart file to crx-quickstart-old. Abort the starting process of from command prompt and rerun java -jar cq-publish-4506.jar. You will find a new quickstart file now which gets generated with respective script.",
+        },
+      ],
+    },
+
+    {
+      type: "paragraph",
+      text: "I hope you find this blog informative, please share and for more blogs please surf our website.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Thank you",
+    },
+  ],
   },
   {
     slug: "aemcaas-dispatcher",
@@ -504,7 +868,242 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Yash Sakharkar",
     description:
       "Discover how AEM components are mapped to frontend components in an AEM SPA implementation.",
-    content: [],
+    content: [
+    {
+      type: "paragraph",
+      text: "The basic concept is to map the AEM component to React component. Basically, the AEM Component runs at the server side and exports the content in the form of JSON Model API, so that the JSON file, for example en.model.json, is consumed by our React Component running at the client side in the browser. We'll know more about the following concept with the help of the following diagram.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/flowchart.webp",
+      alt: "AEM Flowchart",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Steps to map AEM component to React component",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Create an AEM component",
+          text: "Create an AEM component by right clicking on the components folder under the wknd-spa-react project and selecting Create Component. Add the label, title and component group to the component and create it.",
+        },
+        {
+          title: "Create the dialog",
+          text: "Let's consider 'test' as our component in the wknd-spa-react project and its path will be wknd-spa-react/components/test. Create the dialog box through which the author can author the fields.",
+        },
+        {
+          title: "Create a Sling Model",
+          text: "Create a Sling Model so that you can map the authored values with the backend. Add adaptables, adapters and resourceType to the @Model annotation. Inherit the ComponentExporter interface to the service implementation class, and override the getExportedType() method which returns the resourceType of the component.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/createaemcomponent.webp",
+      alt: "Creating AEM Component",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/testcomponent.webp",
+      alt: "Test Component Image",
+    },
+
+    {
+      type: "code",
+      language: "java",
+      code: `package com.adobe.aem.guides.wknd.spa.react.core.models.impl;
+
+import com.adobe.aem.guides.wknd.spa.react.core.models.Test;
+import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.export.json.ExporterConstants;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+@Model(
+    adaptables = SlingHttpServletRequest.class,
+    adapters = {Test.class, ComponentExporter.class},
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+    resourceType = TestModelImpl.RESOURCE_TYPE
+)
+@Exporter(
+    name = ExporterConstants.SLING_MODEL_EXPORTER_NAME,
+    extensions = ExporterConstants.SLING_MODEL_EXTENSION
+)
+public class TestModelImpl implements Test {
+
+    static final String RESOURCE_TYPE =
+        "wknd-spa-react/components/test";
+
+    @ValueMapValue
+    private String name;
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getExportedType() {
+        return TestModelImpl.RESOURCE_TYPE;
+    }
+}`,
+    },
+
+    {
+      type: "paragraph",
+      text: "It is mandatory to implement ComponentExporter as it is used to export the content of our component in JSON format.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/GetExporterType Method.webp",
+      alt: "Component Exporter Method",
+    },
+
+    {
+      type: "paragraph",
+      text: "On hitting test.model.json you will find the response in JSON format.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/jsonfile.webp",
+      alt: "en.model.json URL Image",
+    },
+
+    {
+      type: "paragraph",
+      text: "In the ui.frontend folder/src, right click on the components folder and create a Test.js file. Import React and MapTo from the react and @adobe/aem-react-editable-components libraries.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/reactcomponent.webp",
+      alt: "Creating React Component",
+    },
+
+    {
+      type: "paragraph",
+      text: "Create a class component and write a JSX script in the render() method. At last, add the MapTo() function and export the class using the AEM component resource type.",
+    },
+
+    {
+      type: "code",
+      language: "javascript",
+      code: `import React, { Component } from "react";
+import { MapTo } from "@adobe/aem-react-editable-components";
+
+export const TestEditConfig = {
+  emptyLabel: "Test",
+  isEmpty: function (props) {
+    return !props || !props.name;
+  },
+};
+
+export default class Test extends Component {
+  render() {
+    if (TestEditConfig.isEmpty(this.props)) {
+      return null;
+    }
+
+    return (
+      <p className="TestComponents">
+        {this.props.name}
+      </p>
+    );
+  }
+}
+
+MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
+    },
+
+    {
+      type: "paragraph",
+      text: "With MapTo() you can map your React component to the Sling Model using the resourceType.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/maptomethod.webp",
+      alt: "Map To Method Image",
+    },
+
+    {
+      type: "paragraph",
+      text: "Import your React component in the import-component.js file and similarly import your import-component.js file in index.js.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/importreactcomponent.webp",
+      alt: "Import Component.js Image",
+    },
+
+    {
+      type: "paragraph",
+      text: "MapTo() will look for the Sling Model registered with the same resource type that we have passed in MapTo().",
+    },
+
+    {
+      type: "paragraph",
+      text: "Build the ui.frontend folder with $ mvn clean install -PautoInstallPackage. Search for your component and you will find the minified form of JavaScript in the ui.apps folder.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/minifiedjs.webp",
+      alt: "Minified JS Image",
+    },
+
+    {
+      type: "paragraph",
+      text: "Deploy the SPA code to AEM using Maven: $ mvn clean install -PautoInstallSinglePackage.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Open AEM, select Sites from Navigation, click on the Create button and select Page. Choose the template, add a title to the page and click Done.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/createaempage.webp",
+      alt: "Creating AEM Page",
+    },
+
+    {
+      type: "paragraph",
+      text: "Add the 'test' component, author it and you will find the data rendered on your page.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/Add component on page.webp",
+      alt: "Adding Component To Page",
+    },
+
+    {
+      type: "paragraph",
+      text: "Click on Preview and inspect your page. In the Network tab you will find en.model.json. The Layout Container has a sling:resourceType of your component and is recognized by the SPA Editor using the :type property, just like the Text and Image components.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/spa-component-mapping/responsivegrid.webp",
+      alt: "Inspect test.model.json Image",
+    },
+  ],
   },
   {
     slug: "spa-getting-started",
@@ -514,7 +1113,421 @@ $include "../clientheaders/default_clientheaders.any"`,
     author: "Suchita Mishra",
     description:
       "Explore the fundamentals of AEM SPA Editor and how to build single-page applications with AEM.",
-    content: [],
+    content: [
+    {
+      type: "paragraph",
+      text: "Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Firstly we'll look into the approaches that we have with us to build a web application.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Approaches",
+    },
+
+    {
+      type: "list",
+      items: [
+        {
+          title: "Traditional Approach ( Client - Server )",
+          text: "In traditional approach, the client makes a request of a page to the server and the server will return the HTML i.e., the content, and when the client needs another page, he makes another request to the server and the server will return the different responses for the specified content.",
+        },
+        {
+          title: "Single Page Application (SPA)",
+          text: "In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it's moving from page to page, it doesn't make any request to the server and all the content is present at the client side only.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 1.webp",
+      alt: "traditional approach",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 2.webp",
+      alt: "SPA approach",
+    },
+
+    {
+      type: "paragraph",
+      text: "If a client makes some request which is not present at the client side, in that case the client will make the request to the server for the specific content and the server will return the content in the form of Json.",
+    },
+
+    {
+      type: "paragraph",
+      text: "With SPA, the initial request is a bit slow as the server tries to dump the content as much as possible as per the SPA configurations, but the subsequent request is faster as the client serves the content from the client side only and not the server side.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "What is SPA?",
+    },
+
+    {
+      type: "paragraph",
+      text: "SPA stands for Single Page Application. It is a web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. In a traditional multi-page application, when you navigate from one page to another, the browser requests a new page from the server, and the entire page is reloaded.",
+    },
+
+    {
+      type: "paragraph",
+      text: "In contrast, a Single Page Application loads a single HTML page and dynamically updates it's content as the user interacts with the application. This is often achieved using JavaScript frameworks or libraries such as Angular, React, or Vue.js. SPAs provide a smoother and more seamless user experience because they can update specific parts of the page without requiring a full page reload.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Why SPA?",
+    },
+
+    {
+      type: "paragraph",
+      text: "Single Page Applications (SPAs) are favored for several reasons, and their adoption is driven by the desire to enhance user experiences and streamline web development. Here are some key reasons why SPAs are often preferred:",
+    },
+
+    {
+      type: "list",
+      items: [
+        {
+          title: "Seamless User Experience",
+          text: "SPAs provide a smoother and more seamless user experience by dynamically updating content without the need for full page reloads. This leads to faster response times and a more fluid interaction, creating a more engaging and enjoyable user interface.",
+        },
+        {
+          title: "Reduced Loading Time",
+          text: "Traditional multi-page applications often involve reloading the entire page, resulting in longer loading times. SPAs, on the other hand, load initial resources upfront and fetch additional data asynchronously, reducing latency and making the application feel more responsive.",
+        },
+        {
+          title: "Asynchronous Data Loading",
+          text: "SPAs leverage asynchronous data loading, often using AJAX or similar techniques. This allows for fetching data in the background, updating the content without requiring a complete page refresh. It contributes to a dynamic and interactive user experience.",
+        },
+        {
+          title: "Efficient Resource Utilization",
+          text: "SPAs can be more resource-efficient as they load resources, such as scripts and stylesheets, only once during the initial page load. Subsequent interactions with the application involve fetching only the necessary data, minimizing redundant requests to the server.",
+        },
+        {
+          title: "Client-Side Routing",
+          text: "SPAs handle navigation on the client side, updating the URL and rendering content dynamically. This reduces the need for server requests during navigation, contributing to a more responsive and fluid application.",
+        },
+        {
+          title: "Mobile Responsiveness",
+          text: "SPAs are well-suited for mobile devices due to their ability to load content dynamically and provide a responsive user interface. This is crucial in the current era where a significant portion of web traffic comes from mobile devices.",
+        },
+        {
+          title: "Support for Offline Mode",
+          text: "Some SPAs can incorporate service workers and caching strategies, enabling them to function partially or entirely offline. This is particularly beneficial for users with intermittent internet connectivity.",
+        },
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Why SPA with AEM?",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 3.webp",
+      alt: "SPA with AEM",
+    },
+
+    {
+      type: "paragraph",
+      text: "Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "How can we implement SPA in AEM?",
+    },
+
+    {
+      type: "paragraph",
+      text: "There are basically four technologies/frameworks to develop SPA:",
+    },
+
+    {
+      type: "list",
+      items: [
+        "React JS",
+        "Angular JS",
+        "Vue JS",
+        "Handlebar & Ember",
+      ],
+    },
+
+    {
+      type: "paragraph",
+      text: "We would be working with React js to develop an AEM SPA application.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Creating an AEM SPA Project",
+    },
+
+    {
+      type: "paragraph",
+      text: "Note: Ensure that a fresh instance of AEM, started in Author mode, is running locally.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Create the project:",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        "Open the command line terminal and enter the following maven command.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "bash",
+      code: `mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
+archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D
+archetypeVersion=35 -D appTitle="SPA React" -D appId="spa-react" -D
+artifactId="aem-spa.react" -D groupId="com.adobe.aem.spa.react" -D
+frontendModule="react" -D aemVersion=6.5.0`,
+    },
+
+    {
+      type: "paragraph",
+      text: "[ Replace the AEM version accordingly ]",
+    },
+
+    {
+      type: "paragraph",
+      text: "The following folder and file structure is generated by the maven archetype on our local file system & each folder represents an individual Maven module.",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/SPA Folder structure.webp",
+      alt: "SPA folder structure",
+    },
+
+    {
+      type: "paragraph",
+      text: "We will primarily be working with the ui.frontend module, which is the React app.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Deploy and build the project using the following command:",
+    },
+
+    {
+      type: "code",
+      language: "bash",
+      code: "mvn clean install -PautoInstallSinglePackage",
+    },
+
+    {
+      type: "paragraph",
+      text: "The build will take around a minute and should end with the BUILD SUCCESS message.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Ui.Frontend Module",
+    },
+
+    {
+      type: "paragraph",
+      text: "Ui.frontend module has the following folder structure",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/UI Frontend FS.webp",
+      alt: "UI frontend folder structure",
+    },
+
+    {
+      type: "paragraph",
+      text: "There are few important files that we should know in this structure i.e., .env.development, package.json & clientlib.config.js",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: ".env.development",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/env.webp",
+      alt: "env development",
+    },
+
+    {
+      type: "paragraph",
+      text: "This file contains the path of the JSON API which is consumed by the react app to display the content on the frontend module and also the root path of the frontend module.",
+    },
+
+    {
+      type: "paragraph",
+      text: "We can provide the content to the frontend in two ways:",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "via AEM",
+          text: "We need to provide the proxy path to the AEM which is added in the package.json file.",
+        },
+        {
+          title: "via static mock file",
+          text: "The static mock json file is added under the public folder.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/proxy path.webp",
+      alt: "proxy path",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/mock file path.webp",
+      alt: "mock file path",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "package.json",
+    },
+
+    {
+      type: "paragraph",
+      text: "This file consists of all the dependencies and the scripts required for the frontend module.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "clientlib.config.js",
+    },
+
+    {
+      type: "paragraph",
+      text: "This file has the configuration for the clientlib generator, i.e., the clientlibs are generated in this file.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "src folder",
+    },
+
+    {
+      type: "paragraph",
+      text: "All the React components, images and styles are kept in this folder",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/src folder.webp",
+      alt: "src folder",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "How to create an SPA component?",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 4.webp",
+      alt: "SPA component creation",
+    },
+
+    {
+      type: "paragraph",
+      text: "In normal cases, AEM components render at server side, but SPA components should be rendered at client side as per the concept. So we'll be creating a React component and then we'll map the AEM component to the React component.",
+    },
+
+    {
+      type: "paragraph",
+      text: "The AEM component will not be having any rendering script, it will only have the dialog and the SPA component will have the rendering logic and this SPA component will get content from the AEM repository in the form of Json, and this complete client side application will be deployed in AEM in the form of client libraries.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Our SPA component should have the capability of authoring as well, as per the AEM basic principles. So, for authoring, the SPA development framework provides an SPA editor.",
+    },
+
+    {
+      type: "paragraph",
+      text: "SPA Editor: It adds the capability of authoring to the SPA component.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e, AEM component and React component and when we combine these two it makes a complete SPA component",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 5.webp",
+      alt: "SPA component",
+    },
+
+    {
+      type: "paragraph",
+      text: "These two sections have different responsibilities:",
+    },
+
+    {
+      type: "paragraph",
+      text: "AEM component is used to create dialog and sling model (used for content exporter) and the React component is used for rendering and the content for rendering is provided by the sling model in the form of json.",
+    },
+
+    {
+      type: "paragraph",
+      text: "But these two sections must be mapped as AEM component is at server side and React component is at client side. So, now the SPA framework comes into picture i.e., the React framework as it provides the functionality to map the AEM component to the React component.",
+    },
+
+    {
+      type: "paragraph",
+      text: "So, once we have a React component and an AEM component, we map both the components using MapTo() functionality which has two sections, the first section has the resource type of the AEM component & the other section is for the React component",
+    },
+
+    {
+      type: "image",
+      src: "/images/blogs/spa/getting-started-with-AEM-SPA/Initial Request 6.webp",
+      alt: "SPA component mapping",
+    },
+
+    {
+      type: "paragraph",
+      text: "Hope you all understood the basic concept of AEM SPA. In the next blog, we'll look into how to create AEM components and React components and implement the mapping and rendering of the SPA components on the page.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Thanks for reading! 😁",
+    },
+  ],
   },
   {
     slug: "sidekick-customization",
@@ -3060,7 +4073,156 @@ function handleError(error) {
     author: "Owais Pathan",
     description:
       "Discover how placeholders support reusable content and dynamic authoring experiences in EDS.",
-    content: [],
+    content: [
+    {
+      type: "paragraph",
+      text: "Happy to find you here. Welcome to another learning.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "What is Placeholder?",
+    },
+
+    {
+      type: "paragraph",
+      text: "Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables used to customize content based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.",
+    },
+
+    {
+      type: "paragraph",
+      text: "In most websites, there are strings or variables that are used throughout the site. Especially in sites that support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.",
+    },
+
+    {
+      type: "paragraph",
+      text: "Placeholders can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of a multilingual site.",
+    },
+
+    {
+      type: "paragraph",
+      text: "In this blog, we will explain the placeholder concept using a multilingual site example where region-specific content is displayed using placeholders.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Steps to implement placeholder for region-specific content",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Create language-specific placeholder files",
+          text: "Let's say we have a site that is initially available only in English but is later expanded to French. To display the same content in both languages, create a placeholder sheet in each English and French hierarchy.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/language-specific-files.webp",
+      alt: "Language-specific placeholder files",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Add Key and Text columns",
+          text: "Inside the placeholder sheet, create two columns: Key and Text. For example, the English value can be 'First Name', while the French value can be 'Prénom'. The corresponding language value will then be displayed on the site.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/placeholder-spreadsheet-content.webp",
+      alt: "Placeholder spreadsheet content",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Add page metadata",
+          text: "Use page metadata to determine which placeholder values should be displayed. In this example, locale and Language metadata are added to the English and French pages.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/metadata-for-locale.webp",
+      alt: "Metadata for locale",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Create the Author block",
+          text: "Inside the English and French pages, create an Author block containing only the block heading. The remaining data will be populated using JavaScript.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/Author-block.webp",
+      alt: "Author block",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Customize placeholder file loading",
+          text: "EDS provides an inbuilt library to read the placeholder file from the root folder. In this implementation, the logic is customized so that the placeholder file is read from the respective 'en' or 'fr' hierarchy based on the prefix available in aem.js.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/aemjs-code.webp",
+      alt: "AEM JavaScript placeholder logic",
+    },
+
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Create the block JavaScript and CSS",
+          text: "Write the required CSS and JavaScript for the block. The block reads the placeholder values and displays the corresponding content in English and French on their respective pages.",
+        },
+      ],
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/block-code.webp",
+      alt: "Placeholder block code",
+    },
+
+    {
+      type: "paragraph",
+      text: "The metadata property 'locale' is read from the page, and based on its value, the corresponding placeholder values are retrieved and displayed on the page.",
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/eds/placeholders-in-Edge-Delivery-Services/final-output.webp",
+      alt: "Final placeholder output",
+    },
+
+    {
+      type: "paragraph",
+      text: "Thanks for reading 😄",
+    },
+  ],
   },
   {
     slug: "implementing-redirects-and-response-headers-in-edge-delivery-services",
@@ -3080,7 +4242,7 @@ function handleError(error) {
     author: "Shruti Meshram",
     description:
       "Explore how Sling Servlets handle HTTP requests and implement custom backend functionality in AEM.",
-    content: [],
+     
   },
   {
     slug: "custom-button-and-console",
