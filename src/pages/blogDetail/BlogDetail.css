@@ -484,9 +484,20 @@
   color: #23466f;
 }
 
-.article-intro,
-.article-content,
-.article-paragraph,
-.article-list {
-  text-align: justify;
+/* Video */
+.article-video {
+  width: 100%;
+  margin: 30px 0 35px;
+  text-align: center;
+}
+
+.article-video video {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #000;
 }

@@ -148,6 +148,18 @@ function ContentItem({ item }) {
       </Box>
     );
   }
+  if (item.type === "video") {
+    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
+
+    return (
+      <Box className="article-video">
+        <video controls preload="metadata" width="100%">
+          <source src={resolvedSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Box>
+    );
+  }
 
   return null;
 }

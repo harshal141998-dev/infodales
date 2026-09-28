@@ -3482,7 +3482,266 @@ git push origin feature/hero-banner-block`,
     author: "Ankit Pardhi",
     description:
       "Learn how to create and integrate custom JavaScript functions into the AEM Forms Rule Editor.",
-    content: [],
+    content: [
+      
+    {
+      type: "paragraph",
+      text:
+        "Adobe Experience Manager (AEM) Forms provides a powerful rule editor that allows you to create dynamic and interactive forms. By adding custom JavaScript functions, you can extend the functionality of your forms and create more sophisticated logic. In this blog, we'll walk through the steps to add custom functions to the rule editor.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Prerequisites :",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Before we begin, make sure you have access to AEM Forms and are familiar with basic AEM concepts.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Understanding the Rule Editor:",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Before diving into adding custom functions, it is essential to understand the Rule Editor's role in AEM Forms. The Rule Editor enables form designers to create rules based on conditions and actions, facilitating dynamic form behavior. These rules can be applied to form fields, buttons, and other elements to control visibility, enable/disable features, validate data, and more.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Need for Custom Functions:",
+    },
+    {
+      type: "paragraph",
+      text:
+        "While AEM Forms offers a comprehensive set of built-in functions, there are situations where you may require additional functionality specific to your organization's requirements. These could include complex calculations, data manipulation, integration with external systems, or specialized validation rules. Custom functions allow you to extend the Rule Editor's capabilities to address these needs.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Steps to Add Custom Functions :",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 1:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Login to CRXDE and navigate to the apps folder.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 2:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Create a new folder under the apps folder, let's call it customfunction-in-forms (you can choose any name you like). Then save your changes.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 3:",
+    },
+    {
+      type: "paragraph",
+      text: "Create client libraries",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Within the customfuction-in-forms folder, create a new node of type cq:ClientLibraryFolder called clientlibs.",
+        "Set the properties for the clientlibs folder by adding the following:",
+      ],
+    },
+    {
+      type: "numberedList",
+      items: [
+        "allowProxy: Set to true.",
+        "categories: Specify relevant categories (e.g., customfunction.form).",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/clientlib_property.webp",
+      alt: "properties",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 4:",
+    },
+    {
+      type: "paragraph",
+      text: "Structure your files:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Create a folder called js under the clientlibs folder.",
+        "Within the js folder, create a file named customfunction.js.",
+        "Create another file named js.txt under the clientlibs folder and add entry of your js file",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/folder_Structure.webp",
+      alt: "folder structure",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "add below code in customfunction.js file",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/blog_js.webp",
+      alt: "js code",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 5:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Create adaptive form with three fields drop down list , number and text field",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/form_image.webp",
+      alt: "form image",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 6:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Add clientlibs category in root panel(Adaptive form container) properties.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/propertyadded.webp",
+      alt: "form image",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 7:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Go to Rule Editor of dropdown list.",
+        "Click on plus icon to create a rule.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/functiovisible.webp",
+      alt: "form image",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "You can see your function in left side after clicking functions tab.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 8:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Click on dropdown and select [SET OPTIONS OF].",
+        "Select your object",
+        "Select function output",
+        "select your function",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/funnctionset.webp",
+      alt: "form image",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Save your changes.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 9:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Same thing you need to do for age field, you can refer the image below.",
+        "Follow the steps that are mentioned below.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/function_rule_editor/agefiled.webp",
+      alt: "form image",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Save your changes.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 10:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Rules are defined now we need to test the form.",
+      ],
+    },
+    {
+      type: "video",
+      src: "images/blogs/function_rule_editor/screen-capture.mp4",
+      alt: "screen-capture",
+    },
+  
+    ],
   },
   {
     slug: "submitting-adaptive-form",
@@ -3492,7 +3751,163 @@ git push origin feature/hero-banner-block`,
     author: "Owais Pathan",
     description:
       "Discover how to submit Adaptive Forms using a Form Data Model to integrate with backend services.",
-    content: [],
+    content: [
+      
+    {
+      type: "paragraph",
+      text:
+        "This blog will help you understand how to connect a database to your AEM adaptive forms to retrieve and insert form values. When integrating Adaptive Forms with a Database, establishing seamless connections to data sources becomes essential for retrieving customer data during form rendering. Various scenarios may require data retrieval from these sources based on user inputs within Adaptive Forms. Additionally, upon submitting an Adaptive Form to a database, the captured data can be efficiently updated back into the corresponding data sources.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "We are going to achieve below flow as a part of this blog",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Setting up Database in this case its MySQL.",
+        "Creating Form Data Model",
+        "Submitting Form to the Database using Form data model",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/flowchart.webp",
+      alt: "form-data-model-flow",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Setting up Database",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Go to the official website to download the bundle of your respective database in this case it is MySQL. Click the highlighted link and your bundle get's downloaded.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/mysql-connector.webp",
+      alt: "mysql-connector",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Now got to the http://localhost:4502/system/console/bundles and upload the bundle.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/system-console.webp",
+      alt: "system-console",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/system-console-2.webp",
+      alt: "system-console-2",
+    },
+    {
+      type: "paragraph",
+      text:
+        "After uploading the bundle if it appears in system/console/bundles then it has successfully uploaded.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/system-console-3.webp",
+      alt: "system-console-3",
+    },
+    {
+      type: "paragraph",
+      text:
+        "After successfully installing the respective database connector you then need to create database so that whatever form you submit, that needs to be submitted to the created database. In this we're creating a database name adaptiveform_db.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/Database.webp",
+      alt: "Database",
+    },
+    {
+      type: "paragraph",
+      text:
+        "After creating a database, a configuration needs to be done so that our form model knows in which database he need to submit the data.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/configuration.webp",
+      alt: "configuration",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "In Datasource name you can provide any name that you wanted to keep.",
+        "In JDBC Driver class you need to provide the driver class of your respective database.",
+        "In JDBC Connection URL you need to provide the url of database and proper database name as well.",
+        "Then click on save and your configuration is done.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Creating Form Data Model",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "To create a form data model go to forms.",
+        "Then click on data integrations.",
+        "Then click on create option.",
+        "Inside that you will see form data model option click on it.",
+        "After clicking on it, add the title for form data model and click on next.",
+        "Then select the data source which you configured in data pooled configuration.",
+        "And your form data model is created",
+      ],
+    },
+    {
+      type: "paragraph",
+      text:
+        "After creating the form data model you need to do the required configuration. First you need to add the services GET, INSERT and UPDATE and after adding the services and database you need to test the individual service. After that you need to configure the default services you need for the form data model in this we configured GET, Insert this needs to configured because whenever you create a form your form uses this defualt services to submit the data in to the database.",
+    },
+    {
+      type: "video",
+      src: "images/blogs/forms/data-model-creation.mp4",
+      alt: "data-model-creation",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Submitting Form to the Database using Form data model",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To submit form using form data model we need to follow the below steps:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "We need to create an adpative form.",
+        "While creating an adaptive form we need to select the proper form data model which we created.",
+        "After creating form we need to map the fields of form with data model fields so that proper data gets submitted to respective fields in database.",
+        "Need to map submit button with form data model this confiuration is done when we edit the button in submissions we need to select submission type in that we need to select form data model below that we need to provide the form data model endpoint.",
+        "After this your form is ready when you fill the data and submit the form it will get submitted to the database.",
+      ],
+    },
+    {
+      type: "video",
+      src: "images/blogs/forms/form submission.mp4",
+      alt: "form-submission",
+    },
+    {
+      type: "paragraph",
+      text: "I hope you find this informative and helpful.",
+      variant: "closing",
+    },
+  
+    ],
   },
   {
     slug: "ocr-data-aem-forms",
@@ -3502,7 +3917,303 @@ git push origin feature/hero-banner-block`,
     author: "Nitish Bisen",
     description:
       "Explore how OCR technology extracts text and structured information from documents in AEM Forms.",
-    content: [],
+    content: [
+      
+    {
+      type: "heading",
+      level: 3,
+      text: "OCR Data",
+    },
+    {
+      type: "paragraph",
+      text:
+        "OCR stands for Optical Character Recognition. OCR data refers to the output generated by OCR software or systems when they scan and convert printed or handwritten text into digital text that computers can understand and process. This data typically includes the recognized text itself, along with information about its formatting, layout, and structure.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "OCR technology has advanced significantly in recent years, allowing for high accuracy in converting scanned documents, images, or even live text from a camera feed into editable and searchable text. OCR data is valuable in various applications, such as digitizing books and documents, extracting information from forms, enabling text search in scanned documents, and aiding visually impaired individuals in accessing written content.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "OCR Data Extraction in AEM Forms",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Optical Character Recognition (OCR) integration in Adobe Experience Manager (AEM) Forms can significantly streamline data extraction from scanned documents or images. Choose a suitable OCR engine based on your requirements. Adobe Acrobat provides OCR capabilities, or you can opt for third-party OCR engines like Tesseract, ABBYY FineReader, or Google Cloud Vision API.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Integrate the chosen OCR engine with AEM Forms. This might involve installing plugins, libraries, or APIs provided by the OCR engine provider. Allow users to upload scanned documents or images through AEM Forms. Preprocess the uploaded documents/images if necessary. This may include tasks like image enhancement, noise reduction, or deskewing to improve OCR accuracy. Utilize the integrated OCR engine to extract text from the uploaded documents/images. This step involves passing the document/image to the OCR engine and receiving the extracted text.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "There are several organizations offering OCR services, and if they have well-documented REST APIs, integrating them with AEM Forms using the data integration capability becomes straightforward. For the sake of this tutorial, we'll showcase OCR data extraction using ID Analyzer for uploaded documents.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "This update maintains clarity and aligns with the tutorial's purpose, focusing on the integration with ID Analyzer for OCR data extraction.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/ocr.webp",
+      alt: "OCR Data Extraction",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Swagger File",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Creating a Swagger file involves defining your API's structure, endpoints, parameters, responses, and other details using the Swagger/OpenAPI Specification. Here's a step-by-step guide to help you create a Swagger file:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Understand Swagger/OpenAPI Specification",
+        "Choose a Swagger Editor",
+        "Define API Info",
+        "Define Paths and Operations",
+        "Define Parameters and Responses",
+        "Add Security Definitions (if needed)",
+        "Export and Save",
+        "Validate and Test",
+      ],
+    },
+    {
+      type: "paragraph",
+      text:
+        "Use tools like Swagger Inspector or Postman to validate and test your Swagger file against your actual API endpoints.",
+    },
+    {
+      type: "code",
+      language: "yaml",
+      code: `swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Simple API
+  description: Learning Swagger
+host: api.idanalyzer.com
+
+schemes:
+  - https
+paths:
+  /:
+    post:
+      summary: Decode Documents
+      produces:
+        - application/json
+      consumes:
+        - application/x-www-form-urlencoded
+      operationId: Decode Documents
+      parameters:
+        - in: formData
+          name: file_base64
+          type: string
+          description: Base 64 image of the Documents
+        - in: formData
+          name: apikey
+          type: string
+          description: API Secret Key
+
+      responses:
+        '200':
+          description: Successfull Response
+          schema:
+            $ref: '#/definitions/returnvalue'
+
+definitions:
+  result:
+    type: object
+    properties:
+      fullName:
+        type: string
+      documentNumber:
+        type: string
+      address:
+        type: string
+      dob:
+        type: string
+      pincode:
+        type: string
+
+  returnvalue:
+    type: object
+    properties:
+      result:
+        type: object
+        $ref: '#/definitions/result'`,
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Data Source",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To connect AEM/AEM Forms with third party api's, you first make a data source in cloud services. You can use the Swagger file to set up this data source.",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Log in to AEM and go to the Dashboard.",
+        "From Tools, select Cloud Services.",
+        "Pick or create a folder in Cloud Services to store your data sources.",
+        "Define settings like data type, endpoint URL, and authentication.",
+        "Save the data source",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/ds01.webp",
+      alt: "Data Source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/ds02.webp",
+      alt: "Data Source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/ds03.webp",
+      alt: "Data Source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/ds04.webp",
+      alt: "Data Source",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Form Data Model",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Creating a form data model in AEM Forms involves defining the structure of your form data, including the fields, data types, and validation rules. Here's a step-by-step guide:",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/fdm01.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/fdm02.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/fdm03.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "paragraph",
+      text: "Select you data source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/fdm04.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/fdm05.webp",
+      alt: "Form Data Model",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Client Lib",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To proceed, we'll require the base64 encoded representation of the uploaded document. This encoded string serves as a crucial parameter in our REST invocation process.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/clib.webp",
+      alt: "Client lib",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create an Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Maximize the potential of your adaptive form by integrating the POST invocations of the Form Data Model. Effortlessly extract valuable data from user-uploaded documents by leveraging this powerful feature. Transmit the base64 encoded string of the uploaded document securely through the form data model's POST invocation, ensuring smooth and efficient data extraction processes. Enhance your adaptive form's functionality and elevate your data collection capabilities with this seamless integration.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af01.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af02.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af03.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af04.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af05.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af06.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af07.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/ocr-data/af08.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "paragraph",
+      text:
+        "By integrating the POST invocations of the Form Data Model, extracting data from user-uploaded documents becomes a seamless process in adaptive forms. Leveraging the form data model's capabilities allows for efficient transmission of base64 encoded strings, enhancing data extraction and processing. With this integration, adaptive forms are empowered to deliver enhanced functionality and streamlined data collection experiences.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge. Don't forget to follow me for upcoming blogs. Thank you!",
+      variant: "closing",
+    },
+  
+    ],
   },
   {
     slug: "sms-twoway-aem-forms",
@@ -3512,7 +4223,321 @@ git push origin feature/hero-banner-block`,
     author: "Nitish Bisen",
     description:
       "Learn how to strengthen AEM Forms security using SMS-based two-factor authentication.",
-    content: [],
+    content: [
+      
+    {
+      type: "heading",
+      level: 3,
+      text: "SMS Two-Factor Authentication",
+    },
+    {
+      type: "paragraph",
+      text:
+        "In today's digital landscape, security is paramount. With cyber threats evolving constantly, safeguarding user accounts has become a top priority for businesses and individuals alike. One effective way to enhance security is through SMS-based two-factor authentication (2FA), a robust method that adds an extra layer of protection to online accounts. Let's delve into how SMS 2FA works and why it's a crucial tool in the fight against unauthorized access.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "SMS 2FA adds an extra layer of security by requiring users to verify their identity not only with a password but also with a unique verification code sent to their mobile devices. This blog post dives into the process of implementing SMS 2FA with AEM Forms and highlights its benefits.",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create Developer Account",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Many organizations offer SMS 2FA services, and if they have clear REST APIs, you can integrate them with AEM Forms effortlessly. In this tutorial, I've chosen Vonage API to show how SMS 2FA works with AEM Forms.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Begin by creating a developer account on the Vonage API platform. Once you've registered, take note of the API Key and API Secret Key provided by Vonage API Dashboard. These keys are crucial for accessing and using Vonage API's REST APIs effectively.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/s2f.png",
+      alt: "SMS Two-Factor Authentication",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Swagger File",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Creating a Swagger file involves defining your API's structure, endpoints, parameters, responses, and other details using the Swagger/OpenAPI Specification. Here's a step-by-step guide to help you create a Swagger file:",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Understand Swagger/OpenAPI Specification",
+        "Choose a Swagger Editor",
+        "Define API Info",
+        "Define Paths and Operations",
+        "Define Parameters and Responses",
+        "Add Security Definitions (if needed)",
+        "Export and Save",
+        "Validate and Test",
+      ],
+    },
+    {
+      type: "paragraph",
+      text:
+        "Use tools like Swagger Inspector or Postman to validate and test your Swagger file against your actual API endpoints.",
+    },
+    {
+      type: "code",
+      language: "yaml",
+      code: `swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Nexmo Verify API
+  description: API for verifying OTP codes and sending SMS with codes using Nexmo (formerly Vonage)
+host: api.nexmo.com
+basePath: /verify
+schemes:
+  - https
+paths:
+  /check/json:
+    post:
+      summary: Verify OTP Code
+      produces:
+        - application/json
+      consumes:
+        - application/x-www-form-urlencoded
+      operationId: VerifyOTPCode
+      parameters:
+        - in: formData
+          name: api_key
+          type: string
+          description: API Key
+        - in: formData
+          name: api_secret
+          type: string
+          description: API Secret Key
+        - in: formData
+          name: request_id
+          type: string
+          description: Vonage Request ID
+        - in: formData
+          name: code
+          type: string
+          description: OTP Code
+      responses:
+        '200':
+          description: Successful Response
+          schema:
+            $ref: '#/definitions/ReturnValue'
+  /json:
+    post:
+      summary: Send SMS with Code
+      produces:
+        - application/json
+      consumes:
+        - application/x-www-form-urlencoded
+      operationId: SendSMSWithCode
+      parameters:
+        - in: formData
+          name: api_key
+          type: string
+          description: API Key
+        - in: formData
+          name: api_secret
+          type: string
+          description: API Secret Key
+        - in: formData
+          name: number
+          type: string
+          description: Number to send SMS
+        - in: formData
+          name: brand
+          type: string
+          description: Vonage Brand
+        - in: formData
+          name: code_length
+          type: string
+          description: Verification Code Length
+      responses:
+        '200':
+          description: Successful Response
+          schema:
+            $ref: '#/definitions/ReturnValue'
+
+definitions:
+  ReturnValue:
+    type: object
+    properties:
+      request_id:
+        type: string
+      status:
+        type: string`,
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Data Source",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To connect AEM/AEM Forms with third party api's, you first make a data source in cloud services. You can use the Swagger file to set up this data source.",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Log in to AEM and go to the Dashboard.",
+        "From Tools, select Cloud Services.",
+        "Pick or create a folder in Cloud Services to store your data sources.",
+        "Define settings like data type, endpoint URL, and authentication.",
+        "Save the data source",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds01.png",
+      alt: "Data Source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds02.png",
+      alt: "Data Source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds03.png",
+      alt: "Data Source",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a Form Data Model",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Creating a form data model in AEM Forms involves defining the structure of your form data, including the fields, data types, and validation rules. Here's a step-by-step guide:",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/fdm01.webp",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds04.png",
+      alt: "Form Data Model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds05.png",
+      alt: "Form Data Model",
+    },
+    {
+      type: "paragraph",
+      text: "Select you data source",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds06.png",
+      alt: "Form Data Model",
+    },
+    {
+      type: "paragraph",
+      text: "Test your Model and Service and save it.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/ds07.png",
+      alt: "Form Data Model",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create an Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Connect your form's data with the adaptive form to check the phone number users enter. You can make your own adaptive form and use its data to send and check OTP codes the way you need to.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af01.png",
+      alt: "Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text: "Go to properties",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af02.png",
+      alt: "Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text: "Select your form data model",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af004.png",
+      alt: "Adaptive Form",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af03.png",
+      alt: "Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Open the form in edit mode. Open the rule editor for the following field. Provide your API key and API Secret Key.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af04.png",
+      alt: "Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text: "Always use country code.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af05.png",
+      alt: "Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text: "OTP Sent Successfully",
+    },
+    {
+      type: "image",
+      src: "images/blogs/sms/af06.png",
+      alt: "Adaptive Form",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "In conclusion, SMS-based two-factor authentication enhances security, improves user confidence, and aligns with industry best practices. Integrating SMS 2FA with AEM Forms empowers organizations to protect sensitive data and mitigate security risks effectively. Strengthen your security posture today with SMS 2FA and AEM Forms.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge. Don't forget to follow me for upcoming blogs. Thank you!",
+      variant: "closing",
+    },
+  
+    ],
   },
   {
     slug: "aem-graphql",
@@ -3732,7 +4757,139 @@ git push origin feature/hero-banner-block`,
     author: "Nitish Bisen",
     description:
       "Learn how to configure email notifications that send submitted Adaptive Form data to designated recipients.",
-    content: [],
+    content: [
+      {
+      type: "paragraph",
+      text:
+        "This blog aims to guide you through the process of setting up email notifications upon submitting an adaptive form. When users submit an adaptive form, it's essential to acknowledge their submission promptly. By setting up email notifications, you can ensure users receive confirmation and administrators stay informed. A common practice after receiving a submission through an Adaptive Form is to send a confirmation email to the submitter. To set this up, we'll choose the \"Send Email\" option as the submit action.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Email Submission Methods",
+    },
+    {
+      type: "paragraph",
+      text: "Methods to submit the form via email:",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Through an SMTP Server.",
+      ],
+    },
+    {
+      type: "paragraph",
+      text:
+        "For testing purposes, we utilize a Fake SMTP Server. Here's how to set it up:",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Download the Fake SMTP Server by searching for it on Google.",
+        "Find a reliable source and download the Fake SMTP Server software.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/server.webp",
+      alt: "Fake SMTP Server",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Configuration Needed",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Before we begin, we need to configure mail services by navigating to the Felix Configuration Manager in your browser. The below screenshot shows you the configuration properties for Adobe mail server.",
+    },
+    {
+      type: "paragraph",
+      text: "Configure your Email Configuration",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/configuration2.webp",
+      alt: "Configuration",
+    },
+    {
+      type: "paragraph",
+      text:
+        "In your Day CQ Mail Service, add your hostname (which may be localhost) and set the server port according to your server specifications. Then, provide a username and password, and specify the email address to be used in the \"From:\" field of messages sent by the mailer.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Create an Adaptive Form",
+    },
+    {
+      type: "paragraph",
+      text:
+        "After completing the configuration, it's time to create an Adaptive Form. Simply design a form according to your requirements. We've created a registration form.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/regform.webp",
+      alt: "registration",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Now configure the form properties to enable submission and receive email notifications. Follow the below steps:",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Navigate to the form and select 'Edit.'",
+        "Choose the submission properties.",
+        "Select 'Send Email' as the submit action.",
+        "In the Action Configuration, input your email address in the 'From' section as specified in the configuration settings.",
+        "In the 'To' section, enter ${email} to dynamically capture the recipient's email address.",
+        "Provide a suitable subject in the 'Subject' section, such as '${firstName} Form Submission,' ensuring personalization.",
+        "Save it",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/formprop.webp",
+      alt: "Form properties",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/formprop2.webp",
+      alt: "Form properties",
+    },
+    {
+      type: "paragraph",
+      text:
+        "In the subject, I've included ${firstName} Form Submission. This means that the \"firstName\" corresponds to the name property of the First Name textbox. After receiving the email, you'll see the user's first name in the subject line. Once all properties are configured, start your fake SMTP server and submit the form.",
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/formtest.webp",
+      alt: "Test Form",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form submission/smtp.webp",
+      alt: "SMTP Server",
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the knowledge. Don't forget to follow me for upcoming blogs. Thank you!",
+      variant: "closing",
+    },
+  
+
+    ],
   },
   {
     slug: "rule-editor-show-hide",
