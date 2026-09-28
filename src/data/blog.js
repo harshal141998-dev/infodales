@@ -17,7 +17,484 @@ export const articles = [
     author: "Yash Sakharkar",
     description:
       "Learn how to adapt and migrate Dispatcher configurations from AMS to AEM as a Cloud Service.",
-    content: [],
+    content: [
+    {
+      type: "heading",
+      level: 2,
+      text: "Introduction",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Migrating an AEM AMS (Adobe Managed Services) Dispatcher to AEM as a Cloud Service involves using Adobe I/O CLI (aio CLI) tools to manage and deploy the Dispatcher configurations. This process requires careful planning and adherence to Adobe’s best practices for AEM as a Cloud Service. In this blog, we’ll walk through the step-by-step process of converting AMS Dispatcher configurations and making the necessary updates to the converted Dispatcher files.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 1: Install Node.js",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Ensure that Node.js is installed on your system. If it isn’t, download and install the latest version from the official Node.js website.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 2: Install the Adobe I/O CLI Tool",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Open the command prompt and run the following command to install the Adobe I/O CLI:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code: "npm install -g @adobe/aio-cli",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 3: Install AEM Cloud Service Migration Plugins",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Install the necessary AEM Cloud Service migration plugins by running the following command:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code:
+        "aio plugins:install @adobe/aio-cli-plugin-AEM-cloud-service-migration",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 4: Verify the Installation",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To verify that the CLI tools are installed correctly, run the following command:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code: "aio AEM-migration --help",
+    },
+    {
+      type: "paragraph",
+      text: "This command will display the list of available tools.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/aio-cli-tools.webp",
+      alt: "aio-cli-tools-img",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 5: Configure the Migration Tool",
+    },
+    {
+      type: "paragraph",
+      text: "Navigate to the configuration file located at:",
+    },
+    {
+      type: "paragraph",
+      text:
+        "C:\\Users\\admin\\AppData\\Local\\@adobe\\aio-cli\\AEM-migration-config.yaml",
+      variant: "highlight",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Update the file with the paths to your AEM-sdk-dispatcher source and ams-dispatcher source, then save the changes.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/dispatcher-config.webp",
+      alt: "dispatcher-config",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 6: Run the Dispatcher Converter",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Once everything is set up, execute the Dispatcher conversion command:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code: "aio AEM-migration:dispatcher-converter -t=ams",
+    },
+    {
+      type: "paragraph",
+      text: "After conversion it looks like this:",
+    },
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/dispatcher-logs.webp",
+      alt: "dispatcher-logs",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+    {
+      type: "paragraph",
+      text:
+        "After the conversion, navigate to the target folder. You will find a newly converted Dispatcher folder. Replace its src folder with the AEM-sdk-dispatcher source files.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Note",
+    },
+    {
+      type: "paragraph",
+      text:
+        "If you encounter any errors during the process, check the logs in the following file for details:",
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: `./
+├── conf.d
+│   ├── available_vhosts
+│   │   └── default.vhost
+│   ├── dispatcher_vhost.conf
+│   ├── enabled_vhosts
+│   │   ├── README
+│   │   └── default.vhost -> ../available_vhosts/default.vhost
+│   ├── rewrites
+│   │   ├── default_rewrite.rules
+│   │   └── rewrite.rules
+│   └── variables
+│       ├── custom.vars
+│       └── global.vars
+└── conf.dispatcher.d
+    ├── available_farms
+    │   └── default.farm
+    ├── cache
+    │   ├── default_invalidate.any
+    │   ├── default_rules.any
+    │   ├── marketing_query_parameters.any
+    │   └── rules.any
+    ├── clientheaders
+    │   ├── clientheaders.any
+    │   └── default_clientheaders.any
+    ├── dispatcher.any
+    ├── enabled_farms
+    │   ├── README
+    │   └── default.farm -> ../available_farms/default.farm
+    ├── filters
+    │   ├── default_filters.any
+    │   └── filters.any
+    ├── renders
+    │   └── default_renders.any
+    └── virtualhosts
+        ├── default_virtualhosts.any
+        └── virtualhosts.any`,
+    },
+
+    {
+      type: "paragraph",
+      text: "Your Dispatcher file structure should look like this.",
+    },
+    {
+      type: "paragraph",
+      text: "After the conversion make some changes in Dispatcher.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Delete Virtual Host Files",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.d/enabled_vhosts. Delete any virtual host files whose names contain author or flush.",
+        "Remove all virtual host files in conf.d/available_vhosts that are not linked.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Remove or Comment Unnecessary vHosts",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Remove or comment out virtual host files that do not reference port 80.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Rewrites",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Go to the conf.d/rewrites directory.",
+        "Delete files like base_rewrite.rules. Also, remove any Include statements in the virtual host files referencing these files.",
+        "If only one file remains in the folder, rename it to rewrite.rules and update the Include statements in the virtual host files accordingly.",
+        "If there are multiple virtual host-specific files, merge their contents into the corresponding Include statements in the relevant virtual host files.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Variables",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to the conf.d/variables directory.",
+        "Delete the ams_default.vars file and remove any Include statements in virtual host files referencing it.",
+        "If only one file remains, rename it to custom.vars and update all Include statements in the virtual host files to reflect this new name.",
+        "If multiple files remain, copy their contents into the corresponding Include statements in the relevant virtual host files.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Remove Allowlists",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Delete the conf.d/whitelists folder.",
+        "Remove any Include statements in virtual host files referencing files in this folder.",
+        "Replace PUBLISH_DOCROOT with DOCROOT.",
+        "Remove references to the following variables: DISP_ID, PUBLISH_FORCE_SSL, PUBLISH_WHITELIST_ENABLED.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Cache",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/cache.",
+        "Delete files prefixed with ams_.",
+        "If the folder is empty, copy the rules.any file from the standard Dispatcher configuration found in the SDK src folder into this folder and update the $include statements referencing the ams_*_cache.any files.",
+        "If only one file remains with a _cache.any suffix, rename it to rules.any and update the $include statements in the farm files.",
+        "If multiple farm-specific cache files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Delete files with the suffix _invalidate_allowed.any.",
+        "Copy default_invalidate.any from the standard Dispatcher configuration into this folder and update the cache/allowedClients section in the farm files.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Client Headers",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/clientheaders.",
+        "Delete files prefixed with ams_.",
+        "If only one file remains with a _clientheaders.any suffix, rename it to clientheaders.any and update the $include statements in the farm files.",
+        "If only one file remains with a _cache.any suffix, rename it to rules.any and update the $include statements in the farm files.",
+        "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Copy default_clientheaders.any from the standard Dispatcher configuration into this folder and replace outdated $include statements in the farm files.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: `Replace:
+
+$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_publish_clientheaders.any"
+$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_common_clientheaders.any"
+
+With:
+
+$include "../clientheaders/default_clientheaders.any"`,
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Filters",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/filters.",
+        "Delete files prefixed with ams_.",
+        "If only one file remains, rename it to filters.any and update the $include statements in the farm files.",
+        "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Copy default_filters.any from the standard Dispatcher configuration and update outdated $include statements in the farm files.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: '$include "../filters/default_filters.any"',
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Renders",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/renders.",
+        "Delete all files in this folder.",
+        "Copy default_renders.any from the standard Dispatcher configuration into this folder.",
+        "Update the renders section in each farm file with the default_renders.any include.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: '$include "../renders/default_renders.any"',
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Virtual Hosts",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Rename the directory conf.dispatcher.d/vhosts to conf.dispatcher.d/virtualhosts and navigate to it.",
+        "Delete files prefixed with ams_.",
+        "If only one file remains, rename it to virtualhosts.any and update the $include statements in the farm files.",
+        "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Copy default_virtualhosts.any from the standard Dispatcher configuration and update outdated $include statements in the farm files.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: '$include "../virtualhosts/default_virtualhosts.any"',
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Include Custom Variables",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "In the conf.d/variables/custom.vars file, ensure it is included in each virtual host file. This file contains custom domain names.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Validate the Dispatcher",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to the Dispatcher folder.",
+        "Run the validation command.",
+        "Ensure Docker is installed on your system. The output should confirm successful validation.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "bash",
+      code: "bin\\validate src\\",
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/dispatcher-phases.webp",
+      alt: "dispatcher-phases-img",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Start the Dispatcher",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Now start the Dispatcher in a Docker image with deployment information. Make sure you have the AEM Publish instance running.",
+        "With your AEM Publish server running on Windows on port 4503, you can start the Dispatcher by running the following command.",
+        "After running the command, verify that the Dispatcher starts successfully.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "bash",
+      code: "bin\\docker_run src host.docker.internal:4503 8080",
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/starting-dispatcher.webp",
+      alt: "starting-dispatcher",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "This completes the main steps for converting and validating an AMS Dispatcher configuration for AEM as a Cloud Service.",
+      variant: "closing",
+    },
+  ],
   },
   {
     slug: "spa-component-mapping",
@@ -343,7 +820,7 @@ export const articles = [
     slug: "targeting-in-aem",
     title: "Targeting in AEM - Part 1",
     category: "AEM Sites",
-    date:"2024-08-01",
+    date: "2024-08-01",
     author: "Suchita Mishra",
     description:
       "Discover how AEM targeting uses audiences and contextual data to deliver personalized experiences.",
@@ -353,7 +830,7 @@ export const articles = [
     slug: "indexing",
     title: "Indexing in AEM",
     category: "AEM Sites",
-    date:"2023-11-24",
+    date: "2023-11-24",
     author: "Shruti Meshram",
     description:
       "Understand how Oak indexes improve AEM repository query performance and content retrieval.",
@@ -417,7 +894,415 @@ export const articles = [
     author: "Gaffur Shaik",
     description:
       "Get started with AEM Forms and explore its capabilities for creating responsive digital forms.",
-    content: [],
+    content: [
+    {
+      type: "heading",
+      level: 2,
+      text: "Overview",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Adobe Experience Manager Forms is a solution provided by Adobe for creating, managing, and optimizing electronic forms (both simple and complex) across various channels such as web and mobile. AEM Forms streamline the creation and management of forms, making it easier for businesses to digitize and improve their document-based processes. The AEM Forms Module is a powerful feature introduced by AEM for creating adaptive forms, enabling easy creation, updating, and publishing.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Types of AEM Forms",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "PDF Forms",
+          text:
+            "Known as offline forms, they are saved locally, and form data is sent when it gets online.",
+        },
+        {
+          title: "HTML Forms",
+          text:
+            "Browser forms with the form tag element in HTML code, styled and scripted for validation.",
+        },
+        {
+          title: "Adaptive Forms",
+          text:
+            "Easily adapted to screen size and responsive, customizable on the field for user ease.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-types.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Set Up Adobe Forms Add-on",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Ensure that the Adobe Forms add-on is installed and configured in your AEM instance. This add-on allows you to create, manage, and publish adaptive forms. Adobe Forms functionality is provided through the AEM Forms add-on. You can download the AEM Forms add-on from the Adobe website or get it through Adobe's software distribution portal.",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Form Add-On Service Pack",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/service-pack.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "paragraph",
+      text:
+        "If any item is missing from the Forms Module interface, it means you haven't installed the Forms service pack.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-non.webp",
+      alt: "AEM Form is not setup",
+    },
+    {
+      type: "paragraph",
+      text:
+        "If the AEM Form is installed successfully, this item will appear.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formmodule.webp",
+      alt: "AEM Form setup done",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Adaptive Forms",
+    },
+    {
+      type: "paragraph",
+      text:
+        "An Adaptive Form is an interactive digital form that adjusts its layout and content dynamically based on the user's inputs or the device on which it is being viewed. It provides a user-friendly experience by adapting to different screen sizes, ensuring ease of filling out and navigation regardless of the device. Adaptive Forms are commonly used in web applications and mobile devices, allowing for a more responsive and user-centric form-filling experience.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Types to Create Adaptive Form",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Using a form data model",
+        "Using an XDP Form Template",
+        "Using an XML Schema Definition (XSD) or a JSON Schema",
+        "Using none or without a form model",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formcreateby.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Step To Create an Adaptive Forms",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create an Adaptive Form Template",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Every adaptive form is based on an adaptive form template. The template defines the structure, initial content, theme, etc., the adaptive form inherits. You can create a new adaptive form template or use the out-of-the-box template when creating your adaptive form.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To create an adaptive form template, follow these steps:",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a folder",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Navigate to",
+          text: "Tool > General > Configuration Browser.",
+        },
+        "Create a Folder where you can store your template.",
+        {
+          title: "Give a suitable title",
+          text:
+            "Ensure that you have selected the Editable template.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/conffolder.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/selectET.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a form template",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "To create a template",
+          text: "Go to Tool > General > Template.",
+        },
+        {
+          title: "Choose the folder",
+          text:
+            'Choose the folder you previously created, then click on the "Create" button to generate a template. In the subsequent step, the default template type is the Adaptive Form Template. Ensure that it is selected and proceed by clicking on the "Next" button.',
+        },
+        {
+          title: "Name the template",
+          text:
+            "Ensure that you have enabled the template. Every template at the minimum contains a layout container at the top. There’s an adaptive form container in the middle, and again, there’s a layout container at the bottom.",
+        },
+        {
+          title: "Enable the template",
+          text:
+            "Next, enable this adaptive form template so that it is available for the adaptive form authors to use. To do that, select the template and click on Enable.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/temp-folder.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/template.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/enable-temp.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create Adaptive Form",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formmodule.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Go to Forms > Forms & Documents.",
+        "Create a folder to store your forms.",
+        "Open the folder and create the Adaptive Form.",
+        "Select the template for your adaptive form.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-temp.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Click Next.",
+        "Provide a meaningful title. There are some additional items like Form Model and Advanced.",
+        "This means you can also create forms using Form Data Model, Form Data Model, and Schema.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/select-datamodel.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Click on Create to create an Adaptive Form.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/fromcreate-by.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Open the form in Edit mode.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formlable.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Add Fields to Adaptive Forms",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Drag components to the Panel (click on it to add fields).",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/add-text.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Search for the field (e.g. text, button, numeric box).",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/config-fields.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Add the required fields in the form and configure the fields.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/fields-in-form.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Go to Preview.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/Preview.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Creating Form Fragments",
+    },
+    {
+      type: "paragraph",
+      text:
+        "A fragment is a reusable component within a form, designed to serve a specific purpose such as presenting an address block or legal text. Leveraging fragments streamlines the process of creating and maintaining numerous forms, enhancing efficiency and consistency across form development.",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Go to Forms and Documents.",
+        "Create a folder for adaptive form fragments where you can save your form fragments.",
+        "Select the folder that you created above and create a form fragment.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-fragment.webp",
+      alt: "AEM Form Fragment",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Provide a meaningful title for the fragment form. A form Fragment can be based on a Form model and there are some advanced settings. In Form Model, you can select a form data model, Schema, Form Template, and No option.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Now we have created a basic form fragment. Title: Log In.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/fromfragment.webp",
+      alt: "AEM Form Fragment layout",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Every form fragment has a guide root panel. Add a component in the guide root panel called Panel.",
+    },
+    {
+      type: "paragraph",
+      text: "Add Fields",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Label",
+          text: "User ID, Type: Text Button.",
+        },
+        {
+          title: "Label",
+          text: "Password, Type: Text Button.",
+        },
+        {
+          title: "Label",
+          text: "Login, Type: Submit Button.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/LogIn-form.webp",
+      alt: "AEM Form Fragment layout",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Edit the properties of the fields in the panel.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "You can also add Form Fragment in your Adaptive Form.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Thank you for joining us on our AEM Forms journey through this blog. We appreciate your time and interest in exploring the fundamental concepts of AEM Forms, including Adaptive Forms and AEM Form Fragments.",
+    },
+  ],
   },
   {
     slug: "aem-introduction",
@@ -428,358 +1313,358 @@ export const articles = [
     description:
       "Explore AEM Sites fundamentals, core features, and its role in managing digital experiences.",
     content: [
-    {
-      type: "heading",
-      level: 2,
-      text: "What is AEM",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "What is AEM",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Adobe Experience Manager (AEM) is a comprehensive web content management solution that enables organizations to create, manage, and optimize customer experiences across various digital channels, including web, mobile, email, and forms. AEM is part of the Adobe Marketing Cloud, a tool suite designed to help marketers deliver personalized and engaging content to their audience.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Adobe Experience Manager (AEM) is a comprehensive web content management solution that enables organizations to create, manage, and optimize customer experiences across various digital channels, including web, mobile, email, and forms. AEM is part of the Adobe Marketing Cloud, a tool suite designed to help marketers deliver personalized and engaging content to their audience.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Why AEM is preferred over other CMS",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Why AEM is preferred over other CMS",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Adobe Experience Manager (AEM) is frequently chosen over other Content Management Systems (CMS) due to its distinctive features, capabilities, and the comprehensive value it offers to organizations. The following are the reasons for adopting AEM over other CMS:",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Adobe Experience Manager (AEM) is frequently chosen over other Content Management Systems (CMS) due to its distinctive features, capabilities, and the comprehensive value it offers to organizations. The following are the reasons for adopting AEM over other CMS:",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        "Integration with Adobe Marketing Cloud",
-        "Digital Experience Management (DXM)",
-        "Personalization Emphasis",
-        "Multichannel Content Delivery",
-        "Versatility and Flexibility",
-        "Multi-Site Management (MSM)",
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          "Integration with Adobe Marketing Cloud",
+          "Digital Experience Management (DXM)",
+          "Personalization Emphasis",
+          "Multichannel Content Delivery",
+          "Versatility and Flexibility",
+          "Multi-Site Management (MSM)",
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Features Of AEM",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Features Of AEM",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Content Management",
-          text:
-            "AEM allows users to create, edit, and manage digital content in a user-friendly interface. It supports the creation of websites, landing pages, and other digital experiences.",
-        },
-        {
-          title: "Digital Asset Management",
-          text:
-            "AEM includes a powerful DAM system for organizing, storing, and managing digital assets such as images, videos, documents, and other media files. It allows for easy search, retrieval, and reuse of assets.",
-        },
-        {
-          title: "Web Content Management (WCM)",
-          text:
-            "AEM provides robust tools for creating, editing, and managing web content. It supports the creation of websites, landing pages, and digital experiences with an intuitive authoring interface.",
-        },
-        {
-          title: "Multi-Site Management",
-          text:
-            "AEM supports the management of multiple websites and digital properties from a single platform, providing centralized control over content and assets.",
-        },
-        {
-          title: "Workflow Management",
-          text:
-            "AEM includes workflow tools that facilitate collaboration and streamline the content creation and approval. Workflows can be customized to fit the organization's specific needs.",
-        },
-        {
-          title: "Mobile and Responsive Design",
-          text:
-            "AEM allows for the creation of mobile-responsive websites and applications. It provides tools to design and optimize content for various screen sizes, ensuring a seamless experience on mobile devices.",
-        },
-        {
-          title: "Form Management",
-          text:
-            "AEM Forms allows organizations to create, manage, and optimize digital forms for various processes, such as customer onboarding, registrations, and data collection.",
-        },
-        {
-          title: "Personalization",
-          text:
-            "AEM offers personalization capabilities, allowing dynamic content delivery based on user behavior and preferences. Personalization enhances user engagement by providing relevant and targeted content.",
-        },
-        {
-          title: "Content Fragments",
-          text:
-            "Content Fragments in AEM allow the creation and management of reusable content pieces, enhancing consistency and simplifying updates across multiple pages. These fragments streamline content authoring, ensuring a cohesive and efficient content management strategy in AEM.",
-        },
-        {
-          title: "Integration with Adobe Marketing Cloud",
-          text:
-            "AEM seamlessly integrates with the Adobe Marketing Cloud suite, providing a comprehensive solution for marketers. This integration enhances the ability to deliver personalized and engaging content across channels.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Content Management",
+            text:
+              "AEM allows users to create, edit, and manage digital content in a user-friendly interface. It supports the creation of websites, landing pages, and other digital experiences.",
+          },
+          {
+            title: "Digital Asset Management",
+            text:
+              "AEM includes a powerful DAM system for organizing, storing, and managing digital assets such as images, videos, documents, and other media files. It allows for easy search, retrieval, and reuse of assets.",
+          },
+          {
+            title: "Web Content Management (WCM)",
+            text:
+              "AEM provides robust tools for creating, editing, and managing web content. It supports the creation of websites, landing pages, and digital experiences with an intuitive authoring interface.",
+          },
+          {
+            title: "Multi-Site Management",
+            text:
+              "AEM supports the management of multiple websites and digital properties from a single platform, providing centralized control over content and assets.",
+          },
+          {
+            title: "Workflow Management",
+            text:
+              "AEM includes workflow tools that facilitate collaboration and streamline the content creation and approval. Workflows can be customized to fit the organization's specific needs.",
+          },
+          {
+            title: "Mobile and Responsive Design",
+            text:
+              "AEM allows for the creation of mobile-responsive websites and applications. It provides tools to design and optimize content for various screen sizes, ensuring a seamless experience on mobile devices.",
+          },
+          {
+            title: "Form Management",
+            text:
+              "AEM Forms allows organizations to create, manage, and optimize digital forms for various processes, such as customer onboarding, registrations, and data collection.",
+          },
+          {
+            title: "Personalization",
+            text:
+              "AEM offers personalization capabilities, allowing dynamic content delivery based on user behavior and preferences. Personalization enhances user engagement by providing relevant and targeted content.",
+          },
+          {
+            title: "Content Fragments",
+            text:
+              "Content Fragments in AEM allow the creation and management of reusable content pieces, enhancing consistency and simplifying updates across multiple pages. These fragments streamline content authoring, ensuring a cohesive and efficient content management strategy in AEM.",
+          },
+          {
+            title: "Integration with Adobe Marketing Cloud",
+            text:
+              "AEM seamlessly integrates with the Adobe Marketing Cloud suite, providing a comprehensive solution for marketers. This integration enhances the ability to deliver personalized and engaging content across channels.",
+          },
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "AEM ARCHITECTURE",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "AEM ARCHITECTURE",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Architecture Stack",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Architecture Stack",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Adobe Experience Manager (AEM) architecture is built on a modular and scalable stack that supports creating, managing, and delivering digital experiences. Here's an overview of the key components in the AEM architecture stack:",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Adobe Experience Manager (AEM) architecture is built on a modular and scalable stack that supports creating, managing, and delivering digital experiences. Here's an overview of the key components in the AEM architecture stack:",
+      },
 
     {
       type: "image",
-      src: "/images/AEM_Architecture.webp",
+      src: "images/blogs/sites/AEM_Architecture.webp",
       alt: "AEM Architecture",
     },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Java Platform",
-          text:
-            "The Java platform plays a pivotal role, serving as the backbone for the entire system. AEM is built on a Java-based architecture, leveraging the strengths of the Java programming language to deliver a scalable, robust, and extensible platform for managing digital experiences.",
-        },
-        {
-          title: "Java Runtime Environment (JRE)",
-          text:
-            "JRE stands for Java Runtime Environment. The Java Runtime Environment is a package of software that provides the minimum requirements for executing Java applications. It includes the Java Virtual Machine (JVM), libraries, and other components needed to run Java programs.",
-        },
-        {
-          title: "Granite Platform",
-          text:
-            "Granite is Adobe’s Open Web Stack. The Granite Platform is an underlying foundation and set of core services in Adobe Experience Manager (AEM). It provides a framework for building and running AEM applications, facilitating common functionalities and services that are essential for content management, user interface, and system operations.",
-        },
-        {
-          title: "Servlet engine",
-          text:
-            "Typically refers to the underlying technology that handles the execution of Java servlets within the AEM application. A servlet engine, also known as a servlet container or servlet runner, is responsible for managing the lifecycle of servlets, processing client requests, and generating dynamic content. In the context of AEM, which is built on a Java-based architecture, the servlet engine plays a crucial role in handling HTTP requests and managing the communication between the web server and the AEM application. AEM uses the Apache Sling framework, which is essentially a servlet engine, to process and respond to requests.",
-        },
-        {
-          title: "CRXDE",
-          text:
-            'Refers to the Content Repository Extreme, the underlying repository technology used in AEM. The "de" in "CRX de" specifically stands for "Day Edition," as the technology was originally developed by Day Software, the company that created the predecessor of AEM. CRX is a Java Content Repository (JCR) that serves as the foundation for storing, managing, and retrieving digital assets, content, and configurations within AEM. It provides a hierarchical and standardized way to organize and access content, and it follows the specifications outlined in the Java Content Repository API (JSR-170 and JSR-283).',
-        },
-        {
-          title: "Sling Content Delivery",
-          text:
-            "The Apache Sling framework processes and delivers dynamic content by interpreting resource-based URLs and invoking the appropriate scripts or servlets to generate the content for end-users.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Java Platform",
+            text:
+              "The Java platform plays a pivotal role, serving as the backbone for the entire system. AEM is built on a Java-based architecture, leveraging the strengths of the Java programming language to deliver a scalable, robust, and extensible platform for managing digital experiences.",
+          },
+          {
+            title: "Java Runtime Environment (JRE)",
+            text:
+              "JRE stands for Java Runtime Environment. The Java Runtime Environment is a package of software that provides the minimum requirements for executing Java applications. It includes the Java Virtual Machine (JVM), libraries, and other components needed to run Java programs.",
+          },
+          {
+            title: "Granite Platform",
+            text:
+              "Granite is Adobe’s Open Web Stack. The Granite Platform is an underlying foundation and set of core services in Adobe Experience Manager (AEM). It provides a framework for building and running AEM applications, facilitating common functionalities and services that are essential for content management, user interface, and system operations.",
+          },
+          {
+            title: "Servlet engine",
+            text:
+              "Typically refers to the underlying technology that handles the execution of Java servlets within the AEM application. A servlet engine, also known as a servlet container or servlet runner, is responsible for managing the lifecycle of servlets, processing client requests, and generating dynamic content. In the context of AEM, which is built on a Java-based architecture, the servlet engine plays a crucial role in handling HTTP requests and managing the communication between the web server and the AEM application. AEM uses the Apache Sling framework, which is essentially a servlet engine, to process and respond to requests.",
+          },
+          {
+            title: "CRXDE",
+            text:
+              'Refers to the Content Repository Extreme, the underlying repository technology used in AEM. The "de" in "CRX de" specifically stands for "Day Edition," as the technology was originally developed by Day Software, the company that created the predecessor of AEM. CRX is a Java Content Repository (JCR) that serves as the foundation for storing, managing, and retrieving digital assets, content, and configurations within AEM. It provides a hierarchical and standardized way to organize and access content, and it follows the specifications outlined in the Java Content Repository API (JSR-170 and JSR-283).',
+          },
+          {
+            title: "Sling Content Delivery",
+            text:
+              "The Apache Sling framework processes and delivers dynamic content by interpreting resource-based URLs and invoking the appropriate scripts or servlets to generate the content for end-users.",
+          },
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "OSGi Framework",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "OSGi Framework",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "The OSGi (Open Services Gateway Initiative) framework is a fundamental component of the Adobe Experience Manager (AEM) architecture. OSGi is a modular and dynamic framework for Java that enables the development of modular applications by providing a standardized way to manage and deploy components.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "The OSGi (Open Services Gateway Initiative) framework is a fundamental component of the Adobe Experience Manager (AEM) architecture. OSGi is a modular and dynamic framework for Java that enables the development of modular applications by providing a standardized way to manage and deploy components.",
+      },
 
     {
       type: "image",
-      src: "/images/AEM_framework.webp",
+      src: "images/blogs/sites/Aem_framework.webp",
       alt: "AEM OSGi Framework",
     },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Java Content Repository (JCR)",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Java Content Repository (JCR)",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "The AEM JCR (Java Content Repository) stands as a cornerstone, weaving together the fabric of content management with its unique blend of hierarchical organization and standardized access. The Java Content Repository API articulates an abstract model and a Java API tailored for data storage and services intricately entwined with content-centric applications.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "The AEM JCR (Java Content Repository) stands as a cornerstone, weaving together the fabric of content management with its unique blend of hierarchical organization and standardized access. The Java Content Repository API articulates an abstract model and a Java API tailored for data storage and services intricately entwined with content-centric applications.",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Hierarchical Data Model",
-          text:
-            "JCR represents content as a tree-like structure where each node can have child nodes. This hierarchical data model is well-suited for organizing content in a way that reflects the relationships between different pieces of information.",
-        },
-        {
-          title: "Node Types",
-          text:
-            "JCR defines node types that specify the characteristics and properties of nodes. Nodes can be of different types, each with its own set of properties and behaviors. For example, AEM uses predefined node types for pages, components, and assets.",
-        },
-        {
-          title: "Content Versioning",
-          text:
-            "JCR supports versioning of content, allowing for the tracking and management of different versions of a node. This is particularly important in a content management system like AEM, where content changes over time.",
-        },
-        {
-          title: "Query Language (JCR-SQL2 and XPath)",
-          text:
-            "JCR provides query languages like JCR-SQL2 and XPath, enabling users to search and retrieve content based on specific criteria. This is essential for content authors and developers when accessing and manipulating content within AEM.",
-        },
-        {
-          title: "Access Control",
-          text:
-            "JCR includes mechanisms for access control, allowing administrators to define and manage permissions on nodes. This ensures that only authorized users have the necessary privileges to read or modify specific content.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Hierarchical Data Model",
+            text:
+              "JCR represents content as a tree-like structure where each node can have child nodes. This hierarchical data model is well-suited for organizing content in a way that reflects the relationships between different pieces of information.",
+          },
+          {
+            title: "Node Types",
+            text:
+              "JCR defines node types that specify the characteristics and properties of nodes. Nodes can be of different types, each with its own set of properties and behaviors. For example, AEM uses predefined node types for pages, components, and assets.",
+          },
+          {
+            title: "Content Versioning",
+            text:
+              "JCR supports versioning of content, allowing for the tracking and management of different versions of a node. This is particularly important in a content management system like AEM, where content changes over time.",
+          },
+          {
+            title: "Query Language (JCR-SQL2 and XPath)",
+            text:
+              "JCR provides query languages like JCR-SQL2 and XPath, enabling users to search and retrieve content based on specific criteria. This is essential for content authors and developers when accessing and manipulating content within AEM.",
+          },
+          {
+            title: "Access Control",
+            text:
+              "JCR includes mechanisms for access control, allowing administrators to define and manage permissions on nodes. This ensures that only authorized users have the necessary privileges to read or modify specific content.",
+          },
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Apache Sling",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Apache Sling",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Apache Sling is a key framework that plays a fundamental role in handling the web request-response cycle and facilitating content-centric applications.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Apache Sling is a key framework that plays a fundamental role in handling the web request-response cycle and facilitating content-centric applications.",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Dynamic Content Choreography",
-          text:
-            "Apache Sling, akin to a seasoned conductor, choreographs the dynamic rendering of content. It doesn't just respond to requests; it interprets them, dynamically selecting the right content resource based on URLs. This dynamic choreography ensures a personalized and engaging experience for users.",
-        },
-        {
-          title: "RESTful Rhythm",
-          text:
-            "Apache Sling, being a framework designed for RESTful content-centric applications in Adobe Experience Manager (AEM), follows RESTful principles to facilitate efficient communication and data exchange. Representation of Resources, Resource Identification through URI, Resource Manipulation through Representations, Stateless Communication, Uniform Interface.",
-        },
-        {
-          title: "Scripting Serenade",
-          text:
-            "Picture a script as the musical score of this dance. Apache Sling serenades with scripting languages like Sightly (HTL), providing a templating engine for developers and content authors. This scripting symphony enables the creation of adaptive templates, where creativity and functionality elegantly intertwine.",
-        },
-        {
-          title: "OSGi Overture",
-          text:
-            "As the ballet unfolds, Apache Sling seamlessly integrates with the OSGi (Open Services Gateway Initiative) framework—a foundational overture in AEM's modular architecture. This integration enables the creation of modular applications, where components elegantly dance together in a synchronized performance.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Dynamic Content Choreography",
+            text:
+              "Apache Sling, akin to a seasoned conductor, choreographs the dynamic rendering of content. It doesn't just respond to requests; it interprets them, dynamically selecting the right content resource based on URLs. This dynamic choreography ensures a personalized and engaging experience for users.",
+          },
+          {
+            title: "RESTful Rhythm",
+            text:
+              "Apache Sling, being a framework designed for RESTful content-centric applications in Adobe Experience Manager (AEM), follows RESTful principles to facilitate efficient communication and data exchange. Representation of Resources, Resource Identification through URI, Resource Manipulation through Representations, Stateless Communication, Uniform Interface.",
+          },
+          {
+            title: "Scripting Serenade",
+            text:
+              "Picture a script as the musical score of this dance. Apache Sling serenades with scripting languages like Sightly (HTL), providing a templating engine for developers and content authors. This scripting symphony enables the creation of adaptive templates, where creativity and functionality elegantly intertwine.",
+          },
+          {
+            title: "OSGi Overture",
+            text:
+              "As the ballet unfolds, Apache Sling seamlessly integrates with the OSGi (Open Services Gateway Initiative) framework—a foundational overture in AEM's modular architecture. This integration enables the creation of modular applications, where components elegantly dance together in a synchronized performance.",
+          },
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "TYPES OF AEM",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "TYPES OF AEM",
+      },
 
     {
       type: "image",
-      src: "/images/AEM-Type.webp",
+      src: "images/blogs/sites/AEM-Type.webp",
       alt: "Types of AEM",
     },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "On-Premise",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "On-Premise",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "On-premise (standalone) deployment in AEM refers to the installation and hosting of the AEM software on servers that are physically located within an organization's own infrastructure or data center.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "On-premise (standalone) deployment in AEM refers to the installation and hosting of the AEM software on servers that are physically located within an organization's own infrastructure or data center.",
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Local Infrastructure",
-          text:
-            "In this deployment model, organizations acquire and maintain their servers, networking equipment, and other necessary hardware components. AEM is installed and configured directly on these servers, forming a dedicated environment within the organization's premises.",
-        },
-        {
-          title: "Control and Customization",
-          text:
-            "On-premise deployment provides organizations with complete control over the AEM infrastructure. This includes customizing server configurations, network settings, and security measures according to the organization's specific needs and compliance requirements.",
-        },
-        {
-          title: "Security and Compliance",
-          text:
-            "Organizations can implement tailored security measures and compliance protocols, ensuring that AEM aligns with the organization's internal policies and industry standards. This level of control is particularly important for industries with strict regulatory requirements.",
-        },
-        {
-          title: "Resource Management",
-          text:
-            "Organizations are responsible for managing and maintaining the entire AEM infrastructure, including hardware, software updates, security patches, and backups. While this grants control, it also requires dedicated IT resources and expertise to ensure optimal performance and security.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Local Infrastructure",
+            text:
+              "In this deployment model, organizations acquire and maintain their servers, networking equipment, and other necessary hardware components. AEM is installed and configured directly on these servers, forming a dedicated environment within the organization's premises.",
+          },
+          {
+            title: "Control and Customization",
+            text:
+              "On-premise deployment provides organizations with complete control over the AEM infrastructure. This includes customizing server configurations, network settings, and security measures according to the organization's specific needs and compliance requirements.",
+          },
+          {
+            title: "Security and Compliance",
+            text:
+              "Organizations can implement tailored security measures and compliance protocols, ensuring that AEM aligns with the organization's internal policies and industry standards. This level of control is particularly important for industries with strict regulatory requirements.",
+          },
+          {
+            title: "Resource Management",
+            text:
+              "Organizations are responsible for managing and maintaining the entire AEM infrastructure, including hardware, software updates, security patches, and backups. While this grants control, it also requires dedicated IT resources and expertise to ensure optimal performance and security.",
+          },
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Cloud as a Service",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Cloud as a Service",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        '"AEM Cloud as a Service" refers to the deployment model of AEM where the AEM environment is hosted and managed in the cloud by Adobe or a cloud service provider. In this model, organizations do not need to set up and maintain their infrastructure instead, they leverage cloud-based resources for hosting and accessing AEM.',
-    },
+      {
+        type: "paragraph",
+        text:
+          '"AEM Cloud as a Service" refers to the deployment model of AEM where the AEM environment is hosted and managed in the cloud by Adobe or a cloud service provider. In this model, organizations do not need to set up and maintain their infrastructure instead, they leverage cloud-based resources for hosting and accessing AEM.',
+      },
 
-    {
-      type: "numberedList",
-      items: [
-        {
-          title: "Cloud Hosting",
-          text:
-            "The Cloud as a Service option involves Adobe hosting and managing the AEM environment on cloud infrastructure such as Adobe's Managed Services or other cloud providers like Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform. Adobe takes care of the underlying infrastructure, including servers, storage, and networking.",
-        },
-        {
-          title: "Scalability and Flexibility",
-          text:
-            "Cloud as a Service provides scalability, allowing organizations to scale resources up or down based on demand easily. This flexibility is particularly beneficial for handling varying workloads, ensuring optimal performance during peak times without the need for upfront investments in hardware.",
-        },
-        {
-          title: "Managed Services",
-          text:
-            "Adobe or a chosen cloud service provider manages routine tasks such as software updates, security patches, and infrastructure maintenance. This offloads operational responsibilities from the organization, allowing them to focus more on utilizing AEM for content management and digital experience optimization.",
-        },
-        {
-          title: "Rapid Deployment",
-          text:
-            "Cloud-based deployments offer rapid deployment, reducing the time and effort required to set up and configure the AEM environment. This is especially advantageous for organizations looking for a quick and efficient solution without the need for extensive infrastructure planning.",
-        },
-      ],
-    },
+      {
+        type: "numberedList",
+        items: [
+          {
+            title: "Cloud Hosting",
+            text:
+              "The Cloud as a Service option involves Adobe hosting and managing the AEM environment on cloud infrastructure such as Adobe's Managed Services or other cloud providers like Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform. Adobe takes care of the underlying infrastructure, including servers, storage, and networking.",
+          },
+          {
+            title: "Scalability and Flexibility",
+            text:
+              "Cloud as a Service provides scalability, allowing organizations to scale resources up or down based on demand easily. This flexibility is particularly beneficial for handling varying workloads, ensuring optimal performance during peak times without the need for upfront investments in hardware.",
+          },
+          {
+            title: "Managed Services",
+            text:
+              "Adobe or a chosen cloud service provider manages routine tasks such as software updates, security patches, and infrastructure maintenance. This offloads operational responsibilities from the organization, allowing them to focus more on utilizing AEM for content management and digital experience optimization.",
+          },
+          {
+            title: "Rapid Deployment",
+            text:
+              "Cloud-based deployments offer rapid deployment, reducing the time and effort required to set up and configure the AEM environment. This is especially advantageous for organizations looking for a quick and efficient solution without the need for extensive infrastructure planning.",
+          },
+        ],
+      },
 
-    {
-      type: "paragraph",
-      variant: "closing",
-      text:
-        "A heartfelt thank you for diving into our AEM (Adobe Experience Manager) introduction blog! We hope you found the content informative and that it provided you with a solid understanding of the basics of AEM.",
-    },
-  ],
+      {
+        type: "paragraph",
+        variant: "closing",
+        text:
+          "A heartfelt thank you for diving into our AEM (Adobe Experience Manager) introduction blog! We hope you found the content informative and that it provided you with a solid understanding of the basics of AEM.",
+      },
+    ],
   },
   {
     slug: "vanity-urls",
@@ -812,180 +1697,180 @@ export const articles = [
     content: [],
   },
   {
-  slug: "introduction-to-eds",
-  title: "Introduction to Edge Delivery Services",
-  category: "AEM EDS",
-  date: "2024-12-01",
-  author: "Owais Pathan",
-  description:
-    "Explore Edge Delivery Services architecture, authoring approaches, and high-performance content delivery.",
+    slug: "introduction-to-eds",
+    title: "Introduction to Edge Delivery Services",
+    category: "AEM EDS",
+    date: "2024-12-01",
+    author: "Owais Pathan",
+    description:
+      "Explore Edge Delivery Services architecture, authoring approaches, and high-performance content delivery.",
 
-  content: [
-    {
-      type: "paragraph",
-      text: "Happy to find you here. Welcome to another learning.",
-    },
+    content: [
+      {
+        type: "paragraph",
+        text: "Happy to find you here. Welcome to another learning.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "What is Edge Delivery Services",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "What is Edge Delivery Services",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Edge Delivery Service is a part of AEM as a Cloud Service. It is an individual module or functionality in AEM as a Cloud Service and is not dependent on AEM. You can build, run, and author a website using Edge Delivery Services without AEM. It can be integrated with AEM Author to create content and sites; however, AEM authoring is not mandatory for content authoring. It supports two ways of authoring: document-based authoring and WYSIWYG (What You See Is What You Get) authoring.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Edge Delivery Service is a part of AEM as a Cloud Service. It is an individual module or functionality in AEM as a Cloud Service and is not dependent on AEM. You can build, run, and author a website using Edge Delivery Services without AEM. It can be integrated with AEM Author to create content and sites; however, AEM authoring is not mandatory for content authoring. It supports two ways of authoring: document-based authoring and WYSIWYG (What You See Is What You Get) authoring.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Edge Delivery Services Architecture",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Edge Delivery Services Architecture",
+      },
 
-    {
-      type: "bulletList",
-      items: [
-        "Franklin / Edge Delivery Services is based on a serverless micro-services architecture.",
-        "Each individual service is designed to be single-purpose. The connections between the different services make up the overall architecture.",
-        "All inter-service communication is based on HTTPS.",
-        "It is a composable set of services that enables a rapid development environment.",
-      ],
-    },
+      {
+        type: "bulletList",
+        items: [
+          "Franklin / Edge Delivery Services is based on a serverless micro-services architecture.",
+          "Each individual service is designed to be single-purpose. The connections between the different services make up the overall architecture.",
+          "All inter-service communication is based on HTTPS.",
+          "It is a composable set of services that enables a rapid development environment.",
+        ],
+      },
 
     {
       type: "image",
-      src: "/images/Architecture-picture.png",
+      src: "images/blogs/eds/Architecture-picture.png",
       alt: "Edge Delivery Services Architecture",
     },
 
-    {
-      type: "paragraph",
-      text:
-        "The architecture is typically composed of three layers.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "The architecture is typically composed of three layers.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Authoring Layer",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Authoring Layer",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "In this layer, we create content for Edge Delivery Services. We have the following ways to create content:",
-    },
+      {
+        type: "paragraph",
+        text:
+          "In this layer, we create content for Edge Delivery Services. We have the following ways to create content:",
+      },
 
-    {
-      type: "bulletList",
-      items: [
-        "AEM authoring using Universal Editor.",
-        "Content can be created using Google Docs, Microsoft Docs, or spreadsheets. Teams and Slack can also be used to communicate and collaborate with Adobe when required.",
-        "Code and configuration are maintained in GitHub and moved to Edge Delivery Services when needed.",
-      ],
-    },
+      {
+        type: "bulletList",
+        items: [
+          "AEM authoring using Universal Editor.",
+          "Content can be created using Google Docs, Microsoft Docs, or spreadsheets. Teams and Slack can also be used to communicate and collaborate with Adobe when required.",
+          "Code and configuration are maintained in GitHub and moved to Edge Delivery Services when needed.",
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Edge Delivery Layer",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Edge Delivery Layer",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "It is a microservice-based serverless infrastructure built on the cloud.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "It is a microservice-based serverless infrastructure built on the cloud.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Client Infrastructure",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Client Infrastructure",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "This is also the CDN layer from the client side, on top of the Edge Delivery Services CDN.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "This is also the CDN layer from the client side, on top of the Edge Delivery Services CDN.",
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "The Entire Edge Delivery Services Implementation",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "The Entire Edge Delivery Services Implementation",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "After development, storage and processing are handled using the following server components.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "After development, storage and processing are handled using the following server components.",
+      },
 
     {
       type: "image",
-      src: "/images/Implementation.png",
+      src: "images/blogs/eds/implementation.png",
       alt: "Edge Delivery Services Implementation",
     },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "AWS",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "AWS",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "In AWS there are three main components: AWS S3, Lambda, and Fastly.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "In AWS there are three main components: AWS S3, Lambda, and Fastly.",
+      },
 
-    {
-      type: "bulletList",
-      items: [
-        "AWS S3 is used for storage or as the content hub.",
-        "Lambda is used for processing and computing.",
-        "Fastly is used as the CDN for this stack.",
-      ],
-    },
+      {
+        type: "bulletList",
+        items: [
+          "AWS S3 is used for storage or as the content hub.",
+          "Lambda is used for processing and computing.",
+          "Fastly is used as the CDN for this stack.",
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Cloudflare",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Cloudflare",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "In Cloudflare there are three main components: R2, Worker, and Cloudflare CDN.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "In Cloudflare there are three main components: R2, Worker, and Cloudflare CDN.",
+      },
 
-    {
-      type: "bulletList",
-      items: [
-        "R2 is used for storage.",
-        "Worker is used for computing.",
-        "Cloudflare CDN is used as the CDN.",
-      ],
-    },
+      {
+        type: "bulletList",
+        items: [
+          "R2 is used for storage.",
+          "Worker is used for computing.",
+          "Cloudflare CDN is used as the CDN.",
+        ],
+      },
 
-    {
-      type: "heading",
-      level: 2,
-      text: "Four Main Parts of Edge Delivery Services",
-    },
+      {
+        type: "heading",
+        level: 2,
+        text: "Four Main Parts of Edge Delivery Services",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "There are basically four main parts involved in Edge Delivery Services (EDS):",
-    },
+      {
+        type: "paragraph",
+        text:
+          "There are basically four main parts involved in Edge Delivery Services (EDS):",
+      },
 
     {
       type: "image",
-      src: "/images/FourMainPartsofEDS.png",
+      src: "images/blogs/eds/FourMainPartsofEDS.png",
       alt: "Four Main Parts of Edge Delivery Services",
       style: {
         maxWidth: "600px",
@@ -994,134 +1879,134 @@ export const articles = [
       },
     },
 
-    {
-      type: "paragraph",
-      text:
-        "I will explain each and every part in detail.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "I will explain each and every part in detail.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Edge",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Edge",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Edge is basically the CDN part. It involves three types of CDN.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Edge is basically the CDN part. It involves three types of CDN.",
+      },
 
     {
       type: "image",
-      src: "/images/Edge.png",
+      src: "images/blogs/eds/Edge.png",
       alt: "Edge CDN",
       
     },
 
-    {
-      type: "paragraph",
-      text:
-        "Bring Your Own CDN (BYOCDN) is the CDN that a client can include above the EDS CDN.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Bring Your Own CDN (BYOCDN) is the CDN that a client can include above the EDS CDN.",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Outer CDN: In EDS, we have two URLs, one for the live environment and one for the preview environment. The outer CDN displays the live URL content that has been published.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Outer CDN: In EDS, we have two URLs, one for the live environment and one for the preview environment. The outer CDN displays the live URL content that has been published.",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Inner CDN: This displays the preview of the content that has been authored.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Inner CDN: This displays the preview of the content that has been authored.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "PIPE (Pipeline)",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "PIPE (Pipeline)",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "The main delivery functionality is provided by PIPE (Pipeline). The main pipeline is the helix-pipeline-service, which uses the helix-html-pipeline framework to render HTML and filtered JSON after applying the required filters. The Pipeline Service pulls configuration from the Code Bus and published content from the Content Bus. The pipeline service runs as an AWS Lambda function. Mainly, the pipeline is used to convert content authored in documents into hypermedia.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "The main delivery functionality is provided by PIPE (Pipeline). The main pipeline is the helix-pipeline-service, which uses the helix-html-pipeline framework to render HTML and filtered JSON after applying the required filters. The Pipeline Service pulls configuration from the Code Bus and published content from the Content Bus. The pipeline service runs as an AWS Lambda function. Mainly, the pipeline is used to convert content authored in documents into hypermedia.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Authoring / Author",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Authoring / Author",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Authoring can be done using Google Docs or Microsoft Docs and can be stored in Google Drive or SharePoint and published from there.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Authoring can be done using Google Docs or Microsoft Docs and can be stored in Google Drive or SharePoint and published from there.",
+      },
 
-    {
-      type: "paragraph",
-      text: "Authoring mainly involves three things:",
-    },
+      {
+        type: "paragraph",
+        text: "Authoring mainly involves three things:",
+      },
 
     {
       type: "image",
-      src: "/images/Authoring-Author.png",
+      src: "images/blogs/eds/Authoring-Author.png",
       alt: "EDS Authoring",
     },
 
-    {
-      type: "heading",
-      level: 4,
-      text: "Authoring",
-    },
+      {
+        type: "heading",
+        level: 4,
+        text: "Authoring",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Authoring can be done using Google Docs, Microsoft Docs, or any third-party document service.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Authoring can be done using Google Docs, Microsoft Docs, or any third-party document service.",
+      },
 
-    {
-      type: "heading",
-      level: 4,
-      text: "Sidekick",
-    },
+      {
+        type: "heading",
+        level: 4,
+        text: "Sidekick",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "Sidekick is an important extension used to publish, unpublish, or delete content from the website.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "Sidekick is an important extension used to publish, unpublish, or delete content from the website.",
+      },
 
-    {
-      type: "heading",
-      level: 3,
-      text: "Dev",
-    },
+      {
+        type: "heading",
+        level: 3,
+        text: "Dev",
+      },
 
-    {
-      type: "paragraph",
-      text:
-        "The development part is mainly done in the GitHub repository that we create. In this repository, we need to install the AEM Code Sync GitHub app, also known as Franklin Bot. The content is served from documents stored in Google Drive or SharePoint.",
-    },
+      {
+        type: "paragraph",
+        text:
+          "The development part is mainly done in the GitHub repository that we create. In this repository, we need to install the AEM Code Sync GitHub app, also known as Franklin Bot. The content is served from documents stored in Google Drive or SharePoint.",
+      },
 
     {
       type: "image",
-      src: "/images/Dev.png",
+      src: "images/blogs/eds/Dev.png",
       alt: "EDS Development",
     },
 
-    {
-      type: "paragraph",
-      variant: "closing",
-      text:
-        "Thank you for reading this introduction to Edge Delivery Services. This overview covered the EDS architecture, authoring approaches, delivery infrastructure, and the main components involved in building and delivering content.",
-    },
-  ],
-},
+      {
+        type: "paragraph",
+        variant: "closing",
+        text:
+          "Thank you for reading this introduction to Edge Delivery Services. This overview covered the EDS architecture, authoring approaches, delivery infrastructure, and the main components involved in building and delivering content.",
+      },
+    ],
+  },
 
   {
     slug: "introduction-to-document-based-authoring",
@@ -1233,7 +2118,7 @@ export const articles = [
       "Explore block options in EDS to customize block behavior, variations, and content presentation.",
     content: [],
   },
-   {
+  {
     slug: "block-creation-eds",
     title: "Block Creation in Edge Delivery Service",
     category: "AEM EDS",
@@ -1243,6 +2128,6 @@ export const articles = [
       "Learn to create custom, reusable blocks in EDS using JavaScript, CSS, and structured content.",
     content: [],
   },
-  
-  
+
+
 ];

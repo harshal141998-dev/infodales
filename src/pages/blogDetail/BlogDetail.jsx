@@ -78,11 +78,48 @@ function ContentItem({ item }) {
     );
   }
 
+  if (item.type === "bulletList") {
+  return (
+    <Box
+      component="ul"
+      className="article-list article-bullet-list"
+    >
+      {item.items?.map((listItem, index) => (
+        <li key={index}>
+          {typeof listItem === "string" ? (
+            listItem
+          ) : (
+            <>
+              <strong>{listItem.title}:</strong>{" "}
+              {listItem.text}
+            </>
+          )}
+        </li>
+      ))}
+    </Box>
+  );
+}
+
+if (item.type === "code") {
+  return (
+    <Box className="article-code">
+      <Box
+        component="pre"
+        className="article-code-block"
+      >
+        <code>{item.code}</code>
+      </Box>
+    </Box>
+  );
+}
+
   if (item.type === "image") {
+    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
+
     return (
       <Box className="article-image">
         <img
-          src={item.src}
+          src={resolvedSrc}
           alt={item.alt || ""}
           style={item.style}
         />
@@ -94,7 +131,7 @@ function ContentItem({ item }) {
 }
 
 export default function BlogDetailPage() {
-    const [rating, setRating] = useState(50);
+  const [rating, setRating] = useState(50);
   const { slug } = useParams();
   const navigate = useNavigate();
 
@@ -138,12 +175,12 @@ export default function BlogDetailPage() {
 
   return (
     <Box className="article-detail-page">
-      <Container  maxWidth={false}
-  sx={{
-    maxWidth: "1250px",
-    margin: "0 auto",
-    px: { xs: 2, md: 3 },
-  }}>
+      <Container maxWidth={false}
+        sx={{
+          maxWidth: "1250px",
+          margin: "0 auto",
+          px: { xs: 2, md: 3 },
+        }}>
 
         {/* Back */}
         <button
@@ -241,28 +278,27 @@ export default function BlogDetailPage() {
             {article.authorRole || "AEM Developer"}
           </Typography>
           <Box className="article-feedback">
-  <span className="feedback-emoji" style={{fontSize: "25px"}}>
-    {rating < 35 ? "😞" : rating < 65 ? "😐" : "😊"}
-  </span>
+            <span className="feedback-emoji" style={{ fontSize: "25px" }}>
+              {rating < 35 ? "😞" : rating < 65 ? "😐" : "😊"}
+            </span>
 
-  <Slider
-    value={rating}
-    onChange={(_, value) => setRating(value)}
-    min={0}
-    max={100}
-    size="small"
-     className={`feedback-slider ${
-    rating < 35 ? "rating-sad" : rating < 65 ? "rating-neutral" : "rating-happy"
-  }`}
-  aria-label="Article rating"
-  />
-</Box>
+            <Slider
+              value={rating}
+              onChange={(_, value) => setRating(value)}
+              min={0}
+              max={100}
+              size="small"
+              className={`feedback-slider ${rating < 35 ? "rating-sad" : rating < 65 ? "rating-neutral" : "rating-happy"
+                }`}
+              aria-label="Article rating"
+            />
+          </Box>
         </Box>
 
       </Container>
-      </Box>
+    </Box>
 
 
-    
+
   );
 }
