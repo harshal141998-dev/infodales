@@ -17,7 +17,484 @@ export const articles = [
     author: "Yash Sakharkar",
     description:
       "Learn how to adapt and migrate Dispatcher configurations from AMS to AEM as a Cloud Service.",
-    content: [],
+    content: [
+    {
+      type: "heading",
+      level: 2,
+      text: "Introduction",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Migrating an AEM AMS (Adobe Managed Services) Dispatcher to AEM as a Cloud Service involves using Adobe I/O CLI (aio CLI) tools to manage and deploy the Dispatcher configurations. This process requires careful planning and adherence to Adobe’s best practices for AEM as a Cloud Service. In this blog, we’ll walk through the step-by-step process of converting AMS Dispatcher configurations and making the necessary updates to the converted Dispatcher files.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 1: Install Node.js",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Ensure that Node.js is installed on your system. If it isn’t, download and install the latest version from the official Node.js website.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 2: Install the Adobe I/O CLI Tool",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Open the command prompt and run the following command to install the Adobe I/O CLI:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code: "npm install -g @adobe/aio-cli",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 3: Install AEM Cloud Service Migration Plugins",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Install the necessary AEM Cloud Service migration plugins by running the following command:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code:
+        "aio plugins:install @adobe/aio-cli-plugin-AEM-cloud-service-migration",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 4: Verify the Installation",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To verify that the CLI tools are installed correctly, run the following command:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code: "aio AEM-migration --help",
+    },
+    {
+      type: "paragraph",
+      text: "This command will display the list of available tools.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/aio-cli-tools.webp",
+      alt: "aio-cli-tools-img",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 5: Configure the Migration Tool",
+    },
+    {
+      type: "paragraph",
+      text: "Navigate to the configuration file located at:",
+    },
+    {
+      type: "paragraph",
+      text:
+        "C:\\Users\\admin\\AppData\\Local\\@adobe\\aio-cli\\AEM-migration-config.yaml",
+      variant: "highlight",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Update the file with the paths to your AEM-sdk-dispatcher source and ams-dispatcher source, then save the changes.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/dispatcher-config.webp",
+      alt: "dispatcher-config",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Step 6: Run the Dispatcher Converter",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Once everything is set up, execute the Dispatcher conversion command:",
+    },
+    {
+      type: "code",
+      language: "bash",
+      code: "aio AEM-migration:dispatcher-converter -t=ams",
+    },
+    {
+      type: "paragraph",
+      text: "After conversion it looks like this:",
+    },
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/dispatcher-logs.webp",
+      alt: "dispatcher-logs",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+    {
+      type: "paragraph",
+      text:
+        "After the conversion, navigate to the target folder. You will find a newly converted Dispatcher folder. Replace its src folder with the AEM-sdk-dispatcher source files.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Note",
+    },
+    {
+      type: "paragraph",
+      text:
+        "If you encounter any errors during the process, check the logs in the following file for details:",
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: `./
+├── conf.d
+│   ├── available_vhosts
+│   │   └── default.vhost
+│   ├── dispatcher_vhost.conf
+│   ├── enabled_vhosts
+│   │   ├── README
+│   │   └── default.vhost -> ../available_vhosts/default.vhost
+│   ├── rewrites
+│   │   ├── default_rewrite.rules
+│   │   └── rewrite.rules
+│   └── variables
+│       ├── custom.vars
+│       └── global.vars
+└── conf.dispatcher.d
+    ├── available_farms
+    │   └── default.farm
+    ├── cache
+    │   ├── default_invalidate.any
+    │   ├── default_rules.any
+    │   ├── marketing_query_parameters.any
+    │   └── rules.any
+    ├── clientheaders
+    │   ├── clientheaders.any
+    │   └── default_clientheaders.any
+    ├── dispatcher.any
+    ├── enabled_farms
+    │   ├── README
+    │   └── default.farm -> ../available_farms/default.farm
+    ├── filters
+    │   ├── default_filters.any
+    │   └── filters.any
+    ├── renders
+    │   └── default_renders.any
+    └── virtualhosts
+        ├── default_virtualhosts.any
+        └── virtualhosts.any`,
+    },
+
+    {
+      type: "paragraph",
+      text: "Your Dispatcher file structure should look like this.",
+    },
+    {
+      type: "paragraph",
+      text: "After the conversion make some changes in Dispatcher.",
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Delete Virtual Host Files",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.d/enabled_vhosts. Delete any virtual host files whose names contain author or flush.",
+        "Remove all virtual host files in conf.d/available_vhosts that are not linked.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Remove or Comment Unnecessary vHosts",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Remove or comment out virtual host files that do not reference port 80.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Rewrites",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Go to the conf.d/rewrites directory.",
+        "Delete files like base_rewrite.rules. Also, remove any Include statements in the virtual host files referencing these files.",
+        "If only one file remains in the folder, rename it to rewrite.rules and update the Include statements in the virtual host files accordingly.",
+        "If there are multiple virtual host-specific files, merge their contents into the corresponding Include statements in the relevant virtual host files.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Variables",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to the conf.d/variables directory.",
+        "Delete the ams_default.vars file and remove any Include statements in virtual host files referencing it.",
+        "If only one file remains, rename it to custom.vars and update all Include statements in the virtual host files to reflect this new name.",
+        "If multiple files remain, copy their contents into the corresponding Include statements in the relevant virtual host files.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Remove Allowlists",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Delete the conf.d/whitelists folder.",
+        "Remove any Include statements in virtual host files referencing files in this folder.",
+        "Replace PUBLISH_DOCROOT with DOCROOT.",
+        "Remove references to the following variables: DISP_ID, PUBLISH_FORCE_SSL, PUBLISH_WHITELIST_ENABLED.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Cache",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/cache.",
+        "Delete files prefixed with ams_.",
+        "If the folder is empty, copy the rules.any file from the standard Dispatcher configuration found in the SDK src folder into this folder and update the $include statements referencing the ams_*_cache.any files.",
+        "If only one file remains with a _cache.any suffix, rename it to rules.any and update the $include statements in the farm files.",
+        "If multiple farm-specific cache files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Delete files with the suffix _invalidate_allowed.any.",
+        "Copy default_invalidate.any from the standard Dispatcher configuration into this folder and update the cache/allowedClients section in the farm files.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Client Headers",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/clientheaders.",
+        "Delete files prefixed with ams_.",
+        "If only one file remains with a _clientheaders.any suffix, rename it to clientheaders.any and update the $include statements in the farm files.",
+        "If only one file remains with a _cache.any suffix, rename it to rules.any and update the $include statements in the farm files.",
+        "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Copy default_clientheaders.any from the standard Dispatcher configuration into this folder and replace outdated $include statements in the farm files.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: `Replace:
+
+$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_publish_clientheaders.any"
+$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_common_clientheaders.any"
+
+With:
+
+$include "../clientheaders/default_clientheaders.any"`,
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Filters",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/filters.",
+        "Delete files prefixed with ams_.",
+        "If only one file remains, rename it to filters.any and update the $include statements in the farm files.",
+        "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Copy default_filters.any from the standard Dispatcher configuration and update outdated $include statements in the farm files.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: '$include "../filters/default_filters.any"',
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Renders",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to conf.dispatcher.d/renders.",
+        "Delete all files in this folder.",
+        "Copy default_renders.any from the standard Dispatcher configuration into this folder.",
+        "Update the renders section in each farm file with the default_renders.any include.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: '$include "../renders/default_renders.any"',
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Check Virtual Hosts",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Rename the directory conf.dispatcher.d/vhosts to conf.dispatcher.d/virtualhosts and navigate to it.",
+        "Delete files prefixed with ams_.",
+        "If only one file remains, rename it to virtualhosts.any and update the $include statements in the farm files.",
+        "If multiple files remain, merge their contents into the corresponding $include statements in the farm files.",
+        "Copy default_virtualhosts.any from the standard Dispatcher configuration and update outdated $include statements in the farm files.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "text",
+      code: '$include "../virtualhosts/default_virtualhosts.any"',
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Include Custom Variables",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "In the conf.d/variables/custom.vars file, ensure it is included in each virtual host file. This file contains custom domain names.",
+      ],
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Validate the Dispatcher",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Navigate to the Dispatcher folder.",
+        "Run the validation command.",
+        "Ensure Docker is installed on your system. The output should confirm successful validation.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "bash",
+      code: "bin\\validate src\\",
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/dispatcher-phases.webp",
+      alt: "dispatcher-phases-img",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "heading",
+      level: 4,
+      text: "Start the Dispatcher",
+    },
+    {
+      type: "bulletList",
+      items: [
+        "Now start the Dispatcher in a Docker image with deployment information. Make sure you have the AEM Publish instance running.",
+        "With your AEM Publish server running on Windows on port 4503, you can start the Dispatcher by running the following command.",
+        "After running the command, verify that the Dispatcher starts successfully.",
+      ],
+    },
+
+    {
+      type: "code",
+      language: "bash",
+      code: "bin\\docker_run src host.docker.internal:4503 8080",
+    },
+
+    {
+      type: "image",
+      src: "images/blogs/dispatcher/starting-dispatcher.webp",
+      alt: "starting-dispatcher",
+      width: {
+        xs: "100%",
+        sm: "90%",
+        md: "80%",
+      },
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "This completes the main steps for converting and validating an AMS Dispatcher configuration for AEM as a Cloud Service.",
+      variant: "closing",
+    },
+  ],
   },
   {
     slug: "spa-component-mapping",
@@ -417,7 +894,415 @@ export const articles = [
     author: "Gaffur Shaik",
     description:
       "Get started with AEM Forms and explore its capabilities for creating responsive digital forms.",
-    content: [],
+    content: [
+    {
+      type: "heading",
+      level: 2,
+      text: "Overview",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Adobe Experience Manager Forms is a solution provided by Adobe for creating, managing, and optimizing electronic forms (both simple and complex) across various channels such as web and mobile. AEM Forms streamline the creation and management of forms, making it easier for businesses to digitize and improve their document-based processes. The AEM Forms Module is a powerful feature introduced by AEM for creating adaptive forms, enabling easy creation, updating, and publishing.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Types of AEM Forms",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "PDF Forms",
+          text:
+            "Known as offline forms, they are saved locally, and form data is sent when it gets online.",
+        },
+        {
+          title: "HTML Forms",
+          text:
+            "Browser forms with the form tag element in HTML code, styled and scripted for validation.",
+        },
+        {
+          title: "Adaptive Forms",
+          text:
+            "Easily adapted to screen size and responsive, customizable on the field for user ease.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-types.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Set Up Adobe Forms Add-on",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Ensure that the Adobe Forms add-on is installed and configured in your AEM instance. This add-on allows you to create, manage, and publish adaptive forms. Adobe Forms functionality is provided through the AEM Forms add-on. You can download the AEM Forms add-on from the Adobe website or get it through Adobe's software distribution portal.",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Form Add-On Service Pack",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/service-pack.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "paragraph",
+      text:
+        "If any item is missing from the Forms Module interface, it means you haven't installed the Forms service pack.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-non.webp",
+      alt: "AEM Form is not setup",
+    },
+    {
+      type: "paragraph",
+      text:
+        "If the AEM Form is installed successfully, this item will appear.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formmodule.webp",
+      alt: "AEM Form setup done",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Adaptive Forms",
+    },
+    {
+      type: "paragraph",
+      text:
+        "An Adaptive Form is an interactive digital form that adjusts its layout and content dynamically based on the user's inputs or the device on which it is being viewed. It provides a user-friendly experience by adapting to different screen sizes, ensuring ease of filling out and navigation regardless of the device. Adaptive Forms are commonly used in web applications and mobile devices, allowing for a more responsive and user-centric form-filling experience.",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Types to Create Adaptive Form",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Using a form data model",
+        "Using an XDP Form Template",
+        "Using an XML Schema Definition (XSD) or a JSON Schema",
+        "Using none or without a form model",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formcreateby.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 2,
+      text: "Step To Create an Adaptive Forms",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create an Adaptive Form Template",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Every adaptive form is based on an adaptive form template. The template defines the structure, initial content, theme, etc., the adaptive form inherits. You can create a new adaptive form template or use the out-of-the-box template when creating your adaptive form.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "To create an adaptive form template, follow these steps:",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a folder",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Navigate to",
+          text: "Tool > General > Configuration Browser.",
+        },
+        "Create a Folder where you can store your template.",
+        {
+          title: "Give a suitable title",
+          text:
+            "Ensure that you have selected the Editable template.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/conffolder.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/selectET.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create a form template",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "To create a template",
+          text: "Go to Tool > General > Template.",
+        },
+        {
+          title: "Choose the folder",
+          text:
+            'Choose the folder you previously created, then click on the "Create" button to generate a template. In the subsequent step, the default template type is the Adaptive Form Template. Ensure that it is selected and proceed by clicking on the "Next" button.',
+        },
+        {
+          title: "Name the template",
+          text:
+            "Ensure that you have enabled the template. Every template at the minimum contains a layout container at the top. There’s an adaptive form container in the middle, and again, there’s a layout container at the bottom.",
+        },
+        {
+          title: "Enable the template",
+          text:
+            "Next, enable this adaptive form template so that it is available for the adaptive form authors to use. To do that, select the template and click on Enable.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/temp-folder.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/template.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/enable-temp.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Create Adaptive Form",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formmodule.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Go to Forms > Forms & Documents.",
+        "Create a folder to store your forms.",
+        "Open the folder and create the Adaptive Form.",
+        "Select the template for your adaptive form.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-temp.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Click Next.",
+        "Provide a meaningful title. There are some additional items like Form Model and Advanced.",
+        "This means you can also create forms using Form Data Model, Form Data Model, and Schema.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/select-datamodel.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Click on Create to create an Adaptive Form.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/fromcreate-by.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Open the form in Edit mode.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/formlable.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Add Fields to Adaptive Forms",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Drag components to the Panel (click on it to add fields).",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/add-text.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Search for the field (e.g. text, button, numeric box).",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/config-fields.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Add the required fields in the form and configure the fields.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/fields-in-form.webp",
+      alt: "AEM Form Types",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Go to Preview.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/Preview.webp",
+      alt: "AEM Form Types",
+    },
+
+    {
+      type: "heading",
+      level: 3,
+      text: "Creating Form Fragments",
+    },
+    {
+      type: "paragraph",
+      text:
+        "A fragment is a reusable component within a form, designed to serve a specific purpose such as presenting an address block or legal text. Leveraging fragments streamlines the process of creating and maintaining numerous forms, enhancing efficiency and consistency across form development.",
+    },
+    {
+      type: "numberedList",
+      items: [
+        "Go to Forms and Documents.",
+        "Create a folder for adaptive form fragments where you can save your form fragments.",
+        "Select the folder that you created above and create a form fragment.",
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/form-fragment.webp",
+      alt: "AEM Form Fragment",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Provide a meaningful title for the fragment form. A form Fragment can be based on a Form model and there are some advanced settings. In Form Model, you can select a form data model, Schema, Form Template, and No option.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Now we have created a basic form fragment. Title: Log In.",
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/fromfragment.webp",
+      alt: "AEM Form Fragment layout",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Every form fragment has a guide root panel. Add a component in the guide root panel called Panel.",
+    },
+    {
+      type: "paragraph",
+      text: "Add Fields",
+    },
+    {
+      type: "numberedList",
+      items: [
+        {
+          title: "Label",
+          text: "User ID, Type: Text Button.",
+        },
+        {
+          title: "Label",
+          text: "Password, Type: Text Button.",
+        },
+        {
+          title: "Label",
+          text: "Login, Type: Submit Button.",
+        },
+      ],
+    },
+    {
+      type: "image",
+      src: "images/blogs/forms/LogIn-form.webp",
+      alt: "AEM Form Fragment layout",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Edit the properties of the fields in the panel.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "You can also add Form Fragment in your Adaptive Form.",
+    },
+    {
+      type: "paragraph",
+      text:
+        "Thank you for joining us on our AEM Forms journey through this blog. We appreciate your time and interest in exploring the fundamental concepts of AEM Forms, including Adaptive Forms and AEM Form Fragments.",
+    },
+  ],
   },
   {
     slug: "aem-introduction",
@@ -546,7 +1431,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/AEM_Architecture.webp",
+      src: "images/blogs/sites/AEM_Architecture.webp",
       alt: "AEM Architecture",
     },
 
@@ -600,7 +1485,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/AEM_framework.webp",
+      src: "images/blogs/sites/Aem_framework.webp",
       alt: "AEM OSGi Framework",
     },
 
@@ -693,7 +1578,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "/images/AEM-Type.webp",
+      src: "images/blogs/sites/AEM-Type.webp",
       alt: "Types of AEM",
     },
 
@@ -856,7 +1741,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "src/assets/images/blogs/eds/Architecture-picture.png",
+      src: "images/blogs/eds/Architecture-picture.png",
       alt: "Edge Delivery Services Architecture",
     },
 
@@ -925,7 +1810,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "src/assets/images/blogs/eds/Implementation.png",
+      src: "images/blogs/eds/implementation.png",
       alt: "Edge Delivery Services Implementation",
     },
 
@@ -985,7 +1870,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "src/assets/images/blogs/eds/FourMainPartsofEDS.png",
+      src: "images/blogs/eds/FourMainPartsofEDS.png",
       alt: "Four Main Parts of Edge Delivery Services",
       style: {
         maxWidth: "600px",
@@ -1014,7 +1899,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "src/assets/images/blogs/eds/Edge.png",
+      src: "images/blogs/eds/Edge.png",
       alt: "Edge CDN",
       
     },
@@ -1068,7 +1953,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "src/assets/images/blogs/eds/Authoring-Author.png",
+      src: "images/blogs/eds/Authoring-Author.png",
       alt: "EDS Authoring",
     },
 
@@ -1110,7 +1995,7 @@ export const articles = [
 
     {
       type: "image",
-      src: "src/assets/images/blogs/eds/Dev.png",
+      src: "images/blogs/eds/Dev.png",
       alt: "EDS Development",
     },
 

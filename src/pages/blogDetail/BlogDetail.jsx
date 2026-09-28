@@ -76,6 +76,41 @@ function ContentItem({ item }) {
     );
   }
 
+  if (item.type === "bulletList") {
+  return (
+    <Box
+      component="ul"
+      className="article-list article-bullet-list"
+    >
+      {item.items?.map((listItem, index) => (
+        <li key={index}>
+          {typeof listItem === "string" ? (
+            listItem
+          ) : (
+            <>
+              <strong>{listItem.title}:</strong>{" "}
+              {listItem.text}
+            </>
+          )}
+        </li>
+      ))}
+    </Box>
+  );
+}
+
+if (item.type === "code") {
+  return (
+    <Box className="article-code">
+      <Box
+        component="pre"
+        className="article-code-block"
+      >
+        <code>{item.code}</code>
+      </Box>
+    </Box>
+  );
+}
+
   if (item.type === "image") {
     return (
       <Box className="article-image">
