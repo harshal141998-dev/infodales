@@ -62,10 +62,11 @@ function ContentItem({ item }) {
       </Typography>
     );
   }
-  
-   if (item.type === "blockOptionDemo") {
+
+  if (item.type === "blockOptionDemo") {
   return <BlockOptionDemo item={item} />;
 }
+
 
   if (
     item.type === "list" ||
@@ -204,6 +205,7 @@ function BlockOptionDemo({ item }) {
     </div>
   );
 }
+
 
 export default function BlogDetailPage() {
   const [rating, setRating] = useState(50);
