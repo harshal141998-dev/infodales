@@ -1,4 +1,4 @@
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import {
@@ -64,8 +64,8 @@ function ContentItem({ item }) {
   }
 
   if (item.type === "blockOptionDemo") {
-  return <BlockOptionDemo item={item} />;
-}
+    return <BlockOptionDemo item={item} />;
+  }
 
 
   if (
@@ -91,26 +91,26 @@ function ContentItem({ item }) {
   }
 
   if (item.type === "bulletList") {
-  return (
-    <Box
-      component="ul"
-      className="article-list article-bullet-list"
-    >
-      {item.items?.map((listItem, index) => (
-        <li key={index}>
-          {typeof listItem === "string" ? (
-            listItem
-          ) : (
-            <>
-              <strong>{listItem.title}:</strong>{" "}
-              {listItem.text}
-            </>
-          )}
-        </li>
-      ))}
-    </Box>
-  );
-}
+    return (
+      <Box
+        component="ul"
+        className="article-list article-bullet-list"
+      >
+        {item.items?.map((listItem, index) => (
+          <li key={index}>
+            {typeof listItem === "string" ? (
+              listItem
+            ) : (
+              <>
+                <strong>{listItem.title}:</strong>{" "}
+                {listItem.text}
+              </>
+            )}
+          </li>
+        ))}
+      </Box>
+    );
+  }
 
   if (item.type === "code") {
     return (
@@ -125,7 +125,7 @@ function ContentItem({ item }) {
     );
   }
 
-  
+
 
   if (item.type === "image") {
     const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
@@ -234,7 +234,7 @@ export default function BlogDetailPage() {
 
   //SEO meta tags
 
-    // ---------- SEO: inject meta tags into <head> ----------
+  // ---------- SEO: inject meta tags into <head> ----------
   useEffect(() => {
     if (!article) return;
 
@@ -313,15 +313,15 @@ export default function BlogDetailPage() {
 
   const articleUrl = window.location.href;
 
-  const shareLinkedIn = () => {
-    window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-        articleUrl
-      )}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
+  // const shareLinkedIn = () => {
+  //   window.open(
+  //     `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+  //       articleUrl
+  //     )}`,
+  //     "_blank",
+  //     "noopener,noreferrer"
+  //   );
+  // };
 
   const shareEmail = () => {
     window.location.href =
@@ -389,14 +389,20 @@ export default function BlogDetailPage() {
           className="article-share"
         >
           <IconButton
-            onClick={shareLinkedIn}
+            component="a"
+            href="https://www.linkedin.com/company/infodales-tech-solution/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Share on LinkedIn"
           >
             <LinkedInIcon />
           </IconButton>
 
           <IconButton
-            onClick={shareEmail}
+            component="a"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Share by email"
           >
             <EmailOutlinedIcon />
