@@ -725,6 +725,7 @@ export default function ContactPage() {
       <Container maxWidth="xl" className="facility-section">
         <Paper elevation={0} className="facility-panel">
           <Grid container spacing={3}>
+            {/* Business Hours */}
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack direction="row" spacing={2}>
                 <Box className="facility-icon">
@@ -737,13 +738,14 @@ export default function ContactPage() {
                   </Typography>
 
                   <Typography className="facility-description">
-                    Contact our team during business hours. Please reach out
+                    Monday – Saturday: 10:00 AM – 7:00 PM. Please reach out
                     to confirm availability before visiting.
                   </Typography>
                 </Box>
               </Stack>
             </Grid>
 
+            {/* Office Visits + Call button */}
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack direction="row" spacing={2}>
                 <Box className="facility-icon">
@@ -759,10 +761,20 @@ export default function ContactPage() {
                     Planning to visit? Contact us in advance so our team can
                     coordinate your appointment.
                   </Typography>
+
+                  <Button
+                    component="a"
+                    href="tel:+918087474953"
+                    className="map-link"
+                    endIcon={<PhoneInTalkOutlinedIcon />}
+                  >
+                    Call {contactDetails.phone}
+                  </Button>
                 </Box>
               </Stack>
             </Grid>
 
+            {/* Find Our Office */}
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack direction="row" spacing={2}>
                 <Box className="facility-icon">
