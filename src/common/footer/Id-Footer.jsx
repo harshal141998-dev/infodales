@@ -82,7 +82,9 @@ export default function Footer() {
                         </IconButton>
                         <IconButton
                             component="a"
-                            href="mailto:contact@infodales.com"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="Email"
                             sx={{
                                 width: 36,
@@ -103,10 +105,12 @@ export default function Footer() {
                         <IconButton
                             component="a"
                             href=""
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="Email"
                             sx={{
-                                width: 40,
-                                height: 40,
+                                width: 36,
+                                height: 36,
                                 borderRadius: "0.5rem",
                                 bgcolor: "#0f172a",
                                 border: "1px solid #1e293b",

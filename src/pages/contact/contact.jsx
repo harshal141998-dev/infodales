@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -260,7 +261,7 @@ function ContactCard({ icon, label, title, description, action, href }) {
   );
 }
 
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdvnHSKzwdbeHDIIEme870IpZY_C2IPYMAX9RpAC0ejphBtUA/viewform?usp=header";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc_s1ELTzOJWfYT68WhVujzVCPnV5UxSW_8kWncJBHfJlyE-w/viewform?usp=header";
 
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -272,7 +273,7 @@ function GoogleFormCTA() {
   };
 
   return (
-    <Box className="inquiry-section">
+    <Box id="executive-advisory" className="inquiry-section" sx={{ scrollMarginTop: "90px" }}>
       <Box className="inquiry-heading" sx={{ textAlign: 'center' }}>
         {/* <Chip
           size="small"
@@ -639,6 +640,20 @@ function GoogleFormCTA() {
 // }
 
 export default function ContactPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#executive-advisory") {
+      const timer = setTimeout(() => {
+        const el = document.getElementById("executive-advisory");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
+
   return (
     <Box className="contact-page">
       <MapHero />
@@ -649,7 +664,8 @@ export default function ContactPage() {
             <Grid size={{ xs: 12, md: 4 }}>
               <Box
                 component="a"
-                href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
+                // href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
+                href="https://www.google.com/maps/search/?api=1&query=21.197300682511592, 79.07007964394755"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-card-link"
@@ -765,7 +781,7 @@ export default function ContactPage() {
 
                   <Button
                     component="a"
-                    href="https://www.google.com/maps/search/?api=1&query=93+Eross+Society+Shri+Krushna+Nagar+Nagpur"
+                    href="https://www.google.com/maps/search/?api=1&query=21.197300682511592, 79.07007964394755"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="map-link"

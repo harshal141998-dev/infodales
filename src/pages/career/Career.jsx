@@ -47,46 +47,46 @@ const FILTERS = [
 const JOBS = [
     {
         id: 1, category: "aem", icon: <ArchitectureIcon sx={{ fontSize: 20 }} />, badge: "AEM Practice", badgeColor: "blue",
-        title: "Senior AEM Architect", location: "Full-time / Hybrid (Pune / Remote)",
-        desc: "Lead enterprise multi-tier Adobe Experience Manager deployments. Drive Sling models, OSGi configurations, Dispatcher tuning, and headless decoupled CMS integrations.",
-        tags: ["AEM 6.5 / Cloud", "Java 17", "Sling Models", "GraphQL", "Osgi"], tier: "Tier: Principal / 8+ Yrs",
+        title: "AEM Developer", location: "Full-time / Hybrid (Pune / Remote)",
+        desc: "Build and maintain components, templates, and services on Adobe Experience Manager. Work with Sling Models, OSGi configurations, and Dispatcher rules, and contribute to headless integrations using GraphQL and Content Fragments.",
+        tags: ["AEM 6.5 / Cloud", "Java 17", "Sling Models", "GraphQL", "Osgi"], tier: "Tier: 3+ Yrs",
         keywords: "aem adobe experience manager java sling osgi architect cms",
     },
-    {
-        id: 2, category: "aem", icon: <CodeIcon sx={{ fontSize: 20 }} />, badge: "AEM Practice", badgeColor: "blue",
-        title: "Adobe Experience Manager Lead Developer", location: "Full-time / Hybrid (Bengaluru)",
-        desc: "Design reusable core components, manage client libraries, establish CI/CD release pipelines via Cloud Manager, and mentor core engineering squads.",
-        tags: ["Core Components", "HTL / Sightly", "Cloud Manager", "Maven"], tier: "Tier: Lead / 5-8 Yrs",
-        keywords: "aem adobe developer htl sightly component authoring cloud",
-    },
-    {
-        id: 3, category: "testing", icon: <SmartToyIcon sx={{ fontSize: 20 }} />, badge: "Testing Practice", badgeColor: "emerald",
-        title: "SDET Automation Engineer (Playwright / Selenium)", location: "Full-time / Remote (India)",
-        desc: "Architect end-to-end testing frameworks across microservices and complex front-ends. Drive automated regression suites, pipeline integration, and non-functional verifications.",
-        tags: ["Playwright", "Selenium Grid", "TypeScript", "CI/CD"], tier: "Tier: Mid-Senior / 4-7 Yrs",
-        keywords: "testing test automation sdet playwright selenium typescript quality ci/cd",
-    },
-    {
-        id: 4, category: "testing", icon: <SpeedIcon sx={{ fontSize: 20 }} />, badge: "Testing Practice", badgeColor: "emerald",
-        title: "Performance & API QA Lead", location: "Full-time / Hybrid (Pune)",
-        desc: "Establish load testing benchmarks, API schema contracts, security vulnerability scans, and distributed load simulations for high-scale enterprise platforms.",
-        tags: ["k6", "JMeter", "REST-Assured", "Postman CLI"], tier: "Tier: Lead / 6+ Yrs",
-        keywords: "testing jmeter k6 rest-assured performance api load qa lead",
-    },
-    {
-        id: 5, category: "salesforce", icon: <CloudSyncIcon sx={{ fontSize: 20 }} />, badge: "Salesforce Practice", badgeColor: "cyan",
-        title: "Salesforce Tech Lead / OmniStudio Specialist", location: "Full-time / Hybrid (Bengaluru)",
-        desc: "Lead multi-cloud implementations across Service Cloud, Experience Cloud, and OmniStudio. Craft lightning web components, asynchronous Apex, and bi-directional ESB syncs.",
-        tags: ["OmniStudio", "LWC", "Apex Triggers", "Salesforce DX"], tier: "Tier: Tech Lead / 7+ Yrs",
-        keywords: "salesforce omnistudio lwc apex crm technical lead cloud",
-    },
-    {
-        id: 6, category: "salesforce", icon: <HubIcon sx={{ fontSize: 20 }} />, badge: "Salesforce & Cloud", badgeColor: "cyan",
-        title: "Cloud Solutions Architect", location: "Full-time / Remote",
-        desc: "Orchestrate CRM domain governance, identity management (SSO/OAuth2), and mission-critical enterprise integration pipelines with MuleSoft and event streaming architectures.",
-        tags: ["Enterprise Arch", "MuleSoft", "Kafka", "AWS / Cloud"], tier: "Tier: Principal / 10+ Yrs",
-        keywords: "salesforce cloud solutions architect integration enterprise middleware mulesoft",
-    },
+    // {
+    //     id: 2, category: "aem", icon: <CodeIcon sx={{ fontSize: 20 }} />, badge: "AEM Practice", badgeColor: "blue",
+    //     title: "Adobe Experience Manager Lead Developer", location: "Full-time / Hybrid (Bengaluru)",
+    //     desc: "Design reusable core components, manage client libraries, establish CI/CD release pipelines via Cloud Manager, and mentor core engineering squads.",
+    //     tags: ["Core Components", "HTL / Sightly", "Cloud Manager", "Maven"], tier: "Tier: Lead / 5-8 Yrs",
+    //     keywords: "aem adobe developer htl sightly component authoring cloud",
+    // },
+    // {
+    //     id: 3, category: "testing", icon: <SmartToyIcon sx={{ fontSize: 20 }} />, badge: "Testing Practice", badgeColor: "emerald",
+    //     title: "SDET Automation Engineer (Playwright / Selenium)", location: "Full-time / Remote (India)",
+    //     desc: "Architect end-to-end testing frameworks across microservices and complex front-ends. Drive automated regression suites, pipeline integration, and non-functional verifications.",
+    //     tags: ["Playwright", "Selenium Grid", "TypeScript", "CI/CD"], tier: "Tier: Mid-Senior / 4-7 Yrs",
+    //     keywords: "testing test automation sdet playwright selenium typescript quality ci/cd",
+    // },
+    // {
+    //     id: 4, category: "testing", icon: <SpeedIcon sx={{ fontSize: 20 }} />, badge: "Testing Practice", badgeColor: "emerald",
+    //     title: "Performance & API QA Lead", location: "Full-time / Hybrid (Pune)",
+    //     desc: "Establish load testing benchmarks, API schema contracts, security vulnerability scans, and distributed load simulations for high-scale enterprise platforms.",
+    //     tags: ["k6", "JMeter", "REST-Assured", "Postman CLI"], tier: "Tier: Lead / 6+ Yrs",
+    //     keywords: "testing jmeter k6 rest-assured performance api load qa lead",
+    // },
+    // {
+    //     id: 5, category: "salesforce", icon: <CloudSyncIcon sx={{ fontSize: 20 }} />, badge: "Salesforce Practice", badgeColor: "cyan",
+    //     title: "Salesforce Tech Lead / OmniStudio Specialist", location: "Full-time / Hybrid (Bengaluru)",
+    //     desc: "Lead multi-cloud implementations across Service Cloud, Experience Cloud, and OmniStudio. Craft lightning web components, asynchronous Apex, and bi-directional ESB syncs.",
+    //     tags: ["OmniStudio", "LWC", "Apex Triggers", "Salesforce DX"], tier: "Tier: Tech Lead / 7+ Yrs",
+    //     keywords: "salesforce omnistudio lwc apex crm technical lead cloud",
+    // },
+    // {
+    //     id: 6, category: "salesforce", icon: <HubIcon sx={{ fontSize: 20 }} />, badge: "Salesforce & Cloud", badgeColor: "cyan",
+    //     title: "Cloud Solutions Architect", location: "Full-time / Remote",
+    //     desc: "Orchestrate CRM domain governance, identity management (SSO/OAuth2), and mission-critical enterprise integration pipelines with MuleSoft and event streaming architectures.",
+    //     tags: ["Enterprise Arch", "MuleSoft", "Kafka", "AWS / Cloud"], tier: "Tier: Principal / 10+ Yrs",
+    //     keywords: "salesforce cloud solutions architect integration enterprise middleware mulesoft",
+    // },
 ];
 
 const TIPS = [
@@ -129,7 +129,7 @@ export default function CareerPage() {
     const [modalOpen, setModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Technical Position");
     const [form, setForm] = useState({ name: "", email: "", link: "", consent: false });
-    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdO4wxvifRuTRB-_h8wdi5kEDpnAa9jN9Tsd3TO-JK51wVNGQ/viewform?usp=header";
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc37u3caV0FkOQhmkyWwvk4LkjKqkiOguMkCtx1Df-76z3rpw/viewform?usp=header";
 
     const filteredJobs = useMemo(() => {
         const q = query.toLowerCase().trim();
