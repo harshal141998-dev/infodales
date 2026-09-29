@@ -18134,7 +18134,7 @@ public class Products {
       label: "Image Left",
       className: "image-left",
       image:
-        `${import.meta.env.BASE_URL}/images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp`,
+        `${import.meta.env.BASE_URL}images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_left_image.webp`,
     },
     {
       value: "right",
@@ -18148,7 +18148,7 @@ public class Products {
       label: "Image Full",
       className: "image-full",
       image:
-        `${import.meta.env.BASE_URL}/images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp`,
+        `${import.meta.env.BASE_URL}images/blogs/eds/blockoption-universal-editor-eds/block_option_eds_full_image.webp`,
     },
   ],
 },

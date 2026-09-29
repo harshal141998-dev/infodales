@@ -55,6 +55,19 @@ function ContentItem({ item }) {
     );
   }
 
+  if (item.type === "centerParagraph") {
+    return (
+      <Typography className="article-centerParagraph">
+        {item.text}
+      </Typography>
+    );
+  }
+
+  if (item.type === "blockOptionDemo") {
+  return <BlockOptionDemo item={item} />;
+}
+
+
   if (
     item.type === "list" ||
     item.type === "numberedList"
@@ -140,6 +153,57 @@ if (item.type === "code") {
 
   return null;
 }
+
+function BlockOptionDemo({ item }) {
+  const [selectedValue, setSelectedValue] = useState(
+    item.options[0].value
+  );
+
+  const selectedOption = item.options.find(
+    (option) => option.value === selectedValue
+  );
+
+  return (
+    <div className="article-blockOptionDemo">
+
+      <div className="blockOptionDemo-controls">
+        <label htmlFor="block-option-layout">
+          {item.label}
+        </label>
+
+        <select
+          id="block-option-layout"
+          value={selectedValue}
+          onChange={(e) => setSelectedValue(e.target.value)}
+        >
+          {item.options.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
+
+        <div className="blockOptionDemo-class">
+          &lt;div class="block promo-showcase{" "}
+          <strong>{selectedOption.className}</strong>
+          "&gt;
+        </div>
+      </div>
+
+      <div className="blockOptionDemo-image">
+        <img
+          src={selectedOption.image}
+          alt={`Promo Showcase with ${selectedOption.label}`}
+        />
+      </div>
+
+    </div>
+  );
+}
+
 
 export default function BlogDetailPage() {
   const [rating, setRating] = useState(50);
