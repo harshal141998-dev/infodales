@@ -4,8 +4,6 @@ import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import ShareIcon from '@mui/icons-material/Share';
-import MailIcon from '@mui/icons-material/Mail';
 import { navRoutes } from "../../routes/Routes";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -95,6 +93,8 @@ export default function Header() {
                                 <IconButton
                                     component="a"
                                     href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Email"
                                     sx={{
                                         width: 40,
@@ -115,6 +115,8 @@ export default function Header() {
                                 <IconButton
                                     component="a"
                                     href=""
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Email"
                                     sx={{
                                         width: 40,
@@ -237,6 +239,8 @@ export default function Header() {
                             <IconButton
                                 component="a"
                                 href="https://mail.google.com/mail/?view=cm&fs=1&to=info@infodales.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="Email"
                                 sx={{
                                     width: 36,
@@ -253,6 +257,28 @@ export default function Header() {
                                 }}
                             >
                                 <EmailOutlinedIcon sx={{ fontSize: 18 }} />
+                            </IconButton>
+                            <IconButton
+                                component="a"
+                                href=""
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Email"
+                                sx={{
+                                    width: 40,
+                                    height: 40,
+                                    borderRadius: "0.5rem",
+                                    bgcolor: "#0f172a",
+                                    border: "1px solid #1e293b",
+                                    color: "#94a3b8",
+                                    "&:hover": {
+                                        borderColor: "rgba(14,165,233,0.6)",
+                                        color: "#38bdf8",
+                                        bgcolor: "#0f172a",
+                                    },
+                                }}
+                            >
+                                <XIcon sx={{ fontSize: 18 }} />
                             </IconButton>
                         </Stack>
                         <Box sx={{ px: 2.5, pb: 3 }}>
