@@ -50,7 +50,17 @@ export default function Header() {
 
                             <Button
                                 component={RouterLink}
-                                to="/contact"
+                                 to="/contact#executive-advisory"
+                                //to="https://docs.google.com/forms/d/e/1FAIpQLSdvnHSKzwdbeHDIIEme870IpZY_C2IPYMAX9RpAC0ejphBtUA/viewform?usp=header"
+                                onClick={(e) => {
+                                    if (window.location.pathname === "/contact") {
+                                        e.preventDefault();
+                                        document.querySelector(".section-description")?.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start",
+                                        });
+                                    }
+                                }}
                                 disableElevation
                                 sx={{
                                     bgcolor: "#0EA5E9",
@@ -284,9 +294,21 @@ export default function Header() {
                         <Box sx={{ px: 2.5, pb: 3 }}>
                             <Button
                                 component={RouterLink}
-                                to="/contact"
-                                onClick={toggleDrawer(false)}
-                                fullWidth
+                                to="/contact#executive-advisory"
+                              // onClick={toggleDrawer(false)}
+                               onClick={(e) => {
+                                    toggleDrawer(false)(e);
+                                    if (window.location.pathname === "/contact") {
+                                        e.preventDefault();
+                                        setTimeout(() => {
+                                            document.querySelector(".section-description")?.scrollIntoView({
+                                                behavior: "smooth",
+                                                block: "start",
+                                            });
+                                        }, 400);
+                                    }
+                                }}
+                                //fullWidth
                                 disableElevation
                                 sx={{
                                     bgcolor: "#0EA5E9",

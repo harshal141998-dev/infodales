@@ -4,20 +4,24 @@ import { Box, Typography, Zoom } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 export default function ScrollTopUp() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [bottomOffset, setBottomOffset] = useState(32);
 
-  // Automatically scroll to top on every route change,
-  // except when returning to /blog where the user's previous scroll position is restored
+  // Automatically scroll to top on route change,
+  // except when navigating to an anchor hash (e.g. #executive-advisory)
+  // or when returning to /blog where the user's previous scroll position is restored
   useEffect(() => {
+    if (hash) {
+      return;
+    }
     const savedBlogScroll = sessionStorage.getItem("blog_scroll_pos");
     if (pathname === "/blog" && savedBlogScroll !== null) {
       return;
     }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   // Track scroll position, calculate scroll percentage, and adjust position to avoid covering footer icons
   useEffect(() => {

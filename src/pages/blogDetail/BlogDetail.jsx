@@ -1,5 +1,5 @@
 import {useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import {
   Box,
@@ -358,7 +358,7 @@ export default function BlogDetailPage() {
         </Box>
 
         {/* Author */}
-        <Box className="article-author">
+        <Box className="detail-author">
           <Box className="article-author-divider" />
 
           <Typography className="article-author-name">
