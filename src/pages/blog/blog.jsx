@@ -213,7 +213,7 @@ function ArticleCard({ article, onOpen }) {
   const handleOpen = () => onOpen(article.slug);
   return (
     <Card className="article-card"
-    onClick={handleOpen}
+      onClick={handleOpen}
       role="link"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -684,7 +684,7 @@ export default function BlogsPage() {
       </Container>
 
       {/* ADVISORY SECTION */}
-      <Container maxWidth="xl" className="advisory-container">
+      {/* <Container maxWidth="xl" className="advisory-container">
         <Box className="advisory-panel">
           <Grid container spacing={4} alignitems="stretch">
             {[
@@ -713,7 +713,7 @@ export default function BlogsPage() {
             ))}
           </Grid>
         </Box>
-      </Container>
+      </Container> */}
     </Box>
   );
 }

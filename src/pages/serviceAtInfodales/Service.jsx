@@ -349,8 +349,8 @@ export default function ServicesPage() {
                                 </Box>
 
                                 <Box>
-                                    <Divider sx={{ borderColor: "#f1f5f9", mb: 2 }} />
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    {/* <Divider sx={{ borderColor: "#f1f5f9", mb: 2 }} /> */}
+                                    {/* <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                         <Typography variant="caption" sx={{ color: "#94a3b8", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", fontSize: "0.65rem" }}>
                                             {p.capsLabel}
                                         </Typography>
@@ -368,7 +368,7 @@ export default function ServicesPage() {
                                         >
                                             Learn More
                                         </Button>
-                                    </Box>
+                                    </Box> */}
                                 </Box>
                             </Card>
                         </Grid>
@@ -505,11 +505,11 @@ export default function ServicesPage() {
                                         >
                                             {c.icon}
                                         </Box>
-                                        <Chip
+                                        {/* <Chip
                                             label={c.badge}
                                             size="small"
                                             sx={{ bgcolor: "#f1f5f9", color: "#64748b", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.03em" }}
-                                        />
+                                        /> */}
                                     </Box>
 
 
