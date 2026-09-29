@@ -129,7 +129,7 @@ export default function CareerPage() {
     const [modalOpen, setModalOpen] = useState(false);
     const [modalTitle, setModalTitle] = useState("Technical Position");
     const [form, setForm] = useState({ name: "", email: "", link: "", consent: false });
-    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdO4wxvifRuTRB-_h8wdi5kEDpnAa9jN9Tsd3TO-JK51wVNGQ/viewform?usp=header";
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc37u3caV0FkOQhmkyWwvk4LkjKqkiOguMkCtx1Df-76z3rpw/viewform?usp=header";
 
     const filteredJobs = useMemo(() => {
         const q = query.toLowerCase().trim();
