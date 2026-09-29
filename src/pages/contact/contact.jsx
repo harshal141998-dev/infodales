@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -272,7 +273,7 @@ function GoogleFormCTA() {
   };
 
   return (
-    <Box className="inquiry-section">
+    <Box id="executive-advisory" className="inquiry-section" sx={{ scrollMarginTop: "90px" }}>
       <Box className="inquiry-heading" sx={{ textAlign: 'center' }}>
         {/* <Chip
           size="small"
@@ -639,6 +640,20 @@ function GoogleFormCTA() {
 // }
 
 export default function ContactPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#executive-advisory") {
+      const timer = setTimeout(() => {
+        const el = document.getElementById("executive-advisory");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
+
   return (
     <Box className="contact-page">
       <MapHero />
