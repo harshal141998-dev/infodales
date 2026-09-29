@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams, useLocation } from "react-router-dom";
 import { useRef } from "react";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -310,24 +310,61 @@ function ArticleDetail({ article, onBack }) {
 export default function BlogsPage() {
   const navigate = useNavigate();
   const { slug } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("All Articles");
-  const [page, setPage] = useState(1);
-  const [sortOrder, setSortOrder] = useState("latest");
+  const categoryParam = searchParams.get("category");
+  const pageParam = searchParams.get("page");
+  const searchParam = searchParams.get("search");
+  const sortParam = searchParams.get("sort");
+
+  const [search, setSearch] = useState(searchParam || "");
+  const [category, setCategory] = useState(categoryParam || "All Articles");
+  const [page, setPage] = useState(pageParam ? parseInt(pageParam, 10) : 1);
+  const [sortOrder, setSortOrder] = useState(sortParam || "latest");
 
   const pageSize = 9;
 
-  //   useEffect(() => {
-  //   const currentPath = window.location.hash.replace("#", "");
+  // Sync state if URL search parameters change (e.g. browser back/forward)
+  useEffect(() => {
+    const cat = searchParams.get("category") || "All Articles";
+    const pg = parseInt(searchParams.get("page"), 10) || 1;
+    const q = searchParams.get("search") || "";
+    const s = searchParams.get("sort") || "latest";
 
-  //   if (
-  //     currentPath !== "/blogs" &&
-  //     !currentPath.startsWith("/blogs/")
-  //   ) {
-  //     navigate("/blogs", { replace: true });
-  //   }
-  // }, [navigate]);
+    setCategory(cat);
+    setPage(pg);
+    setSearch(q);
+    setSortOrder(s);
+  }, [searchParams]);
+
+  // Restore scroll position when returning from an article
+  useEffect(() => {
+    const savedScrollPos = sessionStorage.getItem("blog_scroll_pos");
+    if (savedScrollPos !== null) {
+      const targetY = parseInt(savedScrollPos, 10);
+      sessionStorage.removeItem("blog_scroll_pos");
+      const timer = setTimeout(() => {
+        window.scrollTo({
+          top: targetY,
+          left: 0,
+          behavior: "instant",
+        });
+      }, 50);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const updateUrlParams = (newCat, newPg, newSearch, newSort) => {
+    const params = new URLSearchParams();
+    if (newCat && newCat !== "All Articles") params.set("category", newCat);
+    if (newPg && newPg > 1) params.set("page", newPg.toString());
+    if (newSearch && newSearch.trim()) params.set("search", newSearch.trim());
+    if (newSort && newSort !== "latest") params.set("sort", newSort);
+
+    setSearchParams(params, { replace: true });
+  };
 
   const selectedArticle = articles.find(
     (article) => article.slug === slug
@@ -340,11 +377,6 @@ export default function BlogsPage() {
       const matchesCategory =
         category === "All Articles" ||
         article.category === category;
-      // (category === "Dispatcher & Cloud"
-      //   ? ["Dispatcher", "Dispatcher & Cloud"].includes(
-      //       article.category
-      //     )
-      //   : article.category === category);
 
       const matchesSearch =
         !term || article.title.toLowerCase().includes(term) ||
@@ -404,22 +436,54 @@ export default function BlogsPage() {
   const selectCategory = (value) => {
     setCategory(value);
     setPage(1);
+    updateUrlParams(value, 1, search, sortOrder);
+  };
+
+  const handlePageChange = (value) => {
+    setPage(value);
+    updateUrlParams(category, value, search, sortOrder);
+    document
+      .getElementById("articles")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSortChange = (value) => {
+    setSortOrder(value);
+    setPage(1);
+    updateUrlParams(category, 1, search, value);
   };
 
   const handleSearch = () => {
     setPage(1);
-
+    updateUrlParams(category, 1, search, sortOrder);
     document
       .getElementById("articles")
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const openArticle = (articleSlug) => {
-    navigate(`/blogs/${articleSlug}`);
+    sessionStorage.setItem("blog_scroll_pos", window.scrollY.toString());
+
+    const params = new URLSearchParams();
+    if (category && category !== "All Articles") params.set("category", category);
+    if (page && page > 1) params.set("page", page.toString());
+    if (search && search.trim()) params.set("search", search.trim());
+    if (sortOrder && sortOrder !== "latest") params.set("sort", sortOrder);
+
+    const queryString = params.toString() ? `?${params.toString()}` : "";
+    navigate(`/blogs/${articleSlug}`, {
+      state: { from: `${location.pathname}${queryString}` },
+    });
   };
 
   const backToBlogs = () => {
-    navigate("/blog");
+    if (location.state?.from) {
+      navigate(location.state.from);
+    } else if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/blog");
+    }
   };
 
   if (slug) {
@@ -508,10 +572,7 @@ export default function BlogsPage() {
             category={category}
             onSelectCategory={selectCategory}
             sortOrder={sortOrder}
-            onSortChange={(value) => {
-              setSortOrder(value);
-              setPage(1);
-            }}
+            onSortChange={handleSortChange}
             articles={articles}
           />
         </Container>
@@ -603,7 +664,7 @@ export default function BlogsPage() {
             <Pagination
               count={pageCount}
               page={page}
-              onChange={(_, value) => setPage(value)}
+              onChange={(_, value) => handlePageChange(value)}
               shape="rounded"
               color="primary"
             />

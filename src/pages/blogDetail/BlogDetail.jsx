@@ -1,7 +1,6 @@
 import {useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 import {
   Box,
   Container,
@@ -146,6 +145,17 @@ export default function BlogDetailPage() {
   const [rating, setRating] = useState(50);
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleBackToBlogs = () => {
+    if (location.state?.from) {
+      navigate(location.state.from);
+    } else if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/blog");
+    }
+  };
 
   const article = articles.find(
     (item) => item.slug === slug
@@ -271,7 +281,7 @@ export default function BlogDetailPage() {
         {/* Back */}
         <button
           className="article-back"
-          onClick={() => navigate("/blog")}
+          onClick={handleBackToBlogs}
         >
           <ArrowBackIcon />
           Back to Blogs
