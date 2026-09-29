@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 
@@ -56,24 +56,12 @@ function ContentItem({ item }) {
     );
   }
 
-  if (item.type === "centerParagraph") {
-    return (
-      <Typography className="article-centerParagraph">
-        {item.text}
-      </Typography>
-    );
-  }
-  
-   if (item.type === "blockOptionDemo") {
-  return <BlockOptionDemo item={item} />;
-}
-
   if (
     item.type === "list" ||
     item.type === "numberedList"
   ) {
     return (
-      <Box component="ol" className="article-list" start={item.start}>
+      <Box component="ol" className="article-list">
         {item.items?.map((listItem, index) => (
           <li key={index}>
             {typeof listItem === "string" ? (
@@ -91,65 +79,49 @@ function ContentItem({ item }) {
   }
 
   if (item.type === "bulletList") {
-    return (
+  return (
+    <Box
+      component="ul"
+      className="article-list article-bullet-list"
+    >
+      {item.items?.map((listItem, index) => (
+        <li key={index}>
+          {typeof listItem === "string" ? (
+            listItem
+          ) : (
+            <>
+              <strong>{listItem.title}:</strong>{" "}
+              {listItem.text}
+            </>
+          )}
+        </li>
+      ))}
+    </Box>
+  );
+}
+
+if (item.type === "code") {
+  return (
+    <Box className="article-code">
       <Box
-        component="ul"
-        className="article-list article-bullet-list"
+        component="pre"
+        className="article-code-block"
       >
-        {item.items?.map((listItem, index) => (
-          <li key={index}>
-            {typeof listItem === "string" ? (
-              listItem
-            ) : (
-              <>
-                <strong>{listItem.title}:</strong>{" "}
-                {listItem.text}
-              </>
-            )}
-          </li>
-        ))}
+        <code>{item.code}</code>
       </Box>
-    );
-  }
+    </Box>
+  );
+}
 
-  if (item.type === "code") {
-    return (
-      <Box className="article-code">
-        <Box
-          component="pre"
-          className="article-code-block"
-        >
-          <code>{item.code}</code>
-        </Box>
-      </Box>
-    );
-  }
-
-  
-
-  // if (item.type === "image") {
-  //   const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
-
-  //   return (
-  //     <Box className="article-image">
-  //       <img
-  //         src={resolvedSrc}
-  //         alt={item.alt || ""}
-  //         style={item.style}
-  //       />
-  //     </Box>
-  //   );
-  // }
   if (item.type === "image") {
-    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, "")}`;
-    const { maxWidth, ...restStyle } = item.style || {};
+    const resolvedSrc = `${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`;
 
     return (
       <Box className="article-image">
         <img
           src={resolvedSrc}
           alt={item.alt || ""}
-          style={{ ...restStyle, "--img-max": maxWidth }}
+          style={item.style}
         />
       </Box>
     );
@@ -170,56 +142,6 @@ function ContentItem({ item }) {
   return null;
 }
 
-function BlockOptionDemo({ item }) {
-  const [selectedValue, setSelectedValue] = useState(
-    item.options[0].value
-  );
-
-  const selectedOption = item.options.find(
-    (option) => option.value === selectedValue
-  );
-
-  return (
-    <div className="article-blockOptionDemo">
-
-      <div className="blockOptionDemo-controls">
-        <label htmlFor="block-option-layout">
-          {item.label}
-        </label>
-
-        <select
-          id="block-option-layout"
-          value={selectedValue}
-          onChange={(e) => setSelectedValue(e.target.value)}
-        >
-          {item.options.map((option) => (
-            <option
-              key={option.value}
-              value={option.value}
-            >
-              {option.label}
-            </option>
-          ))}
-        </select>
-
-        <div className="blockOptionDemo-class">
-          &lt;div class="block promo-showcase{" "}
-          <strong>{selectedOption.className}</strong>
-          "&gt;
-        </div>
-      </div>
-
-      <div className="blockOptionDemo-image">
-        <img
-          src={selectedOption.image}
-          alt={`Promo Showcase with ${selectedOption.label}`}
-        />
-      </div>
-
-    </div>
-  );
-}
-
 export default function BlogDetailPage() {
   const [rating, setRating] = useState(50);
   const { slug } = useParams();
@@ -233,6 +155,80 @@ export default function BlogDetailPage() {
   // and gives back the running total for that post. Called before any
   // early return so hook order stays consistent, per React's rules of hooks.
   const { views } = useViewCounter(article?.slug, true);
+
+  //SEO meta tags
+
+    // ---------- SEO: inject meta tags into <head> ----------
+  useEffect(() => {
+    if (!article) return;
+
+    const setMeta = (attr, key, content) => {
+      if (content == null || content === "") return;
+      let tag = document.head.querySelector(`meta[${attr}="${key}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, key);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    const setLink = (rel, href) => {
+      if (!href) return;
+      let link = document.head.querySelector(`link[rel="${rel}"]`);
+      if (!link) {
+        link = document.createElement("link");
+        link.setAttribute("rel", rel);
+        document.head.appendChild(link);
+      }
+      link.setAttribute("href", href);
+    };
+
+    const pageUrl = window.location.href;
+    const pageTitle = article.metaTitle || article.title;
+    const pageDesc = article.metaDescription || article.description;
+
+    // <title>
+    document.title = pageTitle;
+
+    // Standard meta
+    setMeta("name", "description", pageDesc);
+    setMeta("name", "keywords", article.keywords);
+    setMeta("name", "author", article.authorName || article.author);
+    setMeta("name", "robots", "index, follow");
+
+    // Open Graph
+    setMeta("property", "og:locale", "en_US");
+    setMeta("property", "og:type", "website");
+    setMeta("property", "og:title", pageTitle);
+    setMeta("property", "og:description", pageDesc);
+    setMeta("property", "og:url", pageUrl);
+    setMeta("property", "og:site_name", "Infodales");
+
+    // Twitter
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", pageTitle);
+    setMeta("name", "twitter:description", pageDesc);
+
+    // Canonical
+    setLink("canonical", pageUrl);
+
+    // Optional cleanup so meta tags don't leak between blog posts
+    return () => {
+      [
+        'meta[name="description"]',
+        'meta[name="keywords"]',
+        'meta[name="author"]',
+        'meta[name="robots"]',
+        'meta[property^="og:"]',
+        'meta[name^="twitter:"]',
+        'link[rel="canonical"]',
+      ].forEach((sel) =>
+        document.head.querySelectorAll(sel).forEach((el) => el.remove())
+      );
+    };
+  }, [article]);
+  // ---------- end SEO ----------
 
   if (!article) {
     return (
@@ -267,18 +263,9 @@ export default function BlogDetailPage() {
     <Box className="article-detail-page">
       <Container maxWidth={false}
         sx={{
-          // maxWidth: "1250px",
-          // margin: "0 auto",
-          // px: { xs: 2, md: 3 },
-          width: {
-            xs: "calc(100% - 40px)",
-            sm: "calc(100% - 60px)",
-            md: "calc(100% - 90px)",
-          },
-          width: "calc(100% - 100px)",
           maxWidth: "1250px",
           margin: "0 auto",
-          px: 0,
+          px: { xs: 2, md: 3 },
         }}>
 
         {/* Back */}
