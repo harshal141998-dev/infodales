@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound/NotFound";
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter>
       <Header />
       <ScrollTopUp />
       <Routes>
