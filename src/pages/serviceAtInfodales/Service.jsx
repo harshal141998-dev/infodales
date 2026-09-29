@@ -41,7 +41,7 @@ const PILLARS = [
         icon: <DeveloperBoardIcon sx={{ fontSize: 22 }} />,
         title: "AEM Web Development",
         subtitle: "cq5/AEM CMS Architecture & Delivery",
-        desc: "There are lots of AEM development companies offering cq5/AEM CMS implementation and expertise in AEM Manager. But choosing the right one always matters. Infodales Tech Solutions provides delivery teams aligned to your timezone to serve you better.",
+        desc: "Many AEM development companies offer cq5/AEM CMS implementation and expertise in Adobe Experience Manager. Choosing the right one matters. Infodales Tech Solutions provides delivery teams aligned to your time zone to serve you better.",
         capsLabel: "Adobe Cloud",
         caps: [
             "Multi-site Management (MSM)",
@@ -56,7 +56,7 @@ const PILLARS = [
         icon: <BugReportIcon sx={{ fontSize: 22 }} />,
         title: "Quality Assurance with Cypress",
         subtitle: "Continuous Verification & Modern E2E",
-        desc: "Automation testing applies tools and technology to test software with the goal of reducing testing effort while delivering capability faster and more affordably — building better quality software with less effort.",
+        desc: "Automation testing applies tools and technology to test software with the goal of reducing testing effort while delivering capability faster and more affordably — building better-quality software with less effort.",
         capsLabel: "Zero-Flake CI/CD",
         caps: [
             "End-to-End Cypress Frameworks",
@@ -89,7 +89,7 @@ const AEM_MODULES = [
         num: "01",
         title: "Adobe AEM Sites",
         icon: <GridViewIcon sx={{ fontSize: 18 }} />,
-        desc: "Build and manage multiple responsively designed sites, tailored across different regions & languages from a central platform. Optimize your eCommerce site, launch marketing campaigns and deliver unified experiences across touchpoints with Adobe AEM Sites.",
+        desc: "Build and manage multiple responsively designed sites, tailored across different regions and languages from a central platform. Optimize your eCommerce site, launch marketing campaigns, and deliver unified experiences across touchpoints with Adobe AEM Sites.",
     },
     {
         num: "02",
@@ -101,19 +101,19 @@ const AEM_MODULES = [
         num: "03",
         title: "Adobe AEM Assets",
         icon: <PermMediaIcon sx={{ fontSize: 18 }} />,
-        desc: "Manage and deliver images, videos and content across devices and screens while automatically assigning metadata and tags to all your assets. Develop customized versions of your assets to deliver personalized and targeted experiences to your users.",
+        desc: "Manage and deliver images, videos, and content across devices and screens while automatically assigning metadata and tags to all your assets. Develop customized versions of your assets to deliver personalized and targeted experiences to your users.",
     },
     {
         num: "04",
         title: "Adobe AEM Forms",
         icon: <DescriptionIcon sx={{ fontSize: 18 }} />,
-        desc: "The easy drag-and-drop interface of Adobe CMS empowers you to quickly develop and update mobile apps using a single codebase for multiple platforms. You can even analyze your app's performance & metrics by leveraging the built-in Adobe Analytics.",
+        desc: "Adobe AEM Forms empowers you to create, manage, and deliver responsive digital forms. Its drag-and-drop form editor, reusable components, and built-in validation help you build adaptive forms that integrate with your backend systems and provide a smooth experience across devices.",
     },
     {
         num: "05",
         title: "Adobe Analytics",
         icon: <InsightsIcon sx={{ fontSize: 18 }} />,
-        desc: "Integrate Adobe Experience Manager with various third-party tools to deliver consistent content experiences across all channels. Its headless capabilities help you establish complete ownership of your content and flexibly update it as per user demographics and statistics.",
+        desc: "Integrate Adobe Experience Manager with various third-party tools to deliver consistent content experiences across all channels. Its headless capabilities help you establish complete ownership of your content and flexibly update it according to user demographics and statistics.",
     },
     {
         num: "06",
@@ -131,7 +131,7 @@ const TESTING_CARDS = [
         tag: "Human-Centric Review",
         badge: "HUMAN PARITY",
         title: "Manual Testing",
-        desc: "Manual testing is the most important part of any test strategy which helps QAs to gain deeper insight from an end user's perspective. Since manual testing is carried out by a human, it judges software from the most important metric: User Experience.",
+        desc: "Manual testing is an essential part of any test strategy, which helps QA engineers gain deeper insight from an end user's perspective. Since manual testing is carried out by a human, it judges software by the most important metric: user experience.",
         points: ["Exploratory & Usability Evaluation", "Cross-Browser / Multi-Device Parity", "Edge Case & Localization Auditing"],
     },
     {
@@ -139,7 +139,7 @@ const TESTING_CARDS = [
         tag: "Continuous Velocity",
         badge: "CI/CD SUITE",
         title: "Automation Testing with Cypress",
-        desc: "Automation testing is the application of tools and technology to test software with the goal of reducing testing effort, delivering capability faster and more affordably. It helps in building better quality software with less effort.",
+        desc: "Automation testing is the application of tools and technology to test software with the goal of reducing testing effort and delivering capability faster and more affordably. It helps in building better-quality software with less effort.",
         points: ["Headless CI/CD Pipeline Runs", "Real-Time Video & DOM Snapshot Logs", "Deterministic, Flake-Free Execution"],
     },
     {
@@ -192,11 +192,11 @@ export default function ServicesPage() {
                         </Typography>
 
                         <Typography sx={{ color: "#7dd3fc", fontWeight: 600, fontSize: { xs: "1.125rem", md: "1.375rem" }, mb: 2, maxWidth: 650 }}>
-                            Services we Offer — Solutions that speak for themselves : Explore our services today.
+                            Solutions that speak for themselves. Explore our services today.
                         </Typography>
 
                         <Typography sx={{ color: "#cbd5e1", fontSize: { xs: "1rem", md: "1.125rem" }, lineHeight: 1.6, maxWidth: 700, mb: 5 }}>
-                            Infodales delivers mission-critical technical execution for global enterprises. From multi-tiered Adobe
+                            Infodales delivers mission-critical technical execution for global enterprises, from multi-tiered Adobe
                             Experience Manager deployments to high-velocity Cypress automation pipelines, scalable Salesforce
                             clouds, and hyper-performant Edge Delivery Services.
                         </Typography>
@@ -253,7 +253,7 @@ export default function ServicesPage() {
                         Primary Practice Pillars
                     </Typography>
                     <Typography sx={{ color: "#64748b", maxWidth: 600, fontSize: "0.95rem" }}>
-                        Structured engineering practices delivering strict code governance, sub-second continuous
+                        Our structured engineering practices deliver strict code governance, sub-second continuous
                         automation, and enterprise ecosystem scalability.
                     </Typography>
                 </Box>
@@ -393,7 +393,7 @@ export default function ServicesPage() {
                             fontWeight={800}
                             sx={{ color: "#fff", fontSize: { xs: "1.5rem", md: "2.25rem" }, letterSpacing: "-0.02em", mb: 2 }}
                         >
-                            What to expect from Adobe Experience Manager
+                            What to expect from Adobe Experience Manager?
                         </Typography>
                         <Typography sx={{ color: "#94a3b8", fontSize: { xs: "0.875rem", md: "1rem" }, lineHeight: 1.7 }}>
                             Discover how the fusion of modern Edge Delivery Services and enterprise Adobe Experience Manager

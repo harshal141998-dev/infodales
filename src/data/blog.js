@@ -22,17 +22,17 @@ export const articles = [
 
       {
         type: "paragraph",
-        text: "Dispatcher is an Apache HTTP Web Server. It is used for exercising the functionalities such as caching, load balancing providing and limiting access of domains and security.",
+        text: "Dispatcher is an Apache HTTP Web Server. It is used for exercising the functionalities such as caching, load balancing, providing and limiting access to domains, and security.",
       },
 
       {
         type: "paragraph",
-        text: "AEM publish instance cannot communicate with the dispatcher (web server) and so AEM module helps in the task. It conveys the requests of the dispatcher to the Publish instance and provides the response from the publish instance to the dispatcher back again.",
+        text: "AEM publish instance cannot communicate with the dispatcher (web server) and so AEM module helps in the task. It conveys the requests of the dispatcher to the Publish instance and provides the response from the publish instance back to the dispatcher.",
       },
 
       {
         type: "paragraph",
-        text: "First any request coming from the client goes to Content Delivery Network (CDN), if the response is available, is returned else it goes to Dispatcher where again the response availability is checked in cache. If found it is returned else it goes to the publish instance to fetch the response of the request and travels back the same route to serve the response to the client.",
+        text: "First, any request coming from the client goes to the Content Delivery Network (CDN). If the response is available, it is returned; otherwise, the request goes to the Dispatcher, where the response availability is checked again in the cache. If found, it is returned; otherwise, it goes to the publish instance to fetch the response and travels back the same route to serve the response to the client.",
       },
 
       {
@@ -50,7 +50,7 @@ export const articles = [
         type: "list",
         items: [
           "Download the provided version.",
-          "After download, open file to install it. You will find the following dialog box, click on next.",
+          "After the download, open the file to install it. You will find the following dialog box. Click Next.",
         ],
       },
 
@@ -68,7 +68,7 @@ export const articles = [
       {
         type: "list",
         items: [
-          "Accept the license and click on next and then you will find a Server Information dialog box. Add your respective network domain, server name and a working email address so that you get all the server related problems via email. Select the default port as 80 or else you can change it to 8000 for current user. Here the port is set to 80.",
+          "Accept the license and click Next, and then you will find a Server Information dialog box. Add your respective network domain, server name and a working email address so that you get all the server related problems via email. Select the default port as 80 or else you can change it to 8000 for current user. Here the port is set to 80.",
         ],
       },
 
@@ -93,7 +93,7 @@ export const articles = [
       {
         type: "list",
         items: [
-          "Click on Next, select Typical and then click on Next again and you will find the default location of installed Apache Server in your system. You can either change it or keep it same.",
+          "Click Next, select Typical, and then click Next again, and you will find the default location of installed Apache Server in your system. You can either change it or keep it same.",
         ],
       },
 
@@ -118,7 +118,7 @@ export const articles = [
       {
         type: "list",
         items: [
-          "Then click on Next, the setup is almost completed, click on install. Installation takes about 5 minutes.",
+          "Then click Next; the setup is almost completed. Click Install. Installation takes about 5 minutes.",
           "After installation is complete click Finish.",
         ],
       },
@@ -184,7 +184,7 @@ export const articles = [
       {
         type: "list",
         items: [
-          "In httpd.conf file you find your server root and administrator's email id which you added in server information dialog box.",
+          "In httpd.conf file you find your server root and administrator's email address which you added in server information dialog box.",
           "In IfModule provide location of dispatcher.any and also set the log level. In Directory add the handler and your httpd.conf file is ready.",
         ],
       },
@@ -210,7 +210,7 @@ export const articles = [
       {
         type: "list",
         items: [
-          "In order to setup Publish instance copy the jar and license of AEM to a new folder and rename the jar to publish instance jar with required port number. By default it is 4503 but here we have set it to 4506.",
+          "To set up the Publish instance, copy the jar and license of AEM to a new folder and rename the jar to publish instance jar with required port number. By default it is 4503 but here we have set it to 4506.",
         ],
       },
 
@@ -237,7 +237,7 @@ export const articles = [
         type: "list",
         items: [
           "Now we need to configure the port of publish instance in our author so go to author instance, then go to welcome page of author instance, find Replication options and select Agents on Author. Select Default Agent (publish) and edit.",
-          "In Transport tab you will find the url, change the port to 4506.",
+          "In Transport tab you will find the URL, change the port to 4506.",
         ],
       },
 
@@ -264,7 +264,7 @@ export const articles = [
       {
         type: "list",
         items: [
-          "Go to Felix console of publish instance and check whether all your bundles are Active or not once and if no then resolve the remaining dependencies which completes your publish instance setup.",
+          "Go to Felix console of publish instance and check whether all your bundles are Active. If not, resolve the remaining dependencies, which completes your publish instance setup.",
         ],
       },
 
@@ -293,10 +293,10 @@ export const articles = [
         type: "list",
         items: [
           "In /virtualhosts file we configure domains which are allowed in headers. Set your preferred domains here.",
-          "/filter section sets the paths of requests that you want your dispatcher to handle. You can enable open consoles (crx content repository, OSGI console, servlet engines), non-public content directories (/bin, /content, /home and so on) and can also deny content grabbing.",
+          "/filter section sets the paths of requests that you want your dispatcher to handle. You can enable open consoles (crx content repository, OSGi console, servlet engines), non-public content directories (/bin, /content, /home and so on) and can also deny content grabbing.",
           "/cache section consists of a docroot file wherein the dispatcher will store files relative to this directory, decline the subsequent requests and allow the web server to deliver them as regular static content.",
           "/statfileslevel indicates the hierarchy up to which a .stat file gets created that checks the time of cache in the dispatcher and that of replication in publish environment. If time of modification in publish environment is greater than that of the cache then it means there is an updated version available and this will delete the previously generated cache and allow the entry of new cache in the provided level.",
-          "In /rules section of /cache we have to specify how caching should happen according to the url generated. You can have your own rule sets.",
+          "In /rules section of /cache we have to specify how caching should happen according to the URL generated. You can have your own rule sets.",
         ],
       },
 
@@ -309,9 +309,9 @@ export const articles = [
       {
         type: "list",
         items: [
-          "Within the cache section we have /invalidate wherein we define which request needs to be available for dispatcher flushing after activation. You can set the dispatcher flush agent on both Author as well as on Publish but prefer setting it on publish because author is a development environment and modifications are tend to happen whereas publish is a read-only environment where unusual modifications happen only via publishing the pages by author instance.",
+          "Within the cache section we have /invalidate wherein we define which request needs to be available for dispatcher flushing after activation. You can set the dispatcher flush agent on both Author as well as on Publish but prefer setting it on publish because author is a development environment and modifications tend to happen whereas publish is a read-only environment where unusual modifications happen only via publishing the pages by author instance.",
           "Set the clients which can activate the content in /allowedClients section by providing the IP address and setting the /type “allow”.",
-          "/ignoreUrlParams section allows you to ignore query parameters passed in the url while caching the response.",
+          "/ignoreUrlParams section allows you to ignore query parameters passed in the URL while caching the response.",
           "Finally you can enable /auth_checker to check the whether the cached page which is requested for delivery matches its header with that of the one which is allowed via /filters by internally passing ‘?uri=’ parameter. If the status code becomes 200 then only the page is sent out for the delivery.",
         ],
       },
@@ -365,7 +365,7 @@ export const articles = [
 
       {
         type: "paragraph",
-        text: "I hope you find this blog informative, please share and for more blogs please surf our website.",
+        text: "I hope you find this blog informative. Please share it, and visit our website for more blogs.",
       },
 
       {
@@ -1110,7 +1110,7 @@ MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
   },
   {
     slug: "spa-getting-started",
-    title: "Getting started with AEM SPA",
+    title: "Getting Started with AEM SPA",
     category: "AEM SPA",
     date: "2023-03-29",
     author: "Suchita Mishra",
@@ -1245,7 +1245,7 @@ MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
 
       {
         type: "paragraph",
-        text: "Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.",
+        text: "Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e., the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.",
       },
 
       {
@@ -1487,7 +1487,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
 
       {
         type: "paragraph",
-        text: "Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e, AEM component and React component and when we combine these two it makes a complete SPA component",
+        text: "Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e., AEM component and React component and when we combine these two it makes a complete SPA component",
       },
 
       {
@@ -2135,7 +2135,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
     author: "Shruti Meshram",
     keywords: "AEM Dispatcher vs Edge Delivery Services, Dispatcher vs EDS CDN, AEM CDN comparison, Edge Delivery Services CDN, AEM caching vs EDS, AEM performance, Dispatcher alternative, Infodales, Infodales AEM blog",
     description:
-      "Learn how to customize the EDS Sidekick to support authoring workflows and project requirements.",
+      "Compare the AEM Dispatcher with the Edge Delivery Services CDN and learn how caching, security, and content delivery differ between the two.",
     content: [
       {
         type: "paragraph",
@@ -2252,8 +2252,8 @@ frontendModule="react" -D aemVersion=6.5.0`,
       {
         type: "bulletList",
         items: [
-          "Path mapping (paths.yaml / paths.json) decides what public URL a piece of content gets at publish time. It's not a runtime rewrite, it's baked into how the content gets indexed and served.",
-          "The mapping works as a mountpoints-style rule: a content source path (e.g. a Google Drive folder, or /content/site/en/products/x when AEM is the source) is mapped to a shorter external path (/products/x).",
+          "Path mapping (paths.yaml / paths.json) decides what public URL a piece of content gets at publish time. It's not a runtime rewrite; it's baked into how the content gets indexed and served.",
+          "The mapping works as a mountpoints-style rule: a content source path (e.g., a Google Drive folder, or /content/site/en/products/x when AEM is the source) is mapped to a shorter external path (/products/x).",
           "Multiple mappings can coexist. You can shorten one section of the site while leaving another untouched, and even mount different content sources at different path prefixes.",
           "When AEM is the source, this file is paths.json; when it's Google Drive/SharePoint, it's paths.yaml. Same concept, different format depending on the authoring surface.",
         ],
@@ -2283,7 +2283,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
       {
         type: "bulletList",
         items: [
-          "The inner CDN (aem.page / aem.live) always exists by default. A custom domain sits in front of it, it doesn't replace it.",
+          "The inner CDN (aem.page / aem.live) always exists by default. A custom domain sits in front of it; it doesn't replace it.",
           "If you're using the Adobe-managed CDN, the domain is attached through Cloud Manager's Custom Domains screen: you supply the domain, Adobe gives you a CNAME target, and you either bring your own TLS certificate or let Adobe auto-provision one (renews automatically).",
           "If you're on a BYO CDN (Cloudflare, Akamai, CloudFront, your own Fastly), the domain is configured on your CDN vendor's side, then pointed at your aem.live origin. The config file (cdn.prod.host key) tells EDS which hostname is the \"production\" one for cache-header and push-invalidation purposes.",
           "Each git branch can carry its own domain mapping (helix-config.yaml), so main maps to your production domain, while other branches map to staging/preview domains automatically.",
@@ -2357,7 +2357,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
           {
             title: "Component-Filter",
             text:
-              "The rules for where the block is allowed to be used (e.g. only inside a Section) and, for container blocks, what child components it is allowed to contain.",
+              "The rules for where the block is allowed to be used (e.g., only inside a Section) and, for container blocks, what child components it is allowed to contain.",
           },
         ],
       },
@@ -2371,7 +2371,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
       {
         type: "paragraph",
         text:
-          "Mental model: the model / definition / filter JSON is the authoring contract that tells the Universal Editor how to let an author create and configure the block. The JS / CSS is the runtime behaviour that tells the browser how to actually render it. A block is incomplete until both sides exist and agree on the same block id.",
+          "Mental model: the model / definition / filter JSON is the authoring contract that tells the Universal Editor how to let an author create and configure the block. The JS / CSS is the runtime behavior that tells the browser how to actually render it. A block is incomplete until both sides exist and agree on the same block id.",
       },
 
       {
@@ -2503,7 +2503,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
       {
         type: "heading",
         level: 2,
-        text: "Step 4: Why Do We Run npm run build:json",
+        text: "Step 4: Why Do We Run npm run build:json?",
       },
 
       {
@@ -2567,7 +2567,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
       {
         type: "heading",
         level: 2,
-        text: "Step 5: Why Do We Run npm run lint",
+        text: "Step 5: Why Do We Run npm run lint?",
       },
 
       {
@@ -2725,7 +2725,7 @@ git push origin feature/hero-banner-block`,
         type: "bulletList",
         items: [
           "The PR sits with all checks green but is still not merge-eligible because a required review comment/checklist item is unchecked.",
-          "A reviewer requests changes simply asking \"what's the test URL?\" before they'll approve, since they have no way to visually verify the block.",
+          "A reviewer requests changes by simply asking \"what's the test URL?\" before they'll approve, since they have no way to visually verify the block.",
           "If the branch preview was never verified, a broken block (wrong field mapping, missing CSS, decorate() error) can slip through even though lint/build/tests all passed, because none of those checks actually render the page.",
         ],
       },
@@ -2808,13 +2808,13 @@ git push origin feature/hero-banner-block`,
   },
   {
     slug: "authoring-in-the-universal-editor",
-    title: "Authoring in the Universal editor",
+    title: "Authoring in the Universal Editor",
     category: "AEM EDS",
     date: "2026-09-10",
     author: "Ayush Khandekar",
     keywords: "AEM Universal Editor, Universal Editor authoring, Edge Delivery Services authoring, AEM WYSIWYG editor, Universal Editor tutorial, AEM EDS content authoring, visual editing AEM, Infodales, Infodales AEM blog",
     description:
-      "Learn Authoring in the universal editor: Content Tree, Components, Actions in detail",
+      "Learn how to author content in the Universal Editor, including the Content Tree, Components, and Actions, in detail.",
     content: [
       {
         type: "paragraph",
@@ -3105,7 +3105,7 @@ git push origin feature/hero-banner-block`,
     author: "Ayush Khandekar",
     keywords: "AEM EDS Universal Editor overview, Edge Delivery Services Universal Editor, Universal Editor architecture, AEM Universal Editor setup, EDS authoring options, Adobe Universal Editor guide, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
-      "Learn Authoring in the universal editor: Content Tree, Components, Actions in detail",
+      "Get an overview of how Edge Delivery Services and the Universal Editor work together to author, preview, and publish content.",
     content: [
       {
         type: "paragraph",
@@ -3210,7 +3210,7 @@ git push origin feature/hero-banner-block`,
           {
             title: "paths.json",
             text:
-              "Used by Universal Editor / xwalk projects to map a real AEM content path (e.g. /content/your-site/) to the site root instead.",
+              "Used by Universal Editor / xwalk projects to map a real AEM content path (e.g., /content/your-site/) to the site root instead.",
           },
         ],
       },
@@ -3808,7 +3808,7 @@ git push origin feature/hero-banner-block`,
     {
       type: "bulletList",
       items: [
-        "Create adaptive form with three fields drop down list , number and text field",
+        "Create adaptive form with three fields drop down list, number and text field",
       ],
     },
     {
@@ -4028,7 +4028,7 @@ git push origin feature/hero-banner-block`,
       items: [
         "In Datasource name you can provide any name that you wanted to keep.",
         "In JDBC Driver class you need to provide the driver class of your respective database.",
-        "In JDBC Connection URL you need to provide the url of database and proper database name as well.",
+        "In JDBC Connection URL you need to provide the URL of database and proper database name as well.",
         "Then click on save and your configuration is done.",
       ],
     },
@@ -4045,7 +4045,7 @@ git push origin feature/hero-banner-block`,
         "Then click on data integrations.",
         "Then click on create option.",
         "Inside that you will see form data model option click on it.",
-        "After clicking on it, add the title for form data model and click on next.",
+        "After clicking on it, add the title for the form data model and click Next.",
         "Then select the data source which you configured in data pooled configuration.",
         "And your form data model is created",
       ],
@@ -4053,7 +4053,7 @@ git push origin feature/hero-banner-block`,
     {
       type: "paragraph",
       text:
-        "After creating the form data model you need to do the required configuration. First you need to add the services GET, INSERT and UPDATE and after adding the services and database you need to test the individual service. After that you need to configure the default services you need for the form data model in this we configured GET, Insert this needs to configured because whenever you create a form your form uses this defualt services to submit the data in to the database.",
+        "After creating the form data model you need to do the required configuration. First you need to add the services GET, INSERT and UPDATE and after adding the services and database you need to test the individual service. After that you need to configure the default services you need for the form data model in this we configured GET, Insert this needs to configured because whenever you create a form your form uses this default services to submit the data in to the database.",
     },
     {
       type: "video",
@@ -4074,10 +4074,10 @@ git push origin feature/hero-banner-block`,
     {
       type: "bulletList",
       items: [
-        "We need to create an adpative form.",
+        "We need to create an adaptive form.",
         "While creating an adaptive form we need to select the proper form data model which we created.",
         "After creating form we need to map the fields of form with data model fields so that proper data gets submitted to respective fields in database.",
-        "Need to map submit button with form data model this confiuration is done when we edit the button in submissions we need to select submission type in that we need to select form data model below that we need to provide the form data model endpoint.",
+        "Need to map submit button with form data model this configuration is done when we edit the button in submissions we need to select submission type in that we need to select form data model below that we need to provide the form data model endpoint.",
         "After this your form is ready when you fill the data and submit the form it will get submitted to the database.",
       ],
     },
@@ -4750,7 +4750,7 @@ definitions:
       {
         type: "paragraph",
         text:
-          "Adobe Experience Manager is a headless Content Management System. The content from backend is delivered by two ways",
+          "Adobe Experience Manager is a headless Content Management System. The content from the backend is delivered in two ways",
       },
 
       {
@@ -4778,7 +4778,6 @@ definitions:
         items: [
           "Single end point.",
           "Status response is always 200.",
-          "Precise content delivery.",
           "Precise content delivery.",
         ],
       },
@@ -5074,7 +5073,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "Also in order to retrieve the only selected data you can add filters.",
+          "Also, in order to retrieve only the selected data, you can add filters.",
         ],
       },
 
@@ -5128,7 +5127,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "This will cache your query and then you can copy the url of selected query and hit on any browser to consume the data.",
+          "This will cache your query and then you can copy the URL of selected query and hit on any browser to consume the data.",
         ],
       },
 
@@ -5155,17 +5154,17 @@ definitions:
       {
         type: "paragraph",
         text:
-          "I hope you find this blog helpful and interesting. Please share and for more blogs surf our website.",
+          "I hope you find this blog helpful and interesting. Please share it, and visit our website for more blogs.",
       },
     ],
   },
   {
     slug: "slightly-in-aem",
-    title: "Slightly in AEM",
+    title: "Sightly (HTL) in AEM",
     category: "AEM Sites",
     date: "2023-01-07",
     author: "Shruti Meshram",
-    keywords: "Slightly in AEM, Slightly template language, HTL vs Slightly, AEM HTL alternative, AEM templating, Sightly HTL AEM, AEM Sites tutorial, Infodales, Infodales AEM blog",
+    keywords: "Sightly in AEM, Sightly template language, HTL vs Sightly, AEM HTL alternative, AEM templating, Sightly HTL AEM, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how HTL (Sightly) separates presentation logic from business logic in AEM.",
     content: [
@@ -5177,31 +5176,31 @@ definitions:
       {
         type: "heading",
         level: 3,
-        text: "Slightly in AEM",
+        text: "Sightly in AEM",
       },
 
       {
         type: "paragraph",
         text:
-          "In this blog we will be discussing Slightly in AEM. We will be focused upon understansing what exactly slightly is and what advantages does it provide.",
+          "In this blog we will be discussing Sightly in AEM. We will be focused upon understanding what exactly Sightly is and what advantages it provides.",
       },
 
       {
         type: "heading",
         level: 3,
-        text: "What Slightly",
+        text: "What is Sightly?",
       },
 
       {
         type: "paragraph",
         text:
-          "Slightly, commaonly referred as sly is a templating engine which is indeed a part of AEM's Slightly templating framework. It is segregates the business logic and presentation logic. It offers a cleaner way to develop frontend scripts.",
+          "Sightly, commonly referred to as sly, is a templating engine which is indeed a part of AEM's Sightly templating framework. It segregates the business logic and presentation logic. It offers a cleaner way to develop frontend scripts.",
       },
 
       {
         type: "paragraph",
         text:
-          "The main purpose of Slightly is not only to provide a clean, easy and maintainable rendering in AEM compared to JSP but also protects injection attacks.",
+          "The main purpose of Sightly is not only to provide a clean, easy and maintainable rendering in AEM compared to JSP but also protects injection attacks.",
       },
 
       {
@@ -5212,7 +5211,7 @@ definitions:
 
       {
         type: "paragraph",
-        text: "Slightly offers a very simple syntax.",
+        text: "Sightly offers a very simple syntax.",
       },
 
       {
@@ -5221,7 +5220,7 @@ definitions:
           {
             title: "Expression Language or Interpolation",
             text:
-              "Just like JSP, Slightly also offers expression language. The syntax for the same is ${expression}. This is used to evaluate the expression and display the result. It is used to display the value of a variable or an object.",
+              "Just like JSP, Sightly also offers expression language. The syntax for the same is ${expression}. This is used to evaluate the expression and display the result. It is used to display the value of a variable or an object.",
           },
           {
             title: "Attributes",
@@ -5239,13 +5238,13 @@ definitions:
       {
         type: "heading",
         level: 3,
-        text: "Commonly Used Tags used in Slightly",
+        text: "Commonly Used Tags used in Sightly",
       },
 
       {
         type: "bulletList",
         items: [
-          "data-sly-use is used to include sling models in slightly.",
+          "data-sly-use is used to include sling models in Sightly.",
         ],
       },
 
@@ -5386,7 +5385,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "data-sly-include is used to include the content of a some fragments or templates for resue here.",
+          "data-sly-include is used to include the content of a some fragments or templates for reuse here.",
         ],
       },
 
@@ -5416,7 +5415,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "data-sly-template Is used to add a resuable template in the current file.",
+          "data-sly-template Is used to add a reusable template in the current file.",
         ],
       },
 
@@ -5476,7 +5475,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "@context is one of the freqently used slightly attribute. @context = 'html' escapes the specail characters ensuring the content is treated as html.@context='url' ensures that the url is encoded properly. @context='text' ensures that the content is treated as plain text and @context='unsafe' renders the content without escaping which is really dangerous as it prone to XSS(cross-site-scripting) attacks.",
+          "@context is one of the frequently used Sightly attribute. @context = 'html' escapes the special characters ensuring the content is treated as html.@context='url' ensures that the URL is encoded properly. @context='text' ensures that the content is treated as plain text and @context='unsafe' renders the content without escaping which is really dangerous as it prone to XSS(cross-site-scripting) attacks.",
         ],
       },
 
@@ -5507,13 +5506,13 @@ definitions:
       {
         type: "paragraph",
         text:
-          "Here we come to the conclusion of the blog where we have understood how we can produce a frontent scripts using Slightly with some commonly used sly tags and their syntax.",
+          "Here we come to the conclusion of the blog where we have understood how we can produce a frontend scripts using Sightly with some commonly used sly tags and their syntax.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -5648,10 +5647,10 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "Structure: When we add components to the sturure, those components cannot de removed from the page directly and will be present in all the pages created with this template before or after adding the componnet.",
-          "Initial Content: When we add components to the initial content, those components can be removed from the page directly and will be present in all the pages created with this template after adding the componnet.",
-          "Layout: This adjests the layout of the container added on the template and also the components added.",
-          "Lets add a component to the template. Click on the container, go to policies and add a component. Here we have added breadcrumb component in structure and text component in initial content.",
+          "Structure: When we add components to the structure, those components cannot de removed from the page directly and will be present in all the pages created with this template before or after adding the component.",
+          "Initial Content: When we add components to the initial content, those components can be removed from the page directly and will be present in all the pages created with this template after adding the component.",
+          "Layout: This adjusts the layout of the container added on the template and also the components added.",
+          "Let's add a component to the template. Click on the container, go to policies and add a component. Here we have added breadcrumb component in structure and text component in initial content.",
         ],
       },
 
@@ -5682,7 +5681,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "Now let us understand the this in crx/de. In conf folder, there exists your project folder there in you find settings, wcm and templates. In templates your templates are stored with policies, structure and inital content. In template types, your base template is stored.",
+          "Now let us understand the this in crx/de. In conf folder, there exists your project folder there in you find settings, wcm and templates. In templates your templates are stored with policies, structure and initial content. In template types, your base template is stored.",
         ],
       },
 
@@ -5707,7 +5706,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "In inital jcr:content, we need to add the sling:resourceType as our page component of the project. Also we can predefine the template to which the template type will be configured.",
+          "In initial jcr:content, we need to add the sling:resourceType as our page component of the project. Also we can predefine the template to which the template type will be configured.",
         ],
       },
 
@@ -5726,7 +5725,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "Similarly to root and container of the inital, we need to add the sling:resourceType property that points to the container comnponent of the project.",
+          "Similarly to root and container of the initial, we need to add the sling:resourceType property that points to the container component of the project.",
         ],
       },
 
@@ -5784,7 +5783,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "This ensures completion of creation of a custom template type for the p[urpose of creation of the template. When you navigate to tools then to templates and then to your project wherein you have specified the template type, you ca start to create a template with the custom template type now.",
+          "This ensures completion of creation of a custom template type for the purpose of creation of the template. When you navigate to tools then to templates and then to your project wherein you have specified the template type, you ca start to create a template with the custom template type now.",
         ],
       },
 
@@ -5809,7 +5808,7 @@ definitions:
       {
         type: "paragraph",
         text:
-          "cq:policy, in created templates is an important property that provides a reference to the content policy for paragraph system of the page along with the references to the actual components whereas the actual policy definations are stored under /settings/wcm/policies/wcm/foundation/components. Pages policies are the content policies for the main parsys container of the page.",
+          "cq:policy, in created templates is an important property that provides a reference to the content policy for paragraph system of the page along with the references to the actual components whereas the actual policy definitions are stored under /settings/wcm/policies/wcm/foundation/components. Pages policies are the content policies for the main parsys container of the page.",
       },
 
       {
@@ -5821,19 +5820,19 @@ definitions:
       {
         type: "heading",
         level: 3,
-        text: "Unavailibility of Templates while Creating a Page",
+        text: "Unavailability of Templates while Creating a Page",
       },
 
       {
         type: "paragraph",
         text:
-          "There comes a scenario that having created a template successfully, you may not be able to find one while crerating a page in project hierarchy. There could be two reasons, either it is in draft state or the template is not allowed in the hierarchy. If it is in draft state, you need to enable it as discussed above but what if we need to allow it in a hierarchy.",
+          "There comes a scenario that having created a template successfully, you may not be able to find one while creating a page in project hierarchy. There could be two reasons, either it is in draft state or the template is not allowed in the hierarchy. If it is in draft state, you need to enable it as discussed above but what if we need to allow it in a hierarchy.",
       },
 
       {
         type: "paragraph",
         text:
-          "Suppose you need to create a page in we-retail site hierarchy with your custom template. Despite being enabled, this custom template is not available in the hierarchy. This is because the template is not allowed in the hierarchy. To allow it, select the page within which you need to allow the template and click on the properties. Here you can see the advance tab. In advance tab, you will find template settings, allowed templates, add the path of the template in the allowed paths and there you go. You have the template available for creatinf the page.",
+          "Suppose you need to create a page in we-retail site hierarchy with your custom template. Despite being enabled, this custom template is not available in the hierarchy. This is because the template is not allowed in the hierarchy. To allow it, select the page within which you need to allow the template and click on the properties. Here you can see the advance tab. In advance tab, you will find template settings, allowed templates, add the path of the template in the allowed paths and there you go. You have the template available for creating the page.",
       },
 
       {
@@ -5863,13 +5862,13 @@ definitions:
       {
         type: "paragraph",
         text:
-          "We have successfully created a template and a page out of it. We also have a clear idea of structure, inital content and layout as well as we have a clear idea of where exactly this is stored in the crx/de. We have also understood the creation and configuration of custom template types what content and page policies are how to troubleshood unavailibility of termplates in the hierarchy.",
+          "We have successfully created a template and a page out of it. We also have a clear idea of structure, initial content and layout as well as we have a clear idea of where exactly this is stored in the crx/de. We have also understood the creation and configuration of custom template types what content and page policies are how to troubleshoot unavailability of templates in the hierarchy.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -5967,7 +5966,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "System users can also be created using configurations. In configMgr (http://localhost:4502/system/console/configMgr), search for an ACS configuration factory called Ensure Service User. This is a configuration factory that actually creates the system user and adds permissions to it. Here we have created a system user called aem-service-bot within aembots folder. Also we have added permisions to it.",
+          "System users can also be created using configurations. In configMgr (http://localhost:4502/system/console/configMgr), search for an ACS configuration factory called Ensure Service User. This is a configuration factory that actually creates the system user and adds permissions to it. Here we have created a system user called aem-service-bot within aembots folder. Also we have added permissions to it.",
         ],
       },
 
@@ -5987,12 +5986,12 @@ definitions:
         type: "bulletList",
         items: [
           "type=allow says that the permissions are being granted (deny could be used) and privileges=jcr:read,jcr:all,rep:write defines for what the permissions are actually granted.",
-          "jcr:read grants reading permision.",
+          "jcr:read grants reading permission.",
           "jcr:all grants all the permissions like read, write, delete, modify etc.",
           "rep:write grants the permission of write.",
           "path=/content/local-project being the repository location where the granted permissions are exercised.",
-          "There are some more commonly used permissions like jcr:modifyProperties, jcr:addChildNodes, jcr:removeChildNodes, rep:readProperties, rep:readNodes and crx:replicate with selfexplainatory names.",
-          "This created system user can be loacted in crx/de under home folder.",
+          "There are some more commonly used permissions like jcr:modifyProperties, jcr:addChildNodes, jcr:removeChildNodes, rep:readProperties, rep:readNodes and crx:replicate with self-explanatory names.",
+          "This created system user can be located in crx/de under home folder.",
         ],
       },
 
@@ -6030,7 +6029,7 @@ definitions:
       {
         type: "bulletList",
         items: [
-          "Search for Apache Sling Service User Mapper Service Ammendment (http://localhost:4502/system/console/configMgr) which is a factory configuration. Here we need to add the system configuration.",
+          "Search for Apache Sling Service User Mapper Service Amendment (http://localhost:4502/system/console/configMgr) which is a factory configuration. Here we need to add the system configuration.",
           "Now we need to add the bundle id: reference name = name of the system user.",
         ],
       },
@@ -6050,7 +6049,7 @@ definitions:
       {
         type: "paragraph",
         text:
-          "Now the system user is ready to be consumed. We need to create a utility class wherein there exists a map. This map consumes our reference name with whihch the system user is binds with the bundle id. It indeed returns a resource resolver",
+          "Now the system user is ready to be consumed. We need to create a utility class wherein there exists a map. This map consumes our reference name with which the system user is binds with the bundle id. It indeed returns a resource resolver",
       },
 
       {
@@ -6085,13 +6084,13 @@ public final class SubserviceConsumption {
       {
         type: "paragraph",
         text:
-          "Here we have sucessfully created a system user, provided permissions to it via explorer and ensure user configurations and have configured it. We have also consumed the system user via a parameter map that returns a resource resolver which can be used to access a recource in the provided path and perform permitted operations on it.",
+          "Here we have successfully created a system user, provided permissions to it via explorer and ensure user configurations and have configured it. We have also consumed the system user via a parameter map that returns a resource resolver which can be used to access a resource in the provided path and perform permitted operations on it.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -6153,7 +6152,7 @@ public final class SubserviceConsumption {
       {
         type: "paragraph",
         text:
-          "You can find repoinit in AEM\\crx-quickstart\\launchpad\\config\\org\\apache\\sling\\jcr\\repoinit wherein there exisits RepositoryInitializerScript of type .config.",
+          "You can find repoinit in AEM\\crx-quickstart\\launchpad\\config\\org\\apache\\sling\\jcr\\repoinit wherein there exists RepositoryInitializerScript of type .config.",
       },
 
       {
@@ -6206,7 +6205,7 @@ service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -6234,7 +6233,7 @@ service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`
       {
         type: "paragraph",
         text:
-          "Content as a Service in AEM is a powerful feature of AEM that circulates content in structured format like JSON instead of serving it as mear webpages thus aiding in its usage across multiple platforms including mobile apps, IoT devices. This content can be consumed by various other websites, applications, and devices.",
+          "Content as a Service in AEM is a powerful feature of AEM that circulates content in structured format like JSON instead of serving it as mere webpages thus aiding in its usage across multiple platforms including mobile apps, IoT devices. This content can be consumed by various other websites, applications, and devices.",
       },
 
       {
@@ -6254,7 +6253,7 @@ service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`
         items: [
           "Headless Content Delivery : Headless content delivery in AEM is like having a supercharged content hub that feeds all your digital experiences—websites, mobile apps, kiosks, or even smart devices—without being tied to a specific front-end design. Think of AEM as the brain of your content. It stores and manages everything—text, images, videos, structured data—and makes it available through APIs. These APIs act like messengers, delivering content to any front-end framework you choose, whether it’s React, Angular, Vue.js, or even something new in the future. This setup gives developers the freedom to build fast, modern, and interactive applications while letting content creators work in AEM without worrying about code. It’s a flexible, scalable way to keep content consistent across platforms, ensuring that updates happen in one place but appear everywhere your audience interacts with your brand.",
           "Content Fragments in AEM are like neatly organized content blocks that you can create once and reuse across multiple platforms. They help structure content in a way that’s flexible, consistent, and API-friendly, making them perfect for headless content delivery. Once created, these fragments can be referenced anywhere within AEM pages, or they can be delivered directly to websites, mobile apps, or other digital platforms through APIs. For more details on content fragments, refer our blog on content fragments (https://infodales.com/blogs/ContentFragments.html).",
-          "GraphQL & REST APIs : If you're familiar with GraphQL, you'll love AEM’s implementation. Instead of making multiple requests to retrieve different pieces of content, GraphQL lets you ask for exactly what you need in a single request. This makes content delivery faster and more efficient, reducing unnecessary data transfers. It’s perfect for structured content like product catalogs, blogs, FAQs, and content fragments, where you only want specific fields rather than an entire data set. For more details refer our Graphql (https://infodales.com/blogs/aem-graphql.html) blog where the content fragments are actualy exported using GraphQL AEM content Services also supports REST APIs, provides a flexible way to fetch content in JSON format. It follows a more traditional API structure, where each request retrieves predefined content endpoints. This is useful when you need to integrate AEM with other systems or when working with applications that rely on RESTful architecture.",
+          "GraphQL & REST APIs : If you're familiar with GraphQL, you'll love AEM’s implementation. Instead of making multiple requests to retrieve different pieces of content, GraphQL lets you ask for exactly what you need in a single request. This makes content delivery faster and more efficient, reducing unnecessary data transfers. It’s perfect for structured content like product catalogs, blogs, FAQs, and content fragments, where you only want specific fields rather than an entire data set. For more details refer our Graphql (https://infodales.com/blogs/aem-graphql.html) blog where the content fragments are actually exported using GraphQL AEM content Services also supports REST APIs, provides a flexible way to fetch content in JSON format. It follows a more traditional API structure, where each request retrieves predefined content endpoints. This is useful when you need to integrate AEM with other systems or when working with applications that rely on RESTful architecture.",
         ],
       },
 
@@ -6354,7 +6353,7 @@ service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`
       {
         type: "bulletList",
         items: [
-          "Having done so, we have created a few content fragmengs which are now ready to be exported.",
+          "Having done so, we have created a few content fragments which are now ready to be exported.",
         ],
       },
 
@@ -6373,7 +6372,7 @@ service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`
       {
         type: "paragraph",
         text:
-          "Now we have all the prerequisits ready for the creation of an endpoint which will sore the data of the content fragments. Here is the code snippet for the same which we will be understanding.",
+          "Now we have all the prerequisites ready for the creation of an endpoint which will sore the data of the content fragments. Here is the code snippet for the same which we will be understanding.",
       },
 
       {
@@ -6502,7 +6501,7 @@ public class StarsServlet extends SlingSafeMethodsServlet {
       {
         type: "bulletList",
         items: [
-          "We have created a servlet which is registered by path and we expect to recieve a json response from this servlet when this path is hit.",
+          "We have created a servlet which is registered by path and we expect to receive a json response from this servlet when this path is hit.",
         ],
       },
 
@@ -6531,7 +6530,7 @@ public class StarsServlet extends SlingSafeMethodsServlet {
       {
         type: "bulletList",
         items: [
-          "starSpectrumJsonObject puts all the spectal data. This is a multi field property, and so the spectral property value is first added in a List of String and then is added in starSpectrumJsonObject with key as substring before \":\" and value as after \":\". Having collected this data, it is then added in starDataJsonObject.",
+          "starSpectrumJsonObject puts all the special data. This is a multi field property, and so the spectral property value is first added in a List of String and then is added in starSpectrumJsonObject with key as substring before \":\" and value as after \":\". Having collected this data, it is then added in starDataJsonObject.",
         ],
       },
 
@@ -6599,7 +6598,7 @@ public class StarsServlet extends SlingSafeMethodsServlet {
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -6627,19 +6626,19 @@ public class StarsServlet extends SlingSafeMethodsServlet {
       {
         type: "paragraph",
         text:
-          "Unit testing in Java is the process of testing individual methods or classes in isolation to verify their correctness. It ensures that each unit of code works as expected, improving reliability and supporting Test-Driven Development (TDD). Frameworks like JUnit and TestNG are commonly used for writing and automating unit tests using assertions to validate expected outputs.For unit testing in java a framework is used called Junit 5.",
+          "Unit testing in Java is the process of testing individual methods or classes in isolation to verify their correctness. It ensures that each unit of code works as expected, improving reliability and supporting Test-Driven Development (TDD). Frameworks like JUnit and TestNG are commonly used for writing and automating unit tests using assertions to validate expected outputs. For unit testing in java a framework is used called Junit 5.",
       },
 
       {
         type: "paragraph",
         text:
-          "Lets have a look on how we can perform unit testing in AEM for that we will take the example of sling model and perform unit testing on it. We are using Junit5 framework specifically.",
+          "Let's have a look at how we can perform unit testing in AEM for that we will take the example of sling model and perform unit testing on it. We are using Junit5 framework specifically.",
       },
 
       {
         type: "paragraph",
         text:
-          "I have a component in which i have title, description and a multifield naming tags in which we can add multiple tags and below is the sling model for the component",
+          "I have a component in which I have title, description and a multifield naming tags in which we can add multiple tags and below is the sling model for the component",
       },
 
       {
@@ -6718,7 +6717,7 @@ private List<SamplePojo> castInfo;
       {
         type: "paragraph",
         text:
-          "Also we need to generate the json of the component that we have created as i have create the card component which has one textfield for title and one multifield inside that multifield we have cardTitle and cardImage, below is the json for that, this json needs to kept in the code under the resources folder under test package",
+          "Also we need to generate the json of the component that we have created as I have created the card component which has one textfield for title and one multifield inside that multifield we have cardTitle and cardImage, below is the json for that, this json needs to kept in the code under the resources folder under test package",
       },
 
       {
@@ -6794,7 +6793,7 @@ List<SamplePojo> castInfo = sampleModel.getCardInfo();
         items: [
           "In the above code first of all we need to annotate our class with @ExtendWith(AemContextExtension.class) it Integrates AEM Mocks into JUnit 5.",
           "Next is we have initialize AEM Context and SampleModel.AppAemContext.newAemContext() is a custom method (from AppAemContext) that creates an AemContext instance.",
-          "Next we added the setup method it runs before each test method, inisde that method",
+          "Next we added the setup method it runs before each test method, inside that method",
         ],
       },
 
@@ -6883,7 +6882,7 @@ List<SamplePojo> castInfo = sampleModel.getCardInfo();
       {
         type: "paragraph",
         text:
-          "An Event Handler manages events at the Sling level, while an Event Listener handles events at the JCR level. Both are responsible for executing actions when an event occurs. .",
+          "An Event Handler manages events at the Sling level, while an Event Listener handles events at the JCR level. Both are responsible for executing actions when an event occurs.",
       },
 
       {
@@ -7148,13 +7147,13 @@ public void onChange( List<ResourceChange> list) {
       {
         type: "paragraph",
         text:
-          "In the example above we have created the SampleResourceChangeListener which implements ResourceChangeListener and overrides onChange event , the event will get triggered when we change , add , remove the Node .",
+          "In the example above we have created the SampleResourceChangeListener which implements ResourceChangeListener and overrides onChange event, the event will get triggered when we change, add, remove the Node.",
       },
     ],
   },
   {
     slug: "sitemap",
-    title: "SiteMap Implementation in AEM",
+    title: "Sitemap Implementation in AEM",
     category: "AEM Sites",
     date: "2024-12-12",
     author: "Yash Sakharkar",
@@ -7165,7 +7164,7 @@ public void onChange( List<ResourceChange> list) {
       {
         type: "heading",
         level: 4,
-        text: "What is a sitemap ?",
+        text: "What is a sitemap?",
       },
 
       {
@@ -7201,8 +7200,7 @@ public void onChange( List<ResourceChange> list) {
         items: [
           "Used primarily by search engines like Google, Bing, and Yahoo.",
           "Helps search engines crawl and index the website efficiently.",
-          "Enhances User Experience – HTML sitemaps help users navigate large websites easily.",
-          "For e.g we have the url for google ,https://www.google.com/sitemap.xml",
+          "For e.g., we have the URL for Google, https://www.google.com/sitemap.xml",
         ],
       },
 
@@ -7243,8 +7241,8 @@ public void onChange( List<ResourceChange> list) {
       {
         type: "bulletList",
         items: [
-          "Checking on All on Demand will allow you to create the sitemap .",
-          "Note : allOnDemand configuration is having a drawback as it processes data and generates a sitemap everytime we hit the URL to generate a sitemap.",
+          "Checking on All on Demand will allow you to create the sitemap.",
+          "Note : allOnDemand configuration has a drawback as it processes data and generates a sitemap everytime we hit the URL to generate a sitemap.",
           "Similarly search for PageTreeSitemapGeneratorImpl in config manager.",
           "This configuration allows you to add the last modified date and also will represent data in xml format.",
         ],
@@ -7259,8 +7257,8 @@ public void onChange( List<ResourceChange> list) {
       {
         type: "bulletList",
         items: [
-          "Navigate to http://localhost:4502/sites.html/content open page properties , on Advanced check the Generated Sitemap check box.",
-          "Now on the browser hit this url http://localhost:4502/content/sample.sitemap.xml.",
+          "Navigate to http://localhost:4502/sites.html/content open page properties, on Advanced check the Generated Sitemap check box.",
+          "Now on the browser hit this URL http://localhost:4502/content/sample.sitemap.xml.",
         ],
       },
 
@@ -7350,7 +7348,7 @@ public void onChange( List<ResourceChange> list) {
   },
   {
     slug: "slingjobs",
-    title: "Schedule Sling Jobs In AEM",
+    title: "Schedule Sling Jobs in AEM",
     category: "AEM Sites",
     date: "2024-12-27",
     author: "Yash Sakharkar",
@@ -7373,7 +7371,7 @@ public void onChange( List<ResourceChange> list) {
       {
         type: "heading",
         level: 4,
-        text: "What is Sling Jobs ?",
+        text: "What is Sling Jobs?",
       },
 
       {
@@ -7398,7 +7396,7 @@ public void onChange( List<ResourceChange> list) {
       {
         type: "bulletList",
         items: [
-          "In AEM, the Sling Job Manager allows you to create jobs using the JobBuilder. By calling jobManager.createJob(TOPIC), you define the job's topic (which is essentially the type of job you're creating). The TOPIC is a unique identifier that helps link the job to a specific Job Consumer that processes jobs with that topic. Once the job is created with the topic, you can add additional properties or parameters (key-value pairs) to specify the task’s details. These properties are used during job execution to provide any necessary data for processing the job. For e.g Creating a job with a specific topic",
+          "In AEM, the Sling Job Manager allows you to create jobs using the JobBuilder. By calling jobManager.createJob(TOPIC), you define the job's topic (which is essentially the type of job you're creating). The TOPIC is a unique identifier that helps link the job to a specific Job Consumer that processes jobs with that topic. Once the job is created with the topic, you can add additional properties or parameters (key-value pairs) to specify the task’s details. These properties are used during job execution to provide any necessary data for processing the job. For e.g., Creating a job with a specific topic",
         ],
       },
 
@@ -7624,7 +7622,7 @@ public JobResult process(Job job) {
       {
         type: "bulletList",
         items: [
-          "for e.g content/archival/scheduled/job you will find you job has been schedule under scheduled job section",
+          "for e.g., content/archival/scheduled/job you will find you job has been schedule under scheduled job section",
         ],
       },
 
@@ -7749,7 +7747,7 @@ public JobResult process(Job job) {
 
       {
         type: "paragraph",
-        text: "Content fragments actually make work alot easy by providing",
+        text: "Content fragments actually make work a lot easier by providing",
       },
 
       {
@@ -7764,7 +7762,7 @@ public JobResult process(Job job) {
       {
         type: "paragraph",
         text:
-          "Hence, they help in dynamic content injection, maintain consistency and multichanel delivery.",
+          "Hence, they help in dynamic content injection, maintain consistency and multichannel delivery.",
       },
 
       {
@@ -7776,7 +7774,7 @@ public JobResult process(Job job) {
       {
         type: "paragraph",
         text:
-          "Now having an idea of this powerful feature of aem, lets try and create one. We will be creating a for the purpose of storing data of varios stars.",
+          "Now having an idea of this powerful feature of aem, lets try and create one. We will be creating a for the purpose of storing data of various stars.",
       },
 
       {
@@ -7919,7 +7917,7 @@ public JobResult process(Job job) {
 
       {
         type: "paragraph",
-        text: "I hope you ejoyed this learning.",
+        text: "I hope you enjoyed this learning.",
       },
     ],
   },
@@ -7942,19 +7940,19 @@ public JobResult process(Job job) {
       {
         type: "paragraph",
         text:
-          "In AEM (Adobe Experience Manager), ETC Mapping is primarily used for routing or transforming content based on a defined mapping between the source and the destination locations in the repository. The term ETC refers to \"Experience Targeted Content\", which is used to manage how content is structured, served, or redirected within AEM.",
+          "In AEM (Adobe Experience Manager), ETC Mapping is primarily used for routing or transforming content based on a defined mapping between the source and the destination locations in the repository. The term ETC refers to the /etc folder of the AEM repository, which stores configuration and system-level content, such as the /etc/map node used for resource mapping.",
       },
 
       {
         type: "heading",
         level: 4,
-        text: "What is ETC Mapping in AEM ?",
+        text: "What is ETC Mapping in AEM?",
       },
 
       {
         type: "paragraph",
         text:
-          "In the context of Adobe Experience Manager (AEM), ETC Mapping typically refers to the Experience Targeted Content (ETC) system, which is used to map content or redirect requests to different locations or resources based on specific conditions, such as user profile, geographical location, or language preferences. However, ETC Mapping is not a standard, widely recognized term in AEM documentation. It might be referring to a specific implementation within your organization or an alias for content mapping used in certain workflows.",
+          "In the context of Adobe Experience Manager (AEM), ETC Mapping typically refers to the resource mappings stored under the /etc/map node of the repository, which are used to map content or redirect requests to different locations or resources, for example by rewriting paths or domain names.",
       },
 
       {
@@ -8450,8 +8448,8 @@ public JobResult process(Job job) {
         items: [
           "Categories : It is a multi property that adds a clientlib to a group that is when referred, the clientlib gets loaded.",
           "Allow Proxy : It is a boolean property which allows the clientlibs to load at dispatcher level via a proxy servlet",
-          "Embed : It is a multi property that allows inclusion of various other clientlibs by adding their respective categories such that they combine together to form one single clientlib.",
-          "Dependency : It is again a multi property that actually adds refers another clientlib by adding its category to it such that the clientlib do not merge with the original clientlib rather loads itself. also it helps to add other dependencies like that of jQuery.",
+          "Embed : It is a multi property that allows inclusion of various other clientlibs by adding their respective categories such that they combine to form one single clientlib.",
+          "Dependency : It is again a multi property that actually adds refers another clientlib by adding its category to it such that the clientlib do not merge with the original clientlib rather loads itself. Also, it helps to add other dependencies like that of jQuery.",
         ],
       },
 
@@ -8526,7 +8524,7 @@ public JobResult process(Job job) {
       {
         type: "bulletList",
         items: [
-          "Now inorder to add the clientlibs to component, just add the following snippet as shown. Here we have added name of the categories. Also we have stated clientlib.all this means alls the js as well as css files will load. We can specify which type of files do we want to load, clientlib.css will load only css files and clientlib.js will load only js files.",
+          "Now in order to add the clientlibs to component, just add the following snippet as shown. Here we have added name of the categories. Also we have stated clientlib.all this means alls the js as well as css files will load. We can specify which type of files do we want to load, clientlib.css will load only css files and clientlib.js will load only js files.",
         ],
       },
 
@@ -8545,8 +8543,8 @@ public JobResult process(Job job) {
       {
         type: "bulletList",
         items: [
-          "Now as we can see the heading tags have changed their colours as per the clientlibs added. Also one thing to be noted that we have added hey.js first and then hi.js and hence hey is getting printed first and then hi in the console.",
-          "Now let us understand dependency. Let us create a glbal level clientlibs named helloclientlibs, under the clientlibs folder of local-project.",
+          "Now as we can see the heading tags have changed their colors as per the clientlibs added. Also one thing to be noted that we have added hey.js first and then hi.js and hence hey is getting printed first and then hi in the console.",
+          "Now let us understand dependency. Let us create a global level clientlibs named helloclientlibs, under the clientlibs folder of local-project.",
         ],
       },
 
@@ -8648,19 +8646,19 @@ public JobResult process(Job job) {
       {
         type: "heading",
         level: 3,
-        text: "Core Componnet Clientlibs Model",
+        text: "Core Component Clientlibs Model",
       },
 
       {
         type: "paragraph",
         text:
-          "Okay so till now we have understood how a set of stylesheets and js script files are included in slightly. Now there comes a question what if a developer need more control over the clientlibs. He wants a certain set of stylesheet to be applied only to a printed copy of the page or ensure the clientlibs to load after completion of html parsing. Well these things cannot be achieved by including clientlibs in this way. AEM provides Core Component's Clientlibraries model to achieve this.",
+          "Okay so till now we have understood how a set of stylesheets and js script files are included in Sightly. Now there comes a question what if a developer need more control over the clientlibs. He wants a certain set of stylesheet to be applied only to a printed copy of the page or ensure the clientlibs to load after completion of html parsing. Well these things cannot be achieved by including clientlibs in this way. AEM provides Core Component's Clientlibraries model to achieve this.",
       },
 
       {
         type: "paragraph",
         text:
-          "Here we have created a simple demonstration component with editconfig as dialog. Also we have added a simple paragraph and provided a class called para to it. Also we have creared a clientlib folder called coreclientlib and added a stylesheet.css and script.js flies in the same way as demonstrated earlier.",
+          "Here we have created a simple demonstration component with editconfig as dialog. Also we have added a simple paragraph and provided a class called para to it. Also we have created a clientlib folder called coreclientlib and added a stylesheet.css and script.js flies in the same way as demonstrated earlier.",
       },
 
       {
@@ -8726,12 +8724,12 @@ public JobResult process(Job job) {
         type: "bulletList",
         items: [
           "media='print' : This ensures that the stylesheet css properties will be applied only to the printed copy. media='screen' and media='all' ensures that the css gets applied during on-screen rendering and for all the media types respectively.",
-          "async='true' : This is an important parameter that contrtols the loading of the provided javascript files asynchronously. This means the javascript will keep on loading along with other resources and the page will also keep on rendering simultaneously. Now there could be some functions in the script which must load only after completion of page loading. In such scenarios, these functions must be added within DOMContentLoaded event listner explicitely.",
+          "async='true' : This is an important parameter that controls the loading of the provided javascript files asynchronously. This means the javascript will keep on loading along with other resources and the page will also keep on rendering simultaneously. Now there could be some functions in the script which must load only after completion of page loading. In such scenarios, these functions must be added within DOMContentLoaded event listener explicitly.",
           "defer='true' : Now this ensures that javascript is loaded only after completion of parsing of all the escaped html characters and when the page content is ready to render. async and defer actually increase the page performance.",
           "onload : This attribute defines a simple function that gets called after complete loading of javascript.",
-          "crossorigin='anonymous' : This handles Cross Origin Resurce Sharing. anonymous in this case is allowing all the other resources to load without authentication (both cookie creds authentication and HTTP authentication). This is dangerous. crossorigin='use-credentials' is always preferred.",
-          "${clientlibs.jsAndCssIncludes @ context=\"unsafe\"} is actually an alternative to clientlib.all where context=\"unsafe\" tells that output is treated as raw HTML. ${clientlibs.cssIncludes @ context=\"unsafe\"} and ${clientlibs.jsIncludes @ context=\"unsafe\"} are again self expalinatory.",
-          "The component is added on the page. The text colour remains as it is even if the css has loaded successfully. Also the console prints the onload function even if it is not written in script.js file. Also in the printed preview of the page, the css gets applied properly. All these observations hereby justify the conditional attributes applied.",
+          "crossorigin='anonymous' : This handles Cross Origin Resource Sharing. anonymous in this case is allowing all the other resources to load without authentication (both cookie creds authentication and HTTP authentication). This is dangerous. crossorigin='use-credentials' is always preferred.",
+          "${clientlibs.jsAndCssIncludes @ context=\"unsafe\"} is actually an alternative to clientlib.all where context=\"unsafe\" tells that output is treated as raw HTML. ${clientlibs.cssIncludes @ context=\"unsafe\"} and ${clientlibs.jsIncludes @ context=\"unsafe\"} are again self explanatory.",
+          "The component is added on the page. The text color remains as it is even if the css has loaded successfully. Also the console prints the onload function even if it is not written in script.js file. Also in the printed preview of the page, the css gets applied properly. All these observations hereby justify the conditional attributes applied.",
         ],
       },
 
@@ -8762,13 +8760,13 @@ public JobResult process(Job job) {
       {
         type: "paragraph",
         text:
-          "We have now a clear idea of what exactly are clientlibs, how to ceate them, which property provides which feature and how to include them in any component.",
+          "We have now a clear idea of what exactly are clientlibs, how to create them, which property provides which feature and how to include them in any component.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -9361,7 +9359,7 @@ public JobResult process(Job job) {
       {
         type: "paragraph",
         text:
-          "Query builder comprises of queries, so let's just look into what all a query consists of:",
+          "Query builder comprises queries, so let's just look into what all a query consists of:",
       },
 
       {
@@ -9446,7 +9444,7 @@ public JobResult process(Job job) {
       {
         type: "bulletList",
         items: [
-          "fulltext.relPath : can specify the relative path to search in (eg. property or subnode)",
+          "fulltext.relPath : can specify the relative path to search in (e.g., property or subnode)",
         ],
       },
 
@@ -9461,9 +9459,9 @@ public JobResult process(Job job) {
         type: "bulletList",
         items: [
           "daterange.property : Specify the date property on which query needs to run.",
-          "daterange.lowerBound : Fix a lower bound date range eg. 2020-08-31",
+          "daterange.lowerBound : Fix a lower bound date range e.g., 2020-08-31",
           "daterange.lowerOperation : “>” (default) or “>=”",
-          "daterange.upperBound : Fix a upper bound date range eg. 2023-01-25",
+          "daterange.upperBound : Fix an upper bound date range e.g., 2023-01-25",
           "daterange.upperOperation : “<” (default) or “<=”",
         ],
       },
@@ -9504,16 +9502,16 @@ public JobResult process(Job job) {
           "tagsearch : It searches for matching tag.",
           "mainasset : mainasset=true means search only Dam Asset and not the subassets.",
           "group : This predicate is used to create logical conditions in your query. You can create complex conditions using OR & AND operators in different groups.",
-          "orderBy : This predicate is used to sort the result sets obtained in the query. e.g. orderby=@jcr:score or orderby=@jcr:content/cq:lastModified",
+          "orderBy : This predicate is used to sort the result sets obtained in the query. e.g., orderby=@jcr:score or orderby=@jcr:content/cq:lastModified",
         ],
       },
 
       {
         type: "bulletList",
         items: [
-          "orderby.sort : You may define the sorting way for the search results e.g. orderby.desc=true or orderby.sort = desc for descending and orderby.asc=true or orderby.sort=asc for ascending.",
+          "orderby.sort : You may define the sorting way for the search results e.g., orderby.desc=true or orderby.sort = desc for descending and orderby.asc=true or orderby.sort=asc for ascending.",
           "orderby.case : support case insensitive orderby.case=ignore (since 6.2)",
-          "orderby=my predicate (eg: orderby=path) : this can also be used to sort by path.",
+          "orderby=my predicate (e.g., orderby=path) : this can also be used to sort by path.",
         ],
       },
 
@@ -9524,7 +9522,7 @@ public JobResult process(Job job) {
           "p.hits=selective : Use this if you want to return selective properties in search results. Use this with p.properties=sling:resourceType jcr:primaryType Example :- p.properties = jcr:path",
           "p.nodedepth : Use this when you need properties of a node and its child nodes in the same search result. Use this with p.hits=full",
           "p.facets=true : This will be used to Search Facets based search for the assigned Query. If you want to calculate the count of tags which are present in your search result or you want to know how many templates for a particular page are there etc, you may go with Facets based search.",
-          "p.guesstotal : The purpose of the p.guessTotal parameter is to return the appropriate number of results that can be shown by combining the minimum viable p.offset and p.limit values. The advantage of using this parameter is improved performance with large result sets. This avoids calculating the full total (e.g calling result.getSize()) and reading the entire result set.",
+          "p.guesstotal : The purpose of the p.guessTotal parameter is to return the appropriate number of results that can be shown by combining the minimum viable p.offset and p.limit values. The advantage of using this parameter is improved performance with large result sets. This avoids calculating the full total (e.g., calling result.getSize()) and reading the entire result set.",
           "p.offset : defines start of index means from which index you want to fetch records from query result.",
           "p.limit : defines page size. In simple words how many records you want to fetch. Each query result will display results from p.offset to p.offset + p.limit.",
         ],
@@ -9663,7 +9661,7 @@ for (Hit hit : resultList ) {
       {
         type: "paragraph",
         text:
-          "Suppose you have a component which will remain the same throughout the pages of your website such that even its authored content also remains the same, it becomes tidious to add the component on every page and author the same data to it. In order to solve this, aem provides experience fragments. It provides a component to become an experience fragment and serve the discussed functionality.",
+          "Suppose you have a component which will remain the same throughout the pages of your website such that even its authored content also remains the same, it becomes tedious to add the component on every page and author the same data to it. In order to solve this, aem provides experience fragments. It provides a component to become an experience fragment and serve the discussed functionality.",
       },
 
       {
@@ -9675,7 +9673,7 @@ for (Hit hit : resultList ) {
       {
         type: "paragraph",
         text:
-          "Here we will be using a demo componentnent as an experience fragment. To create n experience fragment :",
+          "Here we will be using a demo component as an experience fragment. To create n experience fragment :",
       },
 
       {
@@ -9719,7 +9717,7 @@ for (Hit hit : resultList ) {
       {
         type: "bulletList",
         items: [
-          "Go to edit template, add the demo component to the policies and now add the component to the container. This is how you have succcessfully created your experience fragment. Author it and see the result on the page. For the purpose we are displaying the text and path fields only via properties.",
+          "Go to edit template, add the demo component to the policies and now add the component to the container. This is how you have successfully created your experience fragment. Author it and see the result on the page. For the purpose we are displaying the text and path fields only via properties.",
         ],
       },
 
@@ -9824,7 +9822,7 @@ for (Hit hit : resultList ) {
   },
   {
     slug: "osgi-factory-cardinality-and-limit",
-    title: "OSGi Factory Configuration cardinality and limit",
+    title: "OSGi Factory Configuration Cardinality and Limit",
     category: "AEM Sites",
     date: "2024-08-17",
     author: "Shruti Meshram",
@@ -9846,7 +9844,7 @@ for (Hit hit : resultList ) {
       {
         type: "paragraph",
         text:
-          "Lets say we have a configuration and we need it to have different values for its attributes defined for different scenarios. Speaking of a hypothetical scenario, say you are dealing with multiple api calls whose urls and timeout period are consumed via OSGi configurations. You need to create a separate configuration each having the same attributes and same attribute definations which are api url and timeout period. In this case aem provides a facility to group them all to be various instances of one OSGi configuration which is declared as an OSGi factory.",
+          "Let's say we have a configuration and we need it to have different values for its attributes defined for different scenarios. Speaking of a hypothetical scenario, say you are dealing with multiple api calls whose URLs and timeout period are consumed via OSGi configurations. You need to create a separate configuration each having the same attributes and same attribute definitions which are api URL and timeout period. In this case aem provides a facility to group them all to be various instances of one OSGi configuration which is declared as an OSGi factory.",
       },
 
       {
@@ -9858,7 +9856,7 @@ for (Hit hit : resultList ) {
       {
         type: "bulletList",
         items: [
-          "Lets begin by creating an interface called ApiHandlerService, where you will add the methods which you want to find in the configuration.",
+          "Let's begin by creating an interface called ApiHandlerService, where you will add the methods which you want to find in the configuration.",
         ],
       },
 
@@ -9877,7 +9875,7 @@ public interface ApiHandlerService {
       {
         type: "bulletList",
         items: [
-          "Now we need to create the respective object class defination for the same interface. We need to add the name to the same. This is the name from which we will be able to find configuration in the felix console. Then for each method, we need to add the attribute defination, consisting of two properties, name and description. We can also add the default value for the method, the way we have added timeout. Also we have added limit to the timeout by fixing its range.",
+          "Now we need to create the respective object class definition for the same interface. We need to add the name to the same. This is the name from which we will be able to find configuration in the felix console. Then for each method, we need to add the attribute definition, consisting of two properties, name and description. We can also add the default value for the method, the way we have added timeout. Also we have added limit to the timeout by fixing its range.",
         ],
       },
 
@@ -9912,7 +9910,7 @@ public @interface ApiHandlerConfig {
       {
         type: "bulletList",
         items: [
-          "After creating the object class defination, we need to create the implementation class. In Component annotation, provide the property configurationPolicy = ConfigurationPolicy.REQUIRE. This is added for factory configuration. Also in Designate annotation, provide a property factory = true. This ensures successful creation of the factory configuration. In callApi() method, we are actually consuming the values set in an instance of the configuration factory.",
+          "After creating the object class definition, we need to create the implementation class. In Component annotation, provide the property configurationPolicy = ConfigurationPolicy.REQUIRE. This is added for factory configuration. Also in Designate annotation, provide a property factory = true. This ensures successful creation of the factory configuration. In callApi() method, we are actually consuming the values set in an instance of the configuration factory.",
         ],
       },
 
@@ -9967,7 +9965,7 @@ public class ApiHandlerServiceImpl implements ApiHandlerService {
       {
         type: "bulletList",
         items: [
-          "Now after creating the factory configuration, you will need to cisit the felix console (http://localhost:4502/system/console/configMgr) to find the configuration factory in there with a + sign.",
+          "Now after creating the factory configuration, you will need to visit the felix console (http://localhost:4502/system/console/configMgr) to find the configuration factory in there with a + sign.",
         ],
       },
 
@@ -9980,7 +9978,7 @@ public class ApiHandlerServiceImpl implements ApiHandlerService {
       {
         type: "bulletList",
         items: [
-          "You need to add instances in the factory which will get stored with a unique Persistent Identity (PID). Here we have created two instances for the factory with fake api, one showing the todo and the other showing the recipies.",
+          "You need to add instances in the factory which will get stored with a unique Persistent Identity (PID). Here we have created two instances for the factory with fake api, one showing the todo and the other showing the recipes.",
         ],
       },
 
@@ -10037,7 +10035,7 @@ public class ApiHandlerManager {
       {
         type: "bulletList",
         items: [
-          "Now we will retrieve the values hence recieved from a servlet. Here particularly in this example we are showing the values in stdout.log file in crx-quickstart\\logs\\stdout.",
+          "Now we will retrieve the values hence received from a servlet. Here particularly in this example we are showing the values in stdout.log file in crx-quickstart\\logs\\stdout.",
         ],
       },
 
@@ -10094,13 +10092,13 @@ public class ApiHandlerServlet extends SlingSafeMethodsServlet {
       {
         type: "paragraph",
         text:
-          "So here we have understood the concepts of factory configurations with a small example of cadinality and limit. Also we have understood how to retrieve the values of each instance via a servlet. Here we have printed the values in logs but you can have the direct access to the values in servlet itself by changing the return type of the method handlerRequests().",
+          "So here we have understood the concepts of factory configurations with a small example of cardinality and limit. Also we have understood how to retrieve the values of each instance via a servlet. Here we have printed the values in logs but you can have the direct access to the values in servlet itself by changing the return type of the method handlerRequests().",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -10147,7 +10145,7 @@ public class ApiHandlerServlet extends SlingSafeMethodsServlet {
       {
         type: "heading",
         level: 4,
-        text: "Scalibility",
+        text: "Scalability",
       },
 
       {
@@ -10171,7 +10169,7 @@ public class ApiHandlerServlet extends SlingSafeMethodsServlet {
       {
         type: "heading",
         level: 4,
-        text: "Security and Compilances",
+        text: "Security and Compliance",
       },
 
       {
@@ -10702,7 +10700,7 @@ public class ContextAwareConfigModel {
       {
         type: "bulletList",
         items: [
-          "Create a folder sturucture under /conf/project according to your site",
+          "Create a folder structure under /conf/project according to your site",
           "Folders jcr:primarytype would be sling:folder",
           "Node name would be your configurations relative path",
         ],
@@ -10742,7 +10740,7 @@ public class ContextAwareConfigModel {
       {
         type: "heading",
         level: 4,
-        text: "Step : 5 Add rererence to your site",
+        text: "Step : 5 Add reference to your site",
       },
 
       {
@@ -10792,7 +10790,7 @@ public class ContextAwareConfigModel {
   },
   {
     slug: "targeting-in-aem",
-    title: "Targeting in AEM - Part 1",
+    title: "Targeting in AEM – Part 1",
     category: "AEM Sites",
     date: "2024-08-01",
     author: "Suchita Mishra",
@@ -10827,7 +10825,7 @@ public class ContextAwareConfigModel {
       {
         type: "paragraph",
         text:
-          "ContextHub is a framework for storing, manipulating, and presenting context data. The ContextHub Javascript API enables us to access stores to create, update, and delete data as necessary. To enable the ContextHub features and to link to the ContextHub JavaScript libraries, including the <contexthub> component in the <head> section of our web page.",
+          "ContextHub is a framework for storing, manipulating, and presenting context data. The ContextHub JavaScript API enables us to access stores to create, update, and delete data as necessary. To enable the ContextHub features and to link to the ContextHub JavaScript libraries, including the <contexthub> component in the <head> section of our web page.",
       },
 
       {
@@ -11184,7 +11182,7 @@ public class ContextAwareConfigModel {
       {
         type: "paragraph",
         text:
-          "Select the corresponding audience and edit the component data, also we need to set the targeting engine i.e, ContextHub, by clicking on settings.",
+          "Select the corresponding audience and edit the component data, also we need to set the targeting engine i.e., ContextHub, by clicking on settings.",
       },
 
       {
@@ -11383,7 +11381,7 @@ public class ContextAwareConfigModel {
       {
         type: "paragraph",
         text:
-          "Indexing is a technique which enables the user to retrieve data with minimal node traversal and in minimum amount of time. Suppose, an AEM user wants to find all the images present in crx/de console which actually is categorized as a slow query in AEM as the process search gets terminated due to 100000+ node traversal. This is a case where you need to perform indexing upon desired property to retrieve the data (i.e images). Also in case where you need to enhance the search performance, it is recommended to perform indexing so that the data retrieval is cost efficient. Oak query engine supports XPath, SQL-2 and JQOM and Apache Oak-based backend allows multiple indexes to be plugged in a repository. PropertyIndex is predefined in repository itself, Apache Lucene and Apache Solr can be customized.",
+          "Indexing is a technique which enables the user to retrieve data with minimal node traversal and in minimum amount of time. Suppose, an AEM user wants to find all the images present in crx/de console which actually is categorized as a slow query in AEM as the process search gets terminated due to 100000+ node traversal. This is a case where you need to perform indexing upon desired property to retrieve the data (i.e., images). Also in case where you need to enhance the search performance, it is recommended to perform indexing so that the data retrieval is cost efficient. Oak query engine supports XPath, SQL-2 and JQOM and Apache Oak-based backend allows multiple indexes to be plugged in a repository. PropertyIndex is predefined in repository itself, Apache Lucene and Apache Solr can be customized.",
       },
 
       {
@@ -11489,7 +11487,7 @@ public class ContextAwareConfigModel {
       {
         type: "paragraph",
         text:
-          "Oak engine for both property search as well as for full text search internally implements lucene indexing. Let us understand by an example. We need to search all the nodes in crx/de with property property dam:Asset from nt:base. Then for this we need to navigate to crx/de console, click on tools, the Query and select SQL-2 rather than XPath, enter the query for the search i.e",
+          "Oak engine for both property search as well as for full text search internally implements lucene indexing. Let us understand by an example. We need to search all the nodes in crx/de with property dam:Asset from nt:base. Then for this we need to navigate to crx/de console, click on tools, the Query and select SQL-2 rather than XPath, enter the query for the search i.e.,",
       },
 
       {
@@ -11844,7 +11842,7 @@ public class ContextAwareConfigModel {
         type: "bulletList",
         items: [
           "Add custom functionalities in the fields of your form.",
-          "Set the behaviour of fields within the form structure.",
+          "Set the behavior of fields within the form structure.",
         ],
       },
       {
@@ -11900,7 +11898,7 @@ public class ContextAwareConfigModel {
       },
       {
         type: "centerParagraph",
-        text: "First you need to add 5 panels to your form with provided configuration. Ensure except for the first panel rest all are maked as hidden.",
+        text: "First you need to add 5 panels to your form with provided configuration. Ensure except for the first panel rest all are marked as hidden.",
       },
       {
         type: "image",
@@ -11945,7 +11943,7 @@ public class ContextAwareConfigModel {
       },
       {
         type: "centerParagraph",
-        text: "First name , Last Name and Percentile Obtained in 10th are the fields in Personal details panel. First you need to add the First Name Configurations.",
+        text: "First name, Last Name and Percentile Obtained in 10th are the fields in Personal details panel. First you need to add the First Name Configurations.",
       },
       {
         type: "image",
@@ -12082,7 +12080,7 @@ public class ContextAwareConfigModel {
       },
       {
         type: "paragraph",
-        text: "In case the candidate does not qualify to secure admission in college, he will recieve the respective message.",
+        text: "In case the candidate does not qualify to secure admission in college, he will receive the respective message.",
       },
       {
         type: "paragraph",
@@ -12213,7 +12211,7 @@ public class ContextAwareConfigModel {
   },
   {
     slug: "custom-prefill-services",
-    title: "Custom Prefill Services In AEM Forms",
+    title: "Custom Prefill Services in AEM Forms",
     category: "AEM Forms",
     date: "2024-06-20",
     author: "Yash Sakharkar",
@@ -12223,12 +12221,12 @@ public class ContextAwareConfigModel {
     content: [
       {
         type: "paragraph",
-        text: "Welcome to the blog designed for developers new to the AEM Forms . This blog will walk you through some of the concepts like What is Custom Prefill Service In AEM Form ? and most importantly, How to Implement Custom Prefill Services In AEM Forms ? We'll cover these questions in this blog.",
+        text: "Welcome to the blog designed for developers new to the AEM Forms. This blog will walk you through some of the concepts like What is Custom Prefill Service In AEM Form? and most importantly, How to Implement Custom Prefill Services In AEM Forms? We'll cover these questions in this blog.",
       },
       {
         type: "heading",
         level: 3,
-        text: "What are Prefill Services in AEM Forms ?",
+        text: "What are Prefill Services in AEM Forms?",
       },
       {
         type: "paragraph",
@@ -12237,7 +12235,7 @@ public class ContextAwareConfigModel {
       {
         type: "heading",
         level: 3,
-        text: "What are Custom Prefill Services in AEM Forms ?",
+        text: "What are Custom Prefill Services in AEM Forms?",
       },
       {
         type: "paragraph",
@@ -12264,7 +12262,7 @@ public class ContextAwareConfigModel {
       },
       {
         type: "paragraph",
-        text: "Add the Component in the root panel for e.g Text box.",
+        text: "Add the Component in the root panel for e.g., Text box.",
       },
       {
         type: "image",
@@ -12364,7 +12362,7 @@ public class CustomPrefillServices implements DataProvider {
       },
       {
         type: "paragraph",
-        text: "Note : The text which are highlighted in black to create an elements in the above snippet should be similar to which you have provided after adding the textbox component in AEM Forms. In the below image, name field are similar to the one I have created an element in the code.",
+        text: "Note : The text which are highlighted in black to create an elements in the above snippet should be similar to which you have provided after adding the textbox component in AEM Forms. In the below image, name fields are similar to the one I have created an element in the code.",
       },
       {
         type: "image",
@@ -12406,7 +12404,7 @@ public class CustomPrefillServices implements DataProvider {
   },
   {
     slug: "geolocation-forms",
-    title: "Geolocation : AEM Forms with Dynamic Location",
+    title: "Geolocation: AEM Forms with Dynamic Location",
     category: "AEM Forms",
     date: "2024-07-19",
     author: "Nitish Bisen",
@@ -12639,7 +12637,7 @@ public class CustomPrefillServices implements DataProvider {
   },
   {
     slug: "google-api-form",
-    title: "AEM Forms with Google Maps API's",
+    title: "AEM Forms with Google Maps APIs",
     category: "AEM Forms",
     date: "2024-08-03",
     author: "Nitish Bisen",
@@ -13126,7 +13124,7 @@ function handleError(error) {
       {
         type: "numberedList",
         items: [
-          "Search for the field (e.g. text, button, numeric box).",
+          "Search for the field (e.g., text, button, numeric box).",
         ],
       },
       {
@@ -13608,7 +13606,7 @@ function handleError(error) {
   },
   {
     slug: "vanity-urls",
-    title: "Handelling Vanity URLs in AEM",
+    title: "Handling Vanity URLs in AEM",
     category: "AEM Sites",
     date: "2023-06-09",
     author: "Shruti Meshram",
@@ -13619,7 +13617,7 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "Lets begin today's learning regarding vanity urls and their handelling in AEM.",
+          "Let's begin today's learning regarding vanity URLs and their handling in AEM.",
       },
 
       {
@@ -13631,7 +13629,7 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "Vanity URLs are nothing but friendly URLs. Suppose we have a URL:localhost/content/abc/def/ghi/organization/team.html which is not really eye catching to the users so AEM authors are provided the previllege to transform this URL into a more user friendly URL such as localhost:4502/organization/team.html which is indeed a vanity url of the provided one.",
+          "Vanity URLs are nothing but friendly URLs. Suppose we have a URL:localhost/content/abc/def/ghi/organization/team.html which is not really eye catching to the users so AEM authors are provided the privilege to transform this URL into a more user friendly URL such as localhost:4502/organization/team.html which is indeed a vanity URL of the provided one.",
       },
 
       {
@@ -13661,7 +13659,7 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "Go to Basic tab and find vanity path as a multifield to add the required vanity url and select save and close.",
+          "Go to Basic tab and find vanity path as a multifield to add the required vanity URL and select save and close.",
       },
 
       {
@@ -13673,13 +13671,13 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "There in you also find a Redirect checkbox, if checked, the vanity url generates a status code of 302 along with initiator as other and reaches the parent url through internal redirect.",
+          "There in you also find a Redirect checkbox, if checked, the vanity URL generates a status code of 302 along with initiator as other and reaches the parent URL through internal redirect.",
       },
 
       {
         type: "paragraph",
         text:
-          "The vanity URL on the other hand provides a status code of 200 with initiator as the vanity url itself",
+          "The vanity URL on the other hand provides a status code of 200 with initiator as the vanity URL itself",
       },
 
       {
@@ -13715,13 +13713,13 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "Everytime an author adds a vanity url, its entry needs to be made at the dispatcher level and this becomes tedious so, in AEM dispatcher has an auto allow feature listed in vanity tree.",
+          "Everytime an author adds a vanity URL, its entry needs to be made at the dispatcher level and this becomes tedious so, in AEM dispatcher has an auto allow feature listed in vanity tree.",
       },
 
       {
         type: "paragraph",
         text:
-          "All the map entries for vanity urls are available in localhost:4502/system/console/jcrresolver stating external redirect with status code 302.",
+          "All the map entries for vanity URLs are available in localhost:4502/system/console/jcrresolver stating external redirect with status code 302.",
       },
 
       {
@@ -13739,7 +13737,7 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "In dispatcher, /vhost, we specify the rules for vanity_urls. Also we can specify which file should store vanity urls and after how many seconds the file must get refreshed.",
+          "In dispatcher, /vhost, we specify the rules for vanity_urls. Also we can specify which file should store vanity URLs and after how many seconds the file must get refreshed.",
       },
 
       {
@@ -13755,12 +13753,12 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "Here /libs/content/dispatcher/content/vanityUrls.html is a page that displays all the vanity urls available in AEM.",
+          "Here /libs/content/dispatcher/content/vanityUrls.html is a page that displays all the vanity URLs available in AEM.",
       },
 
       {
         type: "paragraph",
-        text: "/temp/vanity-urls is file that stores all the vanity urls",
+        text: "/temp/vanity-urls is the file that stores all the vanity URLs",
       },
 
       {
@@ -13778,7 +13776,7 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "A refreshed request can be explicitly trigerred by just requesting a non-existing url to ensure /delay elapse.",
+          "A refreshed request can be explicitly triggered by just requesting a non-existing URL to ensure /delay elapse.",
       },
 
       {
@@ -13801,7 +13799,7 @@ function handleError(error) {
       {
         type: "paragraph",
         text:
-          "L (i.e last flag) is used to increase the performance as it skips the unnecessary rules without generating a proxy request. PT (i.e pass through flag) looks for a vanity url starting with provided initals and then fetches the complete path from the renderer. NC (i.e no case sensitivity) ignores casings.",
+          "L (i.e., last flag) is used to increase the performance as it skips the unnecessary rules without generating a proxy request. PT (i.e., pass through flag) looks for a vanity URL starting with provided initials and then fetches the complete path from the renderer. NC (i.e., no case sensitivity) ignores casings.",
       },
 
       {
@@ -13813,7 +13811,7 @@ function handleError(error) {
   },
   {
     slug: "osgi-configuration-factory",
-    title: "OSGI Configuration Factory",
+    title: "OSGi Configuration Factory",
     category: "AEM Sites",
     date: "2023-06-24",
     author: "Yash Sakharkar",
@@ -13824,7 +13822,7 @@ function handleError(error) {
       {
         type: "heading",
         level: 3,
-        text: "What is OSGI In AEM ?",
+        text: "What is OSGi In AEM?",
       },
 
       {
@@ -13836,7 +13834,7 @@ function handleError(error) {
       {
         type: "heading",
         level: 3,
-        text: "What is OSGI Configuration In AEM ?",
+        text: "What is OSGi Configuration In AEM?",
       },
 
       {
@@ -13848,7 +13846,7 @@ function handleError(error) {
       {
         type: "heading",
         level: 3,
-        text: "What is OSGI Factory Configuration In AEM ?",
+        text: "What is OSGi Factory Configuration In AEM?",
       },
 
       {
@@ -13907,7 +13905,7 @@ function handleError(error) {
 
       {
         type: "paragraph",
-        text: "Here is the code to create Osgi Configuration :",
+        text: "Here is the code to create OSGi Configuration :",
       },
 
       {
@@ -14033,7 +14031,7 @@ public class OsgiConfigurationFactoryImpl implements OsgiFactoryConfigService {
       {
         type: "heading",
         level: 3,
-        text: "Cardinality in AEM ?",
+        text: "Cardinality in AEM?",
       },
 
       {
@@ -14099,7 +14097,7 @@ public class OsgiConfigurationFactoryImpl implements OsgiFactoryConfigService {
       {
         type: "paragraph",
         text:
-          "Create a Java Class with @Model as an annotation through which we can get all the Configurations that passed from Felic console",
+          "Create a Java Class with @Model as an annotation through which we can get all the Configurations that passed from Felix console",
       },
 
       {
@@ -14132,7 +14130,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "paragraph",
         text:
-          "Create the components and with the help of Slightly we can display all the Configurations in AEM page.",
+          "Create the components and with the help of Sightly we can display all the Configurations in AEM page.",
       },
 
       {
@@ -14173,7 +14171,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "paragraph",
         text:
-          "Now login in to the AEM , Go to site Console and open the page",
+          "Now login in to the AEM, Go to site Console and open the page",
       },
 
       {
@@ -14185,13 +14183,13 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
   },
   {
     slug: "aem-msm",
-    title: "MSM (Multi Site Manager)",
+    title: "MSM (Multi-Site Manager)",
     category: "AEM Sites",
     date: "2023-05-09",
     author: "Yash Sakharkar",
     keywords: "AEM MSM, Multi Site Manager AEM, MSM blueprint live copy, AEM multilingual sites, AEM rollout configuration, AEM MSM tutorial, AEM Sites, Infodales, Infodales AEM blog",
     description:
-      "Discover how AEM Multi Site Manager simplifies multi-site content management using blueprints and live copies.",
+      "Discover how AEM Multi-Site Manager simplifies multi-site content management using blueprints and live copies.",
     content: [
       {
         type: "heading",
@@ -14317,7 +14315,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "bulletList",
         items: [
-          "Create a page e.g. Language Master by right clicking on your project.",
+          "Create a page e.g., Language Master by right clicking on your project.",
         ],
       },
 
@@ -14445,7 +14443,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "paragraph",
         text:
-          "Consider we have a Site in French and English language, but there should be a need of creating the site in other languages, e.g. Spanish in such a case you can create a Live Copy of Spanish language.",
+          "Consider we have a Site in French and English language, but there should be a need of creating the site in other languages, e.g., Spanish in such a case you can create a Live Copy of Spanish language.",
       },
 
       {
@@ -14515,7 +14513,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "bulletList",
         items: [
-          "Add Title and Name, also select the Rollout Configs i.e. Standard Rollout Config, and Push on Modify. Click on the Next Button.",
+          "Add Title and Name, also select the Rollout Configs i.e., Standard Rollout Config, and Push on Modify. Click on the Next Button.",
         ],
       },
 
@@ -14860,7 +14858,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
 
   {
     slug: "introduction-to-document-based-authoring",
-    title: "Introduction to Document Based Authoring",
+    title: "Introduction to Document-Based Authoring",
     category: "AEM EDS",
     date: "2024-12-10",
     author: "Owais Pathan",
@@ -15488,7 +15486,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
   },
   {
     slug: "implementing-redirects-and-response-headers-in-edge-delivery-services",
-    title: "Implementing redirects and response header in Edge Delivery Services",
+    title: "Implementing Redirects and Response Headers in Edge Delivery Services",
     category: "AEM EDS",
     date: "2024-12-25",
     author: "Owais Pathan",
@@ -15841,7 +15839,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "paragraph",
         text:
-          "In this blog we will be understanding what are servlets in AEM plus what are the ways in which they are registered. Also we will understand in brief which type to use and when. Lets begin!",
+          "In this blog we will be understanding what are servlets in AEM plus what are the ways in which they are registered. Also we will understand in brief which type to use and when. Let's begin!",
       },
 
       {
@@ -15877,7 +15875,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
       {
         type: "paragraph",
         text:
-          "doOPTIONS - Handles HTTP OPTIONS requests, used by clients to discover what HTTP methods are supported by the server for a given resource. It is generally used for handeling CORS(Cross Origin Resource Sharing) and checking server's capability.",
+          "doOPTIONS - Handles HTTP OPTIONS requests, used by clients to discover what HTTP methods are supported by the server for a given resource. It is generally used for handling CORS(Cross Origin Resource Sharing) and checking server's capability.",
       },
 
       {
@@ -15904,12 +15902,12 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
           {
             title: "By Path",
             text:
-              "Whenever we have to test the reponse or functioning of the servlet prior, it is preferred to register it by path. Also whenever any custom endpoint is created in the aem environment, they generally are not tied to any sort of aem resource, like components. In such case too, the servlet is preferred to be registered by path. An example is creating an endpoint from content fragments.",
+              "Whenever we have to test the response or functioning of the servlet prior, it is preferred to register it by path. Also whenever any custom endpoint is created in the aem environment, they generally are not tied to any sort of aem resource, like components. In such case too, the servlet is preferred to be registered by path. An example is creating an endpoint from content fragments.",
           },
           {
             title: "By Resource Type",
             text:
-              "Now when a servlet is supposed to act on a specific resource or is supposed to work within the context of a specific resource or perform logic specifically related to the content or inputs recieved from the page, at this moment we are ought to register the servlet by resource type.",
+              "Now when a servlet is supposed to act on a specific resource or is supposed to work within the context of a specific resource or perform logic specifically related to the content or inputs received from the page, at this moment we are ought to register the servlet by resource type.",
           },
         ],
       },
@@ -16046,7 +16044,7 @@ public class AssetPathServlet extends SlingSafeMethodsServlet {
       {
         type: "bulletList",
         items: [
-          "After registering your servlet with resource type, you need to hit it on the postman to recieve its response. The path to the servlet will be the path of the page on which your component is present ending till the location of the component itself.",
+          "After registering your servlet with resource type, you need to hit it on the postman to receive its response. The path to the servlet will be the path of the page on which your component is present ending till the location of the component itself.",
         ],
       },
 
@@ -16121,19 +16119,19 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
       {
         type: "paragraph",
         text:
-          "Here we have learnt what are servlets, how they are registered and when to use which way to register it. Also we have tested both the servlets as registered by resource as well as by path.",
+          "Here we have learned what are servlets, how they are registered and when to use which way to register it. Also we have tested both the servlets as registered by resource as well as by path.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
   {
     slug: "custom-button-and-console",
-    title: "Creating custom button & console in AEM",
+    title: "Creating Custom Button and Console in AEM",
     category: "AEM Sites",
     date: "2023-08-09",
     author: "Suchita Mishra",
@@ -16163,7 +16161,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
         items: [
           "Running AEM instance (AEM 6.x)",
           "Basic knowledge of AEM and Sling",
-          "Familiarity with JSP, and front-end technologies like HTML, CSS, Javascript",
+          "Familiarity with JSP, and front-end technologies like HTML, CSS, JavaScript",
         ],
       },
 
@@ -16325,7 +16323,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
       {
         type: "paragraph",
         text:
-          "After creating the page component and adding the content & styling to it (can be done accordingly), we have sucessfully created our custom AEM console. Upon clicking our sample console tool, it effortlessly redirects us to the meticulously designed page we've created.",
+          "After creating the page component and adding the content & styling to it (can be done accordingly), we have successfully created our custom AEM console. Upon clicking our sample console tool, it effortlessly redirects us to the meticulously designed page we've created.",
       },
 
       {
@@ -16392,7 +16390,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
           {
             title: "Rendering Content",
             text:
-              "A component is usually called within a page’s HTML by its resource type . The page requests content, which the component renders based on its configuration and underlying logic.",
+              "A component is usually called within a page’s HTML by its resource type. The page requests content, which the component renders based on its configuration and underlying logic.",
           },
           {
             title: "Dialog Configuration",
@@ -16442,7 +16440,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
       {
         type: "bulletList",
         items: [
-          "Therein you need to rename the .jsp file to .html file and also add a cd:dialog. This is the dialog in which the fiels persists which are then authored. Here we have created the text field, path field, date picker and a chekbor. For every such field, we have to add a different sling:resourceType. These sling:resourceTypes can be found from the ADOBE Granite UI (https://developer.adobe.com/experience-manager/reference-materials/6-5/granite-ui/api/jcr_root/libs/granite/ui/index.html).",
+          "Therein you need to rename the .jsp file to .html file and also add a cd:dialog. This is the dialog in which the fields persists which are then authored. Here we have created the text field, path field, date picker and a checkbox. For every such field, we have to add a different sling:resourceType. These sling:resourceTypes can be found from the ADOBE Granite UI (https://developer.adobe.com/experience-manager/reference-materials/6-5/granite-ui/api/jcr_root/libs/granite/ui/index.html).",
         ],
       },
 
@@ -16461,7 +16459,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
       {
         type: "bulletList",
         items: [
-          "Then, you simple need to add the component on the page. You need to edit template, add the component to the cointainer's policy and then simply drop your component.",
+          "Then, you simple need to add the component on the page. You need to edit template, add the component to the container's policy and then simply drop your component.",
         ],
       },
 
@@ -16486,8 +16484,8 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
       {
         type: "bulletList",
         items: [
-          "Now we need tto render the authored values of the component via sling model.",
-          "@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL) This defines that the Sling Model can be adapted from a Resource and pecifies how fields in the model should be injected.",
+          "Now we need to render the authored values of the component via sling model.",
+          "@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL) This defines that the Sling Model can be adapted from a Resource and specifies how fields in the model should be injected.",
           "@ValueMapValue annotation is specifically used to inject properties from a Sling Resource into a Sling Model. It works with ValueMaps, which are essentially key-value pairs that store resource properties in AEM. The @Inject annotation can be used with different types, and AEM will automatically resolve the correct source for the injection. Here we are using it to inject ResourceResolver",
         ],
       },
@@ -16566,13 +16564,13 @@ public class DemoComponentModel {
       {
         type: "paragraph",
         text:
-          "We have created a simple component and have learnt how to render its authoreded values using a sling model.",
+          "We have created a simple component and have learned how to render its authored values using a sling model.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
@@ -16688,7 +16686,7 @@ public class DemoComponentModel {
       {
         type: "paragraph",
         text:
-          "Since there could be a list of products with provided set of information and creating a component for each product scpecification is a bad idea, so aem provides a facility of creating a multifield for the same same.",
+          "Since there could be a list of products with provided set of information and creating a component for each product specification is a bad idea, so aem provides a facility of creating a multifield for the same.",
       },
 
       {
@@ -16732,7 +16730,7 @@ public class DemoComponentModel {
       {
         type: "bulletList",
         items: [
-          "Now create the productListNames, productListDescription and productListPrice as created for tabone. Ensure tehre are no duplicate names for any two widgets.",
+          "Now create the productListNames, productListDescription and productListPrice as created for tabone. Ensure there are no duplicate names for any two widgets.",
         ],
       },
 
@@ -16877,12 +16875,12 @@ public class TabAndMultifieldModel {
       {
         type: "bulletList",
         items: [
-          "Here we have added SlingHttpServletRequest as adaptables, this is to recieve those objects which cannot be recieved directly from Resource.",
+          "Here we have added SlingHttpServletRequest as adaptables, this is to receive those objects which cannot be received directly from Resource.",
           "@Inject is used to map the values for tabs and multifield exclusively.",
           "@Via is here used to map the field through resource.",
           "Here we have not added defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, rather have added annotations @Required and @Optional here.",
-          "@Named is used to map the field name to a substitue name referred in the backend.",
-          "To add the multifield, we need to create a pojo class annoted with model, having field names same as that of the name property and applied @Inject to it.",
+          "@Named is used to map the field name to a substitute name referred in the backend.",
+          "To add the multifield, we need to create a pojo class annotated with model, having field names same as that of the name property and applied @Inject to it.",
           "Here the list of pojo needs to be named with that of the field name and here in our case it is products.",
         ],
       },
@@ -16924,8 +16922,8 @@ public class Products {
       {
         type: "bulletList",
         items: [
-          "Here info string provides the collective values hence retrieved and processed from a method annoted with @PostConstruct, which gets called only after all the authoring is complete.",
-          "The values is hence recieved from Slightly using the following snippet in the .html file.",
+          "Here info string provides the collective values hence retrieved and processed from a method annotated with @PostConstruct, which gets called only after all the authoring is complete.",
+          "The values are hence received from Sightly using the following snippet in the .html file.",
         ],
       },
 
@@ -16957,19 +16955,19 @@ public class Products {
       {
         type: "paragraph",
         text:
-          "We have created a component having multifield and tabs. Also we have learnt some more annotaions, the role of pojo and how exactlymultifield and tabs are rendered.",
+          "We have created a component having multifield and tabs. Also we have learned some more annotations, the role of pojo and how exactlymultifield and tabs are rendered.",
       },
 
       {
         type: "paragraph",
         text:
-          "I hope you enjoyed the learing and have found the blog informative.",
+          "I hope you enjoyed the learning and have found the blog informative.",
       },
     ],
   },
   {
     slug: "adaptive-form-fragments",
-    title: "AEM Forms : Adaptive Form Fragments",
+    title: "AEM Forms: Adaptive Form Fragments",
     category: "AEM Forms",
     date: "2023-08-24",
     author: "Nitish Bisen",
@@ -17822,7 +17820,7 @@ public class Products {
       {
         type: "paragraph",
         text:
-          "These files define things like the available components, their fields, how and where they can be placed, page metadata and section configuration. From these source files, the actual configuration files get generated at the project root, i.e. component-definition.json, component-models.json and component-filters.json.",
+          "These files define things like the available components, their fields, how and where they can be placed, page metadata and section configuration. From these source files, the actual configuration files get generated at the project root, i.e., component-definition.json, component-models.json and component-filters.json.",
       },
 
       // TODO: add the generated root files image here
@@ -17879,7 +17877,7 @@ public class Products {
   },
   {
     slug: "blockoption-universal-editor-eds-eds",
-    title: "Block Option in Edge Delivery Service",
+    title: "Block Option in Edge Delivery Services",
     category: "AEM EDS",
     date: "2026-09-28",
     author: "Shruti Kawadkar",
@@ -18295,7 +18293,7 @@ public class Products {
   },
   {
     slug: "block-creation-eds",
-    title: "Block Creation in Edge Delivery Service",
+    title: "Block Creation in Edge Delivery Services",
     category: "AEM EDS",
     date: "2024-12-15",
     author: "Owais Pathan",

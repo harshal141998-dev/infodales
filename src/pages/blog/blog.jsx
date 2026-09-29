@@ -63,10 +63,10 @@ const tracks = [
     title: "AEM Sites",
     tag: "AEM Sites",
     description:
-      "Components, Sling Model, HTL, Sling Job, Workflows and all",
+      "Components, Sling Models, HTL, Sling Jobs, Workflows, and more",
     Icon: CloudOutlinedIcon,
     color: "#059669",
-    action: "Explore sites Track",
+    action: "Explore Sites Track",
     category: "AEM Sites",
   },
   {
@@ -532,7 +532,7 @@ export default function BlogsPage() {
             <Chip />
 
             <Typography component="h1" className="hero-title">
-              Exploring AEM through Blogs
+              Exploring AEM Through Blogs
             </Typography>
 
             <Typography className="hero-description">
@@ -609,7 +609,7 @@ export default function BlogsPage() {
       >
         <Box className="section-heading">
           <Typography component="h2">
-            Filter & Explore AEM Articles
+            Filter and Explore AEM Articles
           </Typography>
 
           <Typography>

@@ -49,7 +49,7 @@ const JOBS = [
         id: 1, category: "aem", icon: <ArchitectureIcon sx={{ fontSize: 20 }} />, badge: "AEM Practice", badgeColor: "blue",
         title: "AEM Developer", location: "Full-time / Hybrid (Pune / Remote)",
         desc: "Build and maintain components, templates, and services on Adobe Experience Manager. Work with Sling Models, OSGi configurations, and Dispatcher rules, and contribute to headless integrations using GraphQL and Content Fragments.",
-        tags: ["AEM 6.5 / Cloud", "Java 17", "Sling Models", "GraphQL", "Osgi"], tier: "Tier: 3+ Yrs",
+        tags: ["AEM 6.5 / Cloud", "Java 17", "Sling Models", "GraphQL", "OSGi"], tier: "Tier: 3+ Years",
         keywords: "aem adobe experience manager java sling osgi architect cms",
     },
     // {
@@ -93,14 +93,14 @@ const TIPS = [
     {
         title: "Get Clear On What You Want", icon: <LightbulbIcon color="primary" />,
         text: "Employers appreciate candidates who demonstrate a clear understanding of their own objectives. Take the time to understand your own skills, values, and interests, and clearly articulate what you're seeking in terms of job responsibilities, company culture, and growth opportunities. The better you know yourself, the more likely you'll find a new job that provides you with greater satisfaction.",
-        note: "Come with 2-3 specific technical goals you want to accomplish in the next 18 months.",
+        note: "Come with 2–3 specific technical goals you want to accomplish in the next 18 months.",
         img: tip1Img,
         imgFirst: false
     },
     {
         title: "Be yourself", icon: <ForumIcon color="primary" />,
         text: "Your initial chat with a recruiter will be casual and candid. So, by being yourself during the interview, you can establish a solid foundation for open and honest communication, ensuring a mutually beneficial and successful work relationship. (And ask a lot of questions!)",
-        note: "Our interviews are dialogues, not interrogations. Ask us about project pains and real challenges.",
+        note: "Our interviews are dialogues, not interrogations. Ask us about project pain points and real challenges.",
         img: tip2Img,
         imgFirst: true
     },
@@ -113,7 +113,7 @@ const TIPS = [
     },
     {
         title: "Think outside the box", icon: <PsychologyIcon color="primary" />,
-        text: "Don't be afraid to challenge the status quo, questioning traditional norms and exploring alternative perspectives that push the boundaries of conventional thinking. Infodales is a haven for those who embrace the audacious, daring to venture into unexplored realms of knowledge and challenging the limitation of the known.",
+        text: "Don't be afraid to challenge the status quo, questioning traditional norms and exploring alternative perspectives that push the boundaries of conventional thinking. Infodales is a haven for those who embrace the audacious, daring to venture into unexplored realms of knowledge and challenging the limitations of the known.",
         note: "We celebrate team members who point out better ways to solve recurring bottlenecks.",
         img: tip4Img,
         imgFirst: true
@@ -560,7 +560,7 @@ export default function CareerPage() {
 
                         <Typography variant="h4" fontWeight={800} sx={{ mb: 1, letterSpacing: '-0.025em', fontSize: { xs: '1.5rem', sm: '1.875rem' } }}>Don't see your specific stack listed?</Typography>
                         <Typography sx={{ color: "#94a3b8", fontSize: { xs: '0.875rem', sm: '1rem' }, lineHeight: 1.6 }}>
-                            We are continuously seeking extraordinary problem-solvers across Cloud, DevSecOps, and Enterprise Data platforms. Introduce yourself directly.
+                            We are continuously seeking extraordinary problem-solvers across cloud, DevSecOps, and enterprise data platforms. Introduce yourself directly.
                         </Typography>
                     </Box>
                     <Box sx={{ flexShrink: 0 }}>

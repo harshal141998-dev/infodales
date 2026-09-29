@@ -128,7 +128,7 @@ export default function HomePage() {
                         </Typography>
 
                         <Typography sx={{ color: "#cbd5e1", fontSize: { xs: "0.9rem", md: "1rem" }, lineHeight: 1.7, maxWidth: 680, mb: 4 }}>
-                            We at InfoDales provide solutions for niche technologies like Adobe Experience Manager, Cypress, Salesforce, and DevOps. Our highly skilled consulting team helps us meet high standards in these technologies. They assist you with AEM, Cypress, Salesforce, and DevOps to build flawless experiences.
+                            We at Infodales provide solutions for niche technologies like Adobe Experience Manager, Cypress, Salesforce, and DevOps. Our highly skilled consulting team helps us meet high standards in these technologies. They assist you with AEM, Cypress, Salesforce, and DevOps to build flawless experiences.
                         </Typography>
 
                         <Button
@@ -200,14 +200,14 @@ export default function HomePage() {
                                 }}
                             /> */}
                             <Typography variant="h3" fontWeight={800} sx={{ color: "#0f172a", fontSize: { xs: "1.75rem", md: "2.25rem" }, letterSpacing: "-0.02em", mb: 1.5 }}>
-                                Who we are
+                                Who We Are
                             </Typography>
                             <Box sx={{ width: 48, height: 3, bgcolor: "#0EA5E9", borderRadius: "2px" }} />
                         </Grid>
 
                         <Grid size={{ xs: 12, md: 8 }}>
                             <Typography sx={{ color: "#0f172a", fontWeight: 600, fontSize: { xs: "1.3rem", md: "1.15rem" }, lineHeight: 1.6, mb: 2 }}>
-                                We at InfoDales are positioned as one of the top engineering firms in the IT industry, offering quick, concise, and reliable services.
+                                We at Infodales are positioned as one of the top engineering firms in the IT industry, offering quick, concise, and reliable services.
                             </Typography>
                             <Typography sx={{ color: "#64748b", fontSize: "1rem", lineHeight: 1.7, mb: 2.5 }}>
                                 At our company, we go beyond mere web development. We craft meticulously tailored digital ecosystems that stand the test of time, embodying years of unwavering expertise and ensuring unrivaled maintainability and freedom from technical debt. Our customer-centric solutions and architectural experience help organizations establish a global footprint.
@@ -397,7 +397,6 @@ export default function HomePage() {
                                 }}
                             >
                                 Hire Adobe AEM experts for better web content management
-                                Here's what you get:
                             </Typography>
                             <Typography sx={{ color: "#64748b", fontSize: "1rem", mb: 4 }}>
                                 Here's what you get –
