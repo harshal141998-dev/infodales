@@ -1465,3 +1465,17 @@
 .blogs-page .article-card .article-title * {
   font-size: inherit !important;
 }
+
+/* Whole card is clickable */
+.blogs-page .article-card.MuiCard-root {
+  cursor: pointer;
+}
+
+.blogs-page .article-card.MuiCard-root:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 3px;
+}
+
+.blogs-page .article-card .read-button.MuiButton-root {
+  pointer-events: none;
+}

@@ -210,8 +210,19 @@ function formatArticleDate(date) {
 }
 
 function ArticleCard({ article, onOpen }) {
+  const handleOpen = () => onOpen(article.slug);
   return (
-    <Card className="article-card">
+    <Card className="article-card"
+    onClick={handleOpen}
+      role="link"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleOpen();
+        }
+      }}
+    >
       <CardContent className="article-content">
         <Stack
           direction="row"

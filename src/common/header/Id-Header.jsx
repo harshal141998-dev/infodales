@@ -52,7 +52,7 @@ export default function Header() {
 
                             <Button
                                 component={RouterLink}
-                                 to="/contact"
+                                 to="/contact#executive-advisory"
                                 //to="https://docs.google.com/forms/d/e/1FAIpQLSdvnHSKzwdbeHDIIEme870IpZY_C2IPYMAX9RpAC0ejphBtUA/viewform?usp=header"
                                 onClick={(e) => {
                                     if (window.location.pathname === "/contact") {
