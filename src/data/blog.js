@@ -5,6 +5,7 @@ export const articles = [
     category: "Dispatcher",
     date: "2023-04-25",
     author: "Shruti Meshram",
+    keywords: "AEM Dispatcher, Dispatcher in AEM, AEM Dispatcher setup, Apache Dispatcher module, AEM caching, AEM load balancing, Dispatcher configuration, AEM security, Dispatcher tutorial, Infodales, Infodales AEM blog",
     description:
       "Understand how AEM Dispatcher improves performance, caching, and security for AEM websites.",
     content: [
@@ -379,6 +380,7 @@ export const articles = [
     category: "Dispatcher",
     date: "2024-08-31",
     author: "Yash Sakharkar",
+    keywords: "AEM as a Cloud Service Dispatcher, AMS to AEMaaCS migration, Dispatcher configuration migration, AEM Cloud Service dispatcher, Dispatcher converter tool, AEM AMS dispatcher, AEMaaCS migration guide, Infodales, Infodales AEM blog",
     description:
       "Learn how to adapt and migrate Dispatcher configurations from AMS to AEM as a Cloud Service.",
     content: [
@@ -866,6 +868,7 @@ $include "../clientheaders/default_clientheaders.any"`,
     category: "AEM SPA",
     date: "2023-04-11",
     author: "Yash Sakharkar",
+    keywords: "AEM SPA component mapping, AEM SPA Editor, MapTo AEM React, AEM React component mapping, AEM Angular SPA, SPA editor tutorial, AEM headless components, Infodales, Infodales AEM blog",
     description:
       "Discover how AEM components are mapped to frontend components in an AEM SPA implementation.",
     content: [
@@ -1111,6 +1114,7 @@ MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);`,
     category: "AEM SPA",
     date: "2023-03-29",
     author: "Suchita Mishra",
+    keywords: "AEM SPA getting started, AEM SPA Editor, AEM React SPA, AEM Angular SPA, Single Page Application AEM, SPA editor setup, AEM SPA tutorial, Infodales, Infodales AEM blog",
     description:
       "Explore the fundamentals of AEM SPA Editor and how to build single-page applications with AEM.",
     content: [
@@ -1535,6 +1539,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
     category: "AEM EDS",
     date: "2025-01-05",
     author: "Owais Pathan",
+    keywords: "AEM Sidekick customization, Edge Delivery Services Sidekick, EDS Sidekick custom button, AEM Sidekick plugin, Sidekick extension EDS, Adobe Edge Delivery Sidekick, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to customize the EDS Sidekick to support authoring workflows and project requirements.",
     content: [
@@ -1772,6 +1777,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
     category: "AEM EDS",
     date: "2025-01-10",
     author: "Owais Pathan",
+    keywords: "AEM Sidekick Library, Edge Delivery Services Sidekick Library, EDS block library, Sidekick Library setup, AEM EDS content authoring, Sidekick blocks library, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Explore the Sidekick Library and how it helps manage and extend Edge Delivery Services functionality.",
     content: [
@@ -2127,6 +2133,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
     category: "AEM EDS",
     date: "2026-09-09",
     author: "Shruti Meshram",
+    keywords: "AEM Dispatcher vs Edge Delivery Services, Dispatcher vs EDS CDN, AEM CDN comparison, Edge Delivery Services CDN, AEM caching vs EDS, AEM performance, Dispatcher alternative, Infodales, Infodales AEM blog",
     description:
       "Learn how to customize the EDS Sidekick to support authoring workflows and project requirements.",
     content: [
@@ -2301,6 +2308,7 @@ frontendModule="react" -D aemVersion=6.5.0`,
     category: "AEM EDS",
     date: "2026-09-10",
     author: "Harshal Farkade",
+    keywords: "create block AEM EDS, Universal Editor block, Edge Delivery Services block development, AEM Universal Editor authoring, EDS block model, component definition JSON, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "In EDS, a block is the fundamental unit of authorable, styleable, and scriptable content on a page, the EDS equivalent of a component.",
     content: [
@@ -2804,6 +2812,7 @@ git push origin feature/hero-banner-block`,
     category: "AEM EDS",
     date: "2026-09-10",
     author: "Ayush Khandekar",
+    keywords: "AEM Universal Editor, Universal Editor authoring, Edge Delivery Services authoring, AEM WYSIWYG editor, Universal Editor tutorial, AEM EDS content authoring, visual editing AEM, Infodales, Infodales AEM blog",
     description:
       "Learn Authoring in the universal editor: Content Tree, Components, Actions in detail",
     content: [
@@ -3094,6 +3103,7 @@ git push origin feature/hero-banner-block`,
     category: "AEM EDS",
     date: "2026-09-10",
     author: "Ayush Khandekar",
+    keywords: "AEM EDS Universal Editor overview, Edge Delivery Services Universal Editor, Universal Editor architecture, AEM Universal Editor setup, EDS authoring options, Adobe Universal Editor guide, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn Authoring in the universal editor: Content Tree, Components, Actions in detail",
     content: [
@@ -3470,6 +3480,7 @@ git push origin feature/hero-banner-block`,
     category: "AEM EDS",
     readTime: "8 min read",
     author: "Infodales",
+    keywords: "Edge Delivery Services indexing, AEM EDS query index, EDS query-index.json, helix-query.yaml, EDS site search, AEM EDS sitemap, Edge Delivery indexing tutorial, Infodales, Infodales AEM blog",
     description:
       "Understand how indexing works in Edge Delivery Services to make website content discoverable.",
     content: [
@@ -3652,6 +3663,7 @@ git push origin feature/hero-banner-block`,
     category: "AEM Forms",
     date: "2023-03-15",
     author: "Ankit Pardhi",
+    keywords: "AEM Forms Rule Editor, custom functions Rule Editor, AEM Adaptive Forms custom function, Rule Editor JavaScript, AEM Forms validation, Adaptive Form rules, AEM Forms tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to create and integrate custom JavaScript functions into the AEM Forms Rule Editor.",
     content: [
@@ -3921,6 +3933,7 @@ git push origin feature/hero-banner-block`,
     category: "AEM Forms",
     date: "2023-02-28",
     author: "Owais Pathan",
+    keywords: "submit Adaptive Form AEM, Form Data Model AEM Forms, AEM Forms data integration, Adaptive Form submission, FDM AEM, AEM Forms REST service, AEM Forms tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how to submit Adaptive Forms using a Form Data Model to integrate with backend services.",
     content: [
@@ -4087,6 +4100,7 @@ git push origin feature/hero-banner-block`,
     category: "AEM Forms",
     date: "2023-06-09",
     author: "Nitish Bisen",
+    keywords: "OCR AEM Forms, data extraction AEM Forms, AEM Forms document upload OCR, Adaptive Form OCR, AEM Forms automation, extract data from documents AEM, AEM Forms tutorial, Infodales, Infodales AEM blog",
     description:
       "Explore how OCR technology extracts text and structured information from documents in AEM Forms.",
     content: [
@@ -4393,6 +4407,7 @@ definitions:
     category: "AEM Forms",
     date: "2023-06-24",
     author: "Nitish Bisen",
+    keywords: "AEM Forms SMS authentication, two factor authentication AEM Forms, SMS OTP Adaptive Form, AEM Forms security, 2FA AEM, OTP verification AEM Forms, AEM Forms tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to strengthen AEM Forms security using SMS-based two-factor authentication.",
     content: [
@@ -4717,6 +4732,7 @@ definitions:
     category: "AEM Sites",
     date: "2024-10-10",
     author: "Shruti Meshram",
+    keywords: "AEM GraphQL, AEM GraphQL API, GraphQL content fragments, AEM headless GraphQL, GraphQL persisted queries AEM, AEM headless CMS, AEM GraphQL tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how AEM GraphQL delivers structured Content Fragment data to headless applications.",
     content: [
@@ -5149,6 +5165,7 @@ definitions:
     category: "AEM Sites",
     date: "2023-01-07",
     author: "Shruti Meshram",
+    keywords: "Slightly in AEM, Slightly template language, HTL vs Slightly, AEM HTL alternative, AEM templating, Sightly HTL AEM, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how HTL (Sightly) separates presentation logic from business logic in AEM.",
     content: [
@@ -5506,6 +5523,7 @@ definitions:
     category: "AEM Sites",
     date: "2023-03-25",
     author: "Shruti Meshram",
+    keywords: "AEM Editable Templates, editable templates in AEM, AEM template types, AEM page templates, template policies AEM, AEM Sites templates, AEM templates tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to create editable templates, configure policies, and enable flexible page authoring in AEM.",
     content: [
@@ -5861,6 +5879,7 @@ definitions:
     category: "AEM Sites",
     date: "2023-04-02",
     author: "Shruti Meshram",
+    keywords: "AEM system user, service user AEM, AEM service resource resolver, AEM ACL permissions, system user mapping AEM, AEM security, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Understand how to create service users and configure secure repository access for AEM operations.",
     content: [
@@ -6082,6 +6101,7 @@ public final class SubserviceConsumption {
     category: "AEM Sites",
     date: "2023-04-27",
     author: "Shruti Meshram",
+    keywords: "AEM Repoinit, Repoinit scripts, Sling Repoinit, AEM repository initialization, Repoinit system user, AEM OSGi configuration, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how RepoInit automates repository setup, service users, and access control configurations in AEM.",
     content: [
@@ -6196,6 +6216,7 @@ service.pid="org.apache.sling.jcr.repoinit.RepositoryInitializer~local-project"`
     category: "AEM Sites",
     date: "2024-11-12",
     author: "Shruti Meshram",
+    keywords: "Content as a Service AEM, AEM CaaS, AEM headless content delivery, AEM content services, AEM Content Fragments API, headless CMS AEM, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Explore how AEM delivers reusable content through APIs to websites, apps, and headless channels.",
     content: [
@@ -6588,6 +6609,7 @@ public class StarsServlet extends SlingSafeMethodsServlet {
     category: "AEM Sites",
     date: "2023-02-10",
     author: "Owais Pathan",
+    keywords: "AEM unit testing, JUnit AEM, AEM Mocks, Sling Model unit test, wcm.io AEM Mocks, AEM JUnit tutorial, AEM testing best practices, Infodales, Infodales AEM blog",
     description:
       "Learn how to write unit tests for AEM components, services, and models to improve code reliability.",
     content: [
@@ -6848,6 +6870,7 @@ List<SamplePojo> castInfo = sampleModel.getCardInfo();
     category: "AEM Sites",
     date: "2024-11-28",
     author: "Yash Sakharkar",
+    keywords: "AEM Event Handler, AEM Event Listener, Sling EventHandler, JCR observation AEM, OSGi event AEM, AEM resource change listener, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Understand how AEM event handlers and listeners respond to repository changes and application events.",
     content: [
@@ -7135,6 +7158,7 @@ public void onChange( List<ResourceChange> list) {
     category: "AEM Sites",
     date: "2024-12-12",
     author: "Yash Sakharkar",
+    keywords: "AEM sitemap, sitemap implementation AEM, Apache Sling Sitemap, AEM SEO sitemap, XML sitemap AEM, AEM sitemap generation, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to generate XML sitemaps in AEM to help search engines discover and index website pages.",
     content: [
@@ -7330,6 +7354,7 @@ public void onChange( List<ResourceChange> list) {
     category: "AEM Sites",
     date: "2024-12-27",
     author: "Yash Sakharkar",
+    keywords: "AEM Sling Jobs, schedule Sling Jobs AEM, Sling Job Consumer, AEM scheduler, AEM cron job, Sling Job queue, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how to schedule and execute background jobs in AEM using Sling Jobs and schedulers.",
     content: [
@@ -7677,6 +7702,7 @@ public JobResult process(Job job) {
     category: "AEM Sites",
     date: "2024-10-10",
     author: "Shruti Meshram",
+    keywords: "AEM Content Fragments, Content Fragment Models, AEM headless CMS, content fragments AEM tutorial, structured content AEM, Content Fragment GraphQL, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Explore how AEM Content Fragments enable structured, reusable content for headless and omnichannel experiences.",
     content: [
@@ -7903,6 +7929,7 @@ public JobResult process(Job job) {
     category: "AEM Sites",
     date: "2024-10-25",
     author: "Yash Sakharkar",
+    keywords: "AEM ETC mapping, /etc/map AEM, Sling resource mapping, AEM URL mapping, AEM Sling mapping configuration, AEM short URLs, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Understand how AEM resource mappings help manage URL resolution and resource access.",
     content: [
@@ -8331,6 +8358,7 @@ public JobResult process(Job job) {
     category: "AEM Sites",
     date: "2023-03-01",
     author: "Shruti Meshram",
+    keywords: "AEM Clientlibs, AEM client libraries, clientlibs categories embed dependencies, AEM CSS JS management, AEM front-end, ui.frontend AEM, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how AEM Client Libraries organize, manage, and deliver CSS and JavaScript assets.",
     content: [
@@ -8750,6 +8778,7 @@ public JobResult process(Job job) {
     category: "AEM Sites",
     date: "2024-09-14",
     author: "Ankit Pardhi",
+    keywords: "AEM Content Transfer Tool, CTT AEM, migrate content to AEM Cloud Service, AEM as a Cloud Service migration, AEM CTT tutorial, AEMaaCS content migration, Cloud Acceleration Manager, Infodales, Infodales AEM blog",
     description:
       "Discover how the Content Transfer Tool migrates AEM content from on-premise or AMS to AEM Cloud.",
     content: [
@@ -9251,6 +9280,7 @@ public JobResult process(Job job) {
     category: "AEM Sites",
     date: "2023-05-23",
     author: "Suchita Mishra",
+    keywords: "AEM Query Builder, AEM QueryBuilder API, Query Builder predicates, AEM JCR query, AEM search query, Query Builder debugger, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Explore how AEM Query Builder retrieves repository content using flexible search predicates.",
     content: [
@@ -9603,6 +9633,7 @@ for (Hit hit : resultList ) {
     category: "AEM Sites",
     date: "2024-09-30",
     author: "Shruti Meshram",
+    keywords: "AEM Experience Fragments, experience fragments in AEM, Experience Fragment variations, AEM reusable content, Experience Fragment tutorial, AEM Sites, AEM Target export, Infodales, Infodales AEM blog",
     description:
       "Learn how Experience Fragments enable reusable, consistent experiences across pages and channels.",
     content: [
@@ -9797,6 +9828,7 @@ for (Hit hit : resultList ) {
     category: "AEM Sites",
     date: "2024-08-17",
     author: "Shruti Meshram",
+    keywords: "OSGi Factory Configuration, OSGi cardinality AEM, OSGi factory limit, AEM OSGi configuration, OSGi Metatype AEM, AEM OSGi tutorial, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Understand OSGi factory configuration cardinality and limits when managing multiple configuration instances in AEM.",
     content: [
@@ -10078,6 +10110,7 @@ public class ApiHandlerServlet extends SlingSafeMethodsServlet {
     category: "AEM Sites",
     date: "2023-05-24",
     author: "Nitish Bisen",
+    keywords: "AEM as a Cloud Service, AEMaaCS, AEM Cloud Service features, Adobe Experience Manager cloud, AEM cloud migration, AEM Cloud Manager, next-generation digital experiences, Infodales, Infodales AEM blog",
     description:
       "Explore the cloud-native capabilities of AEM as a Cloud Service for scalable digital experiences.",
     content: [
@@ -10436,6 +10469,7 @@ public class ApiHandlerServlet extends SlingSafeMethodsServlet {
     category: "AEM Sites",
     date: "2023-11-09",
     author: "Ankit Pardhi",
+    keywords: "AEM Context Aware Configuration, Sling CA Config, AEM CAC tutorial, context aware configuration AEM, AEM multi-tenant configuration, Sling configuration, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Learn how Context-Aware Configuration provides site-specific settings to AEM components and services.",
     content: [
@@ -10762,6 +10796,7 @@ public class ContextAwareConfigModel {
     category: "AEM Sites",
     date: "2024-08-01",
     author: "Suchita Mishra",
+    keywords: "AEM Targeting, Adobe Target AEM, AEM personalization, AEM ContextHub, AEM audience segments, AEM targeting tutorial, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Discover how AEM targeting uses audiences and contextual data to deliver personalized experiences.",
     content: [
@@ -11335,6 +11370,7 @@ public class ContextAwareConfigModel {
     category: "AEM Sites",
     date: "2023-11-24",
     author: "Shruti Meshram",
+    keywords: "AEM indexing, Oak index AEM, Lucene index AEM, custom Oak index, AEM search performance, AEM index definition, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Understand how Oak indexes improve AEM repository query performance and content retrieval.",
     content: [
@@ -11640,6 +11676,7 @@ public class ContextAwareConfigModel {
     category: "AEM Forms",
     date: "2023-01-31",
     author: "Nitish Bisen",
+    keywords: "AEM Adaptive Form email, send email on form submission, AEM Forms email service, Adaptive Form submit action, AEM Forms workflow email, AEM Forms tutorial, AEM Forms, Infodales, Infodales AEM blog",
     description:
       "Learn how to configure email notifications that send submitted Adaptive Form data to designated recipients.",
     content: [
@@ -11782,6 +11819,7 @@ public class ContextAwareConfigModel {
     category: "AEM Forms",
     date: "2024-07-04",
     author: "Shruti Meshram",
+    keywords: "AEM Forms show hide, Rule Editor show hide, Adaptive Form conditional visibility, AEM Rule Editor tutorial, AEM Forms dynamic fields, AEM Forms rules, AEM Forms, Infodales, Infodales AEM blog",
     description:
       "Discover how to use Rule Editor conditions to dynamically show or hide fields in Adaptive Forms.",
     content: [
@@ -12179,6 +12217,7 @@ public class ContextAwareConfigModel {
     category: "AEM Forms",
     date: "2024-06-20",
     author: "Yash Sakharkar",
+    keywords: "AEM Forms prefill service, custom prefill AEM, Adaptive Form prefill, DataProvider prefill AEM, AEM Forms data prefill, AEM Forms tutorial, AEM Forms, Infodales, Infodales AEM blog",
     description:
       "Learn how custom prefill services populate Adaptive Forms with data from external systems.",
     content: [
@@ -12371,6 +12410,7 @@ public class CustomPrefillServices implements DataProvider {
     category: "AEM Forms",
     date: "2024-07-19",
     author: "Nitish Bisen",
+    keywords: "AEM Forms geolocation, dynamic location AEM Forms, Adaptive Form location, AEM Forms Geolocation API, AEM Forms custom component, AEM Forms tutorial, AEM Forms, Infodales, Infodales AEM blog",
     description:
       "Explore how to integrate geolocation into AEM Forms to capture and use dynamic location information.",
     content: [
@@ -12603,6 +12643,7 @@ public class CustomPrefillServices implements DataProvider {
     category: "AEM Forms",
     date: "2024-08-03",
     author: "Nitish Bisen",
+    keywords: "AEM Forms Google Maps API, Google Maps Adaptive Form, AEM Forms address autocomplete, Google Places API AEM, AEM Forms integration, AEM Forms tutorial, AEM Forms, Infodales, Infodales AEM blog",
     description:
       "Discover how to integrate Google Maps APIs with AEM Forms for location-based form experiences.",
     content: [
@@ -12789,6 +12830,7 @@ function handleError(error) {
     category: "AEM Forms",
     date: "2023-01-17",
     author: "Gaffur Shaik",
+    keywords: "Introduction to AEM Forms, AEM Forms basics, Adaptive Forms, AEM Forms tutorial, Adobe Experience Manager Forms, AEM Forms for beginners, AEM Forms features, Infodales, Infodales AEM blog",
     description:
       "Get started with AEM Forms and explore its capabilities for creating responsive digital forms.",
     content: [
@@ -13207,6 +13249,7 @@ function handleError(error) {
     category: "AEM Sites",
     date: "2023-01-03",
     author: "Gaffur Shaik",
+    keywords: "Introduction to AEM Sites, Adobe Experience Manager basics, AEM for beginners, AEM architecture, AEM Sites tutorial, learn AEM, AEM CMS overview, Infodales, Infodales AEM blog",
     description:
       "Explore AEM Sites fundamentals, core features, and its role in managing digital experiences.",
     content: [
@@ -13569,6 +13612,7 @@ function handleError(error) {
     category: "AEM Sites",
     date: "2023-06-09",
     author: "Shruti Meshram",
+    keywords: "AEM vanity URLs, vanity URL AEM, Sling vanity path, AEM URL redirect, AEM Dispatcher vanity URL, AEM SEO friendly URLs, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to configure and manage vanity URLs in AEM for user-friendly website addresses.",
     content: [
@@ -13773,6 +13817,7 @@ function handleError(error) {
     category: "AEM Sites",
     date: "2023-06-24",
     author: "Yash Sakharkar",
+    keywords: "OSGi Configuration Factory, AEM OSGi factory config, OSGi factory configuration AEM, AEM OSGi tutorial, Felix console configuration, OSGi Metatype, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Understand how OSGi factory configurations manage multiple configurable service instances in AEM.",
     content: [
@@ -14144,6 +14189,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM Sites",
     date: "2023-05-09",
     author: "Yash Sakharkar",
+    keywords: "AEM MSM, Multi Site Manager AEM, MSM blueprint live copy, AEM multilingual sites, AEM rollout configuration, AEM MSM tutorial, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Discover how AEM Multi Site Manager simplifies multi-site content management using blueprints and live copies.",
     content: [
@@ -14505,6 +14551,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM EDS",
     date: "2024-12-01",
     author: "Owais Pathan",
+    keywords: "Introduction to Edge Delivery Services, AEM Edge Delivery Services, EDS tutorial, Adobe EDS basics, Helix AEM, AEM EDS for beginners, high performance websites, Infodales, Infodales AEM blog",
     description:
       "Explore Edge Delivery Services architecture, authoring approaches, and high-performance content delivery.",
 
@@ -14817,6 +14864,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM EDS",
     date: "2024-12-10",
     author: "Owais Pathan",
+    keywords: "AEM document based authoring, EDS document authoring, Google Docs AEM EDS, SharePoint Word AEM EDS, Edge Delivery Services authoring, document-based authoring tutorial, AEM EDS, Infodales, Infodales AEM blog",
     description:
       "Understand how document-based authoring enables content creation and publishing through familiar documents.",
     content: [
@@ -15088,6 +15136,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM EDS",
     date: "2024-12-20",
     author: "Owais Pathan",
+    keywords: "EDS metadata, AEM Edge Delivery metadata, EDS SEO metadata, page metadata Edge Delivery Services, metadata block EDS, bulk metadata EDS, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to add and manage page metadata in EDS to improve SEO and content discovery.",
     content: [
@@ -15283,6 +15332,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM EDS",
     date: "2024-12-30",
     author: "Owais Pathan",
+    keywords: "EDS placeholders, Edge Delivery Services placeholders, placeholders.json EDS, AEM EDS localization, EDS placeholder spreadsheet, fetchPlaceholders EDS, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how placeholders support reusable content and dynamic authoring experiences in EDS.",
     content: [
@@ -15442,6 +15492,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM EDS",
     date: "2024-12-25",
     author: "Owais Pathan",
+    keywords: "EDS redirects, Edge Delivery Services response headers, AEM EDS redirect spreadsheet, EDS custom headers, headers.json EDS, AEM EDS SEO, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to configure URL redirects and HTTP response headers in Edge Delivery Services.",
     content: [
@@ -15772,6 +15823,7 @@ public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
     category: "AEM Sites",
     date: "2023-02-01",
     author: "Shruti Meshram",
+    keywords: "AEM Servlets, Sling Servlet, AEM servlet tutorial, SlingSafeMethodsServlet, OSGi servlet registration, AEM servlet path resource type, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Explore how Sling Servlets handle HTTP requests and implement custom backend functionality in AEM.",
     content: [
@@ -16085,6 +16137,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
     category: "AEM Sites",
     date: "2023-08-09",
     author: "Suchita Mishra",
+    keywords: "AEM custom button, custom console AEM, AEM touch UI customization, AEM author console, AEM action bar button, Granite UI AEM, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn how to extend the AEM authoring interface with custom console actions and buttons.",
     content: [
@@ -16294,6 +16347,7 @@ public class AssetResourceServlet extends SlingSafeMethodsServlet {
     category: "AEM Sites",
     date: "2023-01-18",
     author: "Shruti Meshram",
+    keywords: "AEM components, Sling Models AEM, AEM component development, Sling Model tutorial, HTL Sling Model, AEM core components, AEM Sites, Infodales, Infodales AEM blog",
     description:
       "Learn how to build reusable AEM components and use Sling Models to efficiently access and manage content in the JCR.",
     content: [
@@ -16528,6 +16582,7 @@ public class DemoComponentModel {
     category: "AEM Sites",
     date: "2023-01-18",
     author: "Shruti Meshram",
+    keywords: "AEM tabs dialog, AEM multifield, Granite UI multifield, AEM component dialog, composite multifield, AEM Touch UI dialog, AEM Sites tutorial, Infodales, Infodales AEM blog",
     description:
       "Discover how to use tabs and multifields in AEM dialogs to create organized and flexible authoring experiences.",
     content: [
@@ -16918,6 +16973,7 @@ public class Products {
     category: "AEM Forms",
     date: "2023-08-24",
     author: "Nitish Bisen",
+    keywords: "AEM Adaptive Form Fragments, Adaptive Form fragment, reusable form components AEM, AEM Forms fragments, AEM Forms tutorial, Adaptive Form reuse, AEM Forms, Infodales, Infodales AEM blog",
     description:
       "Learn how Adaptive Form Fragments enable reusable form sections and simplify form maintenance.",
     content: [
@@ -17136,6 +17192,7 @@ public class Products {
     category: "AEM EDS",
     date: "2026-09-10",
     author: "Shruti Kawadkar",
+    keywords: "Edge Delivery Services project structure, EDS folder structure, AEM EDS codebase, EDS blocks scripts styles, aem-boilerplate, EDS project setup, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Explore the EDS project structure and understand how blocks, scripts, styles, and configuration work together.",
     content: [
@@ -17826,6 +17883,7 @@ public class Products {
     category: "AEM EDS",
     date: "2026-09-28",
     author: "Shruti Kawadkar",
+    keywords: "EDS block options, Universal Editor block options, Edge Delivery Services block variants, block option AEM EDS, component-models JSON, Universal Editor tutorial, AEM EDS, Infodales, Infodales AEM blog",
     description:
       "Explore block options in EDS to customize block behavior, variations, and content presentation.",
     content: [
@@ -18241,6 +18299,7 @@ public class Products {
     category: "AEM EDS",
     date: "2024-12-15",
     author: "Owais Pathan",
+    keywords: "EDS block creation, Edge Delivery Services blocks, create block AEM EDS, EDS block development, AEM EDS block decorate, EDS JavaScript CSS block, AEM EDS tutorial, Infodales, Infodales AEM blog",
     description:
       "Learn to create custom, reusable blocks in EDS using JavaScript, CSS, and structured content.",
     content: [
