@@ -109,8 +109,8 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             aria-label="Email"
                             sx={{
-                                width: 40,
-                                height: 40,
+                                width: 36,
+                                height: 36,
                                 borderRadius: "0.5rem",
                                 bgcolor: "#0f172a",
                                 border: "1px solid #1e293b",

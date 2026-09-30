@@ -33,25 +33,25 @@ const WHO_WE_ARE = [
     {
         pillar: "PILLAR 01 // STRATEGIC TARGETING",
         title: "Our Mission",
-        desc: "Our mission is to customize technology solutions and strategic advice to businesses of all sizes to improve their operations, productivity, and overall success.",
+        desc: "Our mission is to deliver customized technology solutions and strategic advice to businesses of all sizes to improve their operations, productivity, and overall success.",
         img: missionImg,
     },
     {
         pillar: "PILLAR 02 // TECH HORIZON",
         title: "Our Vision",
-        desc: "The vision includes staying at the forefront of technological innovation, building strong relationships with clients as a trusted advisor, and having a positive impact on society.",
+        desc: "Our vision is to stay at the forefront of technological innovation, build strong relationships with clients as a trusted advisor, and have a positive impact on society.",
         img: visionImg,
     },
     {
         pillar: "PILLAR 03 // ARCHITECTURE & ALLIANCE",
         title: "Our Strategy",
-        desc: "Our strategy is to provide high-quality technology solutions and consulting services to a targeted market, build a talented and experienced team, establish partnerships with other industry players and focus on customer satisfaction.",
+        desc: "Our strategy is to provide high-quality technology solutions and consulting services to a targeted market, build a talented and experienced team, establish partnerships with other industry players, and focus on customer satisfaction.",
         img: strategyImg,
     },
     {
         pillar: "PILLAR 04 // INTEGRITY & TRUST",
         title: "Our Values",
-        desc: "Our Values are the principles and beliefs that guide the behavior and decision-making of the organization.",
+        desc: "Our values are the principles and beliefs that guide the behavior and decision-making of our organization.",
         img: valuesImg,
     },
 ];
@@ -59,7 +59,7 @@ const WHO_WE_ARE = [
 const HOME_SERVICES = [
     {
         icon: <DeveloperBoardIcon sx={{ fontSize: 20 }} />,
-        title: "Web Development With Adobe Experience Manager",
+        title: "Web Development with Adobe Experience Manager",
         desc: "Enterprise CMS ecosystems engineered for scalable multi-channel brand presence with zero architectural compromise.",
         tags: ["Multi-Site Manager (MSM)", "Cloud Service", "Dispatcher Caching", "Content Fragments", "Edge Delivery Services (EDS)"],
         link: "View Architecture Specs",
@@ -128,10 +128,7 @@ export default function HomePage() {
                         </Typography>
 
                         <Typography sx={{ color: "#cbd5e1", fontSize: { xs: "0.9rem", md: "1rem" }, lineHeight: 1.7, maxWidth: 680, mb: 4 }}>
-                            We at InfoDales provide solutions for niche technologies like Adobe Experience Manager,
-                            Cypress, Salesforce and DevOps. We have a highly skilled consulting team who help us meet
-                            high standards in the above mentioned niche technologies. Our consulting team assists you
-                            in the AEM, Cypress, Salesforce and DevOps for building flawless experiences.
+                            We at InfoDales provide solutions for niche technologies like Adobe Experience Manager, Cypress, Salesforce, and DevOps. Our highly skilled consulting team helps us meet high standards in these technologies. They assist you with AEM, Cypress, Salesforce, and DevOps to build flawless experiences.
                         </Typography>
 
                         <Button
@@ -203,21 +200,17 @@ export default function HomePage() {
                                 }}
                             /> */}
                             <Typography variant="h3" fontWeight={800} sx={{ color: "#0f172a", fontSize: { xs: "1.75rem", md: "2.25rem" }, letterSpacing: "-0.02em", mb: 1.5 }}>
-                                Who we are?
+                                Who we are
                             </Typography>
                             <Box sx={{ width: 48, height: 3, bgcolor: "#0EA5E9", borderRadius: "2px" }} />
                         </Grid>
 
                         <Grid size={{ xs: 12, md: 8 }}>
                             <Typography sx={{ color: "#0f172a", fontWeight: 600, fontSize: { xs: "1.3rem", md: "1.15rem" }, lineHeight: 1.6, mb: 2 }}>
-                                We at InfoDales are positioned as one of the top engineers of the IT industry offering quick,
-                                concise, and reliable services.
+                                We at InfoDales are positioned as one of the top engineering firms in the IT industry, offering quick, concise, and reliable services.
                             </Typography>
                             <Typography sx={{ color: "#64748b", fontSize: "1rem", lineHeight: 1.7, mb: 2.5 }}>
-                                At our company, we go beyond mere web development. We craft meticulously tailored digital
-                                ecosystems that stand the test of time, embodying years of unwavering expertise, ensuring
-                                unrivaled maintainability and absolute freedom from technical debt. Our customer-centric
-                                solutions and architecting experience help organizations to make a global footprint.
+                                At our company, we go beyond mere web development. We craft meticulously tailored digital ecosystems that stand the test of time, embodying years of unwavering expertise and ensuring unrivaled maintainability and freedom from technical debt. Our customer-centric solutions and architectural experience help organizations establish a global footprint.
                             </Typography>
                             <Stack
                                 component={RouterLink}
@@ -298,8 +291,7 @@ export default function HomePage() {
                             Our Services
                         </Typography>
                         <Typography sx={{ color: "#94a3b8", fontSize: { xs: "1rem", md: "0.95rem" }, lineHeight: 1.7 }}>
-                            We design, develop, customize and test web platforms that are maintainable and technical
-                            debt-free in long term, which requires years and years of hands-on development experience.
+                            We design, develop, customize, and test web platforms that are maintainable and free of technical debt in the long term, something that requires years of hands-on development experience.
                         </Typography>
                     </Box>
 
@@ -404,7 +396,8 @@ export default function HomePage() {
                                     mb: 2,
                                 }}
                             >
-                                Hire Adobe AEM experts to offer better web content management
+                                Hire Adobe AEM experts for better web content management
+                                Here's what you get:
                             </Typography>
                             <Typography sx={{ color: "#64748b", fontSize: "1rem", mb: 4 }}>
                                 Here's what you get –
@@ -437,9 +430,9 @@ export default function HomePage() {
                         <Grid size={{ xs: 12, md: 7 }}>
                             <Stack spacing={2}>
                                 {[
-                                    "Proven expertise and experience in building editable and scalable Adobe CMS websites for your growing business",
-                                    "In-depth knowledge of the Adobe AEM platform, its core components, OOTB features, experience fragments, and editable templates",
-                                    "Certified Adobe multi-site manager consultants & developers across the Adobe ecosystem",
+                                    "Proven expertise in building editable, scalable Adobe CMS websites for your growing business",
+                                    "In-depth knowledge of the Adobe AEM platform, its core components, out-of-the-box (OOTB) features, experience fragments, and editable templates",
+                                    "Certified Adobe Multi-Site Manager consultants and developers across the Adobe ecosystem",
                                 ].map((text, i) => (
                                     <Card
                                         key={i}

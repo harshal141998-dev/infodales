@@ -261,7 +261,7 @@ function ContactCard({ icon, label, title, description, action, href }) {
   );
 }
 
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdvnHSKzwdbeHDIIEme870IpZY_C2IPYMAX9RpAC0ejphBtUA/viewform?usp=header";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc_s1ELTzOJWfYT68WhVujzVCPnV5UxSW_8kWncJBHfJlyE-w/viewform?usp=header";
 
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
