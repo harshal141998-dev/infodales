@@ -84,7 +84,7 @@ const CLIENT_TIERS = [
 
         logosrc: codilarlogo,
         category: "CODILAR",
-        quote: "Delivered an AEM Forms implementation for HDFC in partnership with Codilar, architecting a hybrid solution that combines native AEM Forms capabilities with a EDS — enabling secure, responsive digital form experiences at enterprise scale.",
+        quote: "Delivered an AEM Forms implementation for HDFC in partnership with Codilar, architecting a hybrid solution that combines native AEM Forms capabilities with an EDS — enabling secure, responsive digital form experiences at enterprise scale.",
         author: "Julian Vance",
         role: "CTO, Global Quantitative Capital",
         highlight: "12M DAILY ARBITRAGE TRADES",
@@ -93,8 +93,8 @@ const CLIENT_TIERS = [
         id: "hayagreeva",
 
         logosrc: hayalogo,
-        category: "HAYA GREEVA",
-        quote: "Partnered with Haya Greeva on multiple AEM Sites implementations, delivering scalable web architecture and consistent, high-performing digital experiences across their site portfolio.",
+        category: "HAYAGREEVA",
+        quote: "Partnered with Hayagreeva on multiple AEM Sites implementations, delivering scalable web architecture and consistent, high-performing digital experiences across their site portfolio.",
         author: "Rachel Kowalski",
         role: "Head of Cloud Infrastructure, Sovereign Financial Network",
         highlight: "CONTINUOUS ZK AUDITING",
@@ -113,7 +113,7 @@ const CLIENT_TIERS = [
 
 // const HERO_LOGOS = [
 //     { id: "codilar", name: "Codilar", src: codilarlogo }, // Replace with your actual image path
-//     { id: "hayagreeva", name: "Haya Greeva", src: hayalogo },
+//     { id: "hayagreeva", name: "Hayagreeva", src: hayalogo },
 //     { id: "gspann", name: "GSAPNN", src: gspannlogo }
 // ];
 
@@ -154,7 +154,7 @@ export default function AboutUsPage() {
                         </Typography>
 
                         <Typography sx={{ color: "#cbd5e1", fontSize: { xs: '1.125rem', md: '1.25rem' }, lineHeight: 1.6, maxWidth: 672 }}>
-                            We deliver enterprise-grade content management through Adobe Experience Manager (AEM), the industry-leading CMS for websites, mobile apps, and forms — enabling seamless content management and digital experiences that cultivate lifetime customer value and enduring brand loyalty.
+                            We deliver enterprise-grade content management through Adobe Experience Manager (AEM), the industry-leading CMS for websites, mobile apps, and forms — enabling seamless digital experiences that build lifetime customer value and brand loyalty.
                         </Typography>
 
 

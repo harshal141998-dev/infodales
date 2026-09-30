@@ -34,7 +34,7 @@ import '../contact/contact.css';
 
 const contactDetails = {
   address:
-    '93, Eross Society, Shri Krushna Nagar, Behind Vidarbha Furniture, Nagpur - 440030',
+    '93, Eross Society, Shri Krushna Nagar, Behind Vidarbha Furniture, Nagpur – 440030',
   phone: '+91 8087474953',
   email: 'info@infodales.com',
 };
@@ -198,12 +198,12 @@ function MapHero() {
           </Typography>
 
           <Typography component="h1" className="hero-title">
-            Let’s Start a Conversation
+            Let's Start a Conversation
           </Typography>
 
           <Typography className="hero-description">
             Have a project in mind or need expert guidance? Reach out to our
-            team. We’re here to understand your goals and help you move
+            team. We're here to understand your goals and help you move
             forward.
           </Typography>
         </Box>
@@ -294,7 +294,7 @@ function GoogleFormCTA() {
 
         <Typography className="section-description" sx={{ maxWidth: 640, mx: 'auto' }}>
           To streamline review and connect you directly with the right solution
-          architect within 24 hours, all official requests are handled via our
+          architect within 24 hours, we handle all official requests through our
           centralized intake portal.
         </Typography>
       </Box>
@@ -725,6 +725,7 @@ export default function ContactPage() {
       <Container maxWidth="xl" className="facility-section">
         <Paper elevation={0} className="facility-panel">
           <Grid container spacing={3}>
+            {/* Business Hours */}
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack direction="row" spacing={2}>
                 <Box className="facility-icon">
@@ -737,13 +738,14 @@ export default function ContactPage() {
                   </Typography>
 
                   <Typography className="facility-description">
-                    Contact our team during business hours. Please reach out
+                    Monday – Saturday: 10:00 AM – 7:00 PM. Please reach out
                     to confirm availability before visiting.
                   </Typography>
                 </Box>
               </Stack>
             </Grid>
 
+            {/* Office Visits + Call button */}
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack direction="row" spacing={2}>
                 <Box className="facility-icon">
@@ -759,10 +761,20 @@ export default function ContactPage() {
                     Planning to visit? Contact us in advance so our team can
                     coordinate your appointment.
                   </Typography>
+
+                  <Button
+                    component="a"
+                    href="tel:+918087474953"
+                    className="map-link"
+                    endIcon={<PhoneInTalkOutlinedIcon />}
+                  >
+                    Call {contactDetails.phone}
+                  </Button>
                 </Box>
               </Stack>
             </Grid>
 
+            {/* Find Our Office */}
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack direction="row" spacing={2}>
                 <Box className="facility-icon">
@@ -776,7 +788,7 @@ export default function ContactPage() {
 
                   <Typography className="facility-description">
                     93, Eross Society, Shri Krushna Nagar, Behind Vidarbha
-                    Furniture, Nagpur - 440030.
+                    Furniture, Nagpur – 440030.
                   </Typography>
 
                   <Button
