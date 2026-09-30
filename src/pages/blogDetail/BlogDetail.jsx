@@ -207,8 +207,12 @@ function BlockOptionDemo({ item }) {
 
 export default function BlogDetailPage() {
   const [rating, setRating] = useState(50);
-  const { slug } = useParams();
+  // const { slug } = useParams();
+  const { slug: rawSlug } = useParams();
+
+  const slug = rawSlug.replace(/\.html$/, "");
   const navigate = useNavigate();
+
   const location = useLocation();
 
   const handleBackToBlogs = () => {
