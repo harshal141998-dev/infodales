@@ -26,7 +26,7 @@ const COLORS = {
 
 const STATS = [
     { icon: <VerifiedIcon sx={{ fontSize: 16 }} />, label: "Adobe Certified Experts" },
-    { icon: <TimelineIcon sx={{ fontSize: 16 }} />, label: "Deterministic Cypress" },
+    { icon: <TimelineIcon sx={{ fontSize: 16 }} />, label: "Reliable Cypress Test Automation" },
     { icon: <CloudQueueIcon sx={{ fontSize: 16 }} />, label: "Salesforce Cloud Native" },
 ];
 const WHO_WE_ARE = [
@@ -60,7 +60,7 @@ const HOME_SERVICES = [
     {
         icon: <DeveloperBoardIcon sx={{ fontSize: 20 }} />,
         title: "Web Development with Adobe Experience Manager",
-        desc: "Enterprise CMS ecosystems engineered for scalable multi-channel brand presence with zero architectural compromise.",
+        desc: "Enterprise CMS solutions built to support scalable, consistent brand experiences across multiple channels.",
         tags: ["Multi-Site Manager (MSM)", "Cloud Service", "Dispatcher Caching", "Content Fragments", "Edge Delivery Services (EDS)"],
         link: "View Architecture Specs",
         to: "/services",
@@ -68,7 +68,7 @@ const HOME_SERVICES = [
     {
         icon: <BugReportIcon sx={{ fontSize: 20 }} />,
         title: "Automation Testing with Cypress",
-        desc: "Deterministic QA frameworks that extinguish flaky tests and enable confident, rapid continuous deployment workflows.",
+        desc: "Reliable QA frameworks that reduce flaky tests and support faster, more confident deployments.",
         tags: ["End-to-End Frameworks", "Sub-second Regression", "CI/CD Integration", "Flaky Test Remediation"],
         link: "Explore QA Protocols",
         to: "/services",
@@ -76,7 +76,7 @@ const HOME_SERVICES = [
     {
         icon: <CloudQueueIcon sx={{ fontSize: 20 }} />,
         title: "Salesforce Development",
-        desc: "Streamlined CRM orchestrations, custom Lightning Web Components (LWC), and clean data models built for enterprise revenue systems.",
+        desc: "Streamlined CRM workflows, custom Lightning Web Components (LWC), and well-structured data models designed for enterprise needs.",
         tags: ["Service & Sales Cloud", "OmniStudio & LWC", "Custom Cloud Apps", "Legacy Data Migration"],
         link: "View Salesforce Capabilities",
         to: "/services",
@@ -128,7 +128,7 @@ export default function HomePage() {
                         </Typography>
 
                         <Typography sx={{ color: "#cbd5e1", fontSize: { xs: "0.9rem", md: "1rem" }, lineHeight: 1.7, maxWidth: 680, mb: 4 }}>
-                            We at Infodales provide solutions for niche technologies like Adobe Experience Manager, Cypress, Salesforce, and DevOps. Our highly skilled consulting team helps us meet high standards in these technologies. They assist you with AEM, Cypress, Salesforce, and DevOps to build flawless experiences.
+                            At Infodales, we specialize in Adobe Experience Manager (AEM), Cypress, Salesforce, and DevOps. Our experienced consulting team helps businesses use these technologies effectively to build reliable digital experiences.
                         </Typography>
 
                         <Button
@@ -207,10 +207,10 @@ export default function HomePage() {
 
                         <Grid size={{ xs: 12, md: 8 }}>
                             <Typography sx={{ color: "#0f172a", fontWeight: 600, fontSize: { xs: "1.3rem", md: "1.15rem" }, lineHeight: 1.6, mb: 2 }}>
-                                We at Infodales are positioned as one of the top engineering firms in the IT industry, offering quick, concise, and reliable services.
+                                We at Infodales are positioned as one of the top engineering firms in the IT industry, offering quick, concise and reliable services.
                             </Typography>
                             <Typography sx={{ color: "#64748b", fontSize: "1rem", lineHeight: 1.7, mb: 2.5 }}>
-                                At our company, we go beyond mere web development. We craft meticulously tailored digital ecosystems that stand the test of time, embodying years of unwavering expertise and ensuring unrivaled maintainability and freedom from technical debt. Our customer-centric solutions and architectural experience help organizations establish a global footprint.
+                                At our company, we do more than just build websites. We create custom digital solutions that are reliable, easy to maintain, and built for long-term growth. With our experience and focus on customer needs, we help businesses improve their digital presence and grow globally.
                             </Typography>
                             <Stack
                                 component={RouterLink}
